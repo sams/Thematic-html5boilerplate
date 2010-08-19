@@ -1,5 +1,5 @@
-﻿Thematic Profrontend
-====================
+﻿Thematic Html5Boilerplate (Profrontend)
+========================================
 
 A wordpress theme using html5 and based on Thematic ToolBox (and other Thematic themes).
 
@@ -18,8 +18,9 @@ A wordpress theme using html5 and based on Thematic ToolBox (and other Thematic 
    * wp swfobject
  * Thematic Child Themes
 
-for more on PFT see 
-http://github.com/paulirish/frontend-pro-template
+for more on Html5Boilerplate (formerly Profrontend Template) see 
+http://github.com/paulirish/html5-boilerplate
+http://html5boilerplate.com
 
 for more on OOCSS see
 http://github.com/stubbornella/oocss
