@@ -1,0 +1,25 @@
+/* -------------------------------------------------------------- 
+   
+   Styles for the custom theme options page.
+  
+-------------------------------------------------------------- */
+
+#childtheme_theme_icon_32 {
+  background: transparent url('images/icon-32.png') no-repeat 0 0;
+}
+
+#panel h3 {
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px dotted #999;
+}
+
+#panel select {
+  min-width: 18em;
+}
+
+#panel .img_preview {
+  margin: 12px 0px;
+}
+
+span.description {display:block;}

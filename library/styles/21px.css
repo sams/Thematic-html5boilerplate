@@ -1,0 +1,123 @@
+/* -------------------------------------------------------------- 
+  
+   Minimal styles that hold to a 21px line-height
+   
+-------------------------------------------------------------- */
+
+/* =Global Elements
+-------------------------------------------------------------- */
+
+/*
+You'll want to import this after typography.css because
+we're going to set a couple of typographical styles here
+*/
+
+body, input, textarea {
+    font: 14px Arial,sans-serif;
+    line-height:21px;
+}
+p, ul, ol, dd, pre {
+    margin-bottom:21px;
+}
+pre, code {
+	font:13px Monaco, monospace;
+	line-height:21px;
+}
+
+/* =Header
+-------------------------------------------------------------- */
+
+#branding {
+    padding:21px 0;
+}
+
+/* =Menu
+-------------------------------------------------------------- */
+
+.skip-link {
+    display:none;
+}
+#menu {
+    overflow:hidden; /* clears the inner float  */
+}
+#menu ul {
+    margin:0;
+    list-style:none;
+}
+#menu ul ul {
+    display:none;
+}
+#menu li {
+    display:inline;
+}
+#menu a {
+    display:block;
+    float:left;
+}
+
+/* =Content
+-------------------------------------------------------------- */
+
+#main {
+    padding-top:21px;
+}
+.hentry {
+    padding-bottom:21px;
+}
+.page-link {
+    margin-bottom:21px;
+}
+
+/* =Images
+-------------------------------------------------------------- */
+
+.entry-content img,
+.wp-caption {
+    margin-bottom:21px;
+}
+.wp-smiley {
+    max-height:14px;
+}
+
+/* =Navigation
+-------------------------------------------------------------- */
+
+.navigation {
+    margin:0px 0 21px 0;
+    overflow:hidden;
+}
+.nav-previous {
+	float: left;
+	width:50%;
+}
+.nav-next {
+	float: right;
+	width:50%;
+	text-align:right;
+}
+#nav-above,#nav-below {
+	width: 100%;
+}
+
+/* =Comments
+-------------------------------------------------------------- */
+
+
+/* =Asides, Sidebars & Widget-Ready Areas
+-------------------------------------------------------------- */
+
+.aside ul {
+    list-style:none;
+    margin-left:0;
+}
+.aside ul ul {
+    list-style:disc;
+    margin:0 0 21px 1.5em;
+}
+.aside ul ul ul {
+    margin-bottom:0;
+}
+.aside form,
+.aside table {
+    margin-bottom:21px;
+}

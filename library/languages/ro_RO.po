@@ -1,0 +1,796 @@
+# kubrick theme pot file.
+# Copyright (C) 2007 WordPress
+# This file is distributed under the same license as the kubrick theme package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Thematic\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-02-18 20:58+0100\n"
+"PO-Revision-Date: 2010-02-22 20:11+0100\n"
+"Last-Translator: Chris Gossmann <chris.gossmann@googlemail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Romana\n"
+"X-Poedit-Country: GERMANIA\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/archives.php:42
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/links.php:53
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/page.php:40
+msgid "Edit"
+msgstr "Editare"
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/attachment.php:39
+msgid "Pages:"
+msgstr "Pagini:"
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/author.php:53
+msgid "Email "
+msgstr "E-mail"
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/comments.php:10
+msgid "This post is password protected. Enter the password to view any comments."
+msgstr "Acest articol este protejat cu parolă. Introduceţi parola pentru a vedea comentariile."
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/comments.php:52
+#, php-format
+msgid "<span>%d</span> Trackbacks"
+msgstr "<span>%d</span> Ping-uri"
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/comments.php:52
+msgid "<span>One</span> Trackback"
+msgstr "<span>Un</span> Ping"
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/comments.php:72
+#, php-format
+msgid "You must be <a href=\"%s\" title=\"Log in\">logged in</a> to post a comment."
+msgstr "Trebuie să vă <a href=\"%s\" title=\"Autentificare\">autentificaţi</a> pentru a publica un comentariu."
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/comments.php:83
+#, php-format
+msgid "<span class=\"loggedin\">Logged in as <a href=\"%1$s\" title=\"Logged in as %2$s\">%2$s</a>.</span> <span class=\"logout\"><a href=\"%3$s\" title=\"Log out of this account\">Log out?</a></span>"
+msgstr "<span class=\"loggedin\">Sunteţi autentificat ca şi <a href=\"%1$s\" title=\"Logged in as %2$s\">%2$s</a>.</span> <span class=\"logout\"><a href=\"%3$s\" title=\"Log out of this account\">Deautentificare?</a></span>"
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/comments.php:90
+msgid "Your email is <em>never</em> published nor shared."
+msgstr "Adresa dumneavoastră de e-mail nu va fi <em>niciodată</em> publicată sau redistribuită."
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/comments.php:90
+msgid "Required fields are marked <span class=\"required\">*</span>"
+msgstr "Câmpurile necesare sunt marcate cu <span class=\"required\">*</span>"
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/comments.php:93
+msgid "Name"
+msgstr "Nume"
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/comments.php:93
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/comments.php:98
+msgid "<span class=\"required\">*</span>"
+msgstr "<span class=\"required\">*</span>"
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/comments.php:98
+msgid "Email"
+msgstr "Adresă de e-mail"
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/comments.php:103
+msgid "Website"
+msgstr "Site web"
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/comments.php:115
+msgid "You may use these <abbr title=\"HyperText Markup Language\">HTML</abbr> tags and attributes:"
+msgstr "Puteţi folosi următoarele etichete şi atribute <abbr title=\"HyperText Markup Language\">HTML</abbr>:"
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/page.php:38
+msgid "Pages: "
+msgstr "Pagini: "
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/search.php:41
+msgid "Nothing Found"
+msgstr "Nu s-a găsit nimic"
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/search.php:43
+msgid "Sorry, but nothing matched your search criteria. Please try again with some different keywords."
+msgstr "Ne pare rau, dar nimic nu se potriveşte cu căutarea dumneavoastră. Va rugăm să reîncercati cu alte cuvinte."
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/search.php:48
+msgid "Find"
+msgstr "Caută"
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/comments-extensions.php:76
+msgid "<span>One</span> Comment"
+msgstr "<span>Un</span> Comentariu"
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/comments-extensions.php:83
+#, php-format
+msgid "<span>%d</span> Comments"
+msgstr "<span>%d</span> Comentarii"
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/comments-extensions.php:96
+msgid "Post a Comment"
+msgstr "Publicaţi un comentariu"
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/comments-extensions.php:103
+#, php-format
+msgid "Post a Reply to %s"
+msgstr "Publicaţi un raspuns la %s"
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/comments-extensions.php:110
+msgid "Comment"
+msgstr "Comentariu"
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/comments-extensions.php:117
+msgid "Post Comment"
+msgstr "Publicaţi comentariul"
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/content-extensions.php:147
+msgid "Author Archives: "
+msgstr "Arhivele autorului: "
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/content-extensions.php:153
+msgid "Category Archives:"
+msgstr "Arhivele categoriei:"
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/content-extensions.php:162
+msgid "Search Results for:"
+msgstr "Rezultatele căutării pentru:"
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/content-extensions.php:168
+msgid "Tag Archives:"
+msgstr "Arhivele etichetei:"
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/content-extensions.php:174
+#, php-format
+msgid "Daily Archives: <span>%s</span>"
+msgstr "Arhivele zilnice: <span>%s</span>"
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/content-extensions.php:178
+#, php-format
+msgid "Monthly Archives: <span>%s</span>"
+msgstr "Arhivele lunare: <span>%s</span>"
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/content-extensions.php:182
+#, php-format
+msgid "Yearly Archives: <span>%s</span>"
+msgstr "Arhivele anuale: <span>%s</span>"
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/content-extensions.php:186
+msgid "Blog Archives"
+msgstr "Arhivele blogului"
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/content-extensions.php:209
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/content-extensions.php:725
+msgid "<span class=\"meta-nav\">&laquo;</span> Older posts"
+msgstr "<span class=\"meta-nav\">&laquo;</span> Articole  mai vechi"
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/content-extensions.php:210
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/content-extensions.php:726
+msgid "Newer posts <span class=\"meta-nav\">&raquo;</span>"
+msgstr "Articole  mai noi <span class=\"meta-nav\">&raquo;</span>"
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/content-extensions.php:394
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/content-extensions.php:618
+msgid "Edit post"
+msgstr "Editează articol"
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/content-extensions.php:406
+msgid "Not Found"
+msgstr "Nu s-a găsit"
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/content-extensions.php:411
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/content-extensions.php:686
+msgid "Permalink to "
+msgstr "Legătură permanentă către "
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/content-extensions.php:441
+msgid "By "
+msgstr "De către "
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/content-extensions.php:444
+msgid "View all posts by "
+msgstr "Vizualizaţi toate articolele scrise de "
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/content-extensions.php:455
+msgid "Published: "
+msgstr "Publicat: "
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/content-extensions.php:523
+msgid "Archives by Category"
+msgstr "Arhive dupa categorii"
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/content-extensions.php:534
+msgid "Archives by Month"
+msgstr "Arhive dupa lună"
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/content-extensions.php:562
+msgid "Apologies, but we were unable to find what you were looking for. Perhaps  searching will help."
+msgstr "Ne cerem scuze, dar nu am reuşit sa găsim ceea ce căutaţi. Poate formularul de căutare vă va ajuta."
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/content-extensions.php:578
+msgid "Read More <span class=\"meta-nav\">&raquo;</span>"
+msgstr "Citeşte mai departe <span class=\"meta-nav\">&raquo;</span>"
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/content-extensions.php:629
+msgid "This entry was posted in "
+msgstr "Acest articol a post publicat în "
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/content-extensions.php:632
+msgid "Also posted in "
+msgstr "De asemenea publicat în "
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/content-extensions.php:635
+msgid "Posted in "
+msgstr "Publicat în "
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/content-extensions.php:646
+msgid " and tagged"
+msgstr " şi etichetat"
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/content-extensions.php:649
+msgid " Also tagged "
+msgstr " De asemenea etichetat "
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/content-extensions.php:651
+msgid "Tagged"
+msgstr "Etichetat"
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/content-extensions.php:663
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/content-extensions.php:666
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/content-extensions.php:669
+msgid "Comment on "
+msgstr "Comentariu la "
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/content-extensions.php:664
+msgid " Comments"
+msgstr " Comentarii"
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/content-extensions.php:667
+msgid " Comment"
+msgstr " Comentariu"
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/content-extensions.php:670
+msgid "Leave a comment"
+msgstr "Lăsaţi un comentariu"
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/content-extensions.php:673
+msgid "Comments closed"
+msgstr "Comentariile nu sunt acceptate."
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/content-extensions.php:686
+msgid ". Bookmark the "
+msgstr ". Salvaţi ca şi semn de carte "
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/content-extensions.php:687
+msgid "permalink"
+msgstr "legătură permanentă"
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/content-extensions.php:689
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/content-extensions.php:697
+msgid "Post a comment"
+msgstr "Publicaţi un comentariu"
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/content-extensions.php:690
+msgid " or leave a trackback: "
+msgstr " sau lăsaţi un ping: "
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/content-extensions.php:691
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/content-extensions.php:694
+msgid "Trackback URL for your post"
+msgstr "Adresa Ping-ului pentru articolul dumneavoastră"
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/content-extensions.php:691
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/content-extensions.php:694
+msgid "Trackback URL"
+msgstr "Adresa Ping-ului"
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/content-extensions.php:693
+msgid " Comments are closed, but you can leave a trackback: "
+msgstr " Comentariile nu sunt acceptate, dar puteţi lăsa un ping: "
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/content-extensions.php:696
+msgid " Trackbacks are closed, but you can "
+msgstr " Ping-urile nu sunt acceptate, dar puteţi să "
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/content-extensions.php:697
+msgid "post a comment"
+msgstr "publicaţi un comentariu"
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/content-extensions.php:699
+msgid " Both comments and trackbacks are currently closed."
+msgstr " Nu sunt acceptate nici comentarile şi nici ping-urile."
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/discussion.php:10
+#, php-format
+msgid "Posted %1$s at %2$s <span class=\"meta-sep\">|</span> <a href=\"%3$s\" title=\"Permalink to this comment\">Permalink</a>"
+msgstr "Publicat %1$s la %2$s <span class=\"meta-sep\">|</span> <a href=\"%3$s\" title=\"Link permanent catre comentariu\">Legătură permanentă</a>"
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/discussion.php:15
+msgid "\t\t\t\t\t<span class='unapproved'>Your comment is awaiting moderation.</span>\n"
+msgstr "\t\t\t\t\t<span class='unapproved'>Comentariul dumneavoastră aşteaptă să fie moderat.</span>\n"
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/discussion.php:22
+msgid "Reply"
+msgstr "Răspunde"
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/discussion.php:23
+msgid "Log in to reply."
+msgstr "Autentificaţi-vă pentru a răspunde."
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/discussion.php:37
+#, php-format
+msgid "By %1$s on %2$s at %3$s"
+msgstr "De către %1$s in %2$s la %3$s"
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/discussion.php:42
+msgid "\\t\\t\\t\\t\\t<span class=\"unapproved\">Your trackback is awaiting moderation.</span>\\n"
+msgstr "\\t\\t\\t\\t\\t<span class=\"unapproved\">Ping-ul dumneavoastră aşteaptă să fie moderat.</span>\\n"
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/header-extensions.php:251
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/widgets.php:77
+msgid "Posts RSS feed"
+msgstr "Fluxul RSS al articolelor"
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/header-extensions.php:269
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/widgets.php:78
+msgid "Comments RSS feed"
+msgstr "Fluxul RSS al comentariilor"
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/header-extensions.php:401
+msgid "Skip navigation to the content"
+msgstr "Săriţi peste navigaţie către conţinut"
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/header-extensions.php:401
+msgid "Skip to content"
+msgstr "Săriţi către conţinut"
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/helpers.php:31
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/helpers.php:44
+msgid "There is no excerpt because this is a protected post."
+msgstr "Rezumatul nu este disponibil pentru că e vorba de un articol protejat."
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/shortcodes.php:16
+msgid "Login"
+msgstr "Autentificare"
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/shortcodes.php:18
+msgid "Logout"
+msgstr "Deautentificare"
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/theme-options.php:13
+msgid "Index Insert Position"
+msgstr "Poziţia de inserare în pagina de index"
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/theme-options.php:14
+msgid "The widgetized Index Insert will follow after this post number."
+msgstr "Zona de widget de pe pagina de index va apărea după articolul cu acest număr."
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/theme-options.php:19
+msgid "Info on Author Page"
+msgstr "Informaţii pe pagina de autor."
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/theme-options.php:20
+msgid "Display a <a href=\"http://microformats.org/wiki/hcard\" target=\"_blank\">microformatted vCard</a>—with the author's avatar, bio and email—on the author page."
+msgstr "Afişare <a href=\"http://microformats.org/wiki/hcard\" target=\"_blank\">vCard microformatat</a>—cu avatarul, informaţiile biografice şi adresa de e-mail a autorului—pe pagina de autor."
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/theme-options.php:25
+msgid "Text in Footer"
+msgstr "Text din footer"
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/theme-options.php:26
+msgid "You can use the following shortcodes in your footer text: [wp-link] [theme-link] [loginout-link] [blog-title] [blog-link] [the-year]"
+msgstr "Puteţi folosi următoarele coduri scurte în textul din footer: [wp-link] [theme-link] [loginout-link] [blog-title] [blog-link] [the-year]"
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/theme-options.php:28
+msgid "Powered by [wp-link]. Built on the [theme-link]."
+msgstr "Propulsat de [wp-link]. Construit pe [theme-link]."
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/theme-options.php:75
+msgid "settings saved."
+msgstr "opţiuni salvate."
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/theme-options.php:76
+msgid "settings reset."
+msgstr "setări resetate."
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/theme-options.php:77
+msgid "widgets reset."
+msgstr "widget-uri resetate."
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/theme-options.php:190
+msgid "Save changes"
+msgstr "Salvare modificări"
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/theme-options.php:196
+msgid "Reset"
+msgstr "Resetare"
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/theme-options.php:202
+msgid "Reset Widgets"
+msgstr "Resetare Widget-uri"
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/theme-options.php:207
+msgid "For more information about this theme, <a href=\"http://themeshaper.com\">visit ThemeShaper</a>. Please visit the <a href=\"http://themeshaper.com/forums/\">ThemeShaper Forums</a> if you have any questions about Thematic."
+msgstr "Pentru mai multe informaţii despre această temă, <a href=\"http://themeshaper.com\">vizitaţi ThemeShaper</a>. Vă rugăm vizitaţi <a href=\"http://themeshaper.com/forums/\">Forumurile ThemeShaper</a> dacă aveţi întrebări despre Thematic."
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/widgets-extensions.php:12
+msgid "To search, type and hit enter"
+msgstr "Pentru căutare, scrieţi şi apăsaţi enter"
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/widgets-extensions.php:18
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/widgets-extensions.php:281
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/widgets.php:43
+msgid "Search"
+msgstr "Caută"
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/widgets-extensions.php:43
+msgid "The primary widget area, most often used as a sidebar."
+msgstr "Zona principală de widget-uri, cel mai adesea folosită ca şi bară laterală."
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/widgets-extensions.php:58
+msgid "The secondary widget area, most often used as a sidebar."
+msgstr "Zona secundară de widget-uri, cel mai adesea folosită ca şi bară laterală."
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/widgets-extensions.php:73
+msgid "The 1st widget area in the footer."
+msgstr "Prima zonă de widget-uri din subsol."
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/widgets-extensions.php:88
+msgid "The 2nd widget area in the footer."
+msgstr "A doua zonă de widget-uri din subsol."
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/widgets-extensions.php:103
+msgid "The 3rd widget area in the footer."
+msgstr "A treia zonă de widget-uri din subsol."
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/widgets-extensions.php:118
+msgid "The top widget area displayed on the index page."
+msgstr "Zona de widget-uri afişată în partea de sus a paginii de index."
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/widgets-extensions.php:133
+msgid "The widget area inserted after x posts on the index page."
+msgstr "Zona de widget-uri inserată după x articole pe pagina de index."
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/widgets-extensions.php:148
+msgid "The bottom widget area displayed on the index page."
+msgstr "Zona de widget-uri afişată în partea de jos a paginii de index."
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/widgets-extensions.php:163
+msgid "The top widget area displayed on a single post."
+msgstr "Zona de widget-uri afişată în partea de sus pe paginile de articol."
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/widgets-extensions.php:178
+msgid "The widget area inserted between the post and the comments on a single post."
+msgstr "Zona de widget-uri afişată între articol şi comentarii pe paginile de articol."
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/widgets-extensions.php:193
+msgid "The bottom widget area displayed on a single post."
+msgstr "Zona de widget-uri afişată în partea de jos pe paginile de articol."
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/widgets-extensions.php:208
+msgid "The top widget area displayed on a page."
+msgstr "Zona de widget-uri afişată în partea de sus a paginilor propriu-zise."
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/widgets-extensions.php:223
+msgid "The bottom widget area displayed on a page."
+msgstr "Zona de widget-uri afişată în partea de jos a paginilor propriu-zise."
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/widgets-extensions.php:283
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/widgets.php:55
+msgid "Meta"
+msgstr "Meta"
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/widgets-extensions.php:285
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/widgets-extensions.php:286
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/widgets.php:72
+msgid "RSS Links"
+msgstr "Legături RSS"
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/widgets.php:77
+msgid "All posts"
+msgstr "Toate articolele"
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/widgets.php:78
+msgid "All comments"
+msgstr "Toate comentarile"
+
+#: c:\xampp\htdocs\development\wp-content\themes\thematic/library/extensions/widgets.php:96
+msgid "Title:"
+msgstr "Titlu:"
+
+#~ msgid "definitions created."
+#~ msgstr "definiţii au fost create."
+#~ msgid "failed to create directory:"
+#~ msgstr "s-a eşuat în crearea directorului:"
+#~ msgid "failed to create the file:"
+#~ msgstr "s-a eşuat în crearea fişierului:"
+#~ msgid "Create Definitions"
+#~ msgstr "Creare Definiţii"
+#~ msgid "Pages"
+#~ msgstr "Pagini"
+#~ msgid "Categories"
+#~ msgstr "Categorii"
+#~ msgid "Archives"
+#~ msgstr "Arhive"
+#~ msgid "RSS Feeds"
+#~ msgstr "Feed-uri RSS"
+#~ msgid "Blog Index"
+#~ msgstr "Index blog"
+#~ msgid "Error 404 - Not Found"
+#~ msgstr "Fehler 404 - Nicht gefunden"
+#~ msgid "Archive for the &#8216;%s&#8217; Category"
+#~ msgstr "Archiv f&uuml;r die Kategorie &#8222;%s&#8220;"
+#~ msgid "Posts Tagged &#8216;%s&#8217;"
+#~ msgstr "Artikel-Schlagworte: &#8222;%s&#8220;"
+#~ msgid "Archive for %s|Daily archive page"
+#~ msgstr "Archiv f&uuml;r %s"
+#~ msgid "F jS, Y"
+#~ msgstr "j. F Y"
+#~ msgid "Archive for %s|Monthly archive page"
+#~ msgstr "Archiv f&uuml;r %s"
+#~ msgid "F, Y"
+#~ msgstr "F Y"
+#~ msgid "Archive for %s|Yearly archive page"
+#~ msgstr "Archiv f&uuml;r %s"
+#~ msgid "Y"
+#~ msgstr "Y"
+#~ msgid "&laquo; Older Entries"
+#~ msgstr "&laquo; &Auml;ltere Eintr&auml;ge"
+#~ msgid "Newer Entries &raquo;"
+#~ msgstr "Neuere Eintr&auml;ge &raquo;"
+#~ msgid "l, F jS, Y"
+#~ msgstr "l, j. F Y"
+#~ msgid "Tags:"
+#~ msgstr "Schlagworte:"
+#~ msgid "No Comments &#187;"
+#~ msgstr "Keine Kommentare &#187;"
+#~ msgid "1 Comment &#187;"
+#~ msgstr "1 Kommentar &#187;"
+#~ msgid "% Comments &#187;"
+#~ msgstr "% Kommentare &#187;"
+#~ msgid "Archives by Subject:"
+#~ msgstr "Archive nach Thema:"
+#~ msgid "Permanent Link: %s"
+#~ msgstr "Permanent-Link: %s"
+#~ msgid "Read the rest of this entry &raquo;"
+#~ msgstr "Diesen Beitrag weiterlesen &raquo;"
+#~ msgid "This entry was posted %1$s on %2$s at %3$s and is filed under %4$s."
+#~ msgstr ""
+#~ "Dieser Beitrag wurde vor %1$s am %2$s um %3$s Uhr ver&ouml;ffentlicht und "
+#~ "unter %4$s gespeichert."
+#~ msgid ""
+#~ "You can follow any responses to this entry through the <a href='%s'>RSS "
+#~ "2.0</a> feed."
+#~ msgstr ""
+#~ "Sie k&ouml;nnen Kommentare zu diesem Eintrag &uuml;ber den <a href='%"
+#~ "s'>RSS-2.0</a>-Feed verfolgen."
+#~ msgid ""
+#~ "You can <a href=\"#respond\">leave a response</a>, or <a href=\"%s\" rel="
+#~ "\"trackback\">trackback</a> from your own site."
+#~ msgstr ""
+#~ "Sie k&ouml;nnen einen <a href=\"#respond\">Kommentar hinterlassen</a> "
+#~ "oder einen <a href=\"%s\" rel=\"trackback\">Trackback</a> von Ihrer "
+#~ "Website hierher setzen."
+#~ msgid ""
+#~ "Responses are currently closed, but you can <a href=\"%s\" rel=\"trackback"
+#~ "\">trackback</a> from your own site."
+#~ msgstr ""
+#~ "Kommentare sind momentan deaktiviert, aber Sie k&ouml;nnen einen <a href="
+#~ "\"%s\" rel=\"trackback\">Trackback</a> von Ihrer Website hierher setzen."
+#~ msgid ""
+#~ "You can skip to the end and leave a response. Pinging is currently not "
+#~ "allowed."
+#~ msgstr ""
+#~ "Sie k&ouml;nnen einen <a href=\"#respond\">Kommentar hinterlassen</a>, "
+#~ "Pingbacks/Trackbacks sind momentan deaktiviert."
+#~ msgid "Edit this entry."
+#~ msgstr "Diesen Eintrag bearbeiten"
+#~ msgid "Sorry, no attachments matched your criteria."
+#~ msgstr ""
+#~ "Leider wurden keine Anh&auml;nge gefunden, die Ihren Kriterien "
+#~ "entsprechen."
+#~ msgid "No Responses"
+#~ msgstr "Keine Kommentare"
+#~ msgid "One Response"
+#~ msgstr "1 Kommentar"
+#~ msgid "% Responses"
+#~ msgstr "% Kommentare"
+#~ msgid "to &#8220;%s&#8221;"
+#~ msgstr "zu &#8222;%s&#8220;"
+#~ msgid "<cite>%s</cite> Says:"
+#~ msgstr "<cite>%s</cite> sagt:"
+#~ msgid "edit"
+#~ msgstr "bearbeiten"
+#~ msgid "Comments are closed."
+#~ msgstr "Kommentieren ist momentan nicht m&ouml;glich."
+#~ msgid "Leave a Reply"
+#~ msgstr "Kommentieren"
+#~ msgid "Logged in as <a href=\"%1$s\">%2$s</a>."
+#~ msgstr "Angemeldet als <a href=\"%1$s\">%2$s</a>."
+#~ msgid "Log out of this account"
+#~ msgstr "Jetzt abmelden"
+#~ msgid "Log out &raquo;"
+#~ msgstr "Abmelden &raquo;"
+#~ msgid "(required)"
+#~ msgstr "(ben&ouml;tigt)"
+#~ msgid "Mail (will not be published)"
+#~ msgstr "E-Mail (wird nicht ver&ouml;ffentlicht)"
+#~ msgid "<strong>XHTML:</strong> You can use these tags: <code>%s</code>"
+#~ msgstr ""
+#~ "<strong>XHTML:</strong> Sie k&ouml;nnen folgende Elemente nutzen: <code>%"
+#~ "s</code>"
+#~ msgid "Submit Comment"
+#~ msgstr "Kommentar senden"
+#~ msgid "%1$s - Comments on %2$s"
+#~ msgstr "%1$s - Kommentare zu %2$s"
+#~ msgid ""
+#~ "<abbr title=\"Really Simple Syndication\">RSS</abbr> feed for comments on "
+#~ "this post."
+#~ msgstr ""
+#~ "<abbr title=\"Really Simple Syndication\">RSS</abbr>-Feed f&uuml;r "
+#~ "Kommentare zu diesem Artikel."
+#~ msgid ""
+#~ "The <abbr title=\"Universal Resource Locator\">URL</abbr> to TrackBack "
+#~ "this entry is: <em>%s</em>"
+#~ msgstr ""
+#~ "Die Trackback-<abbr title=\"Universal Resource Locator\">URL</abbr> zu "
+#~ "diesem Artikel ist: <em>%s</em>"
+#~ msgid "Pingback"
+#~ msgstr "Pingback"
+#~ msgid "by %1$s &#8212; %2$s @ <a href=\"#comment-%3$s\">%4$s</a>"
+#~ msgstr "von %1$s &#8212; %2$s um <a href=\"#comment-%3$s\">%4$s Uhr</a>"
+#~ msgid "No comments yet."
+#~ msgstr "Noch keine Kommentare."
+#~ msgid ""
+#~ "Line and paragraph breaks automatic, e-mail address never displayed, "
+#~ "<acronym title=\"Hypertext Markup Language\">HTML</acronym> allowed: "
+#~ "<code>%s</code>"
+#~ msgstr ""
+#~ "Zeilen- und Absatzumbr&uuml;che werden automatisch eingef&uuml;gt, Ihre E-"
+#~ "Mail wird nicht angezeigt.Erlaubtes <acronym title=\"Hypertext Markup "
+#~ "Language\">HTML</acronym>:"
+#~ msgid "<abbr title=\"Universal Resource Locator\">URL</abbr>"
+#~ msgstr "<abbr title=\"Universal Resource Locator\">URL</abbr>"
+#~ msgid "Say It!"
+#~ msgstr "Senden"
+#~ msgid "Sorry, the comment form is closed at this time."
+#~ msgstr "Kommentieren ist momentan leider nicht m&ouml;glich."
+#~ msgid "Close this window."
+#~ msgstr "Fenster schlie&szlig;en."
+#~ msgid ""
+#~ "Powered by <a href=\"%s\" title=\"Powered by WordPress, state-of-the-art "
+#~ "semantic personal publishing platform\"><strong>WordPress</strong></a>"
+#~ msgstr ""
+#~ "<a href=\"%s\" title=\"WordPress, die f&uuml;hrende Weblog-Anwendung"
+#~ "\"><strong>WordPress</strong></a>"
+#~ msgid "%1$s is proudly powered by %2$s"
+#~ msgstr "%1$s l&auml;uft mit %2$s"
+#~ msgid "%1$s and %2$s."
+#~ msgstr "%1$s und %2$s."
+#~ msgid "Entries (RSS)"
+#~ msgstr "Beitr&auml;ge (RSS)"
+#~ msgid "%d queries. %s seconds."
+#~ msgstr "%d Abfragen. %s Sekunden."
+#~ msgid "Customize Header"
+#~ msgstr "Kopfbereich anpassen"
+#~ msgid "Header Image and Color"
+#~ msgstr "Hintergrundbild und -farbe"
+#~ msgid "Close Color Picker"
+#~ msgstr "Farbw&auml;hler schlie&szlig;en"
+#~ msgid "Save"
+#~ msgstr "Speichern"
+#~ msgid "Font Color:"
+#~ msgstr "Schriftfarbe:"
+#~ msgid "Any CSS color (%s or %s or %s)"
+#~ msgstr "Eine beliebige CSS-Farbe (%s oder %s oder %s)"
+#~ msgid "Upper Color:"
+#~ msgstr "Farbe f&uuml;r oben:"
+#~ msgid "HEX only (%s or %s)"
+#~ msgstr "Nur HEX (%s oder %s)"
+#~ msgid "Lower Color:"
+#~ msgstr "Farbe f&uuml;r unten:"
+#~ msgid "Toggle Text"
+#~ msgstr "Text umschalten"
+#~ msgid "Use Defaults"
+#~ msgstr "Standard verwenden"
+#~ msgid "Font Color"
+#~ msgstr "Schriftfarbe"
+#~ msgid "Upper Color"
+#~ msgstr "Farbe f&uuml;r oben"
+#~ msgid "Lower Color"
+#~ msgstr "Farbe f&uuml;r unten"
+#~ msgid "Advanced"
+#~ msgstr "Erweitert"
+#~ msgid "Update Header &raquo;"
+#~ msgstr "Kopfbereich aktualisieren &raquo;"
+#~ msgid "Font Color (CSS):"
+#~ msgstr "Schriftfarbe (CSS):"
+#~ msgid "Upper Color (HEX):"
+#~ msgstr "Farbe f&uuml;r oben (HEX):"
+#~ msgid "Lower Color (HEX):"
+#~ msgstr "Farbe f&uuml;r unten (HEX):"
+#~ msgid "Select Default Colors"
+#~ msgstr "Standardfarben ausw&auml;hlen"
+#~ msgid "Toggle Text Display"
+#~ msgstr "Textanzeige aktivieren/deaktivieren"
+#~ msgid "&raquo; Blog Archive"
+#~ msgstr "&raquo; Blogarchiv"
+#~ msgid "This entry was posted on %1$s at %2$s and is filed under %3$s."
+#~ msgstr ""
+#~ "Dieser Beitrag wurde am %1$s um %2$s Uhr veröffentlicht und unter %3$s "
+#~ "gespeichert."
+#~ msgid "Sorry, no posts matched your criteria."
+#~ msgstr ""
+#~ "Leider wurden keine Artikel gefunden, die Ihren Kriterien entsprechen."
+#~ msgid "Sorry, but you are looking for something that isn&#8217;t here."
+#~ msgstr "Es konnten leider keine passenden Inhalte gefunden werden."
+#~ msgid "Read the rest of this page &raquo;"
+#~ msgstr "Diesen Seite weiterlesen &raquo;"
+#~ msgid "Search for:"
+#~ msgstr "Suchen nach:"
+#~ msgid "No posts found. Try a different search?"
+#~ msgstr ""
+#~ "Ihre Suche ergab keine Treffer. M&ouml;chten Sie eine neue Suche starten?"
+#~ msgid "Author"
+#~ msgstr "Autor"
+#~ msgid "You are currently browsing the archives for the %s category."
+#~ msgstr "Sie sind momentan im Archiv der Kategorie %s."
+#~ msgid ""
+#~ "You are currently browsing the <a href=\"%1$s/\">%2$s</a> blog archives "
+#~ "for the day %3$s."
+#~ msgstr ""
+#~ "Sie sind momentan im Blogarchiv f&uuml;r den %3$s von <a href=\"%1$s/\">%2"
+#~ "$s</a>."
+#~ msgid ""
+#~ "You are currently browsing the <a href=\"%1$s/\">%2$s</a> blog archives "
+#~ "for %3$s."
+#~ msgstr ""
+#~ "Sie sind momentan im Blogarchiv f&uuml;r %3$s von <a href=\"%1$s/\">%2$s</"
+#~ "a>."
+#~ msgid ""
+#~ "You are currently browsing the <a href=\"%1$s/\">%2$s</a> blog archives "
+#~ "for the year %3$s."
+#~ msgstr ""
+#~ "Sie sind momentan im Blogarchiv f&uuml;r das Jahr %3$s von <a href=\"%1$s/"
+#~ "\">%2$s</a>."
+#~ msgid ""
+#~ "You have searched the <a href=\"%1$s/\">%2$s</a> blog archives for "
+#~ "<strong>&#8216;%3$s&#8217;</strong>. If you are unable to find anything "
+#~ "in these search results, you can try one of these links."
+#~ msgstr ""
+#~ "Sie haben im Blogarchiv von <a href=\"%1$s/\">%2$s</a> nach "
+#~ "<strong>&#8222;%3$s&#8220;</strong> gesucht. Falls Sie in den "
+#~ "Suchergebnissen nicht f&uuml;ndig werden, helfen Ihnen m&ouml;"
+#~ "glicherweise die folgenden Links."
+#~ msgid ""
+#~ "You are currently browsing the <a href=\"%1$s/\">%2$s</a> blog archives."
+#~ msgstr "Sie sind momentan im Blogarchiv von <a href=\"%1$s/\">%2$s</a>."
+#~ msgid "This page validates as XHTML 1.0 Transitional"
+#~ msgstr "Diese Seite ist valides XHTML 1.0 Transitional"
+#~ msgid "XHTML Friends Network"
+#~ msgstr "XHTML Friends Network"
+#~ msgid "XFN"
+#~ msgstr "XFN"
+#~ msgid ""
+#~ "Powered by WordPress, state-of-the-art semantic personal publishing "
+#~ "platform."
+#~ msgstr "L&auml;uft mit WordPress, der f&uuml;hrenden Weblog-Anwendung."
+#~ msgid "Edit this entry"
+#~ msgstr "Diesen Eintrag bearbeiten"
+#~ msgid ""
+#~ "Powered by <a href=\"%s\" title=\"Powered by WordPress, state-of-the-art "
+#~ "semantic personal publishing platform\"><strong>Wordpress</strong></a>"
+#~ msgstr ""
+#~ "<a href=\"%s\" title=\"WordPress, die f&uuml;hrende Weblog-Anwendung"
+#~ "\"><strong>WordPress</strong></a>"
+#~ msgid ""
+#~ "Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out "
+#~ "of this account\">Logout &raquo;</a>"
+#~ msgstr ""
+#~ "Angemeldet als <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\">Abmelden "
+#~ "&raquo;</a>"
+

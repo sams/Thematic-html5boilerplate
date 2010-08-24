@@ -18,9 +18,10 @@ A wordpress theme using html5 and based on Thematic ToolBox (and other Thematic 
    * wp swfobject
  * Thematic Child Themes
 
-for more on Html5Boilerplate (formerly Profrontend Template) see 
+The original source is available at 
 http://github.com/paulirish/html5-boilerplate
-http://html5boilerplate.com
+and more information is available at
+http://html5boilerplate.com/
 
 for more on OOCSS see
 http://github.com/stubbornella/oocss

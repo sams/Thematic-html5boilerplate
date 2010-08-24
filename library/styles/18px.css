@@ -1,0 +1,92 @@
+/* -------------------------------------------------------------- 
+  
+   Minimal styles that hold to a 18px line-height
+   
+-------------------------------------------------------------- */
+
+/* =Header
+-------------------------------------------------------------- */
+
+#branding {
+    padding:18px 0;
+}
+
+/* =Menu
+-------------------------------------------------------------- */
+
+.skip-link {
+    display:none;
+}
+#menu {
+    overflow:hidden; /* clears the inner float  */
+}
+#menu ul {
+    margin:0;
+    list-style:none;
+}
+#menu ul ul {
+    display:none;
+}
+#menu li {
+    display:inline;
+}
+#menu a {
+    display:block;
+    float:left;
+}
+
+/* =Content
+-------------------------------------------------------------- */
+
+#main {
+    padding-top:18px;
+}
+.hentry {
+    padding-bottom:18px;
+}
+.page-link {
+    margin-bottom:18px;
+}
+
+/* =Navigation
+-------------------------------------------------------------- */
+
+.navigation {
+    margin:0px 0 18px 0;
+    overflow:hidden;
+}
+.nav-previous {
+	float: left;
+	width:50%;
+}
+.nav-next {
+	float: right;
+	width:50%;
+	text-align:right;
+}
+#nav-above,#nav-below {
+	width: 100%;
+}
+
+/* =Comments
+-------------------------------------------------------------- */
+
+
+/* =Asides, Sidebars & Widget-Ready Areas
+-------------------------------------------------------------- */
+
+.aside ul {
+    list-style:none;
+    margin-left:0;
+}
+.aside ul ul {
+    list-style:disc;
+    margin:0 0 18px 1.5em;
+}
+.aside ul ul ul {
+    margin-bottom:0;
+}
+.aside form,
+.aside table {
+    margin-bottom:18px;
+}

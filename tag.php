@@ -1,0 +1,54 @@
+<?php
+/**
+ * The template used to display Tag Archive pages
+ *
+ * @package WordPress
+ * @subpackage Thematic PFT todo: thematic exapnsion plugins
+ */
+
+/*
+
+
+	
+        
+            // displays the page title
+            thematic_page_title();
+
+            // create the navigation above the content
+            thematic_navigation_above();
+			
+            // action hook for placing content above the tag loop
+            thematic_above_tagloop();		
+
+            // action hook creating the tag loop
+            thematic_tagloop();
+
+            // action hook for placing content below the tag loop
+            thematic_below_tagloop();
+
+            // create the navigation below the content
+            thematic_navigation_below();
+
+
+*/
+
+get_header(); ?>
+
+		<div id="primary">
+			<div id="content">
+
+				<?php the_post(); ?>
+
+				<h2 class="page-title"><?php
+					printf( __( 'Tag Archives: %s', 'themename' ), '<span>' . single_tag_title( '', false ) . '</span>' );
+				?></h2>
+
+				<?php rewind_posts(); ?>
+
+				<?php get_template_part( 'loop', 'tag' ); ?>
+
+			</div><!-- #content -->
+		</div><!-- #primary -->
+
+<?php get_sidebar(); ?>
+<?php get_footer(); ?>
