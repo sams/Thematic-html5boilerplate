@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 /*
  * Switch CSS Style
@@ -118,6 +118,3 @@ function childtheme_can_edit_theme_options(){
 	else
 		return current_user_can( 'edit_theme_options' ) ;
 }
-
-
-?>

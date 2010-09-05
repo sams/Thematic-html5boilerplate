@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 // Fetch alternate theme stylesheets    - this will be either classnames on the body or these will be added to the minify at runtime
 $alt_layout_dir = CHILDTHEME_THEME_DIRECTORY . 'layouts/';
@@ -37,7 +37,14 @@ $my_options = array(
     'desc' => __('Paste Your Google Analytics Code Here.', 'thematicchild'),
     'id' => $my_shortname . '_googleanalytics',
     'std' => '',
-    'type' => 'textarea'
+    'type' => 'text'
+  ),
+  array(
+    'name' => __('Chrome Frame', 'thematicchild'),
+    'desc' => __('If you want the chrome frame output oin head because your not adding it to .htaccess.', 'thematicchild'),
+    'id' => $my_shortname . '_chromeframe',
+    'std' => '',
+    'type' => 'checkbox'
   ),
     array(
     'name' => __('Footer Text', 'thematicchild'),
@@ -47,5 +54,3 @@ $my_options = array(
     'type' => 'textarea'
   ),
 );
-
-?>

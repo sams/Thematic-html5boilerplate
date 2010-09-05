@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 /*
  * Remove Thematic Admin Panel
@@ -294,5 +294,3 @@ function childtheme_admin_get_my_options() {
     }
   }
 }
-
-?>
