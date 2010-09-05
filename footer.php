@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * @package WordPress
  * @subpackage Thematic PFT
@@ -33,7 +33,6 @@
 
 
   <!-- this should be moved to a footer hook Grab Google CDN's jQuery. fall back to local if neccessary -->
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
   <script>!window.jQuery && document.write('<script src="<?php echo get_stylesheet_directory_uri(); ?>/library/scripts/jquery-1.4.2.min.js"><\/script>')</script>
   <!-- WP-Minify JS -->
   
