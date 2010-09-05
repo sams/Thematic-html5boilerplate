@@ -3,43 +3,43 @@
  * @package WordPress
  * @subpackage Thematic PFT
  */
-    thematic_create_doctype();
-    
-    // Creating the head profile
-    thematic_head_profile();      
-    
+	thematic_create_doctype();
+	
+	// Creating the head profile
+	thematic_head_profile();
+	
 	thematic_create_contenttype();
 
-    // Creating the doc title
-    thematic_doctitle();
+	// Creating the doc title
+	thematic_doctitle();
 	// this is on ead also <link rel="profile" href="http://gmpg.org/xfn/11" />
 	
 	// Creating the description
-    thematic_show_description();
-    
-    // Creating the robots tags
-    thematic_show_robots();
-    
-    // Creating the canonical URL
-    thematic_canonical_url();
-    
-    // Loading the stylesheet
-    thematic_create_stylesheet();
-    
-    // Creating the internal RSS links
-    thematic_show_rss();
-    
-    // Creating the comments RSS links
-    thematic_show_commentsrss();
-    
-    // Creating the pingback adress
-    thematic_show_pingback();
-    
-    // Enables comment threading
-    thematic_show_commentreply();
+	thematic_show_description();
+	
+	// Creating the robots tags
+	thematic_show_robots();
+	
+	// Creating the canonical URL
+	thematic_canonical_url();
+	
+	// Loading the stylesheet
+	thematic_create_stylesheet();
+	
+	// Creating the internal RSS links
+	thematic_show_rss();
+	
+	// Creating the comments RSS links
+	thematic_show_commentsrss();
+	
+	// Creating the pingback adress
+	thematic_show_pingback();
+	
+	// Enables comment threading
+	thematic_show_commentreply();
 
-    // Calling WordPress' header action hook
-    wp_head();
+	// Calling WordPress' header action hook
+	wp_head();
 ?>
 <!-- WP-Minify CSS -->
 
@@ -48,30 +48,30 @@
 <?php 
 
 if (apply_filters('thematic_show_bodyclass',TRUE)) { 
-    // Creating the body class
-    ?>
+	// Creating the body class
+	?>
 
-<body class="<?php thematic_body_class() ?>">
-    
+<body class="<?php echo thematic_body_class(); ?>">
+	
 <?php }
 
 // action hook for placing content before opening #wrapper
 thematic_before(); ?>
 <div id="page" class="hfeed container"><?php
-    
-    // action hook for placing content above the theme header
-    thematic_aboveheader(); 
-    // think I wish to remove these additional div wrappers and they can be placed using the theme callbacks
-    ?>
+
+	// action hook for placing content above the theme header
+	thematic_aboveheader(); 
+	// think I wish to remove these additional div wrappers and they can be placed using the theme callbacks
+	?>
 	<div id="masthead" class="head clearfix">
 		<header id="branding" role="banner">
 			<hgroup> 
-        <?php 
-        
-        // action hook creating the theme header
-        thematic_header();
-        
-        ?>
+		<?php 
+		
+		// action hook creating the theme header
+		thematic_header();
+		
+		?>
 			</hgroup>
 			<?php
 				// Check if this is a post or page, if it has a thumbnail, and if it's a big one
@@ -92,11 +92,11 @@ thematic_before(); ?>
 			<?php //wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 		</nav><!-- #access -->
 	</div><!-- #masthead -->
-	                                                               
-     <?php                                                      
-    // action hook for placing content below the theme header  
-    thematic_belowheader();                                    
 
-	    ?>
+	<?php 
+	// action hook for placing content below the theme header  
+	thematic_belowheader();
+
+		?>
 
 	<div id="main" class="body">
