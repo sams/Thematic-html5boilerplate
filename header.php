@@ -25,18 +25,20 @@
 	
 	// Loading the stylesheet
 	thematic_create_stylesheet();
-	
+
 	// Creating the internal RSS links
 	thematic_show_rss();
-	
+
 	// Creating the comments RSS links
 	thematic_show_commentsrss();
-	
+
 	// Creating the pingback adress
 	thematic_show_pingback();
-	
+
 	// Enables comment threading
 	thematic_show_commentreply();
+
+	thematic_create_modernizr();
 
 	// Calling WordPress' header action hook
 	wp_head();

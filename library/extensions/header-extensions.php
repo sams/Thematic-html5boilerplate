@@ -113,6 +113,11 @@ function thematic_create_contenttype() {
 	echo apply_filters('thematic_create_contenttype', $content);
 } // end thematic_create_contenttype
 
+// output modernizr to head of doc
+function thematic_create_modernizr() {
+	echo "\t<script src=\"" . get_stylesheet_directory_uri() . "/library/scripts/modernizr-1.5.min.js\"></script>\n\n";
+} // end thematic_create_modernizr
+
 // The master switch for SEO functions
 function thematic_seo() {
 		$content = TRUE;
@@ -348,9 +353,9 @@ function thematic_header() {
 
 // Functions that hook into thematic_header()
 
-		// Open #branding
-		// In the header div
-		function thematic_brandingopen() { ?>
+// Open #branding
+// In the header div
+function thematic_brandingopen() { ?>
 				<div id="branding">
 		<?php }
 		add_action('thematic_header','thematic_brandingopen',1);
