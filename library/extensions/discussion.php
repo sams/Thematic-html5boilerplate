@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 // Custom callback to list comments in the Thematic style
 function thematic_comments($comment, $args, $depth) {
@@ -44,5 +44,3 @@ function thematic_pings($comment, $args, $depth) {
     			<?php comment_text() ?>
 			</div>
 <?php }
-
-?>

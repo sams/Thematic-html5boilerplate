@@ -32,7 +32,8 @@ define('JSFOOT', true);
 define('TEMPLATENAME', $ct['Title']);
 define('TEMPLATEAUTHOR', $ct['Author']);
 define('TEMPLATEURI', $ct['URI']);
-define('TEMPLATEVERSION', $templateversion);     
+define('TEMPLATEVERSION', $templateversion);
+
 function thematic_scripts() { 
                   
     $scriptdir_start = "\t";
@@ -292,7 +293,7 @@ add_filter( 'excerpt_length', 'thematic_pft_excerpt_length' );
  */
 function thematic_pft_continue_reading_link() {
 	return ' <a href="'. get_permalink() . '">' . __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'thematic_pft' ) . '</a>';
-}                    
+}
 
 /**
  * Replaces "[...]" (appended to automatically generated excerpts) with an ellipsis and thematic_pft_continue_reading_link().
@@ -349,6 +350,7 @@ if ( ! isset( $content_width ) ) {
  */
 register_nav_menus( array(
 	'primary' => __( 'Primary Menu', 'themename' ),
+	'aside' => __( 'Aside Menu', 'themename' )
 ) );
 
 /**
@@ -579,5 +581,3 @@ function my_plugin_manage_menu()
 {
 	/* Output our admin page */
 }
-
-

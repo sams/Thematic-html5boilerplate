@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 function thematic_search_form() {
 				$search_form = "\n" . "\t";
@@ -485,5 +485,3 @@ function thematic_after_widget_area($hook) {
 	} 
 	return apply_filters('thematic_after_widget_area', $content);
 }
-
-?>

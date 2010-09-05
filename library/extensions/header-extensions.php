@@ -408,6 +408,3 @@ function thematic_header() {
 function thematic_belowheader() {
     do_action('thematic_belowheader');
 } // end thematic_belowheader
-		
-
-?>

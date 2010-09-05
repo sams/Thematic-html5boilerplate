@@ -333,4 +333,3 @@ function thematic_date_classes( $t, &$c, $p = '' ) {
 }
 
 // Remember: Thematic, like The Sandbox, is for play.
-?>

@@ -1,4 +1,6 @@
-﻿<?php
+﻿<?php  
+
+//die('We got cheezeburger here');
 
 // Add a Favicon  - make this handle more stuff from pft
 
@@ -8,5 +10,3 @@ function childtheme_favicon() { ?>
 <?php }
 
 add_action('wp_head', 'childtheme_favicon');
-
-?>

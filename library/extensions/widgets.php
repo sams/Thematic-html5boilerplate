@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 // Check for static widgets in widget-ready areas
 
@@ -97,5 +97,3 @@ function widget_thematic_rsslinks_control() {
 			<input type="hidden" id="rsslinks-submit" name="rsslinks-submit" value="1" />
 <?php
 }
-
-?>

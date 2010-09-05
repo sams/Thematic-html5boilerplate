@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 // create bullet-proof excerpt for meta name="description"
 
@@ -77,5 +77,3 @@ function thematic_tag_query() {
 	}
 	 return $nice_tag_query;
 }
-
-?>

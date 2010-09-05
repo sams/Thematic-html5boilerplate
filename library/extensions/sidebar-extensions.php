@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 
 // Filter to create the sidebar

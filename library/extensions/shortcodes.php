@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 function thmfooter_wp_link() {
     return '<a class="wp-link" href="http://WordPress.org/" title="WordPress" rel="generator">WordPress</a>';
@@ -78,5 +78,3 @@ function child_version() {
     return TEMPLATEVERSION;
 }
 add_shortcode('child-version', 'child_version');
-
-?>

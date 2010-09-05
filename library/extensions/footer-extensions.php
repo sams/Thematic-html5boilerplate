@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 
 // Located in footer.php

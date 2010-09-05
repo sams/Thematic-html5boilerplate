@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 // Located in 404.php, archive.php, archives.php, attachement.php, author.php, category.php index.php, 
 // links.php, page.php, search.php, single.php, tag.php
@@ -798,7 +798,3 @@ function thematic_tag_ur_it($glue) {
 
 	return trim(join( $glue, $tags ));
 } // end thematic_tag_ur_it
-
-
-
-?>

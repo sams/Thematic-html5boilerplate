@@ -98,7 +98,5 @@ thematic_before(); ?>
     thematic_belowheader();                                    
 
 	    ?>
-	    
 
 	<div id="main" class="body">
-	                                                 
