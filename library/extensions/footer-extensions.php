@@ -48,32 +48,60 @@ function thematic_after() {
         widget_area_subsidiaries();
     }
     add_action('thematic_footer', 'thematic_subsidiaries', 10);
-    
-    function thematic_siteinfoopen() { ?>
-    
-        <div id="siteinfo">        
 
-    <?php
-    }
-    add_action('thematic_footer', 'thematic_siteinfoopen', 20);
+    function thematic_jqueryalt() { ?>
     
-    function thematic_siteinfo() {
-        global $options;
-        foreach ($options as $value) {
-            if (get_option( $value['id'] ) === FALSE) { 
-                $$value['id'] = $value['std'];
-            } else { 
-                $$value['id'] = get_option( $value['id'] );
-            }
-        }
-        /* footer text set in theme options */
-        echo do_shortcode(__(stripslashes(thematic_footertext($thm_footertext)), 'thematic'));    }
-    add_action('thematic_footer', 'thematic_siteinfo', 30);
-    
-    function thematic_siteinfoclose() { ?>
-    
-		</div><!-- #siteinfo -->
+		<script>!window.jQuery && document.write('<script src="<?php echo get_stylesheet_directory_uri(); ?>/library/scripts/jquery-1.4.2.min.js"><\/script>')</script>
     
     <?php
     }
-    add_action('thematic_footer', 'thematic_siteinfoclose', 40);
+    add_action('thematic_footer', 'thematic_jqueryalt', 50);
+
+    function thematic_ifieblock() { ?>
+	<!--[if lt IE 7 ]>
+		<script src="<?php echo get_stylesheet_directory_uri(); ?>/library/scripts/dd_belatedpng.js"></script>
+	<![endif]-->
+    <?php
+    }
+    add_action('thematic_footer', 'thematic_ifieblock', 50);
+    
+    function thematic_googleanalytics() {
+    	global $my_shortname;
+		$ga = stripslashes(get_option($my_shortname . '_googleanalytics'));
+		if(!$ga or $ga == '') {
+			return;
+		}
+	?>
+    
+		<!-- BEGIN thematic_googleanalytics -->
+		<script>
+		   var _gaq = [['_setAccount', '<?php echo $ga; ?>'], ['_trackPageview']];
+		   (function(d, t) {
+		    var g = d.createElement(t),
+		        s = d.getElementsByTagName(t)[0];
+		    g.async = true;
+		    g.src = '//www.google-analytics.com/ga.js';
+		    s.parentNode.insertBefore(g, s);
+		   })(document, 'script');
+		</script>
+		<!-- END thematic_googleanalytics -->
+
+	<?php
+	}
+	add_action('thematic_footer', 'thematic_googleanalytics', 60);
+
+	function thematic_yahooprofiler() {
+		global $my_shortname;
+		$yp = stripslashes(get_option($my_shortname . '_yahooprofile'));
+		if(!$yp) {
+			return;
+		}
+		?>
+		<!-- BEGIN thematic_yahooprofiler -->
+		<script src="<?php echo get_stylesheet_directory_uri(); ?>/library/scripts/profiling/yahoo-profiling.min.js"></script>
+		<script src="<?php echo get_stylesheet_directory_uri(); ?>/library/scripts/profiling/config.js"></script>
+		<!-- END thematic_yahooprofiler -->
+
+	<?php
+	}
+    add_action('thematic_footer', 'thematic_yahooprofiler', 50);

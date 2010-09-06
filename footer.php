@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * @package WordPress
  * @subpackage Thematic PFT
@@ -29,22 +29,6 @@
 	</footer><!-- #footer -->
 </div><!-- #page.container -->
 
-<?php wp_footer(); ?>
-
-
-  <!-- this should be moved to a footer hook Grab Google CDN's jQuery. fall back to local if neccessary -->
-  <script>!window.jQuery && document.write('<script src="<?php echo get_stylesheet_directory_uri(); ?>/library/scripts/jquery-1.4.2.min.js"><\/script>')</script>
-  <!-- WP-Minify JS -->
-  
-  <!--[if lt IE 7 ]>
-    <script src="<?php echo get_stylesheet_directory_uri(); ?>/library/scripts/dd_belatedpng.js"></script>
-  <![endif]-->
-
-  <?php if($profiling): ?>
-  <!-- yui profiler and profileviewer - remove for production -->
-  <script src="<?php echo get_stylesheet_directory_uri(); ?>/library/scripts/profiling/yahoo-profiling.min.js"></script>
-  <script src="<?php echo get_stylesheet_directory_uri(); ?>/library/scripts/profiling/config.js"></script>
-  <!-- end profiling code -->
-  <?php endif; ?>
+<?php wp_footer(); thematic_footer(); ?>
 </body>
 </html>
