@@ -1,18 +1,17 @@
-﻿<?php
+<?php
 /**
  * @package WordPress
  * @subpackage Thematic PFT
  */
 	thematic_create_doctype();
-	
+
 	// Creating the head profile
 	thematic_head_profile();
-	
+
 	thematic_create_contenttype();
 
 	// Creating the doc title
 	thematic_doctitle();
-	// this is on ead also <link rel="profile" href="http://gmpg.org/xfn/11" />
 	
 	// Creating the description
 	thematic_show_description();

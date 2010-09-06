@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 // Custom callback to list comments in the Thematic style
 function thematic_comments($comment, $args, $depth) {

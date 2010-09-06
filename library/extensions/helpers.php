@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 // create bullet-proof excerpt for meta name="description"
 

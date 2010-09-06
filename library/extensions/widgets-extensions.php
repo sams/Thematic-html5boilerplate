@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 function thematic_search_form() {
 				$search_form = "\n" . "\t";

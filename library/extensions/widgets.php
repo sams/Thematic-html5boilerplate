@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 // Check for static widgets in widget-ready areas
 

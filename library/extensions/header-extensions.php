@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 // Creates the DOCTYPE section
 function thematic_create_doctype() {

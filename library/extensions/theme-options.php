@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 // Theme options adapted from "A Theme Tip For WordPress Theme Authors"
 // http://literalbarrage.org/blog/archives/2007/05/03/a-theme-tip-for-wordpress-theme-authors/

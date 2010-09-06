@@ -2,10 +2,6 @@
 /*
 Template Name: Blog Page
 */
-?>
-
-<?php
-
     // calling the header.php
     get_header();
 

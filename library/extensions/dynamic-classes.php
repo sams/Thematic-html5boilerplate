@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 // Generates semantic classes for BODY element
 function thematic_body_class($add = false, $print = false ) {
