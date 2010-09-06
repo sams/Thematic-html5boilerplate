@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 /*
  * Switch CSS Style

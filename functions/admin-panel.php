@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 /*
  * Remove Thematic Admin Panel

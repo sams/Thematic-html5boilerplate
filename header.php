@@ -8,7 +8,7 @@
 	// Creating the head profile
 	thematic_head_profile();
 
-	thematic_create_contenttype();
+	thematic_create_initialhead();
 
 	// Creating the doc title
 	thematic_doctitle();
@@ -46,35 +46,25 @@
 
 </head>
 
-<?php 
+<?php
 
 if (apply_filters('thematic_show_bodyclass',TRUE)) { 
 	// Creating the body class
 	?>
 
 <body class="<?php echo thematic_body_class(); ?>">
-	
-<?php }
+	<?php }
 
-// action hook for placing content before opening #wrapper
-thematic_before(); ?>
-<div id="page" class="hfeed container"><?php
+	// action hook for placing content before it all begins - later will be able to open a wrapper
+	thematic_before();
 
-	// action hook for placing content above the theme header
-	thematic_aboveheader(); 
-	// think I wish to remove these additional div wrappers and they can be placed using the theme callbacks
+	thematic_aboveheader();
 	?>
-	<div id="masthead" class="head clearfix">
-		<header id="branding" role="banner">
-			<hgroup> 
-		<?php 
-		
-		// action hook creating the theme header
-		thematic_header();
-		
-		?>
-			</hgroup>
+		<header id="header" role="banner" class="head clearfix">
 			<?php
+				// action hook creating the theme header
+				thematic_header();
+
 				// Check if this is a post or page, if it has a thumbnail, and if it's a big one
 				if ( is_singular() &&
 						has_post_thumbnail( $post->ID ) &&
@@ -85,19 +75,11 @@ thematic_before(); ?>
 				else : ?>
 					<img src="<?php header_image(); ?>" width="<?php echo HEADER_IMAGE_WIDTH; ?>" height="<?php echo HEADER_IMAGE_HEIGHT; ?>" alt="" />
 				<?php endif; ?>
-		</header><!-- #branding -->
-		<nav id="access">
-			<h1 class="screen-reader-text"><?php _e( 'Main menu', 'themename' ); ?></h1>
-			<div class="skip-link screen-reader-text"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'themename' ); ?>"><?php _e( 'Skip to content', 'themename' ); ?></a></div>
-	
-			<?php //wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-		</nav><!-- #access -->
-	</div><!-- #masthead -->
+		</header><!-- #header -->
 
-	<?php 
-	// action hook for placing content below the theme header  
-	thematic_belowheader();
-
+		<?php
+		// action hook for placing content below the theme header  
+		thematic_belowheader();
 		?>
 
-	<div id="main" class="body">
+	<section id="main" class="body content clearfix">

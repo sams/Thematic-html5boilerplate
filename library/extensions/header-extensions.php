@@ -104,11 +104,19 @@ function thematic_doctitle() {
 
 
 // Creates the content-type section
-function thematic_create_contenttype() {
+function thematic_create_initialhead() {
+    	global $my_shortname;
+		$cf = stripslashes(get_option($my_shortname . '_chromeframe'));
 	$content  = "\t";
 	$content .= "<meta charset=\"";
 	$content .= get_bloginfo('charset');
 	$content .= "\" />";
+	$content .= "\n\n";
+	$content .= "\t<!--[if IE]><![endif]-->";
+	$content .= "\n\n";
+	if($cf)	{
+		$content .= "\t<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge,chrome=1\" />";
+	}
 	$content .= "\n\n";
 	echo apply_filters('thematic_create_contenttype', $content);
 } // end thematic_create_contenttype
@@ -163,7 +171,7 @@ function thematic_create_description() {
 										if (thematic_the_excerpt() == "") {
 							if (thematic_use_autoexcerpt()) {
 								$content ="\t";
-														$content .= "<meta name=\"description\" content=\"";
+								$content .= "<meta name=\"description\" content=\"";
 								$content .= thematic_excerpt_rss();
 								$content .= "\" />";
 								$content .= "\n\n";
@@ -205,17 +213,17 @@ function thematic_show_description() {
 function thematic_create_robots() {
 		global $paged;
 		if (thematic_seo()) {
-			$content = "\t";
+			$content = "";
 			if((is_home() && ($paged < 2 )) || is_front_page() || is_single() || is_page() || is_attachment()) {
-						$content .= "<meta name=\"robots\" content=\"index,follow\" />";
+						$content .= "\t<meta name=\"robots\" content=\"index,follow\" />";
 			} elseif (is_search()) {
-				$content .= "<meta name=\"robots\" content=\"noindex,nofollow\" />";
+				$content .= "\t<meta name=\"robots\" content=\"noindex,nofollow\" />";
 			} else {	
-				$content .= "<meta name=\"robots\" content=\"noindex,follow\" />";
+				$content .= "\t<meta name=\"robots\" content=\"noindex,follow\" />";
 			}
 			$content .= "\n\n";
 			if (get_option('blog_public')) {
-					echo apply_filters('thematic_create_robots', $content);
+				echo apply_filters('thematic_create_robots', $content);
 			}
 		}
 } // end thematic_create_robots
@@ -356,55 +364,60 @@ function thematic_header() {
 // Open #branding
 // In the header div
 function thematic_brandingopen() { ?>
-		<?php }
-		add_action('thematic_header','thematic_brandingopen',1);
-		
-		
-		// Create the blog title
-		// In the header div
-		function thematic_blogtitle() { ?>
-					<div id="blog-title"><span><a href="<?php bloginfo('url') ?>/" title="<?php bloginfo('name') ?>" rel="home"><?php bloginfo('name') ?></a></span></div>
-		<?php }
-		add_action('thematic_header','thematic_blogtitle',3);
-		
-		
-		// Create the blog description
-		// In the header div
-		function thematic_blogdescription() {
-					if (is_home() || is_front_page()) { ?>
-					<h1 id="blog-description"><?php bloginfo('description') ?></h1>
-					<?php } else { ?>	
-					<div id="blog-description"><?php bloginfo('description') ?></div>
-					<?php }
-		}
-		add_action('thematic_header','thematic_blogdescription',5);
-		
-		
-		// Close #branding
-		// In the header div
-		function thematic_brandingclose() {
-			// action hook creating the primary aside
-			thematic_widget_header();
-		?>
-		<?php }
-		add_action('thematic_header','thematic_brandingclose',7);
-		
-		
-		// Create #access
-		// In the header div
-		function thematic_access() { ?>
-				<div id="access">
-					<div class="skip-link"><a href="#content" title="<?php _e('Skip navigation to the content', 'thematic'); ?>"><?php _e('Skip to content', 'thematic'); ?></a></div>
-					<?php wp_page_menu('sort_column=menu_order') ?>
-				</div><!-- #access -->
-		<?php }
-		add_action('thematic_header','thematic_access',9);
+<?php }
+add_action('thematic_header','thematic_brandingopen',1);
+
+function thematic_hgroupopen() { ?>
+	<div id="logo">
+		logo
+	</div>
+	<hgroup>
+<?php }
+add_action('thematic_header','thematic_hgroupopen',2);
+
+function thematic_hgroupclose() { ?>
+	</hgroup>
+<?php }
+add_action('thematic_header','thematic_hgroupclose',6);
+
+// Create the blog title
+// In the header div
+function thematic_blogtitle() { ?>
+	<h1 id="blog-title"><a href="<?php bloginfo('url') ?>/" title="<?php bloginfo('name') ?>" rel="home"><?php bloginfo('name') ?></a></h1>
+<?php }
+add_action('thematic_header','thematic_blogtitle',3);
+
+// Create the blog description
+// In the header div
+function thematic_blogdescription() {	?>
+	<h2 id="blog-description"><?php bloginfo('description') ?></h2>
+	<?php
+}
+add_action('thematic_header','thematic_blogdescription',5);
+
+// Close #branding
+// In the header
+function thematic_brandingclose() {
+	// action hook creating the primary aside
+	thematic_widget_header();
+}
+add_action('thematic_header','thematic_brandingclose',7);
+
+// Create #access
+// In the header
+function thematic_access() { ?>
+	<nav id="access">
+		<div class="skip-link"><a href="#content" title="<?php _e('Skip navigation to the content', 'thematic'); ?>"><?php _e('Skip to content', 'thematic'); ?></a></div>
+		<?php wp_page_menu('sort_column=menu_order') ?>
+	</nav><!-- #access -->
+<?php }
+add_action('thematic_header','thematic_access',9);
 		
 
 // End of functions that hook into thematic_header()
 
 		
-// Just after the header div
+// Just after the header
 function thematic_belowheader() {
 	do_action('thematic_belowheader');
 } // end thematic_belowheader

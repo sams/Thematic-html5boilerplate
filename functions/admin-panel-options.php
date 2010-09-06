@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 // Fetch alternate theme stylesheets    - this will be either classnames on the body or these will be added to the minify at runtime
 $alt_layout_dir = CHILDTHEME_THEME_DIRECTORY . 'layouts/';
@@ -43,6 +43,13 @@ $my_options = array(
     'name' => __('Chrome Frame', 'thematicchild'),
     'desc' => __('If you want the chrome frame output oin head because your not adding it to .htaccess.', 'thematicchild'),
     'id' => $my_shortname . '_chromeframe',
+    'std' => '',
+    'type' => 'checkbox'
+  ),
+  array(
+    'name' => __('Yahoo Profiling', 'thematicchild'),
+    'desc' => __('Enable Yahoo Profiling.  Don\'t leave it on it will slow things down (see Paul Irish\'s Video Tutorial for how to use this)', 'thematicchild'),
+    'id' => $my_shortname . '_yahooprofile',
     'std' => '',
     'type' => 'checkbox'
   ),
