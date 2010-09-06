@@ -52,8 +52,10 @@ function thematic_scripts() {
    }
 
 // load jQuery
-wp_deregister_script('jquery');
-wp_enqueue_script('jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js', array(), false, true);
+if(!is_admin())	{
+	wp_deregister_script('jquery');
+	wp_enqueue_script('jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js', array(), false, true);
+}
 
 // Path constants
 define('THEMELIB', TEMPLATEPATH . '/library');
@@ -115,7 +117,7 @@ add_filter( 'archive_meta', 'convert_smilies' );
 add_filter( 'archive_meta', 'convert_chars' );
 add_filter( 'archive_meta', 'wpautop' );
 
-// Remove the WordPress Generator â€“ via http://blog.ftwr.co.uk/archives/2007/10/06/improving-the-wordpress-generator/
+// Remove the WordPress Generator – via http://blog.ftwr.co.uk/archives/2007/10/06/improving-the-wordpress-generator/
 function thematic_remove_generators() { return ''; }
 if (apply_filters('thematic_hide_generators', TRUE)) {  
 	add_filter('the_generator','thematic_remove_generators');
