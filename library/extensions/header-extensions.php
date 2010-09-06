@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 // Creates the DOCTYPE section
 function thematic_create_doctype() {
@@ -126,13 +126,13 @@ function thematic_seo() {
 
 // Creates the canonical URL
 function thematic_canonical_url() {
-		if (thematic_seo()) {
-			if ( is_singular() ) {
-				$canonical_url = "\t";
-				$canonical_url .= '<link rel="canonical" href="' . get_permalink() . '" />';
-				$canonical_url .= "\n\n";		
-				echo apply_filters('thematic_canonical_url', $canonical_url);
-				}
+	if (thematic_seo()) {
+		if ( is_singular() ) {
+			$canonical_url = "\t";
+			$canonical_url .= '<link rel="canonical" href="' . get_permalink() . '" />';
+			$canonical_url .= "\n\n";		
+			echo apply_filters('thematic_canonical_url', $canonical_url);
+		}
 	}
 } // end thematic_canonical_url
 
@@ -356,7 +356,6 @@ function thematic_header() {
 // Open #branding
 // In the header div
 function thematic_brandingopen() { ?>
-				<div id="branding">
 		<?php }
 		add_action('thematic_header','thematic_brandingopen',1);
 		
@@ -387,7 +386,6 @@ function thematic_brandingopen() { ?>
 			// action hook creating the primary aside
 			thematic_widget_header();
 		?>
-				</div><!--  #branding -->
 		<?php }
 		add_action('thematic_header','thematic_brandingclose',7);
 		
