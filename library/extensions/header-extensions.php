@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 // Creates the DOCTYPE section
 function thematic_create_doctype() {
@@ -368,9 +368,6 @@ function thematic_brandingopen() { ?>
 add_action('thematic_header','thematic_brandingopen',1);
 
 function thematic_hgroupopen() { ?>
-	<div id="logo">
-		logo
-	</div>
 	<hgroup>
 <?php }
 add_action('thematic_header','thematic_hgroupopen',2);
@@ -399,7 +396,7 @@ add_action('thematic_header','thematic_blogdescription',5);
 // In the header
 function thematic_brandingclose() {
 	// action hook creating the primary aside
-	thematic_widget_header();
+	//thematic_widget_header();
 }
 add_action('thematic_header','thematic_brandingclose',7);
 

@@ -17,7 +17,7 @@ $options = array (
 						"type" => "text"),
 
 				array(	"name" => __('Info on Author Page','thematic'),
-						"desc" => __("Display a <a href=\"http://microformats.org/wiki/hcard\" target=\"_blank\">microformatted vCard</a>â€”with the author's avatar, bio and emailâ€”on the author page.",'thematic'),
+						"desc" => __("Display a <a href=\"http://microformats.org/wiki/hcard\" target=\"_blank\">microformatted vCard</a>—with the author's avatar, bio and email—on the author page.",'thematic'),
 						"id" => $shortname."_authorinfo",
 						"std" => "false",
 						"type" => "checkbox"),

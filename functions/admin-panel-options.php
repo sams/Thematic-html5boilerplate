@@ -5,6 +5,7 @@ $alt_layout_dir = CHILDTHEME_THEME_DIRECTORY . 'layouts/';
 $alt_layouts = array();
 
 if (is_dir($alt_layout_dir)) {
+  $alt_layouts[] = 'default';
   $layouts = scandir($alt_layout_dir);
   foreach ($layouts as $layout) {
     if (strpos($layout, '.css')) {
@@ -21,7 +22,7 @@ $my_options = array(
     'name' => __('Column Layout', 'thematicchild'),
     'desc' => '',
     'id' => $my_shortname . '_alt_layouts',
-    'std' => '2c-r-fixed.css',
+    'std' => 'desfault',
     'type' => 'select',
     'options' => $alt_layouts
   ),
@@ -31,6 +32,20 @@ $my_options = array(
     'id' => $my_shortname . '_logo',
     'std' => '',
     'type' => 'upload'
+  ),
+  array(
+    'name' => __('Remove Title', 'thematicchild'),
+    'desc' => __('remove the title from header.', 'childtheme') ,
+    'id' => $my_shortname . '_rmtitle',
+    'std' => '',
+    'type' => 'checkbox'
+  ),
+  array(
+    'name' => __('Remove Description', 'thematicchild'),
+    'desc' => __('remove the description from header.', 'childtheme') ,
+    'id' => $my_shortname . '_rmdesc',
+    'std' => '',
+    'type' => 'checkbox'
   ),
   array(
     'name' => __('Google Analytics Code', 'thematicchild'),
