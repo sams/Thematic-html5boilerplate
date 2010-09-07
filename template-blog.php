@@ -6,15 +6,18 @@ Template Name: Blog Page
     get_header();
 
     // action hook for placing content above #container
-    thematic_abovecontainer();
+    thematic_abovecontainer(); ?>
+	<aside class="leftCol">
+	<?php
 
-?>
+    // calling the standard sidebar 
+    thematic_sidebar();
 
-	<div id="container">
+?></aside>
+
+	<section id="main" class="main">
 	
 		<?php thematic_abovecontent(); ?>
-	
-		<div id="content">
         
         <?php $paged = (get_query_var('paged')) ? get_query_var('paged') : 1; query_posts("paged=$paged"); ?>
            
@@ -43,20 +46,15 @@ Template Name: Blog Page
             thematic_navigation_below();
             
             ?>
-
-		</div><!-- #content -->
 		
 		<?php thematic_belowcontent(); ?> 
 		
-	</div><!-- #container -->
+	</section><!-- #main -->
 
 <?php 
 
     // action hook for placing content below #container
     thematic_belowcontainer();
-
-    // calling the standard sidebar 
-    thematic_sidebar();
     
     // calling footer.php
     get_footer();

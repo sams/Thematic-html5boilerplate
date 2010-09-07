@@ -6,8 +6,9 @@
 
 get_header(); ?>
 
-		<div id="primary">
-			<div id="content">
+<aside class="leftCol"><?php get_sidebar(); ?></aside>
+
+		<section id="primary" class="main">
 
 				<?php the_post(); ?>
 
@@ -17,8 +18,5 @@ get_header(); ?>
 
 				<?php get_template_part( 'loop', 'author' ); ?>
 
-			</div><!-- #content -->
-		</div><!-- #primary -->
-
-<?php get_sidebar(); ?>
+		</section><!-- #primary -->
 <?php get_footer(); ?>

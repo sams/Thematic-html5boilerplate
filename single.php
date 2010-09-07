@@ -6,8 +6,7 @@
 
 get_header(); ?>
 
-		<div id="primary">
-			<div id="content">
+		<section id="primary" class="main">
 
 			<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 
@@ -71,8 +70,7 @@ get_header(); ?>
 
 			<?php endwhile; // end of the loop. ?>
 
-			</div><!-- #content -->
-		</div><!-- #primary -->
+		</section><!-- #primary -->
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

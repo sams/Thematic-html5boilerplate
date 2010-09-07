@@ -6,8 +6,11 @@
 
 get_header(); ?>
 
-		<div id="primary">
-			<div id="content">
+		<aisde class="rightCol">
+			this can has asides within this aside
+		</aside>
+
+		<section id="primary" class="main">
 
 				<?php 
 					// create the navigation above the content
@@ -32,8 +35,7 @@ get_header(); ?>
 					thematic_navigation_below();
 				?>
 
-			</div><!-- #content -->
-		</div><!-- #primary -->
+		</section><!-- #main -->
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>
