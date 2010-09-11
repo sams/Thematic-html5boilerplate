@@ -12,9 +12,11 @@ A wordpress theme using html5 and based on Thematic ToolBox (and other Thematic 
  * Built in support for popular wordpress plugins (todo)
    * minify 
    * super cache
+   * Cleaner Gallery (todo)
    * contact 7 form
    * white label cms
-   * wp fancybox
+   * Yoast Plugins (todo)
+   * wp fancybox (todo)
    * wp swfobject
  * Thematic Child Themes (todo)
 
@@ -32,4 +34,4 @@ extra support for custom types
 
 built in support for funky jquery plugins later
 
-http://github.com/pengwynn/compass-wordpress
+http://github.com/pengwynn/compass-wordpress ?
