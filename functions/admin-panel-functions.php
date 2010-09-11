@@ -25,13 +25,7 @@ add_filter('thematic_create_stylesheet', 'childtheme_pick_layout');
 function add_childtheme_logo() {
 	global $my_shortname;
 	$logo = get_option($my_shortname . '_logo');
-	$rmtitle = get_option($my_shortname . '_rmtitle');
-	$rmdesc = get_option($my_shortname . '_rmdesc');
 	if (!empty($logo)) {
-		if($rmtitle)
-			remove_action('thematic_header','thematic_blogtitle', 3);
-		if($rmdesc)
-			remove_action('thematic_header','thematic_blogdescription',5);
 		add_action('thematic_header','childtheme_logo', 1);
 	}
 }

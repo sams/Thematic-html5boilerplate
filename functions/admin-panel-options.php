@@ -16,6 +16,7 @@ if (is_dir($alt_layout_dir)) {
 
 // Theme options adapted from "A Theme Tip For WordPress Theme Authors"
 // http://literalbarrage.org/blog/archives/2007/05/03/a-theme-tip-for-wordpress-theme-authors/
+// is it req to add options for minify etc
 
 $my_options = array(
   array(
@@ -48,16 +49,44 @@ $my_options = array(
     'type' => 'checkbox'
   ),
   array(
-    'name' => __('Google Analytics Code', 'thematicchild'),
-    'desc' => __('Paste Your Google Analytics Code Here.', 'thematicchild'),
-    'id' => $my_shortname . '_googleanalytics',
+    'name' => __('Favicon', 'thematicchild'),
+    'desc' => __('Icon used by browsers when bookmarking.', 'childtheme') ,
+    'id' => $my_shortname . '_appletouch',
     'std' => '',
-    'type' => 'text'
+    'type' => 'upload'
+  ),
+  array(
+    'name' => __('Apple Touch Icon', 'thematicchild'),
+    'desc' => __('An icon used by Apple devices as icon when favouriting (Android use it too).', 'childtheme') ,
+    'id' => $my_shortname . '_appletouch',
+    'std' => '',
+    'type' => 'upload'
+  ),
+  array(
+    'name' => __('Facebook Src', 'thematicchild'),
+    'desc' => __('Facebook Src\'s allow you to specifiy the image which appears in status updates.  These are choosen in post and pages', 'thematicchild'),
+    'id' => $my_shortname . '_fbsrc',
+    'std' => '',
+    'type' => 'checkbox'
   ),
   array(
     'name' => __('Chrome Frame', 'thematicchild'),
     'desc' => __('If you want the chrome frame output oin head because your not adding it to .htaccess.', 'thematicchild'),
     'id' => $my_shortname . '_chromeframe',
+    'std' => '',
+    'type' => 'checkbox'
+  ),
+  array(
+    'name' => __('Handheld', 'thematicchild'),
+    'desc' => __('Include the handheld styles.', 'thematicchild'),
+    'id' => $my_shortname . '_handheld',
+    'std' => '',
+    'type' => 'checkbox'
+  ),
+  array(
+    'name' => __('JS in Footer', 'thematicchild'),
+    'desc' => __('For optimal rendering in performance', 'thematicchild'),
+    'id' => $my_shortname . '_jsfoot',
     'std' => '',
     'type' => 'checkbox'
   ),
@@ -74,5 +103,12 @@ $my_options = array(
     'id' => $my_shortname . '_footertext',
     'std' => __('Powered by [wp-link]. Built on the [theme-link].', 'thematicchild'),
     'type' => 'textarea'
+  ),
+  array(
+    'name' => __('Google Analytics Code', 'thematicchild'),
+    'desc' => __('Your Google Analytics Id String (not the full code just UA-xxx).  Install Yoast GA & Seo Plugins http://yoast.com/.', 'thematicchild'),
+    'id' => $my_shortname . '_googleanalytics',
+    'std' => '',
+    'type' => 'text'
   ),
 );
