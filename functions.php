@@ -1,14 +1,16 @@
 <?php
 /**
  * @package WordPress
- * @subpackage Toolbox
+ * @subpackage Html5Boilerplate
  */
 
 /**
  * Make theme available for translation     - Setup child themes
  * Translations can be filed in the /languages/ directory
  */
+// Credits: S Sherlock (merged ideas from thematic and twenty 10 + addded html5 boilerplate)
 // Credits: Joern Kretzschmar
+// Credits: Twenty 10 Wordpress Original Theme
 
 $themeData = get_theme_data(TEMPLATEPATH . '/style.css');
 $version = trim($themeData['Version']);
@@ -26,6 +28,7 @@ define('THEMEAUTHOR', $themeData['Author']);
 define('THEMEURI', $themeData['URI']);
 define('THEMATICVERSION', $version);
 
+// move this to options
 define('JSFOOT', true);
 
 // set child theme constants
@@ -34,22 +37,10 @@ define('TEMPLATEAUTHOR', $ct['Author']);
 define('TEMPLATEURI', $ct['URI']);
 define('TEMPLATEVERSION', $templateversion);
 
-function thematic_scripts() { 
-                  
-    $scriptdir_start = "\t";
-		$scriptdir_start .= '<script type="text/javascript" src="';
-    $scriptdir_start .= get_bloginfo('template_directory');
-    $scriptdir_start .= '/library/scripts/';
-    
-    $scriptdir_end = '"></script>';
-    
-    $scripts = "\n";
-    $scripts .= $scriptdir_start . 'hoverIntent.js' . $scriptdir_end . "\n";
-    $scripts .= $scriptdir_start . 'superfish.js' . $scriptdir_end . "\n";
-    $scripts .= $scriptdir_start . 'supersubs.js' . $scriptdir_end . "\n";
-    $dropdown_options = $scriptdir_start . 'thematic-dropdowns.js' . $scriptdir_end . "\n";
-	return $scripts;
-   }
+
+/** remove this*/
+function thematic_scripts() {
+}
 
 // load jQuery
 if(!is_admin())	{
@@ -99,17 +90,17 @@ require_once(THEMELIB . '/extensions/helpers.php');
 // Load shortcodes
 require_once(THEMELIB . '/extensions/shortcodes.php');
 
-//add_theme_support( 'post-thumbnails', array( 'post') ); // Add it for posts
+add_theme_support( 'post-thumbnails', array( 'post') ); // Add it for posts
 
-//add_filter( 'pre_get_posts', 'home_content' );
+add_filter( 'pre_get_posts', 'home_content' );
 
-//function home_content( $query ) {
-//
-//	if ( is_home() && false == $query->query_vars['suppress_filters'] )
-//		$query->set( 'post_type', array( 'home', 'attachment' ) );
-//
-//	return $query;
-//}
+function home_content( $query ) {
+
+	if ( is_home() && false == $query->query_vars['suppress_filters'] )
+		$query->set( 'post_type', array( 'home', 'attachment' ) );
+
+	return $query;
+}
 
 // Adds filters for the description/meta content in archives.php
 add_filter( 'archive_meta', 'wptexturize' );
@@ -140,9 +131,9 @@ if ( ! isset( $profiling ) ) {
 
 
 /** Tell WordPress to run twentyten_setup() when the 'after_setup_theme' hook is run. */
-add_action( 'after_setup_theme', 'thematic_pft_setup' );
+add_action( 'after_setup_theme', 'thematic_h5bp_setup' );
 
-if ( ! function_exists( 'thematic_pft_setup' ) ):
+if ( ! function_exists( 'thematic_h5bp_setup' ) ):
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -150,7 +141,7 @@ if ( ! function_exists( 'thematic_pft_setup' ) ):
  * before the init hook. The init hook is too late for some features, such as indicating
  * support post thumbnails.
  *
- * To override thematic_pft_setup() in a child theme, add your own thematic_pft_setup to your child theme's
+ * To override thematic_h5bp_setup() in a child theme, add your own thematic_pft_setup to your child theme's
  * functions.php file.
  *
  * @uses add_theme_support() To add support for post thumbnails and automatic feed links.
@@ -162,9 +153,8 @@ if ( ! function_exists( 'thematic_pft_setup' ) ):
  * @uses register_default_headers() To register the default custom header images provided with the theme.
  * @uses set_post_thumbnail_size() To set a custom post thumbnail size.
  *
- * @since Twenty Ten 1.0    
  */
-function thematic_pft_setup() {
+function thematic_h5bp_setup() {
 
 	// This theme styles the visual editor with editor-style.css to match the theme style.
 	add_editor_style();
@@ -177,7 +167,7 @@ function thematic_pft_setup() {
 
 	// Make theme available for translation
 	// Translations can be filed in the /languages/ directory
-	load_theme_textdomain( 'thematic_pft', TEMPLATEPATH . '/languages' );
+	load_theme_textdomain( 'thematic_h5bp', TEMPLATEPATH . '/languages' );
 
 	$locale = get_locale();
 	$locale_file = TEMPLATEPATH . "/languages/$locale.php";
@@ -186,7 +176,7 @@ function thematic_pft_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => __( 'Primary Navigation', 'thematic_pft' ),
+		'primary' => __( 'Primary Navigation', 'thematic_h5bp' ),
 	) );
 
 	// This theme allows users to set a custom background
@@ -199,8 +189,8 @@ function thematic_pft_setup() {
 
 	// The height and width of your custom header. You can hook into the theme's own filters to change these values.
 	// Add a filter to thematic_pft_header_image_width and thematic_pft_header_image_height to change these values.
-	define( 'HEADER_IMAGE_WIDTH', apply_filters( 'thematic_pft_header_image_width', 940 ) );
-	define( 'HEADER_IMAGE_HEIGHT', apply_filters( 'thematic_pft_header_image_height', 198 ) );
+	define( 'HEADER_IMAGE_WIDTH', apply_filters( 'thematic_h5bp_header_image_width', 940 ) );
+	define( 'HEADER_IMAGE_HEIGHT', apply_filters( 'thematic_h5bp_header_image_height', 198 ) );
 
 	// We'll be using post thumbnails for custom header images on posts and pages.
 	// We want them to be 940 pixels wide by 198 pixels tall.
@@ -212,7 +202,7 @@ function thematic_pft_setup() {
 
 	// Add a way for the custom header to be styled in the admin panel that controls
 	// custom headers. See thematic_pft_admin_header_style(), below.
-	add_custom_image_header( '', 'thematic_pft_admin_header_style' );
+	add_custom_image_header( '', 'thematic_h5bp_admin_header_style' );
 
 	// ... and thus ends the changeable header business.
 
@@ -222,7 +212,7 @@ function thematic_pft_setup() {
 			'url' => '%s/images/headers/path.jpg',
 			'thumbnail_url' => '%s/images/headers/path-thumbnail.jpg',
 			/* translators: header image description */
-			'description' => __( 'Path', 'thematic_pft' )
+			'description' => __( 'Path', 'thematic_h5bp' )
 		),
 		'h5bp' => array(
 			'url' => '%s/images/headers/h5bp.jpg',
@@ -234,7 +224,7 @@ function thematic_pft_setup() {
 }
 endif;
 
-if ( ! function_exists( 'thematic_pft_admin_header_style' ) ) :
+if ( ! function_exists( 'thematic_h5bp_admin_header_style' ) ) :
 /**
  * Styles the header image displayed on the Appearance > Header admin panel.
  *
@@ -242,7 +232,7 @@ if ( ! function_exists( 'thematic_pft_admin_header_style' ) ) :
  *
  * @since Twenty Ten 1.0
  */
-function thematic_pft_admin_header_style() {
+function thematic_h5bp_admin_header_style() {
 ?>
 <style type="text/css">
 /* Shows the same border as on front end */
@@ -267,11 +257,11 @@ endif;
  *
  * @since Twenty Ten 1.0
  */
-function thematic_pft_page_menu_args( $args ) {
+function thematic_h5bp_page_menu_args( $args ) {
 	$args['show_home'] = true;
 	return $args;
 }
-add_filter( 'wp_page_menu_args', 'thematic_pft_page_menu_args' );
+add_filter( 'wp_page_menu_args', 'thematic_h5bp_page_menu_args' );
 
 /**
  * Sets the post excerpt length to 40 characters.
@@ -282,7 +272,7 @@ add_filter( 'wp_page_menu_args', 'thematic_pft_page_menu_args' );
  * @since Twenty Ten 1.0
  * @return int
  */
-function thematic_pft_excerpt_length( $length ) {
+function thematic_h5bp_excerpt_length( $length ) {
 	return 40;
 }
 add_filter( 'excerpt_length', 'thematic_pft_excerpt_length' );
@@ -293,7 +283,7 @@ add_filter( 'excerpt_length', 'thematic_pft_excerpt_length' );
  * @since Twenty Ten 1.0
  * @return string "Continue Reading" link
  */
-function thematic_pft_continue_reading_link() {
+function thematic_h5bp_continue_reading_link() {
 	return ' <a href="'. get_permalink() . '">' . __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'thematic_pft' ) . '</a>';
 }
 
@@ -306,10 +296,10 @@ function thematic_pft_continue_reading_link() {
  * @since Twenty Ten 1.0
  * @return string An ellipsis
  */
-function thematic_pft_auto_excerpt_more( $more ) {
+function thematic_h5bp_auto_excerpt_more( $more ) {
 	return ' &hellip;' . thematic_pft_continue_reading_link();
 }
-add_filter( 'excerpt_more', 'thematic_pft_auto_excerpt_more' );
+add_filter( 'excerpt_more', 'thematic_h5bp_auto_excerpt_more' );
 
 /**
  * Adds a pretty "Continue Reading" link to custom post excerpts.
@@ -326,7 +316,7 @@ function thematic_pft_custom_excerpt_more( $output ) {
 	}
 	return $output;
 }
-add_filter( 'get_the_excerpt', 'thematic_pft_custom_excerpt_more' );
+add_filter( 'get_the_excerpt', 'thematic_h5bp_custom_excerpt_more' );
 
 /**
  * Remove inline styles printed when the gallery shortcode is used.
@@ -336,10 +326,10 @@ add_filter( 'get_the_excerpt', 'thematic_pft_custom_excerpt_more' );
  * @since Twenty Ten 1.0
  * @return string The gallery style filter, with the styles themselves removed.
  */
-function thematic_pft_remove_gallery_css( $css ) {
+function thematic_h5bp_remove_gallery_css( $css ) {
 	return preg_replace( "#<style type='text/css'>(.*?)</style>#s", '', $css );
 }
-add_filter( 'gallery_style', 'thematic_pft_remove_gallery_css' );
+add_filter( 'gallery_style', 'thematic_h5bp_remove_gallery_css' );
 
 /**
  * Set the content width based on the theme's design and stylesheet.
@@ -387,10 +377,10 @@ function toolbox_filter_wp_title( $title, $separator ) {
 
 	if ( is_search() ) {
 		// If we're a search, let's start over:
-		$title = sprintf( __( 'Search results for %s', 'thematic_pft' ), '"' . get_search_query() . '"' );
+		$title = sprintf( __( 'Search results for %s', 'thematic_h5bp' ), '"' . get_search_query() . '"' );
 		// Add a page number if we're on page 2 or more:
 		if ( $paged >= 2 )
-			$title .= " $separator " . sprintf( __( 'Page %s', 'thematic_pft' ), $paged );
+			$title .= " $separator " . sprintf( __( 'Page %s', 'thematic_h5bp' ), $paged );
 		// Add the site name to the end:
 		$title .= " $separator " . get_bloginfo( 'name', 'display' );
 		// We're done. Let's send the new title back to wp_title():
@@ -407,7 +397,7 @@ function toolbox_filter_wp_title( $title, $separator ) {
 
 	// Add a page number if necessary:
 	if ( $paged >= 2 || $page >= 2 )
-		$title .= " $separator " . sprintf( __( 'Page %s', 'thematic_pft' ), max( $paged, $page ) );
+		$title .= " $separator " . sprintf( __( 'Page %s', 'thematic_h5bp' ), max( $paged, $page ) );
 
 	// Return the new title to wp_title():
 	return $title;
@@ -468,9 +458,9 @@ add_filter( 'wp_page_menu_args', 'toolbox_page_menu_args' );
 function toolbox_widgets_init() {
 	// Area 1, located at the top of the sidebar.
 	register_sidebar( array(
-		'name' => __( 'Primary Widget Area', 'twentyten' ),
+		'name' => __( 'Primary Widget Area', 'thematic_h5bp' ),
 		'id' => 'primary-widget-area',
-		'description' => __( 'The primary widget area', 'twentyten' ),
+		'description' => __( 'The primary widget area', 'thematic_h5bp' ),
 		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
 		'after_widget' => '</li>',
 		'before_title' => '<h3 class="widget-title">',
@@ -479,9 +469,9 @@ function toolbox_widgets_init() {
 
 	// Area 2, located below the Primary Widget Area in the sidebar. Empty by default.
 	register_sidebar( array(
-		'name' => __( 'Secondary Widget Area', 'twentyten' ),
+		'name' => __( 'Secondary Widget Area', 'thematic_h5bp' ),
 		'id' => 'secondary-widget-area',
-		'description' => __( 'The secondary widget area', 'twentyten' ),
+		'description' => __( 'The secondary widget area', 'thematic_h5bp' ),
 		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
 		'after_widget' => '</li>',
 		'before_title' => '<h3 class="widget-title">',
@@ -490,9 +480,9 @@ function toolbox_widgets_init() {
 
 	// Area 3, located in the footer. Empty by default.
 	register_sidebar( array(
-		'name' => __( 'First Footer Widget Area', 'twentyten' ),
+		'name' => __( 'First Footer Widget Area', 'thematic_h5bp' ),
 		'id' => 'first-footer-widget-area',
-		'description' => __( 'The first footer widget area', 'twentyten' ),
+		'description' => __( 'The first footer widget area', 'thematic_h5bp' ),
 		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
 		'after_widget' => '</li>',
 		'before_title' => '<h3 class="widget-title">',
@@ -501,7 +491,7 @@ function toolbox_widgets_init() {
 
 	// Area 4, located in the footer. Empty by default.
 	register_sidebar( array(
-		'name' => __( 'Second Footer Widget Area', 'twentyten' ),
+		'name' => __( 'Second Footer Widget Area', 'thematic_h5bp' ),
 		'id' => 'second-footer-widget-area',
 		'description' => __( 'The second footer widget area', 'twentyten' ),
 		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
@@ -512,9 +502,9 @@ function toolbox_widgets_init() {
 
 	// Area 5, located in the footer. Empty by default.
 	register_sidebar( array(
-		'name' => __( 'Third Footer Widget Area', 'twentyten' ),
+		'name' => __( 'Third Footer Widget Area', 'thematic_h5bp' ),
 		'id' => 'third-footer-widget-area',
-		'description' => __( 'The third footer widget area', 'twentyten' ),
+		'description' => __( 'The third footer widget area', 'thematic_h5bp' ),
 		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
 		'after_widget' => '</li>',
 		'before_title' => '<h3 class="widget-title">',
@@ -525,7 +515,7 @@ function toolbox_widgets_init() {
 	register_sidebar( array(
 		'name' => __( 'Fourth Footer Widget Area', 'twentyten' ),
 		'id' => 'fourth-footer-widget-area',
-		'description' => __( 'The fourth footer widget area', 'twentyten' ),
+		'description' => __( 'The fourth footer widget area', 'thematic_h5bp' ),
 		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
 		'after_widget' => '</li>',
 		'before_title' => '<h3 class="widget-title">',
@@ -534,16 +524,6 @@ function toolbox_widgets_init() {
 }
 
 add_action( 'init', 'toolbox_widgets_init' );
-
-define( 'MINIFY', true );
-define( 'PROFILING', true );
-
-
-
-function xuacompatible() { ?>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-<?php }
-
 
 /*
  * This example will work at least on WordPress 2.6.3, 

@@ -7,7 +7,8 @@
 
 	// Creating the head profile
 	thematic_head_profile();
-
+	
+	// 
 	thematic_create_initialhead();
 
 	// Creating the doc title
@@ -37,10 +38,11 @@
 	// Enables comment threading
 	thematic_show_commentreply();
 
-	thematic_create_modernizr();
-
 	// Calling WordPress' header action hook
 	wp_head();
+
+	// Modernizer
+	thematic_create_modernizr();
 ?>
 <!-- WP-Minify CSS -->
 

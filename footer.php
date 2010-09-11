@@ -25,7 +25,9 @@
 			<div id="site-generator">
 				<a href="http://wordpress.org/" title="<?php esc_attr_e( 'A Semantic Personal Publishing Platform', 'themename' ); ?>" rel="generator"><?php printf( __( 'Proudly powered by %s.', 'themename' ), 'WordPress' ); ?></a>
 			</div>
+
 		</div><!-- #colophon -->
+
 	</footer><!-- #footer -->
 
 <?php wp_footer(); thematic_footer(); ?>
