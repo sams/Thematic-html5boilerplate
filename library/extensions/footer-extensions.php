@@ -60,6 +60,9 @@ function thematic_after() {
     function thematic_ifieblock() { ?>
 	<!--[if lt IE 7 ]>
 		<script src="<?php echo get_stylesheet_directory_uri(); ?>/library/scripts/dd_belatedpng.js"></script>
+		<script>
+		DD_belatedPNG.fix('img, .png_bg');
+		</script>
 	<![endif]-->
     <?php
     }
@@ -68,6 +71,10 @@ function thematic_after() {
     function thematic_googleanalytics() {
     	global $my_shortname;
 		$ga = stripslashes(get_option($my_shortname . '_googleanalytics'));
+		if($ga == 'YOAST') {
+			yoast_analytics(); 
+			return;
+		}
 		if(!$ga or $ga == '') {
 			return;
 		}

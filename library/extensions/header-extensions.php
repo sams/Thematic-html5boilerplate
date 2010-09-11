@@ -3,9 +3,10 @@
 // Creates the DOCTYPE section
 function thematic_create_doctype() {
 	$content = '<!DOCTYPE html>' . "\n";
-	$content.= '<!--[if lte IE 6 ]><html lang="en" class="no-js ie ie6"><![endif]-->' . "\n";
+	$content.= '<!--[if lt IE 7 ]><html lang="en" class="no-js ie ie6"><![endif]-->' . "\n";
 	$content.= '<!--[if IE 7 ]><html lang="en" class="no-js ie ie7"><![endif]-->' . "\n";
 	$content.= '<!--[if IE 8 ]><html lang="en" class="no-js ie ie8"><![endif]-->' . "\n";
+	$content.= '<!--[if IE 9 ]><html lang="en" class="no-js ie ie8"><![endif]-->' . "\n";
 	$content.= '<!--[if (gt IE 9)|!(IE)]><!--><html lang="en" class="no-js"><!--<![endif]-->' . "\n";
 	echo apply_filters('thematic_create_doctype', $content);
 } // end thematic_create_doctype
@@ -103,10 +104,13 @@ function thematic_doctitle() {
 } // end thematic_doctitle
 
 
-// Creates the content-type section
+// Creates the inital head content of boilerplate (many options here are controlled by admin options)
 function thematic_create_initialhead() {
-    	global $my_shortname;
-		$cf = stripslashes(get_option($my_shortname . '_chromeframe'));
+    global $my_shortname;
+	$cf = stripslashes(get_option($my_shortname . '_chromeframe'));
+	$fi = stripslashes(get_option($my_shortname . '_favicon'));
+	$at = stripslashes(get_option($my_shortname . '_appletouch'));
+		
 	$content  = "\t";
 	$content .= "<meta charset=\"";
 	$content .= get_bloginfo('charset');
@@ -114,23 +118,28 @@ function thematic_create_initialhead() {
 	$content .= "\n\n";
 	$content .= "\t<!--[if IE]><![endif]-->";
 	$content .= "\n\n";
-	if($cf)	{
+	
+	// if chrome frame is set ie its not in htaccess
+	if($cf === true)	{
 		$content .= "\t<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge,chrome=1\" />";
 	}
-	$content .= "\n\n";
+	
+	// if your using default favicon & apple touch - these may be uploaded
+	//$content .= "\n\n";
+	//$content .= '<link rel="shortcut icon" href="/favicon.ico">';
+  	//$content .= '<link rel="apple-touch-icon" href="/apple-touch-icon.png">';
+  	
+  	// featured image for facebook if set
+	//$content .= "\n\n";
+	//$content .= '<link >';
 	echo apply_filters('thematic_create_contenttype', $content);
 } // end thematic_create_contenttype
-
-// output modernizr to head of doc
-function thematic_create_modernizr() {
-	echo "\t<script src=\"" . get_stylesheet_directory_uri() . "/library/scripts/modernizr-1.5.min.js\"></script>\n\n";
-} // end thematic_create_modernizr
 
 // The master switch for SEO functions
 function thematic_seo() {
 		$content = TRUE;
 		return apply_filters('thematic_seo', $content);
-}
+} // end thematic_seo
 
 // Creates the canonical URL
 function thematic_canonical_url() {
@@ -168,7 +177,7 @@ function thematic_create_description() {
 	  		  if ( have_posts() ) {
 		  		  while ( have_posts() ) {
 						the_post();
-										if (thematic_the_excerpt() == "") {
+						if (thematic_the_excerpt() == "") {
 							if (thematic_use_autoexcerpt()) {
 								$content ="\t";
 								$content .= "<meta name=\"description\" content=\"";
@@ -215,7 +224,7 @@ function thematic_create_robots() {
 		if (thematic_seo()) {
 			$content = "";
 			if((is_home() && ($paged < 2 )) || is_front_page() || is_single() || is_page() || is_attachment()) {
-						$content .= "\t<meta name=\"robots\" content=\"index,follow\" />";
+				$content .= "\t<meta name=\"robots\" content=\"index,follow\" />";
 			} elseif (is_search()) {
 				$content .= "\t<meta name=\"robots\" content=\"noindex,nofollow\" />";
 			} else {	
@@ -242,14 +251,21 @@ function thematic_show_robots() {
 // Located in header.php
 // creates link to style.css
 function thematic_create_stylesheet() {
+    global $my_shortname;
+	$hh = stripslashes(get_option($my_shortname . '_handheld'));
+	
+	//print_r(array($hh));die();
+	
 	$content = "\t";
 	$content .= "<link rel=\"stylesheet\" type=\"text/css\" href=\"";
 	$content .= get_bloginfo('stylesheet_url');
 	$content .= "\" />";
-	$content .= "\n\n\t";
-	$content .= "<link rel=\"stylesheet\" media=\"handheld\" type=\"text/css\" href=\"";
-	$content .= get_stylesheet_directory_uri() . "/library/styles/handheld.css";
-	$content .= "\" />";
+	if($hh === true) {
+		$content .= "\n\n\t";
+		$content .= "<link rel=\"stylesheet\" media=\"handheld\" type=\"text/css\" href=\"";
+		$content .= get_stylesheet_directory_uri() . "/library/styles/handheld.css";
+		$content .= "\" />";
+	}
 	$content .= "\n\n";
 	echo apply_filters('thematic_create_stylesheet', $content);
 }
@@ -317,15 +333,20 @@ function thematic_show_commentreply() {
 	}
 } // end thematic_show_commentreply
 
+// output modernizr to head of doc
+function thematic_create_modernizr() {
+	echo "\t<script src=\"" . get_stylesheet_directory_uri() . "/library/scripts/modernizr-1.5.min.js\"></script>\n\n";
+} // end thematic_create_modernizr
+
 
 // Load scripts for the jquery Superfish plugin http://users.tpg.com.au/j_birch/plugins/superfish/#examples
 function thematic_head_scripts() {
 			if(JSFOOT) return;
 		   // wp_enqueue_script( 'thematic-scripts' ,get_bloginfo('template_directory'), array('../thematic/library/scripts/hoverIntent.js', '../thematic/library/scripts/superfish.js', '../thematic/library/scripts/supersubs.js', '../thematic/library/scripts/thematic-dropdowns.js'), array('jquery'), '2.50', true); return;
 		   
-		 $scripts =   thematic_script();
+	$scripts =   thematic_script();
 	
-	$scripts = $scripts . apply_filters('thematic_dropdown_options', $dropdown_options);
+	$scripts .= apply_filters('thematic_dropdown_options', $dropdown_options);
 
 	// Print filtered scripts
 	print apply_filters('thematic_head_scripts', $scripts);
@@ -367,22 +388,31 @@ function thematic_brandingopen() { ?>
 <?php }
 add_action('thematic_header','thematic_brandingopen',1);
 
-function thematic_hgroupopen() { ?>
+function thematic_hgroup() {
+    global $my_shortname;
+	$title = stripslashes(get_option($my_shortname . '_rmtitle'));
+	$desc = stripslashes(get_option($my_shortname . '_rmdesc'));
+	if($title && $desc) { ?>
 	<hgroup>
-<?php }
-add_action('thematic_header','thematic_hgroupopen',2);
-
-function thematic_hgroupclose() { ?>
+	<?php
+		thematic_blogtitle();
+		thematic_blogdescription();
+	?>
 	</hgroup>
-<?php }
-add_action('thematic_header','thematic_hgroupclose',6);
+	<?php } else {
+		if($title)
+		thematic_blogtitle();
+		if($desc)
+		thematic_blogdescription();
+	}
+}
+add_action('thematic_header','thematic_hgroup',2);
 
 // Create the blog title
 // In the header div
 function thematic_blogtitle() { ?>
 	<h1 id="blog-title"><a href="<?php bloginfo('url') ?>/" title="<?php bloginfo('name') ?>" rel="home"><?php bloginfo('name') ?></a></h1>
 <?php }
-add_action('thematic_header','thematic_blogtitle',3);
 
 // Create the blog description
 // In the header div
@@ -390,7 +420,6 @@ function thematic_blogdescription() {	?>
 	<h2 id="blog-description"><?php bloginfo('description') ?></h2>
 	<?php
 }
-add_action('thematic_header','thematic_blogdescription',5);
 
 // Close #branding
 // In the header
