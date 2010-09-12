@@ -84,6 +84,13 @@ $my_options = array(
     'type' => 'checkbox'
   ),
   array(
+    'name' => __('Liquid', 'thematicchild'),
+    'desc' => __('Set the body to be liquid.', 'thematicchild'),
+    'id' => $my_shortname . '_liquid',
+    'std' => '',
+    'type' => 'checkbox'
+  ),
+  array(
     'name' => __('JS in Footer', 'thematicchild'),
     'desc' => __('For optimal rendering in performance', 'thematicchild'),
     'id' => $my_shortname . '_jsfoot',
