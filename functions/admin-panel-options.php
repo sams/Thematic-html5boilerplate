@@ -97,6 +97,13 @@ $my_options = array(
     'std' => '',
     'type' => 'checkbox'
   ),
+  array(
+    'name' => __('Search as Header li', 'thematicchild'),
+    'desc' => __('Add the search to header as a listed item widget or you many manually add it to an aside', 'thematicchild'),
+    'id' => $my_shortname . '_searchasli',
+    'std' => '',
+    'type' => 'checkbox'
+  ),
     array(
     'name' => __('Footer Text', 'thematicchild'),
     'desc' => __('You can use the shortcodes: [wp-link] [theme-link] [loginout-link] [blog-title] [blog-link] [the-year]', 'thematicchild'),

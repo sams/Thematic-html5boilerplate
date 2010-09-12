@@ -1,20 +1,19 @@
 <?php
 
-function thematic_search_form() {
+function thematic_search_form($echo = true) {
 				$search_form = "\n" . "\t";
-				$search_form .= '<form id="searchform" method="get" action="' . get_bloginfo('home') .'">';
+				$search_form .= '<form id="searchbox" method="get" action="' . get_bloginfo('home') .'">';
 				$search_form .= "\n" . "\t" . "\t";
 				$search_form .= '<div>';
 				$search_form .= "\n" . "\t" . "\t". "\t";
 				if (is_search()) {
-						$search_form .= '<input id="s" name="s" type="text" value="' . wp_specialchars(stripslashes($_GET['s']), true) .'" size="32" tabindex="1" />';
+						$search_form .= '<input id="s" name="s" type="search" placeholder="' . wp_specialchars(stripslashes($_GET['s']), true) .'" size="32" tabindex="1" />';
 				} else {
 						$value = __('To search, type and hit enter', 'thematic');
 						$value = apply_filters('search_field_value',$value);
 						$search_form .= '<input id="s" name="s" type="text" value="' . $value . '" onfocus="if (this.value == \'' . $value . '\') {this.value = \'\';}" onblur="if (this.value == \'\') {this.value = \'' . $value . '\';}" size="32" tabindex="1" />';
 				}
 				$search_form .= "\n" . "\t" . "\t". "\t";
-
 				$search_submit = '<input id="searchsubmit" name="searchsubmit" type="submit" value="' . __('Search', 'thematic') . '" tabindex="2" />';
 
 				$search_form .= apply_filters('thematic_search_submit', $search_submit);
@@ -25,7 +24,10 @@ function thematic_search_form() {
 				$search_form .= "\n" . "\t";
 				$search_form .= '</form>';
 
-				echo apply_filters('thematic_search_form', $search_form);
+				if($echo)
+					echo apply_filters('thematic_search_form', $search_form);
+				else
+					return apply_filters('thematic_search_form', $search_form);
 
 }
 
@@ -326,7 +328,7 @@ add_filter('thematic_widgetized_areas', 'thematic_sort_widgetized_areas', 100);
 
 // Define the thematic_widget_header
 function thematic_widget_header() {
-		echo thematic_before_widget_area('widget-header');   
+		echo thematic_before_widget_area('widget-header');
 		dynamic_sidebar('hdr-widgets');
 		echo thematic_after_widget_area('widget-header');
 } 
@@ -451,17 +453,17 @@ function thematic_page_bottom() {
 function thematic_before_widget_area($hook) {
 	$content =  "\n";
 	if ($hook == 'primary-aside') {
-		$content .= '<div id="primary" class="aside main-aside">' . "\n";
+		$content .= '<aside class="primary rightCol">' . "\n";
 	} elseif ($hook == 'secondary-aside') {
-		$content .= '<div id="secondary" class="aside main-aside">' . "\n";
+		$content .= '<aside class="secondary rightCol">' . "\n";
 	} elseif ($hook == '1st-subsidiary-aside') {
-		$content .= '<div id="first" class="aside sub-aside">' . "\n";
+		$content .= '<aside class="first rightCol">' . "\n";
 	} elseif ($hook == '2nd-subsidiary-aside') {
-		$content .= '<div id="second" class="aside sub-aside">' . "\n";
+		$content .= '<aside id="" class="second rightCol">' . "\n";
 	} elseif ($hook == '3rd-subsidiary-aside') {
-		$content .= '<div id="third" class="aside sub-aside">' . "\n";
+		$content .= '<aside id="third" class="third rightCol">' . "\n";
 	} else {
-		$content .= '<div id="' . $hook . '" class="aside">' ."\n";
+		$content .= '<aside class="' . $hook . '">' ."\n";
 	}
 	$content .= "\t" . '<ul class="xoxo">' . "\n";
 	return apply_filters('thematic_before_widget_area', $content);
@@ -471,17 +473,17 @@ function thematic_before_widget_area($hook) {
 function thematic_after_widget_area($hook) {
 	$content = "\n" . "\t" . '</ul>' ."\n";
 	if ($hook == 'primary-aside') {
-		$content .= '</div><!-- #primary .aside -->' ."\n";
+		$content .= '</aside><!-- .primary aside -->' ."\n";
 	} elseif ($hook == 'secondary-aside') {
-		$content .= '</div><!-- #secondary .aside -->' ."\n";
+		$content .= '</aside><!-- .secondary aside -->' ."\n";
 	} elseif ($hook == '1st-subsidiary-aside') {
-		$content .= '</div><!-- #first .aside -->' ."\n";
+		$content .= '</aside><!-- .first aside -->' ."\n";
 	} elseif ($hook == '2nd-subsidiary-aside') {
-		$content .= '</div><!-- #second .aside -->' ."\n";
+		$content .= '</aside><!-- #second .aside -->' ."\n";
 	} elseif ($hook == '3rd-subsidiary-aside') {
-		$content .= '</div><!-- #third .aside -->' ."\n";
+		$content .= '</aside><!-- #third .aside -->' ."\n";
 	} else {
-		$content .= '</div><!-- #' . $hook . ' .aside -->' ."\n";
+		$content .= '</aside><!-- .' . $hook . ' aside -->' ."\n";
 	} 
 	return apply_filters('thematic_after_widget_area', $content);
 }

@@ -354,6 +354,38 @@ function thematic_head_scripts() {
 }
 add_action('wp_head','thematic_head_scripts');
 
+// figure below head captionable (add caption etc todo)
+function thematic_head_figure() {
+	$figure = '';
+	// if not gallery and no 'no header' meta (todo)
+	if ( is_singular() &&
+			has_post_thumbnail( $post->ID ) &&
+			( /* $src, $width, $height */ $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'post-thumbnail' ) ) &&
+			$image[1] >= HEADER_IMAGE_WIDTH  && !is_page('gallery')) {
+		$figure ="<img src=\"" . header_image() . "\" width=\"" . $image[1] . " height=\"" . $image[2] . "\" alt=\"\" />";
+	} else if(!is_page('gallery')) {
+		$figure ="<img src=\"" . header_image() . "\" width=\"" . HEADER_IMAGE_WIDTH . " height=\"" . HEADER_IMAGE_HEIGHT . "\" alt=\"\" />";
+	}
+	echo '<figure>'.$figure.'<caption></caption></figure>';
+}
+add_action('thematic_belowheader','thematic_head_figure',1);
+
+// return figure thumb or large (todo but not to size of header image atop - should be a stretchy image even in ie7) for article
+// add caption etc todo
+function thematic_thumb_figure() {
+	$figure = '';
+	// Check if this is a post or page, if it has a thumbnail, and if it's a big one
+	if ( is_singular() &&
+			has_post_thumbnail( $post->ID ) &&
+			( /* $src, $width, $height */ $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'post-thumbnail' ) ) &&
+			$image[1] >= HEADER_IMAGE_WIDTH  && !is_page('gallery'))
+		$figure = get_the_post_thumbnail( $post->ID, 'post-thumbnail' );
+	else
+		$figure ="<img src=\"" . header_image() . "\" width=\"" . HEADER_IMAGE_WIDTH . "\" height=\"" . HEADER_IMAGE_HEIGHT . "\" alt=\"\" />";
+		
+	echo '<figure>'.$figure.'<caption></caption></figure>';
+}
+
 
 // Add ID and CLASS attributes to the first <ul> occurence in wp_page_menu
 function thematic_add_menuclass($ulclass) {
@@ -424,17 +456,24 @@ function thematic_blogdescription() {	?>
 // Close #branding
 // In the header
 function thematic_brandingclose() {
-	// action hook creating the primary aside
 	//thematic_widget_header();
 }
 add_action('thematic_header','thematic_brandingclose',7);
 
 // Create #access
 // In the header
-function thematic_access() { ?>
+function thematic_access() {  
+    global $my_shortname;
+	$searchasli = stripslashes(get_option($my_shortname . '_searchasli'));
+	// remove the fugly div
+	$access = preg_replace('#<([/]*)(div)([^>]*)>#', '', wp_nav_menu( array('primary-menu', 'container_class' => '', 'menu_class' => '', 'echo' => false) ), 1);
+	// have a way to add search to access as li (todo)
+	if($searchasli)
+	$access = preg_replace('#<(/ul)([^>]*)>#', '<li>'.thematic_search_form(false).'</li></ul>', $access, 1);
+	?>
 	<nav id="access">
-		<div class="skip-link"><a href="#content" title="<?php _e('Skip navigation to the content', 'thematic'); ?>"><?php _e('Skip to content', 'thematic'); ?></a></div>
-		<?php wp_page_menu('sort_column=menu_order') ?>
+		<a href="#content" class="skip-link" title="<?php _e('Skip navigation to the content', 'thematic'); ?>"><?php _e('Skip to content', 'thematic'); ?></a>
+		<?php echo $access; ?>
 	</nav><!-- #access -->
 <?php }
 add_action('thematic_header','thematic_access',9);

@@ -35,7 +35,7 @@ function childtheme_logo() {
 	global $my_shortname;
 	$logo = get_option($my_shortname . '_logo');
 	if (!empty($logo)) { ?>
-		<div id="logo"><a href="<?php bloginfo('url') ?>/" title="<?php bloginfo('name') ?>" rel="home"><img src="<?php bloginfo('stylesheet_directory'); ?>/scripts/timthumb.php?src=<?php echo $logo; ?>&amp;w=55&amp;zc=1" alt="<?php bloginfo('name') ?>" /></a></div>
+		<a id="logo" href="<?php bloginfo('url') ?>/" title="<?php bloginfo('name') ?>" rel="home"><img src="<?php bloginfo('stylesheet_directory'); ?>/scripts/timthumb.php?src=<?php echo $logo; ?>&amp;w=55&amp;zc=1" alt="<?php bloginfo('name') ?>" /></a>
 		<?php
 		}
 	}

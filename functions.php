@@ -176,7 +176,7 @@ function thematic_h5bp_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => __( 'Primary Navigation', 'thematic_h5bp' ),
+		'oxox' => __( 'Primary Navigation', 'thematic_h5bp' ),
 	) );
 
 	// This theme allows users to set a custom background
@@ -275,7 +275,7 @@ add_filter( 'wp_page_menu_args', 'thematic_h5bp_page_menu_args' );
 function thematic_h5bp_excerpt_length( $length ) {
 	return 40;
 }
-add_filter( 'excerpt_length', 'thematic_pft_excerpt_length' );
+add_filter( 'excerpt_length', 'thematic_h5bp_excerpt_length' );
 
 /**
  * Returns a "Continue Reading" link for excerpts
@@ -310,7 +310,7 @@ add_filter( 'excerpt_more', 'thematic_h5bp_auto_excerpt_more' );
  * @since Twenty Ten 1.0
  * @return string Excerpt with a pretty "Continue Reading" link
  */
-function thematic_pft_custom_excerpt_more( $output ) {
+function thematic_h5bp_custom_excerpt_more( $output ) {
 	if ( has_excerpt() && ! is_attachment() ) {
 		$output .= thematic_pft_continue_reading_link();
 	}
@@ -341,7 +341,7 @@ if ( ! isset( $content_width ) ) {
  * This theme uses wp_nav_menu() in one location.
  */
 register_nav_menus( array(
-	'primary' => __( 'Primary Menu', 'themename' ),
+	'oxox' => __( 'Primary Menu', 'themename' ),
 	'aside' => __( 'Aside Menu', 'themename' )
 ) );
 
@@ -459,6 +459,16 @@ function toolbox_widgets_init() {
 	// Area 1, located at the top of the sidebar.
 	register_sidebar( array(
 		'name' => __( 'Primary Widget Area', 'thematic_h5bp' ),
+		'id' => 'primary-menu',
+		'description' => __( 'The primary menu in header (not wrapped in div)', 'thematic_h5bp' ),
+		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
+		'after_widget' => '</li>',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+	) );
+
+	register_sidebar( array(
+		'name' => __( 'Primary Widget Area', 'thematic_h5bp' ),
 		'id' => 'primary-widget-area',
 		'description' => __( 'The primary widget area', 'thematic_h5bp' ),
 		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
@@ -493,7 +503,7 @@ function toolbox_widgets_init() {
 	register_sidebar( array(
 		'name' => __( 'Second Footer Widget Area', 'thematic_h5bp' ),
 		'id' => 'second-footer-widget-area',
-		'description' => __( 'The second footer widget area', 'twentyten' ),
+		'description' => __( 'The second footer widget area', 'thematic_h5bp' ),
 		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
 		'after_widget' => '</li>',
 		'before_title' => '<h3 class="widget-title">',
@@ -513,7 +523,7 @@ function toolbox_widgets_init() {
 
 	// Area 6, located in the footer. Empty by default.
 	register_sidebar( array(
-		'name' => __( 'Fourth Footer Widget Area', 'twentyten' ),
+		'name' => __( 'Fourth Footer Widget Area', 'thematic_h5bp' ),
 		'id' => 'fourth-footer-widget-area',
 		'description' => __( 'The fourth footer widget area', 'thematic_h5bp' ),
 		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
@@ -530,24 +540,24 @@ add_action( 'init', 'toolbox_widgets_init' );
  * but maybe on older versions too.
  */
 
+/* 
+
 add_action('admin_init', 'my_plugin_admin_init');
 add_action('admin_menu', 'my_plugin_admin_menu');
-
+ 
 function my_plugin_admin_init()
 {
-	/* Register our script. */
+	/* Register our script. * /
 	wp_register_script('myPluginScript', WP_PLUGIN_URL . '/myPlugin/script.js');
-}
-
-function my_plugin_admin_menu()
+}function my_plugin_admin_menu()
 {
-	/* Register our plugin page */
+	/* Register our plugin page * /
 	$page = add_submenu_page( 'edit.php', 
 							  __('My Plugin', 'myPlugin'), 
 							  __('My Plugin', 'myPlugin'), 9,  __FILE__, 
 							  'my_plugin_manage_menu');
 
-	/* Using registered $page handle to hook script load */
+	/* Using registered $page handle to hook script load * /
 	add_action('admin_print_scripts-' . $page, 'my_plugin_admin_styles');
 }
 
@@ -555,11 +565,11 @@ function my_plugin_admin_styles()
 {
 	/*
 	 * It will be called only on your plugin admin page, enqueue our script here
-	 */
+	 * /
 	wp_enqueue_script('myPluginScript');
 }
 
 function my_plugin_manage_menu()
 {
-	/* Output our admin page */
-}
+	/* Output our admin page * /
+} */
