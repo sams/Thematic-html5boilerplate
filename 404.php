@@ -12,9 +12,6 @@ a { color: rgb(36, 109, 56); text-decoration:none; }
 a:hover { color: rgb(96, 73, 141) ; text-shadow: 2px 2px 2px rgba(36, 109, 56, 0.5); }
 </style>
 
-
-
-
 <details>
 	<summary><h1><?php _e( 'It might be that Monkeys are mocking you from a distance', 'themename' ); ?></h1></summary>
 	<?php

@@ -55,7 +55,7 @@ if (function_exists('imagefilter') && defined('IMG_FILTER_NEGATE')) {
 // sort out image source
 $src = get_request("src", "");
 if($src == '' || strlen($src) <= 3) {
-    displayError ('no image specified');
+	displayError ('no image specified');
 }
 
 // clean params before use

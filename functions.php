@@ -14,13 +14,17 @@
 
 $themeData = get_theme_data(TEMPLATEPATH . '/style.css');
 $version = trim($themeData['Version']);
-if(!$version)
-    $version = "unknown";
+
+if(!$version)	{
+	$version = "unknown";
+}
 
 $ct=get_theme_data(STYLESHEETPATH . '/style.css');
 $templateversion = trim($ct['Version']);
-if(!$templateversion)
-    $templateversion = "unknown";
+
+if(!$templateversion)	{
+	$templateversion = "unknown";
+}
 
 // set theme constants
 define('THEMENAME', $themeData['Title']);
@@ -94,8 +98,7 @@ add_theme_support( 'post-thumbnails', array( 'post') ); // Add it for posts
 
 add_filter( 'pre_get_posts', 'home_content' );
 
-function home_content( $query ) {
-
+function home_content( $query )	{
 	if ( is_home() && false == $query->query_vars['suppress_filters'] )
 		$query->set( 'post_type', array( 'home', 'attachment' ) );
 
@@ -109,7 +112,8 @@ add_filter( 'archive_meta', 'convert_chars' );
 add_filter( 'archive_meta', 'wpautop' );
 
 // Remove the WordPress Generator – via http://blog.ftwr.co.uk/archives/2007/10/06/improving-the-wordpress-generator/
-function thematic_remove_generators() { return ''; }
+function thematic_remove_generators()	{ return ''; }
+
 if (apply_filters('thematic_hide_generators', TRUE)) {  
 	add_filter('the_generator','thematic_remove_generators');
 }
@@ -128,7 +132,6 @@ if ( is_readable($locale_file) )
 if ( ! isset( $profiling ) ) { 
 	$profiling = false;
 }
-
 
 /** Tell WordPress to run twentyten_setup() when the 'after_setup_theme' hook is run. */
 add_action( 'after_setup_theme', 'thematic_h5bp_setup' );

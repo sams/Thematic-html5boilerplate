@@ -16,22 +16,23 @@ get_header(); ?>
 				<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'themename' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 				<?php
 
-	                // displays the page title
-	                thematic_page_title();
-	
-	                // create the navigation above the content
-	                thematic_navigation_above();
-				
-	                // action hook for placing content above the search loop
-	                thematic_above_searchloop();
+					// displays the page title
+					thematic_page_title();
+
+					// create the navigation above the content
+					thematic_navigation_above();
+
+					// action hook for placing content above the search loop
+					thematic_above_searchloop();
 
 					//	get_template_part( 'loop', 'search' );
 
-	                // action hook creating the search loop
-	                thematic_searchloop();
+					// action hook creating the search loop
+					thematic_searchloop();
 
-	                // action hook for placing content below the search loop
-	                thematic_below_searchloop();
+					// action hook for placing content below the search loop
+					thematic_below_searchloop();
+
 				?>
 
 			<?php else : ?>

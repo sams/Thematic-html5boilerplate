@@ -1,33 +1,34 @@
 <?php
 
 function thematic_search_form($echo = true) {
-				$search_form = "\n" . "\t";
-				$search_form .= '<form id="searchbox" method="get" action="' . get_bloginfo('home') .'">';
-				$search_form .= "\n" . "\t" . "\t";
-				$search_form .= '<div>';
-				$search_form .= "\n" . "\t" . "\t". "\t";
-				if (is_search()) {
-						$search_form .= '<input id="s" name="s" type="search" placeholder="' . wp_specialchars(stripslashes($_GET['s']), true) .'" size="32" tabindex="1" />';
-				} else {
-						$value = __('To search, type and hit enter', 'thematic');
-						$value = apply_filters('search_field_value',$value);
-						$search_form .= '<input id="s" name="s" type="text" value="' . $value . '" onfocus="if (this.value == \'' . $value . '\') {this.value = \'\';}" onblur="if (this.value == \'\') {this.value = \'' . $value . '\';}" size="32" tabindex="1" />';
-				}
-				$search_form .= "\n" . "\t" . "\t". "\t";
-				$search_submit = '<input id="searchsubmit" name="searchsubmit" type="submit" value="' . __('Search', 'thematic') . '" tabindex="2" />';
+	$search_form = "\n" . "\t";
+	$search_form .= '<form id="searchbox" method="get" action="' . get_bloginfo('home') .'">';
+	$search_form .= "\n" . "\t" . "\t";
+	$search_form .= '<div>';
+	$search_form .= "\n" . "\t" . "\t". "\t";
+	if (is_search()) {
+			$search_form .= '<input id="s" name="s" type="search" placeholder="' . wp_specialchars(stripslashes($_GET['s']), true) .'" size="32" tabindex="1" />';
+	} else {
+			$value = __('To search, type and hit enter', 'thematic');
+			$value = apply_filters('search_field_value',$value);
+			$search_form .= '<input id="s" name="s" type="text" value="' . $value . '" onfocus="if (this.value == \'' . $value . '\') {this.value = \'\';}" onblur="if (this.value == \'\') {this.value = \'' . $value . '\';}" size="32" tabindex="1" />';
+	}
+	$search_form .= "\n" . "\t" . "\t". "\t";
+	$search_submit = '<input id="searchsubmit" name="searchsubmit" type="submit" value="' . __('Search', 'thematic') . '" tabindex="2" />';
 
-				$search_form .= apply_filters('thematic_search_submit', $search_submit);
+	$search_form .= apply_filters('thematic_search_submit', $search_submit);
 
-				$search_form .= "\n" . "\t" . "\t";
-				$search_form .= '</div>';
+	$search_form .= "\n" . "\t" . "\t";
+	$search_form .= '</div>';
 
-				$search_form .= "\n" . "\t";
-				$search_form .= '</form>';
+	$search_form .= "\n" . "\t";
+	$search_form .= '</form>';
 
-				if($echo)
-					echo apply_filters('thematic_search_form', $search_form);
-				else
-					return apply_filters('thematic_search_form', $search_form);
+	if($echo)	{
+		echo apply_filters('thematic_search_form', $search_form);
+	} else	{
+		return apply_filters('thematic_search_form', $search_form);
+	}
 
 }
 
@@ -42,7 +43,7 @@ function thematic_widgets_init() {
 			'args' => array (
 				'name' => 'Header Widgets',
 				'id' => 'hdr-widgets',
-                'description' => __('The header widget area for additional mast head items.', 'thematic'),
+				'description' => __('The header widget area for additional mast head items.', 'thematic'),
 				'before_widget' => thematic_before_widget(),
 				'after_widget' => thematic_after_widget(),
 				'before_title' => thematic_before_title(),
@@ -57,7 +58,7 @@ function thematic_widgets_init() {
 			'args' => array (
 				'name' => 'Primary Aside',
 				'id' => 'primary-aside',
-                'description' => __('The primary widget area, most often used as a sidebar.', 'thematic'),
+				'description' => __('The primary widget area, most often used as a sidebar.', 'thematic'),
 				'before_widget' => thematic_before_widget(),
 				'after_widget' => thematic_after_widget(),
 				'before_title' => thematic_before_title(),
@@ -72,7 +73,7 @@ function thematic_widgets_init() {
 			'args' => array (
 				'name' => 'Secondary Aside',
 				'id' => 'secondary-aside',
-                'description' => __('The secondary widget area, most often used as a sidebar.', 'thematic'),
+				'description' => __('The secondary widget area, most often used as a sidebar.', 'thematic'),
 				'before_widget' => thematic_before_widget(),
 				'after_widget' => thematic_after_widget(),
 				'before_title' => thematic_before_title(),
@@ -87,7 +88,7 @@ function thematic_widgets_init() {
 			'args' => array (
 				'name' => '1st Subsidiary Aside',
 				'id' => '1st-subsidiary-aside',
-                'description' => __('The 1st widget area in the footer.', 'thematic'),
+				'description' => __('The 1st widget area in the footer.', 'thematic'),
 				'before_widget' => thematic_before_widget(),
 				'after_widget' => thematic_after_widget(),
 				'before_title' => thematic_before_title(),
@@ -102,7 +103,7 @@ function thematic_widgets_init() {
 			'args' => array (
 				'name' => '2nd Subsidiary Aside',
 				'id' => '2nd-subsidiary-aside',
-                'description' => __('The 2nd widget area in the footer.', 'thematic'),
+				'description' => __('The 2nd widget area in the footer.', 'thematic'),
 				'before_widget' => thematic_before_widget(),
 				'after_widget' => thematic_after_widget(),
 				'before_title' => thematic_before_title(),
@@ -117,7 +118,7 @@ function thematic_widgets_init() {
 			'args' => array (
 				'name' => '3rd Subsidiary Aside',
 				'id' => '3rd-subsidiary-aside',
-                'description' => __('The 3rd widget area in the footer.', 'thematic'),
+				'description' => __('The 3rd widget area in the footer.', 'thematic'),
 				'before_widget' => thematic_before_widget(),
 				'after_widget' => thematic_after_widget(),
 				'before_title' => thematic_before_title(),
@@ -132,7 +133,7 @@ function thematic_widgets_init() {
 			'args' => array (
 				'name' => 'Index Top',
 				'id' => 'index-top',
-                'description' => __('The top widget area displayed on the index page.', 'thematic'),
+				'description' => __('The top widget area displayed on the index page.', 'thematic'),
 				'before_widget' => thematic_before_widget(),
 				'after_widget' => thematic_after_widget(),
 				'before_title' => thematic_before_title(),
@@ -147,7 +148,7 @@ function thematic_widgets_init() {
 			'args' => array (
 				'name' => 'Index Insert',
 				'id' => 'index-insert',
-                'description' => __('The widget area inserted after x posts on the index page.', 'thematic'),
+				'description' => __('The widget area inserted after x posts on the index page.', 'thematic'),
 				'before_widget' => thematic_before_widget(),
 				'after_widget' => thematic_after_widget(),
 				'before_title' => thematic_before_title(),
@@ -162,7 +163,7 @@ function thematic_widgets_init() {
 			'args' => array (
 				'name' => 'Index Bottom',
 				'id' => 'index-bottom',
-                'description' => __('The bottom widget area displayed on the index page.', 'thematic'),
+				'description' => __('The bottom widget area displayed on the index page.', 'thematic'),
 				'before_widget' => thematic_before_widget(),
 				'after_widget' => thematic_after_widget(),
 				'before_title' => thematic_before_title(),
@@ -177,7 +178,7 @@ function thematic_widgets_init() {
 			'args' => array (
 				'name' => 'Single Top',
 				'id' => 'single-top',
-                'description' => __('The top widget area displayed on a single post.', 'thematic'),
+				'description' => __('The top widget area displayed on a single post.', 'thematic'),
 				'before_widget' => thematic_before_widget(),
 				'after_widget' => thematic_after_widget(),
 				'before_title' => thematic_before_title(),
@@ -192,7 +193,7 @@ function thematic_widgets_init() {
 			'args' => array (
 				'name' => 'Single Insert',
 				'id' => 'single-insert',
-                'description' => __('The widget area inserted between the post and the comments on a single post.', 'thematic'),
+				'description' => __('The widget area inserted between the post and the comments on a single post.', 'thematic'),
 				'before_widget' => thematic_before_widget(),
 				'after_widget' => thematic_after_widget(),
 				'before_title' => thematic_before_title(),
@@ -207,7 +208,7 @@ function thematic_widgets_init() {
 			'args' => array (
 				'name' => 'Single Bottom',
 				'id' => 'single-bottom',
-                'description' => __('The bottom widget area displayed on a single post.', 'thematic'),
+				'description' => __('The bottom widget area displayed on a single post.', 'thematic'),
 				'before_widget' => thematic_before_widget(),
 				'after_widget' => thematic_after_widget(),
 				'before_title' => thematic_before_title(),
@@ -222,7 +223,7 @@ function thematic_widgets_init() {
 			'args' => array (
 				'name' => 'Page Top',
 				'id' => 'page-top',
-                'description' => __('The top widget area displayed on a page.', 'thematic'),
+				'description' => __('The top widget area displayed on a page.', 'thematic'),
 				'before_widget' => thematic_before_widget(),
 				'after_widget' => thematic_after_widget(),
 				'before_title' => thematic_before_title(),
@@ -237,7 +238,7 @@ function thematic_widgets_init() {
 			'args' => array (
 				'name' => 'Page Bottom',
 				'id' => 'page-bottom',
-                'description' => __('The bottom widget area displayed on a page.', 'thematic'),
+				'description' => __('The bottom widget area displayed on a page.', 'thematic'),
 				'before_widget' => thematic_before_widget(),
 				'after_widget' => thematic_after_widget(),
 				'before_title' => thematic_before_title(),
@@ -260,26 +261,28 @@ function thematic_widgets_init() {
 			add_action($thematic_widgetized_areas[$key]['action_hook'], $thematic_widgetized_areas[$key]['function'], $thematic_widgetized_areas[$key]['priority']);	
 		}
 	}
-	  
-    // we will check for a Thematic widgets directory and and add and activate additional widgets
-    // Thanks to Joern Kretzschmar
-	  $widgets_dir = @ dir(ABSPATH . '/wp-content/themes/' . get_template() . '/widgets');
-	  if ($widgets_dir)	{
-		  while(($widgetFile = $widgets_dir->read()) !== false) {
-			 if (!preg_match('|^\.+$|', $widgetFile) && preg_match('|\.php$|', $widgetFile))
-				  include(ABSPATH . '/wp-content/themes/' . get_template() . '/widgets/' . $widgetFile);
-		  }
-	  }
 
-	  // we will check for the child themes widgets directory and add and activate additional widgets
-    // Thanks to Joern Kretzschmar 
-	  $widgets_dir = @ dir(ABSPATH . '/wp-content/themes/' . get_stylesheet() . '/widgets');
-	  if ((TEMPLATENAME != THEMENAME) && ($widgets_dir)) {
-		  while(($widgetFile = $widgets_dir->read()) !== false) {
-			 if (!preg_match('|^\.+$|', $widgetFile) && preg_match('|\.php$|', $widgetFile))
-				  include(ABSPATH . '/wp-content/themes/' . get_stylesheet() . '/widgets/' . $widgetFile);
-		  }
-	  }   
+	// we will check for a Thematic widgets directory and and add and activate additional widgets
+	// Thanks to Joern Kretzschmar
+	$widgets_dir = @ dir(ABSPATH . '/wp-content/themes/' . get_template() . '/widgets');
+	if ($widgets_dir)	{
+		while(($widgetFile = $widgets_dir->read()) !== false) {
+			if (!preg_match('|^\.+$|', $widgetFile) && preg_match('|\.php$|', $widgetFile))	{
+				include(ABSPATH . '/wp-content/themes/' . get_template() . '/widgets/' . $widgetFile);
+			}
+		}
+	}
+
+	// we will check for the child themes widgets directory and add and activate additional widgets
+	// Thanks to Joern Kretzschmar 
+	$widgets_dir = @ dir(ABSPATH . '/wp-content/themes/' . get_stylesheet() . '/widgets');
+	if ((TEMPLATENAME != THEMENAME) && ($widgets_dir)) {
+		while(($widgetFile = $widgets_dir->read()) !== false) {
+			if (!preg_match('|^\.+$|', $widgetFile) && preg_match('|\.php$|', $widgetFile))	{
+				include(ABSPATH . '/wp-content/themes/' . get_stylesheet() . '/widgets/' . $widgetFile);
+			}
+		}
+	}
 
 	// Remove WP default Widgets
 	// WP 2.8 function using $widget_class
@@ -308,9 +311,9 @@ function thematic_widgets_init() {
 		'secondary-aside'  => array( 'links', 'rss-links', 'meta' )
 		);
 
-    if ( isset( $_GET['activated'] ) ) {
-  		update_option( 'sidebars_widgets', apply_filters('thematic_preset_widgets',$preset_widgets ));
-  	}
+	if ( isset( $_GET['activated'] ) ) {
+		update_option( 'sidebars_widgets', apply_filters('thematic_preset_widgets',$preset_widgets ));
+	}
 
 }
 

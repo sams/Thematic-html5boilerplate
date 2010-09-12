@@ -32,59 +32,47 @@ function pageGetPageNo() {
 function thematic_doctitle() {
 	$site_name = get_bloginfo('name');
 	$separator = '|';
-			
+
 	if ( is_single() ) {
-	  $content = single_post_title('', FALSE);
-	}
-	elseif ( is_home() || is_front_page() ) { 
-	  $content = get_bloginfo('description');
-	}
-	elseif ( is_page() ) { 
-	  $content = single_post_title('', FALSE); 
-	}
-	elseif ( is_search() ) { 
-	  $content = __('Search Results for:', 'thematic'); 
-	  $content .= ' ' . wp_specialchars(stripslashes(get_search_query()), true);
-	}
-	elseif ( is_category() ) {
-	  $content = __('Category Archives:', 'thematic');
-	  $content .= ' ' . single_cat_title("", false);;
-	}
-	elseif ( is_tag() ) { 
-	  $content = __('Tag Archives:', 'thematic');
-	  $content .= ' ' . thematic_tag_query();
-	}
-	elseif ( is_404() ) { 
-	  $content = __('Not Found', 'thematic'); 
-	}
-	else { 
-	  $content = get_bloginfo('description');
+		$content = single_post_title('', FALSE);
+	} elseif ( is_home() || is_front_page() ) {
+		$content = get_bloginfo('description');
+	} elseif ( is_page() ) {
+		$content = single_post_title('', FALSE);
+	} elseif ( is_search() ) {
+		$content = __('Search Results for:', 'thematic'); 
+		$content .= ' ' . wp_specialchars(stripslashes(get_search_query()), true);
+	} elseif ( is_category() ) {
+		$content = __('Category Archives:', 'thematic');
+		$content .= ' ' . single_cat_title("", false);;
+	} elseif ( is_tag() ) { 
+		$content = __('Tag Archives:', 'thematic');
+		$content .= ' ' . thematic_tag_query();
+	} elseif ( is_404() ) { 
+		$content = __('Not Found', 'thematic'); 
+	} else { 
+		$content = get_bloginfo('description');
 	}
 
 	if (get_query_var('paged')) {
-	  $content .= ' ' .$separator. ' ';
-	  $content .= 'Page';
-	  $content .= ' ';
-	  $content .= get_query_var('paged');
+		$content .= ' ' .$separator. ' ';
+		$content .= 'Page';
+		$content .= ' ';
+		$content .= get_query_var('paged');
 	}
 
 	if($content) {
-	  if ( is_home() || is_front_page() ) {
-		  $elements = array(
-			'site_name' => $site_name,
-			'separator' => $separator,
-			'content' => $content
-		  );
-	  }
-	  else {
-		  $elements = array(
-			'content' => $content
-		  );
-	  }  
+		if ( is_home() || is_front_page() ) {
+			$elements = array(
+				'site_name' => $site_name,
+				'separator' => $separator,
+				'content' => $content
+			);
+		} else {
+			$elements = array('content' => $content);
+		}
 	} else {
-	  $elements = array(
-		'site_name' => $site_name
-	  );
+		$elements = array('site_name' => $site_name);
 	}
 
 	// Filters should return an array
@@ -92,10 +80,10 @@ function thematic_doctitle() {
 	
 	// But if they don't, it won't try to implode
 	if(is_array($elements)) {
-	  $doctitle = implode(' ', $elements);
+		$doctitle = implode(' ', $elements);
 	}
 	else {
-	  $doctitle = $elements;
+		$doctitle = $elements;
 	}
 	
 	$doctitle = "\t" . "<title>" . $doctitle . "</title>" . "\n\n";
@@ -106,7 +94,7 @@ function thematic_doctitle() {
 
 // Creates the inital head content of boilerplate (many options here are controlled by admin options)
 function thematic_create_initialhead() {
-    global $my_shortname;
+	global $my_shortname;
 	$cf = stripslashes(get_option($my_shortname . '_chromeframe'));
 	$fi = stripslashes(get_option($my_shortname . '_favicon'));
 	$at = stripslashes(get_option($my_shortname . '_appletouch'));
@@ -122,11 +110,13 @@ function thematic_create_initialhead() {
 	}
 	
 	// if your using default favicon & apple touch - these may be uploaded
+	if($fi == 'true')	{}
+	if($at == 'true')	{}
 	//$content .= "\n\n";
 	//$content .= '<link rel="shortcut icon" href="/favicon.ico">';
-  	//$content .= '<link rel="apple-touch-icon" href="/apple-touch-icon.png">';
-  	
-  	// featured image for facebook if set
+	//$content .= '<link rel="apple-touch-icon" href="/apple-touch-icon.png">';
+	
+	// featured image for facebook if set
 	//$content .= "\n\n";
 	//$content .= '<link >';
 	echo apply_filters('thematic_create_contenttype', $content);
@@ -134,8 +124,8 @@ function thematic_create_initialhead() {
 
 // The master switch for SEO functions
 function thematic_seo() {
-		$content = TRUE;
-		return apply_filters('thematic_seo', $content);
+	$content = TRUE;
+	return apply_filters('thematic_seo', $content);
 } // end thematic_seo
 
 // Creates the canonical URL
@@ -169,39 +159,39 @@ function thematic_use_autoexcerpt() {
 
 // Creates the meta-tag description
 function thematic_create_description() {
-		if (thematic_seo()) {
-			if (is_single() || is_page() ) {
-	  		  if ( have_posts() ) {
-		  		  while ( have_posts() ) {
-						the_post();
-						if (thematic_the_excerpt() == "") {
-							if (thematic_use_autoexcerpt()) {
-								$content ="\t";
-								$content .= "<meta name=\"description\" content=\"";
-								$content .= thematic_excerpt_rss();
-								$content .= "\" />";
-								$content .= "\n\n";
-							}
-						} else {
-							if (thematic_use_excerpt()) {
-								$content ="\t";
-								$content .= "<meta name=\"description\" content=\"";
-								$content .= thematic_the_excerpt();
-								$content .= "\" />";
-								$content .= "\n\n";
-							}
+	if (thematic_seo()) {
+		if (is_single() || is_page() ) {
+			if ( have_posts() ) {
+				while ( have_posts() ) {
+					the_post();
+					if (thematic_the_excerpt() == "") {
+						if (thematic_use_autoexcerpt()) {
+							$content ="\t";
+							$content .= "<meta name=\"description\" content=\"";
+							$content .= thematic_excerpt_rss();
+							$content .= "\" />";
+							$content .= "\n\n";
+						}
+					} else {
+						if (thematic_use_excerpt()) {
+							$content ="\t";
+							$content .= "<meta name=\"description\" content=\"";
+							$content .= thematic_the_excerpt();
+							$content .= "\" />";
+							$content .= "\n\n";
 						}
 					}
 				}
-			} elseif ( is_home() || is_front_page() ) {
-				$content ="\t";
-				$content .= "<meta name=\"description\" content=\"";
-				$content .= get_bloginfo('description');
-				$content .= "\" />";
-				$content .= "\n\n";
 			}
-			echo apply_filters ('thematic_create_description', $content);
+		} elseif ( is_home() || is_front_page() ) {
+			$content ="\t";
+			$content .= "<meta name=\"description\" content=\"";
+			$content .= get_bloginfo('description');
+			$content .= "\" />";
+			$content .= "\n\n";
 		}
+		echo apply_filters ('thematic_create_description', $content);
+	}
 } // end thematic_create_description
 
 
@@ -217,21 +207,21 @@ function thematic_show_description() {
 
 // create meta-tag robots
 function thematic_create_robots() {
-		global $paged;
-		if (thematic_seo()) {
-			$content = "";
-			if((is_home() && ($paged < 2 )) || is_front_page() || is_single() || is_page() || is_attachment()) {
-				$content .= "\t<meta name=\"robots\" content=\"index,follow\" />";
-			} elseif (is_search()) {
-				$content .= "\t<meta name=\"robots\" content=\"noindex,nofollow\" />";
-			} else {	
-				$content .= "\t<meta name=\"robots\" content=\"noindex,follow\" />";
-			}
-			$content .= "\n\n";
-			if (get_option('blog_public')) {
-				echo apply_filters('thematic_create_robots', $content);
-			}
+	global $paged;
+	if (thematic_seo()) {
+		$content = "";
+		if((is_home() && ($paged < 2 )) || is_front_page() || is_single() || is_page() || is_attachment()) {
+			$content .= "\t<meta name=\"robots\" content=\"index,follow\" />";
+		} elseif (is_search()) {
+			$content .= "\t<meta name=\"robots\" content=\"noindex,nofollow\" />";
+		} else {	
+			$content .= "\t<meta name=\"robots\" content=\"noindex,follow\" />";
 		}
+		$content .= "\n\n";
+		if (get_option('blog_public')) {
+			echo apply_filters('thematic_create_robots', $content);
+		}
+	}
 } // end thematic_create_robots
 
 
@@ -248,7 +238,7 @@ function thematic_show_robots() {
 // Located in header.php
 // creates link to style.css
 function thematic_create_stylesheet() {
-    global $my_shortname;
+	global $my_shortname;
 	$hh = stripslashes(get_option($my_shortname . '_handheld'));
 	
 	$content = "\t";
@@ -391,7 +381,7 @@ function thematic_brandingopen() { ?>
 add_action('thematic_header','thematic_brandingopen',1);
 
 function thematic_hgroup() {
-    global $my_shortname;
+	global $my_shortname;
 	$title = stripslashes(get_option($my_shortname . '_rmtitle'));
 	$desc = stripslashes(get_option($my_shortname . '_rmdesc'));
 	if($title == 'false' && $desc == 'false') { ?>
@@ -433,7 +423,7 @@ add_action('thematic_header','thematic_brandingclose',7);
 // Create #access
 // In the header
 function thematic_access() {  
-    global $my_shortname;
+	global $my_shortname;
 	$searchasli = stripslashes(get_option($my_shortname . '_searchasli'));
 	// remove the fugly div
 	$access = preg_replace('#<([/]*)(div)([^>]*)>#', '', wp_nav_menu( array('primary-menu', 'container_class' => '', 'menu_class' => '', 'echo' => false) ), 1);

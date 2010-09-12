@@ -10,7 +10,7 @@ function thematic_trim_excerpt($text) {
 
 		$text = str_replace(']]>', ']]&gt;', $text);
 		$text = strip_tags($text);
-	  $text = str_replace('"', '\'', $text);
+		$text = str_replace('"', '\'', $text);
 		$excerpt_length = apply_filters('excerpt_length', 55);
 		$words = explode(' ', $text, $excerpt_length + 1);
 		if (count($words) > $excerpt_length) {
@@ -75,5 +75,5 @@ function thematic_tag_query() {
 		$nice_tag_query = $nice_tag_query.$tag->name.$tag_ops[$tag_ops_counter];
 		$tag_ops_counter += 1;
 	}
-	 return $nice_tag_query;
+	return $nice_tag_query;
 }

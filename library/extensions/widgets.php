@@ -1,7 +1,8 @@
 <?php
 
-// Check for static widgets in widget-ready areas
-
+/**
+ * Check for static widgets in widget-ready areas
+ */
 function is_sidebar_active( $index ){
   global $wp_registered_sidebars;
 
@@ -12,31 +13,46 @@ function is_sidebar_active( $index ){
 	return false;
 }
 
-// CSS markup before the widget
+
+/**
+ * CSS markup before the widget
+ */
 function thematic_before_widget() {
 	$content = '<li id="%1$s" class="widgetcontainer %2$s">';
 	return apply_filters('thematic_before_widget', $content);
 }
 
-// CSS markup after the widget
+
+/**
+ * CSS markup after the widget
+ */
 function thematic_after_widget() {
 	$content = '</li>';
 	return apply_filters('thematic_after_widget', $content);
 }
 
-// CSS markup before the widget title
+
+/**
+ * CSS markup before the widget title
+ */
 function thematic_before_title() {
 	$content = "<h3 class=\"widgettitle\">";
 	return apply_filters('thematic_before_title', $content);
 }
 
-// CSS markup after the widget title
+
+/**
+ * CSS markup after the widget title
+ */
 function thematic_after_title() {
 	$content = "</h3>\n";
 	return apply_filters('thematic_after_title', $content);
 }
 
-// Widget: Thematic Search
+
+/**
+ * Widget: Thematic Search
+ */
 function widget_thematic_search($args) {
 	extract($args);
 	if ( empty($title) )
@@ -48,7 +64,10 @@ function widget_thematic_search($args) {
 			echo $after_widget;
 }
 
-// Widget: Thematic Meta
+
+/**
+ * Widget: Thematic Meta
+ */
 function widget_thematic_meta($args) {
 	extract($args);
 	if ( empty($title) )
@@ -65,7 +84,10 @@ function widget_thematic_meta($args) {
 <?php
 }
 
-// Widget: Thematic RSS links
+
+/**
+ * Widget: Thematic RSS links
+ */
 function widget_thematic_rsslinks($args) {
 	extract($args);
 	$options = get_option('widget_thematic_rsslinks');
@@ -81,7 +103,10 @@ function widget_thematic_rsslinks($args) {
 <?php
 }
 
-// Widget: RSS links; element controls for customizing text within Widget plugin
+
+/**
+ * Widget: RSS links; element controls for customizing text within Widget plugin
+ */
 function widget_thematic_rsslinks_control() {
 	$options = $newoptions = get_option('widget_thematic_rsslinks');
 	if ( $_POST["rsslinks-submit"] ) {
@@ -93,7 +118,7 @@ function widget_thematic_rsslinks_control() {
 	}
 	$title = htmlspecialchars($options['title'], ENT_QUOTES);
 ?>
-			<p><label for="rsslinks-title"><?php _e('Title:'); ?> <input style="width: 250px;" id="rsslinks-title" name="rsslinks-title" type="text" value="<?php echo $title; ?>" /></label></p>
-			<input type="hidden" id="rsslinks-submit" name="rsslinks-submit" value="1" />
+	<p><label for="rsslinks-title"><?php _e('Title:'); ?> <input style="width: 250px;" id="rsslinks-title" name="rsslinks-title" type="text" value="<?php echo $title; ?>" /></label></p>
+	<input type="hidden" id="rsslinks-submit" name="rsslinks-submit" value="1" />
 <?php
 }

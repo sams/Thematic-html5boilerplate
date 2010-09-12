@@ -1,35 +1,35 @@
 <?php
 
-// Located in 404.php, archive.php, archives.php, attachement.php, author.php, category.php index.php, 
+// Located in 404.php (not in PI's twist), archive.php, archives.php, attachement.php, author.php, category.php index.php, 
 // links.php, page.php, search.php, single.php, tag.php
 // Just between #main and #container
 function thematic_abovecontainer() {
-    do_action('thematic_abovecontainer');
+	do_action('thematic_abovecontainer');
 } // end thematic_abovecontainer
 
 // Located in archives.php
 // Just after the content
 function thematic_archives() {
-		do_action('thematic_archives');
+	do_action('thematic_archives');
 } // end thematic_archives
 
 
 // Located in archive.php, author.php, category.php, index.php, search.php, single.php, tag.php
 // Just before the content
 function thematic_navigation_above() {
-		do_action('thematic_navigation_above');
+	do_action('thematic_navigation_above');
 } // end thematic_navigation_above
 
 // Located in archive.php, author.php, category.php, index.php, search.php, single.php, tag.php
 // Just after the content
 function thematic_navigation_below() {
-		do_action('thematic_navigation_below');
+	do_action('thematic_navigation_below');
 } // end thematic_navigation_below
 
 // Located in index.php 
 // Just before the loop
 function thematic_above_indexloop() {
-    do_action('thematic_above_indexloop');
+	do_action('thematic_above_indexloop');
 } // end thematic_above_indexloop
 
 // Located in archive.php
@@ -77,56 +77,56 @@ function thematic_tagloop() {
 // Located in index.php 
 // Just after the loop
 function thematic_below_indexloop() {
-    do_action('thematic_below_indexloop');
+	do_action('thematic_below_indexloop');
 } // end thematic_below_indexloop
 
 
 // Located in category.php 
 // Just before the loop
 function thematic_above_categoryloop() {
-    do_action('thematic_above_categoryloop');
+	do_action('thematic_above_categoryloop');
 } // end thematic_above_categoryloop
 
 
 // Located in category.php 
 // Just after the loop
 function thematic_below_categoryloop() {
-    do_action('thematic_below_categoryloop');
+	do_action('thematic_below_categoryloop');
 } // end thematic_below_categoryloop
 
 
 // Located in search.php 
 // Just before the loop
 function thematic_above_searchloop() {
-    do_action('thematic_above_searchloop');
+	do_action('thematic_above_searchloop');
 } // end thematic_above_searchloop
 
 
 // Located in search.php 
 // Just after the loop
 function thematic_below_searchloop() {
-    do_action('thematic_below_searchloop');
+	do_action('thematic_below_searchloop');
 } // end thematic_below_searchloop
 
 
 // Located in tag.php 
 // Just before the loop
 function thematic_above_tagloop() {
-    do_action('thematic_above_tagloop');
+	do_action('thematic_above_tagloop');
 } // end thematic_above_tagloop
 
 
 // Located in tag.php 
 // Just after the loop
 function thematic_below_tagloop() {
-    do_action('thematic_below_tagloop');
+	do_action('thematic_below_tagloop');
 } // end thematic_below_tagloop
 
 // Located in 404.php, archive.php, archives.php, attachement.php, author.php, category.php index.php, 
 // links.php, page.php, search.php, single.php, tag.php
 // Just below #container
 function thematic_belowcontainer() {
-    do_action('thematic_belowcontainer');
+	do_action('thematic_belowcontainer');
 } // end thematic_belowcontainer
 
 
@@ -203,9 +203,9 @@ function thematic_nav_above() {
 		} else { ?>
 
 			<nav id="nav-above" class="navigation">
-                <?php if(function_exists('wp_pagenavi')) { ?>
-                <?php wp_pagenavi(); ?>
-                <?php } else { ?>  
+				<?php if(function_exists('wp_pagenavi')) { ?>
+				<?php wp_pagenavi(); ?>
+				<?php } else { ?>  
 				<div class="nav-previous"><?php next_posts_link(__('<span class="meta-nav">&laquo;</span> Older posts', 'thematic')) ?></div>
 				<div class="nav-next"><?php previous_posts_link(__('Newer posts <span class="meta-nav">&raquo;</span>', 'thematic')) ?></div>
 				<?php } ?>
@@ -221,7 +221,7 @@ function thematic_archive_loop() {
 		while ( have_posts() ) : the_post(); ?>
 
 			<div id="post-<?php the_ID() ?>" class="<?php thematic_post_class() ?>">
-    			<?php thematic_postheader(); ?>
+				<?php thematic_postheader(); ?>
 				<div class="entry-content">
 <?php thematic_content(); ?>
 
@@ -239,7 +239,7 @@ function thematic_author_loop() {
 		while (have_posts()) : the_post(); ?>
 
 			<div id="post-<?php the_ID(); ?>" class="<?php thematic_post_class(); ?>">
-    			<?php thematic_postheader(); ?>
+				<?php thematic_postheader(); ?>
 				<div class="entry-content ">
 <?php thematic_content(); ?>
 
@@ -256,7 +256,7 @@ function thematic_category_loop() {
 		while (have_posts()) : the_post(); ?>
 
 			<div id="post-<?php the_ID(); ?>" class="<?php thematic_post_class(); ?>">
-    			<?php thematic_postheader(); ?>
+				<?php thematic_postheader(); ?>
 				<div class="entry-content">
 <?php thematic_content(); ?>
 
@@ -272,14 +272,14 @@ add_action('thematic_categoryloop', 'thematic_category_loop');
 function thematic_index_loop() {
 	global $options;
 	foreach ($options as $value) {
-    	if (get_option( $value['id'] ) === FALSE) { $$value['id'] = $value['std']; }
-    	else { $$value['id'] = get_option( $value['id'] ); }
-    }
+		if (get_option( $value['id'] ) === FALSE) { $$value['id'] = $value['std']; }
+		else { $$value['id'] = get_option( $value['id'] ); }
+	}
 		/* Count the number of posts so we can insert a widgetized area */ $count = 1;
 		while ( have_posts() ) : the_post() ?>
 
 			<div id="post-<?php the_ID() ?>" class="<?php thematic_post_class() ?>">
-    			<?php thematic_postheader(); ?>
+				<?php thematic_postheader(); ?>
 				<div class="entry-content">
 <?php thematic_content(); ?>
 
@@ -301,7 +301,7 @@ add_action('thematic_indexloop', 'thematic_index_loop');
 // The Single Post
 function thematic_single_post() { ?>
 			<div id="post-<?php the_ID(); ?>" class="<?php thematic_post_class(); ?>">
-    			<?php thematic_postheader(); ?>
+				<?php thematic_postheader(); ?>
 				<div class="entry-content">
 <?php thematic_content(); ?>
 
@@ -318,7 +318,7 @@ function thematic_search_loop() {
 		while ( have_posts() ) : the_post(); ?>
 
 			<div id="post-<?php the_ID() ?>" class="<?php thematic_post_class() ?>">
-    			<?php thematic_postheader(); ?>
+				<?php thematic_postheader(); ?>
 				<div class="entry-content">
 <?php thematic_content(); ?>
 
@@ -335,7 +335,7 @@ function thematic_tag_loop() {
 		while (have_posts()) : the_post(); ?>
 
 			<div id="post-<?php the_ID(); ?>" class="<?php thematic_post_class(); ?>">
-    			<?php thematic_postheader(); ?>
+				<?php thematic_postheader(); ?>
 				<div class="entry-content">
 <?php thematic_content() ?>
 
@@ -374,102 +374,102 @@ function thematic_time_display() {
 // Information in Post Header
 function thematic_postheader() {
 
-    global $post;
+	global $post;
   
-    if ($post->post_type == 'page' || is_404()) {
-        $postheader = thematic_postheader_posttitle();        
-    } else {
-        $postheader = thematic_postheader_posttitle() . thematic_postheader_postmeta();    
-    }
-    
-    echo apply_filters( 'thematic_postheader', $postheader ); // Filter to override default post header
+	if ($post->post_type == 'page' || is_404()) {
+		$postheader = thematic_postheader_posttitle();		
+	} else {
+		$postheader = thematic_postheader_posttitle() . thematic_postheader_postmeta();	
+	}
+	
+	echo apply_filters( 'thematic_postheader', $postheader ); // Filter to override default post header
 } // end thematic_postheader
 
 // Create the post edit link
 function thematic_postheader_posteditlink() {
-    
-    global $id;
-    
-    $posteditlink = '<a href="' . get_bloginfo('wpurl') . '/wp-admin/post.php?action=edit&amp;post=' . $id;
-    $posteditlink .= '" title="' . __('Edit post', 'thematic') .'">';
-    $posteditlink .= __('Edit', 'thematic') . '</a>';
-    return apply_filters('thematic_postheader_posteditlink',$posteditlink); 
+	
+	global $id;
+	
+	$posteditlink = '<a href="' . get_bloginfo('wpurl') . '/wp-admin/post.php?action=edit&amp;post=' . $id;
+	$posteditlink .= '" title="' . __('Edit post', 'thematic') .'">';
+	$posteditlink .= __('Edit', 'thematic') . '</a>';
+	return apply_filters('thematic_postheader_posteditlink',$posteditlink); 
 
 } // end thematic_postheader_posteditlink
 
 // Create post title
 function thematic_postheader_posttitle() {
 
-    if (is_single() || is_page()) {
-        $posttitle = '<h1 class="entry-title">' . get_the_title() . "</h1>\n";
-    } elseif (is_404()) {    
-        $posttitle = '<h1 class="entry-title">' . __('Not Found', 'thematic') . "</h1>\n";
-    } else {
-        $posttitle = '<h2 class="entry-title"><a href="';
-        $posttitle .= get_permalink();
-        $posttitle .= '" title="';
-        $posttitle .= __('Permalink to ', 'thematic') . the_title_attribute('echo=0');
-        $posttitle .= '" rel="bookmark">';
-        $posttitle .= get_the_title();   
-        $posttitle .= "</a></h2>\n";
-    }
-    return apply_filters('thematic_postheader_posttitle',$posttitle); 
+	if (is_single() || is_page()) {
+		$posttitle = '<h1 class="entry-title">' . get_the_title() . "</h1>\n";
+	} elseif (is_404()) {	
+		$posttitle = '<h1 class="entry-title">' . __('Not Found', 'thematic') . "</h1>\n";
+	} else {
+		$posttitle = '<h2 class="entry-title"><a href="';
+		$posttitle .= get_permalink();
+		$posttitle .= '" title="';
+		$posttitle .= __('Permalink to ', 'thematic') . the_title_attribute('echo=0');
+		$posttitle .= '" rel="bookmark">';
+		$posttitle .= get_the_title();   
+		$posttitle .= "</a></h2>\n";
+	}
+	return apply_filters('thematic_postheader_posttitle',$posttitle); 
 
 } // end thematic_postheader_posttitle
 
 // Create post meta
 function thematic_postheader_postmeta() {
 
-    $postmeta = '<div class="entry-meta">';
-    $postmeta .= thematic_postmeta_authorlink();
-    $postmeta .= '<span class="meta-sep meta-sep-entry-date"> | </span>';
-    $postmeta .= thematic_postmeta_entrydate();
-    
-    $postmeta .= thematic_postmeta_editlink();
-                   
-    $postmeta .= "</div><!-- .entry-meta -->\n";
-    
-    return apply_filters('thematic_postheader_postmeta',$postmeta); 
+	$postmeta = '<div class="entry-meta">';
+	$postmeta .= thematic_postmeta_authorlink();
+	$postmeta .= '<span class="meta-sep meta-sep-entry-date"> | </span>';
+	$postmeta .= thematic_postmeta_entrydate();
+	
+	$postmeta .= thematic_postmeta_editlink();
+				   
+	$postmeta .= "</div><!-- .entry-meta -->\n";
+	
+	return apply_filters('thematic_postheader_postmeta',$postmeta); 
 
 } // end thematic_postheader_postmeta
 
 // Create author link for post meta
 function thematic_postmeta_authorlink() {
 
-    global $authordata;
+	global $authordata;
 
-    $authorlink = '<span class="meta-prep meta-prep-author">' . __('By ', 'thematic') . '</span>';
-    $authorlink .= '<span class="author vcard">'. '<a class="url fn n" href="';
-    $authorlink .= get_author_posts_url($authordata->ID, $authordata->user_nicename);
-    $authorlink .= '" title="' . __('View all posts by ', 'thematic') . get_the_author() . '">';
-    $authorlink .= get_the_author();
-    $authorlink .= '</a></span>';
-    
-    return apply_filters('thematic_post_meta_authorlink', $authorlink);
+	$authorlink = '<span class="meta-prep meta-prep-author">' . __('By ', 'thematic') . '</span>';
+	$authorlink .= '<span class="author vcard">'. '<a class="url fn n" href="';
+	$authorlink .= get_author_posts_url($authordata->ID, $authordata->user_nicename);
+	$authorlink .= '" title="' . __('View all posts by ', 'thematic') . get_the_author() . '">';
+	$authorlink .= get_the_author();
+	$authorlink .= '</a></span>';
+	
+	return apply_filters('thematic_post_meta_authorlink', $authorlink);
    
 } // end thematic_postmeta_authorlink()
 
 // Create entry date for post meta
 function thematic_postmeta_entrydate() {
 
-    $entrydate = '<span class="meta-prep meta-prep-entry-date">' . __('Published: ', 'thematic') . '</span>';
-    $entrydate .= '<span class="entry-date"><abbr class="published" title="';
-    $entrydate .= get_the_time(thematic_time_title()) . '">';
-    $entrydate .= get_the_time(thematic_time_display());
-    $entrydate .= '</abbr></span>';
-    
-    return apply_filters('thematic_post_meta_entrydate', $entrydate);
+	$entrydate = '<span class="meta-prep meta-prep-entry-date">' . __('Published: ', 'thematic') . '</span>';
+	$entrydate .= '<span class="entry-date"><abbr class="published" title="';
+	$entrydate .= get_the_time(thematic_time_title()) . '">';
+	$entrydate .= get_the_time(thematic_time_display());
+	$entrydate .= '</abbr></span>';
+	
+	return apply_filters('thematic_post_meta_entrydate', $entrydate);
    
 } // end thematic_postmeta_entrydate()
 
 // Create edit link for post meta
 function thematic_postmeta_editlink() {
-    
-    // Display edit link
-    if (current_user_can('edit_posts')) {
-        $editlink = ' <span class="meta-sep meta-sep-edit">|</span> ' . '<span class="edit">' . thematic_postheader_posteditlink() . '</span>';
-        return apply_filters('thematic_post_meta_editlink', $editlink);
-    }               
+	
+	// Display edit link
+	if (current_user_can('edit_posts')) {
+		$editlink = ' <span class="meta-sep meta-sep-edit">|</span> ' . '<span class="edit">' . thematic_postheader_posteditlink() . '</span>';
+		return apply_filters('thematic_post_meta_editlink', $editlink);
+	}			   
 
 }
 
@@ -556,8 +556,8 @@ function thematic_404() {
 
 	// 404 content injected into thematic_404
 	function thematic_404_content() { ?>
-   			<?php thematic_postheader(); ?>
-   			
+			<?php thematic_postheader(); ?>
+			
 				<div class="entry-content">
 					<p><?php _e('Apologies, but we were unable to find what you were looking for. Perhaps  searching will help.', 'thematic') ?></p>
 				</div>
@@ -589,156 +589,156 @@ function list_bookmarks_args() {
 
 // Information in Post Footer
 function thematic_postfooter() {
-    global $id, $post;
-    
-    if ($post->post_type == 'page' && current_user_can('edit_posts')) { /* For logged-in "page" search results */
-        $postfooter = '<div class="entry-utility">' . thematic_postfooter_posteditlink();
-        $postfooter .= "</div><!-- .entry-utility -->\n";    
-    } elseif ($post->post_type == 'page') { /* For logged-out "page" search results */
-        $postfooter = '';
-    } else {
-        if (is_single()) {
-            $postfooter = '<div class="entry-utility">' . thematic_postfooter_postcategory() . thematic_postfooter_posttags() . thematic_postfooter_postconnect();
-        } else {
-            $postfooter = '<div class="entry-utility">' . thematic_postfooter_postcategory() . thematic_postfooter_posttags() . thematic_postfooter_postcomments();
-        }
-        $postfooter .= "</div><!-- .entry-utility -->\n";    
-    }
-    
-    // Put it on the screen
-    echo apply_filters( 'thematic_postfooter', $postfooter ); // Filter to override default post footer
+	global $id, $post;
+	
+	if ($post->post_type == 'page' && current_user_can('edit_posts')) { /* For logged-in "page" search results */
+		$postfooter = '<div class="entry-utility">' . thematic_postfooter_posteditlink();
+		$postfooter .= "</div><!-- .entry-utility -->\n";	
+	} elseif ($post->post_type == 'page') { /* For logged-out "page" search results */
+		$postfooter = '';
+	} else {
+		if (is_single()) {
+			$postfooter = '<div class="entry-utility">' . thematic_postfooter_postcategory() . thematic_postfooter_posttags() . thematic_postfooter_postconnect();
+		} else {
+			$postfooter = '<div class="entry-utility">' . thematic_postfooter_postcategory() . thematic_postfooter_posttags() . thematic_postfooter_postcomments();
+		}
+		$postfooter .= "</div><!-- .entry-utility -->\n";	
+	}
+	
+	// Put it on the screen
+	echo apply_filters( 'thematic_postfooter', $postfooter ); // Filter to override default post footer
 } // end thematic_postfooter
 
 // Create the post edit link
 function thematic_postfooter_posteditlink() {
 
-    global $id;
-    
-    $posteditlink = '<span class="edit"><a href="' . get_bloginfo('wpurl') . '/wp-admin/post.php?action=edit&amp;post=' . $id;
-    $posteditlink .= '" title="' . __('Edit post', 'thematic') .'">';
-    $posteditlink .= __('Edit', 'thematic') . '</a></span>';
-    return apply_filters('thematic_postfooter_posteditlink',$posteditlink); 
-    
+	global $id;
+	
+	$posteditlink = '<span class="edit"><a href="' . get_bloginfo('wpurl') . '/wp-admin/post.php?action=edit&amp;post=' . $id;
+	$posteditlink .= '" title="' . __('Edit post', 'thematic') .'">';
+	$posteditlink .= __('Edit', 'thematic') . '</a></span>';
+	return apply_filters('thematic_postfooter_posteditlink',$posteditlink); 
+	
 } // end thematic_postfooter_posteditlink
 
 // Create post category
 function thematic_postfooter_postcategory() {
-    
-    $postcategory = '<span class="cat-links">';
-    if (is_single()) {
-        $postcategory .= __('This entry was posted in ', 'thematic') . get_the_category_list(', ');
-        $postcategory .= '</span>';
-    } elseif ( is_category() && $cats_meow = thematic_cats_meow(', ') ) { /* Returns categories other than the one queried */
-        $postcategory .= __('Also posted in ', 'thematic') . $cats_meow;
-        $postcategory .= '</span> <span class="meta-sep meta-sep-tag-links">|</span>';
-    } else {
-        $postcategory .= __('Posted in ', 'thematic') . get_the_category_list(', ');
-        $postcategory .= '</span> <span class="meta-sep meta-sep-tag-links">|</span>';
-    }
-    return apply_filters('thematic_postfooter_postcategory',$postcategory); 
-    
+	
+	$postcategory = '<span class="cat-links">';
+	if (is_single()) {
+		$postcategory .= __('This entry was posted in ', 'thematic') . get_the_category_list(', ');
+		$postcategory .= '</span>';
+	} elseif ( is_category() && $cats_meow = thematic_cats_meow(', ') ) { /* Returns categories other than the one queried */
+		$postcategory .= __('Also posted in ', 'thematic') . $cats_meow;
+		$postcategory .= '</span> <span class="meta-sep meta-sep-tag-links">|</span>';
+	} else {
+		$postcategory .= __('Posted in ', 'thematic') . get_the_category_list(', ');
+		$postcategory .= '</span> <span class="meta-sep meta-sep-tag-links">|</span>';
+	}
+	return apply_filters('thematic_postfooter_postcategory',$postcategory); 
+	
 } // end thematic_postfooter_postcategory
 
 // Create post tags
 function thematic_postfooter_posttags() {
 
-    if (is_single()) {
-        $tagtext = __(' and tagged', 'thematic');
-        $posttags = get_the_tag_list("<span class=\"tag-links\"> $tagtext ",', ','</span>');
-    } elseif ( is_tag() && $tag_ur_it = thematic_tag_ur_it(', ') ) { /* Returns tags other than the one queried */
-        $posttags = '<span class="tag-links">' . __(' Also tagged ', 'thematic') . $tag_ur_it . '</span> <span class="meta-sep meta-sep-comments-link">|</span>';
-    } else {
-        $tagtext = __('Tagged', 'thematic');
-        $posttags = get_the_tag_list("<span class=\"tag-links\"> $tagtext ",', ','</span> <span class="meta-sep meta-sep-comments-link">|</span>');
-    }
-    return apply_filters('thematic_postfooter_posttags',$posttags); 
+	if (is_single()) {
+		$tagtext = __(' and tagged', 'thematic');
+		$posttags = get_the_tag_list("<span class=\"tag-links\"> $tagtext ",', ','</span>');
+	} elseif ( is_tag() && $tag_ur_it = thematic_tag_ur_it(', ') ) { /* Returns tags other than the one queried */
+		$posttags = '<span class="tag-links">' . __(' Also tagged ', 'thematic') . $tag_ur_it . '</span> <span class="meta-sep meta-sep-comments-link">|</span>';
+	} else {
+		$tagtext = __('Tagged', 'thematic');
+		$posttags = get_the_tag_list("<span class=\"tag-links\"> $tagtext ",', ','</span> <span class="meta-sep meta-sep-comments-link">|</span>');
+	}
+	return apply_filters('thematic_postfooter_posttags',$posttags); 
 
 } // end thematic_postfooter_posttags
 
 // Create comments link and edit link
 function thematic_postfooter_postcomments() {
-    if (comments_open()) {
-        $postcommentnumber = get_comments_number();
-        if ($postcommentnumber > '1') {
-            $postcomments = ' <span class="comments-link"><a href="' . get_permalink() . '#comments" title="' . __('Comment on ', 'thematic') . the_title_attribute('echo=0') . '">';
-            $postcomments .= get_comments_number() . __(' Comments', 'thematic') . '</a></span>';
-        } elseif ($postcommentnumber == '1') {
-            $postcomments = ' <span class="comments-link"><a href="' . get_permalink() . '#comments" title="' . __('Comment on ', 'thematic') . the_title_attribute('echo=0') . '">';
-            $postcomments .= get_comments_number() . __(' Comment', 'thematic') . '</a></span>';
-        } elseif ($postcommentnumber == '0') {
-            $postcomments = ' <span class="comments-link"><a href="' . get_permalink() . '#comments" title="' . __('Comment on ', 'thematic') . the_title_attribute('echo=0') . '">';
-            $postcomments .= __('Leave a comment', 'thematic') . '</a></span>';
-        }
-    } else {
-        $postcomments = ' <span class="comments-link comments-closed-link">' . __('Comments closed', 'thematic') .'</span>';
-    }
-    // Display edit link
-    if (current_user_can('edit_posts')) {
-        $postcomments .= ' <span class="meta-sep meta-sep-edit">|</span> ' . thematic_postfooter_posteditlink();
-    }               
-    return apply_filters('thematic_postfooter_postcomments',$postcomments); 
-    
+	if (comments_open()) {
+		$postcommentnumber = get_comments_number();
+		if ($postcommentnumber > '1') {
+			$postcomments = ' <span class="comments-link"><a href="' . get_permalink() . '#comments" title="' . __('Comment on ', 'thematic') . the_title_attribute('echo=0') . '">';
+			$postcomments .= get_comments_number() . __(' Comments', 'thematic') . '</a></span>';
+		} elseif ($postcommentnumber == '1') {
+			$postcomments = ' <span class="comments-link"><a href="' . get_permalink() . '#comments" title="' . __('Comment on ', 'thematic') . the_title_attribute('echo=0') . '">';
+			$postcomments .= get_comments_number() . __(' Comment', 'thematic') . '</a></span>';
+		} elseif ($postcommentnumber == '0') {
+			$postcomments = ' <span class="comments-link"><a href="' . get_permalink() . '#comments" title="' . __('Comment on ', 'thematic') . the_title_attribute('echo=0') . '">';
+			$postcomments .= __('Leave a comment', 'thematic') . '</a></span>';
+		}
+	} else {
+		$postcomments = ' <span class="comments-link comments-closed-link">' . __('Comments closed', 'thematic') .'</span>';
+	}
+	// Display edit link
+	if (current_user_can('edit_posts')) {
+		$postcomments .= ' <span class="meta-sep meta-sep-edit">|</span> ' . thematic_postfooter_posteditlink();
+	}			   
+	return apply_filters('thematic_postfooter_postcomments',$postcomments); 
+	
 } // end thematic_postfooter_postcomments
 
 // Create permalink, comments link, and RSS on single posts
 function thematic_postfooter_postconnect() {
-    
-    $postconnect = __('. Bookmark the ', 'thematic') . '<a href="' . get_permalink() . '" title="' . __('Permalink to ', 'thematic') . the_title_attribute('echo=0') . '">';
-    $postconnect .= __('permalink', 'thematic') . '</a>.';
-    if ((comments_open()) && (pings_open())) { /* Comments are open */
-        $postconnect .= ' <a class="comment-link" href="#respond" title ="' . __('Post a comment', 'thematic') . '">' . __('Post a comment', 'thematic') . '</a>';
-        $postconnect .= __(' or leave a trackback: ', 'thematic');
-        $postconnect .= '<a class="trackback-link" href="' . trackback_url(FALSE) . '" title ="' . __('Trackback URL for your post', 'thematic') . '" rel="trackback">' . __('Trackback URL', 'thematic') . '</a>.';
-    } elseif (!(comments_open()) && (pings_open())) { /* Only trackbacks are open */
-        $postconnect .= __(' Comments are closed, but you can leave a trackback: ', 'thematic');
-        $postconnect .= '<a class="trackback-link" href="' . trackback_url(FALSE) . '" title ="' . __('Trackback URL for your post', 'thematic') . '" rel="trackback">' . __('Trackback URL', 'thematic') . '</a>.';
-    } elseif ((comments_open()) && !(pings_open())) { /* Only comments open */
-        $postconnect .= __(' Trackbacks are closed, but you can ', 'thematic');
-        $postconnect .= '<a class="comment-link" href="#respond" title ="' . __('Post a comment', 'thematic') . '">' . __('post a comment', 'thematic') . '</a>.';
-    } elseif (!(comments_open()) && !(pings_open())) { /* Comments and trackbacks closed */
-        $postconnect .= __(' Both comments and trackbacks are currently closed.', 'thematic');
-    }
-    // Display edit link on single posts
-    if (current_user_can('edit_posts')) {
-        $postconnect .= ' ' . thematic_postfooter_posteditlink();
-    }
-    return apply_filters('thematic_postfooter_postconnect',$postconnect); 
+	
+	$postconnect = __('. Bookmark the ', 'thematic') . '<a href="' . get_permalink() . '" title="' . __('Permalink to ', 'thematic') . the_title_attribute('echo=0') . '">';
+	$postconnect .= __('permalink', 'thematic') . '</a>.';
+	if ((comments_open()) && (pings_open())) { /* Comments are open */
+		$postconnect .= ' <a class="comment-link" href="#respond" title ="' . __('Post a comment', 'thematic') . '">' . __('Post a comment', 'thematic') . '</a>';
+		$postconnect .= __(' or leave a trackback: ', 'thematic');
+		$postconnect .= '<a class="trackback-link" href="' . trackback_url(FALSE) . '" title ="' . __('Trackback URL for your post', 'thematic') . '" rel="trackback">' . __('Trackback URL', 'thematic') . '</a>.';
+	} elseif (!(comments_open()) && (pings_open())) { /* Only trackbacks are open */
+		$postconnect .= __(' Comments are closed, but you can leave a trackback: ', 'thematic');
+		$postconnect .= '<a class="trackback-link" href="' . trackback_url(FALSE) . '" title ="' . __('Trackback URL for your post', 'thematic') . '" rel="trackback">' . __('Trackback URL', 'thematic') . '</a>.';
+	} elseif ((comments_open()) && !(pings_open())) { /* Only comments open */
+		$postconnect .= __(' Trackbacks are closed, but you can ', 'thematic');
+		$postconnect .= '<a class="comment-link" href="#respond" title ="' . __('Post a comment', 'thematic') . '">' . __('post a comment', 'thematic') . '</a>.';
+	} elseif (!(comments_open()) && !(pings_open())) { /* Comments and trackbacks closed */
+		$postconnect .= __(' Both comments and trackbacks are currently closed.', 'thematic');
+	}
+	// Display edit link on single posts
+	if (current_user_can('edit_posts')) {
+		$postconnect .= ' ' . thematic_postfooter_posteditlink();
+	}
+	return apply_filters('thematic_postfooter_postconnect',$postconnect); 
 
 } // end thematic_postfooter_postconnect
 
 // Action to create the below navigation
 function thematic_nav_below() {
-		if (is_single()) { ?>
+	if (is_single()) { ?>
 
-			<nav id="nav-below" class="navigation">
-				<p class="nav-previous"><?php thematic_previous_post_link() ?></p>
-				<p class="nav-next"><?php thematic_next_post_link() ?></p>
-			</nav>
+		<nav id="nav-below" class="navigation">
+			<p class="nav-previous"><?php thematic_previous_post_link() ?></p>
+			<p class="nav-next"><?php thematic_next_post_link() ?></p>
+		</nav>
 
 <?php
-		} else { ?>
+	} else { ?>
 
-			<nav id="nav-below" class="navigation">
-                <?php if(function_exists('wp_pagenavi')) { ?>
-                <?php wp_pagenavi(); ?>
-                <?php } else { ?>  
-				<p class="nav-previous"><?php next_posts_link(__('<span class="meta-nav">&laquo;</span> Older posts', 'thematic')) ?></p>
-				<p class="nav-next"><?php previous_posts_link(__('Newer posts <span class="meta-nav">&raquo;</span>', 'thematic')) ?></p>
-				<?php } ?>
-			</nav>	
+		<nav id="nav-below" class="navigation">
+			<?php if(function_exists('wp_pagenavi')) { ?>
+			<?php wp_pagenavi(); ?>
+			<?php } else { ?>  
+			<p class="nav-previous"><?php next_posts_link(__('<span class="meta-nav">&laquo;</span> Older posts', 'thematic')) ?></p>
+			<p class="nav-next"><?php previous_posts_link(__('Newer posts <span class="meta-nav">&raquo;</span>', 'thematic')) ?></p>
+			<?php } ?>
+		</nav>
 	
 <?php
-		}
+	}
 }
 add_action('thematic_navigation_below', 'thematic_nav_below', 2);
 
 
 // creates the previous_post_link
 function thematic_previous_post_link() {
-	$args = array ('format'              => '%link',
-								 'link'                => '<span class="meta-nav">&laquo;</span> %title',
-								 'in_same_cat'         => FALSE,
-								 'excluded_categories' => '');
+	$args = array ('format'	 => '%link',
+								'link'			=> '<span class="meta-nav">&laquo;</span> %title',
+								'in_same_cat'	 => FALSE,
+								'excluded_categories' => '');
 	$args = apply_filters('thematic_previous_post_link_args', $args );
 	previous_post_link($args['format'], $args['link'], $args['in_same_cat'], $args['excluded_categories']);
 } // end thematic_previous_post_link
@@ -746,10 +746,10 @@ function thematic_previous_post_link() {
 
 // creates the next_post_link
 function thematic_next_post_link() {
-	$args = array ('format'              => '%link',
-								 'link'                => '%title <span class="meta-nav">&raquo;</span>',
-								 'in_same_cat'         => FALSE,
-								 'excluded_categories' => '');
+	$args = array ('format'	=> '%link',
+							'link'				=> '%title <span class="meta-nav">&raquo;</span>',
+							'in_same_cat'		 => FALSE,
+							'excluded_categories' => '');
 	$args = apply_filters('thematic_next_post_link_args', $args );
 	next_post_link($args['format'], $args['link'], $args['in_same_cat'], $args['excluded_categories']);
 } // end thematic_next_post_link
@@ -757,7 +757,7 @@ function thematic_next_post_link() {
 
 // Produces an avatar image with the hCard-compliant photo class for author info
 function thematic_author_info_avatar() {
-    global $wp_query; $curauth = $wp_query->get_queried_object();
+	global $wp_query; $curauth = $wp_query->get_queried_object();
 	$email = $curauth->user_email;
 	$avatar = str_replace( "class='avatar", "class='photo avatar", get_avatar("$email") );
 	echo $avatar;

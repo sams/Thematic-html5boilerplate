@@ -8,7 +8,7 @@
 	// Creating the head profile
 	thematic_head_profile();
 	
-	// 
+	// TODO change function name this one is crappy 
 	thematic_create_initialhead();
 
 	// Creating the doc title
@@ -69,7 +69,8 @@ if (apply_filters('thematic_show_bodyclass',TRUE)) {
 			?>
 		</header><!-- #header -->
 
-		<?php     
+		<?php
+	// currently this is a complete mess to me and may be rethought. figure though appeals to me here but this setup is borky should be in a function but seemed to bork then
 	if ( is_singular() &&
 	has_post_thumbnail( $post->ID ) &&
 	( /* $src, $width, $height */ $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'post-thumbnail' ) ) &&
@@ -81,6 +82,6 @@ if (apply_filters('thematic_show_bodyclass',TRUE)) {
 	<?php endif;
 		// action hook for placing content below the theme header  
 		thematic_belowheader();
-		?>
+	?>
 
 	<section id="main" class="body content clearfix">

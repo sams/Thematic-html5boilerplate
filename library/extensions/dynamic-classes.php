@@ -3,48 +3,47 @@
 // Generates semantic classes for BODY element
 function thematic_body_class($add = false, $print = false ) {
 	global $wp_query, $current_user, $my_shortname;
-  $altstyle = get_option($my_shortname . '_alt_layouts');
-    
-    $c = '';
+	$altstyle = get_option($my_shortname . '_alt_layouts');
+	$c = '';
 
 	if (apply_filters('thematic_show_bc_wordpress', TRUE)) {
-        // It's surely a WordPress blog, right?
-        $c = array('wordpress');
-    }
+		// It's surely a WordPress blog, right?
+		$c = array('wordpress');
+	}
 
 	if (apply_filters('thematic_show_bc_datetime', TRUE)) {
-        // Applies the time- and date-based classes (below) to BODY element
-        thematic_date_classes( time(), $c );
-    }
+		// Applies the time- and date-based classes (below) to BODY element
+		thematic_date_classes( time(), $c );
+	}
 
-    if (apply_filters('thematic_show_bc_contenttype', TRUE)) {
-        // Generic semantic classes for what type of content is displayed
-        is_front_page()  ? $c[] = 'home'       : null; // For the front page, if set
-        is_home()        ? $c[] = 'blog'       : null; // For the blog posts page, if set
-        is_archive()     ? $c[] = 'archive'    : null;
-        is_date()        ? $c[] = 'date'       : null;
-        is_search()      ? $c[] = 'search'     : null;
-        is_paged()       ? $c[] = 'paged'      : null;
-        is_attachment()  ? $c[] = 'attachment' : null;
-        is_404()         ? $c[] = 'four04'     : null; // CSS does not allow a digit as first character
-    }
+	if (apply_filters('thematic_show_bc_contenttype', TRUE)) {
+		// Generic semantic classes for what type of content is displayed
+		is_front_page()  ? $c[] = 'home'       : null; // For the front page, if set
+		is_home()        ? $c[] = 'blog'       : null; // For the blog posts page, if set
+		is_archive()     ? $c[] = 'archive'    : null;
+		is_date()        ? $c[] = 'date'       : null;
+		is_search()      ? $c[] = 'search'     : null;
+		is_paged()       ? $c[] = 'paged'      : null;
+		is_attachment()  ? $c[] = 'attachment' : null;
+		is_404()         ? $c[] = 'four04'     : null; // CSS does not allow a digit as first character
+	}
 
-    if (apply_filters('thematic_show_bc_singular', TRUE)) {
-        // Special classes for BODY element when a singular post
-        if ( is_singular() ) {
-            $c[] = 'singular';
-        } else {
-            $c[] = 'not-singular';
-        }
-    }
+	if (apply_filters('thematic_show_bc_singular', TRUE)) {
+		// Special classes for BODY element when a singular post
+		if ( is_singular() ) {
+		    $c[] = 'singular';
+		} else {
+		    $c[] = 'not-singular';
+		}
+	}
 
 	// Special classes for BODY element when a single post
 	if ( is_single() && apply_filters('thematic_show_bc_singlepost', TRUE)) {
 		$postID = $wp_query->post->ID;
 		the_post();
 
-        // Adds post slug class, prefixed by 'slug-'
-        $c[] = 'slug-' . $wp_query->post->post_name;
+		// Adds post slug class, prefixed by 'slug-'
+		$c[] = 'slug-' . $wp_query->post->post_name;
 
 		// Adds 'single' class and class with the post ID
 		$c[] = 'single postid-' . $postID;
@@ -54,33 +53,38 @@ function thematic_body_class($add = false, $print = false ) {
 			thematic_date_classes( mysql2date( 'U', $wp_query->post->post_date ), $c, 's-' );
 
 		// Adds category classes for each category on single posts
-		if ( $cats = get_the_category() )
-			foreach ( $cats as $cat )
+		if ( $cats = get_the_category() )	{
+			foreach ( $cats as $cat )	{
 				$c[] = 's-category-' . $cat->slug;
+			}
+		}
 
 		// Adds tag classes for each tags on single posts
-		if ( $tags = get_the_tags() )
-			foreach ( $tags as $tag )
+		if ( $tags = get_the_tags() )	{
+			foreach ( $tags as $tag )	{
 				$c[] = 's-tag-' . $tag->slug;
+			}
+		}
 
 		// Adds MIME-specific classes for attachments
 		if ( is_attachment() ) {
 			$mime_type = get_post_mime_type();
 			$mime_prefix = array( 'application/', 'image/', 'text/', 'audio/', 'video/', 'music/' );
-				$c[] = 'attachmentid-' . $postID . ' attachment-' . str_replace( $mime_prefix, "", "$mime_type" );
+			$c[] = 'attachmentid-' . $postID . ' attachment-' . str_replace( $mime_prefix, "", "$mime_type" );
 		}
 
 		// Adds author class for the post author
 		$c[] = 's-author-' . sanitize_title_with_dashes(strtolower(get_the_author_meta('user_nicename', $post->post_author)));
 		rewind_posts();
-		
+
 		// For posts with excerpts
-		if (has_excerpt())
+		if (has_excerpt()) {
 			$c[] = 's-has-excerpt';
-			
+		}
+
 		// For posts with comments open or closed
 		if (comments_open()) {
-			$c[] = 's-comments-open';		
+			$c[] = 's-comments-open';
 		} else {
 			$c[] = 's-comments-closed';
 		}
@@ -91,15 +95,14 @@ function thematic_body_class($add = false, $print = false ) {
 		} else {
 			$c[] = 's-pings-closed';
 		}
-	
+
 		// For password-protected posts
 		if ( $post->post_password )
 			$c[] = 's-protected';
-	
+
 		// For sticky posts
 		if (is_sticky())
-		   $c[] = 's-sticky';		
-		
+			$c[] = 's-sticky';
 	}
 
 	// Author name classes for BODY on author archives
@@ -129,26 +132,29 @@ function thematic_body_class($add = false, $print = false ) {
 		$page_children = wp_list_pages("child_of=$pageID&echo=0");
 		the_post();
 
-        // Adds post slug class, prefixed by 'slug-'
-        $c[] = 'slug-' . $wp_query->post->post_name;
+		// Adds post slug class, prefixed by 'slug-'
+		$c[] = 'slug-' . $wp_query->post->post_name;
 
 		$c[] = 'page pageid-' . $pageID;
-		
+
 		$c[] = 'page-author-' . sanitize_title_with_dashes(strtolower(get_the_author_meta('user_nicename', $post->post_author)));
-		
+
 		// Checks to see if the page has children and/or is a child page; props to Adam
-		if ( $page_children )
+		if ( $page_children )	{
 			$c[] = 'page-parent';
-		if ( $wp_query->post->post_parent )
+		}
+		if ( $wp_query->post->post_parent )	{
 			$c[] = 'page-child parent-pageid-' . $wp_query->post->post_parent;
-			
+		}
+
 		// For pages with excerpts
-		if (has_excerpt())
+		if (has_excerpt())	{
 			$c[] = 'page-has-excerpt';
-			
+		}
+
 		// For pages with comments open or closed
 		if (comments_open()) {
-			$c[] = 'page-comments-open';		
+			$c[] = 'page-comments-open';
 		} else {
 			$c[] = 'page-comments-closed';
 		}
@@ -162,11 +168,13 @@ function thematic_body_class($add = false, $print = false ) {
 	
 		// For password-protected pages
 		if ( $post->post_password )
-			$c[] = 'page-protected';			
-			
+			$c[] = 'page-protected';
+
 		// Checks to see if the page is using a template	
-		if ( is_page_template() & !is_page_template('default') )
+		if ( is_page_template() & !is_page_template('default') )	{
 			$c[] = 'page-template page-template-' . str_replace( '.php', '-php', get_post_meta( $pageID, '_wp_page_template', true ) );
+		}
+
 		rewind_posts();
 	}
 
@@ -182,15 +190,16 @@ function thematic_body_class($add = false, $print = false ) {
 	}
 
 	if (apply_filters('thematic_show_bc_loggedin', TRUE)) {
-        // For when a visitor is logged in while browsing
-        if ( $current_user->ID )
-            $c[] = 'loggedin';
-    }
+		// For when a visitor is logged in while browsing
+		if ( $current_user->ID )	{
+			$c[] = 'loggedin';
+		}
+	}
 
 	// Paged classes; for 'page X' classes of index, single, etc.
 	if ( (( ( $page = $wp_query->get('paged') ) || ( $page = $wp_query->get('page') ) ) && $page > 1) && apply_filters('thematic_show_bc_pagex', TRUE)) {
 	// Thanks to Prentiss Riddle, twitter.com/pzriddle, for the security fix below. 
- 			$page = intval($page); // Ensures that an integer (not some dangerous script) is passed for the variable
+			$page = intval($page); // Ensures that an integer (not some dangerous script) is passed for the variable
 		$c[] = 'paged-' . $page;
 		if ( is_single() ) {
 			$c[] = 'single-paged-' . $page;
@@ -229,20 +238,23 @@ function thematic_post_class( $print = true ) {
 	$c[] = 'author-' . sanitize_title_with_dashes(strtolower(get_the_author('login')));
 
 	// Category for the post queried
-	foreach ( (array) get_the_category() as $cat )
+	foreach ( (array) get_the_category() as $cat )	{
 		$c[] = 'category-' . $cat->slug;
+	}
 
 	// Tags for the post queried; if not tagged, use .untagged
 	if ( get_the_tags() == null ) {
 		$c[] = 'untagged';
 	} else {
-		foreach ( (array) get_the_tags() as $tag )
+		foreach ( (array) get_the_tags() as $tag )	{
 			$c[] = 'tag-' . $tag->slug;
+		}
 	}
 
 	// For posts with excerpts
-	if (has_excerpt())
+	if (has_excerpt())	{
 		$c[] = 'has-excerpt';
+	}
 		
 	// For posts with comments open or closed
 	if (comments_open()) {
@@ -259,22 +271,25 @@ function thematic_post_class( $print = true ) {
 	}
 
 	// For password-protected posts
-	if ( $post->post_password )
+	if ( $post->post_password )	{
 		$c[] = 'protected';
+	}
 
 	// For sticky posts
-	if (is_sticky())
-	   $c[] = 'sticky';
+	if (is_sticky())	{
+		$c[] = 'sticky';
+	}
 
 	// Applies the time- and date-based classes (below) to post DIV
 	thematic_date_classes( mysql2date( 'U', $post->post_date ), $c );
 
 	// If it's the other to the every, then add 'alt' class
-	if ( ++$thematic_post_alt % 2 )
+	if ( ++$thematic_post_alt % 2 )	{
 		$c[] = 'alt';
+	}
 
-    // Adds post slug class, prefixed by 'slug-'
-    $c[] = 'slug-' . $post->post_name;
+	// Adds post slug class, prefixed by 'slug-'
+	$c[] = 'slug-' . $post->post_name;
 
 	// Separates classes with a single space, collates classes for post DIV
 	$c = join( ' ', apply_filters( 'post_class', $c ) ); // Available filter: post_class
@@ -306,14 +321,16 @@ function thematic_comment_class( $print = true ) {
 		// For all registered users, 'byuser'; to specificy the registered user, 'commentauthor+[log in name]'
 		$c[] = 'byuser comment-author-' . sanitize_title_with_dashes(strtolower( $user->user_login ));
 		// For comment authors who are the author of the post
-		if ( $comment->user_id === $post->post_author )
+		if ( $comment->user_id === $post->post_author )	{
 			$c[] = 'bypostauthor';
+		}
 	}
 
 	// If it's the other to the every, then add 'alt' class; collects time- and date-based classes
 	thematic_date_classes( mysql2date( 'U', $comment->comment_date ), $c, 'c-' );
-	if ( ++$thematic_comment_alt % 2 )
+	if ( ++$thematic_comment_alt % 2 )	{
 		$c[] = 'alt';
+	}
 
 	// Comment depth
 	$c[] = "depth-$comment_depth";

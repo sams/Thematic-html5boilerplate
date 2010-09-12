@@ -1,16 +1,13 @@
 <?php
-
-
-
 /**
  * The Generate the javascript for the ajax remove image feature
  *
  */
 
 function childtheme_javascript() {
-global $my_shortname;
+	global $my_shortname;
 
-$nonce= wp_create_nonce  ('my-nonce');
+	$nonce= wp_create_nonce  ('my-nonce');
 ?>
 <script type="text/javascript" >
 jQuery(document).ready(function($) {
@@ -77,21 +74,18 @@ add_action('wp_ajax_remove_header_image', 'childtheme_remove_header_image_callba
  */
 
 function childtheme_remove_header_image_callback() {
-$nonce=$_REQUEST['_nonce'];
-if (! wp_verify_nonce($nonce, 'my-nonce') ) die('Nice Try');
-if (! childtheme_can_edit_theme_options() ) die('Nice Try');
+	$nonce=$_REQUEST['_nonce'];
+	if (! wp_verify_nonce($nonce, 'my-nonce') ) die('Nice Try');
+	if (! childtheme_can_edit_theme_options() ) die('Nice Try');
 
 	global $wpdb; // this is how you get access to the database
 
 	$delete = delete_option($_REQUEST['field']);
 
-
-	if ($delete == true)
+	if ($delete == true)	{
 		_e("Image Removed");
-	else
+	}	else	{
 		_e("Error");
-
-
-
+	}
 	die();
 }
