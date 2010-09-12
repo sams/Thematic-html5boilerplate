@@ -6,6 +6,8 @@
 
 get_header(); ?>
 
+<?php get_sidebar(); ?>
+
 		<!-- once upon a time this was  id="primary" -->
 		<section class="main">
 
@@ -18,6 +20,4 @@ get_header(); ?>
 				<?php get_template_part( 'loop', 'category' ); ?>
 
 		</section><!-- #primary -->
-
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>
