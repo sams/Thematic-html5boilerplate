@@ -50,17 +50,16 @@ function thematic_after() {
 
     function thematic_jqueryalt() { ?>
     
-		<script>!window.jQuery && document.write('<script src="<?php echo get_stylesheet_directory_uri(); ?>/library/scripts/jquery-1.4.2.min.js"><\/script>')</script>
+		<script>!window.jQuery && document.write('<script src="<?php echo get_stylesheet_directory_uri(); ?>/library/js/jquery-1.4.2.min.js"><\/script>')</script>
     
     <?php
     }
     add_action('thematic_footer', 'thematic_jqueryalt', 50);
 
     function thematic_ifieblock() {
-    // scripts/
 	?>
 	<!--[if lt IE 7 ]>
-		<script src="<?php echo get_stylesheet_directory_uri(); ?>/library/scripts/dd_belatedpng.js"></script>
+		<script src="<?php echo get_stylesheet_directory_uri(); ?>/library/js/dd_belatedpng.js"></script>
 		<script>
 		DD_belatedPNG.fix('img, .png_bg');
 		</script>
@@ -108,8 +107,8 @@ function thematic_after() {
 		}
 		?>
 		<!-- BEGIN thematic_yahooprofiler - move to scripts/ => js/ -->
-		<script src="<?php echo get_stylesheet_directory_uri(); ?>/library/scripts/profiling/yahoo-profiling.min.js"></script>
-		<script src="<?php echo get_stylesheet_directory_uri(); ?>/library/scripts/profiling/config.js"></script>
+		<script src="<?php echo get_stylesheet_directory_uri(); ?>/library/js/profiling/yahoo-profiling.min.js"></script>
+		<script src="<?php echo get_stylesheet_directory_uri(); ?>/library/js/profiling/config.js"></script>
 		<!-- END thematic_yahooprofiler -->
 
 	<?php

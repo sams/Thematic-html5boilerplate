@@ -261,7 +261,7 @@ function thematic_create_stylesheet() {
 	if($hh == 'true') {
 		$content .= "\n\t";
 		$content .= "<link rel=\"stylesheet\" media=\"handheld\" type=\"text/css\" href=\"";
-		$content .= get_stylesheet_directory_uri() . "/library/styles/handheld.css";
+		$content .= get_stylesheet_directory_uri() . "/library/css/handheld.css";
 		$content .= "\" />\n";
 	}
 	$content .= "\n";
@@ -334,15 +334,13 @@ function thematic_show_commentreply() {
 // output modernizr to head of doc
 function thematic_create_modernizr() {
 	// scripts/ => js/
-	echo "\t<script src=\"" . get_stylesheet_directory_uri() . "/library/scripts/modernizr-1.5.min.js\"></script>\n\n";
+	echo "\t<script src=\"" . get_stylesheet_directory_uri() . "/library/js/modernizr-1.5.min.js\"></script>\n\n";
 } // end thematic_create_modernizr
 
 
 // Load scripts for the jquery Superfish plugin http://users.tpg.com.au/j_birch/plugins/superfish/#examples
 function thematic_head_scripts() {
 			if(JSFOOT) return;
-		   // wp_enqueue_script( 'thematic-scripts' ,get_bloginfo('template_directory'), array('../thematic/library/scripts/hoverIntent.js', '../thematic/library/scripts/superfish.js', '../thematic/library/scripts/supersubs.js', '../thematic/library/scripts/thematic-dropdowns.js'), array('jquery'), '2.50', true); return;
-		   
 	$scripts =   thematic_script();
 	
 	$scripts .= apply_filters('thematic_dropdown_options', $dropdown_options);
