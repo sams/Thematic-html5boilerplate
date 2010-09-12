@@ -117,7 +117,7 @@ function thematic_create_initialhead() {
 	$content .= "\" />";
 	
 	// if chrome frame is set ie its not in htaccess
-	if($cf === true)	{
+	if($cf == "true")	{
 		$content .= "\t<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge,chrome=1\" />";
 	}
 	
@@ -250,8 +250,6 @@ function thematic_show_robots() {
 function thematic_create_stylesheet() {
     global $my_shortname;
 	$hh = stripslashes(get_option($my_shortname . '_handheld'));
-	
-	//print_r(array($hh));die();
 	
 	$content = "\t";
 	$content .= "<link rel=\"stylesheet\" type=\"text/css\" href=\"";
@@ -440,7 +438,7 @@ function thematic_access() {
 	// remove the fugly div
 	$access = preg_replace('#<([/]*)(div)([^>]*)>#', '', wp_nav_menu( array('primary-menu', 'container_class' => '', 'menu_class' => '', 'echo' => false) ), 1);
 	// have a way to add search to access as li (todo)
-	if($searchasli)
+	if($searchasli == 'true')
 	$access = preg_replace('#(?![^\s]+)(<\/ul>)#', '<li>'.thematic_search_form(false).'</li></ul>', trim($access), 1);
 	?>
 	<nav id="access">

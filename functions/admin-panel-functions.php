@@ -5,6 +5,7 @@
  */
 
 function childtheme_pick_layout($content) {
+	return;
   global $my_shortname;
   $altstyle = get_option($my_shortname . '_alt_layouts');
   if (empty($altstyle)) { $altstyle = '2c-r-fixed.css'; }

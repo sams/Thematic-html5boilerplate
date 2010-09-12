@@ -1,18 +1,14 @@
 <?php
 
-// Fetch alternate theme stylesheets    - this will be either classnames on the body or these will be added to the minify at runtime
-$alt_layout_dir = CHILDTHEME_THEME_DIRECTORY . 'layouts/';
-$alt_layouts = array();
-
-if (is_dir($alt_layout_dir)) {
-  $alt_layouts[] = 'default';
-  $layouts = scandir($alt_layout_dir);
-  foreach ($layouts as $layout) {
-    if (strpos($layout, '.css')) {
-      $alt_layouts[] = $layout;
-    }
-  }
-}
+// alt layouts are available within a single set of sheets; aim to allow great diversity of layouts within theme; plus less complex
+$alt_layouts = array(
+	'default' => 'simple single sidebar (right) layout ',
+	'ldefault' => 'simple single sidebar (left) layout',
+	'fdefault' => 'full layout',
+	'col3a' => '2 sidebars and central layout',
+	'col3b' => '2 sidebars (left)',
+	'col3c' => '2 sidebars (right)',
+);
 
 // Theme options adapted from "A Theme Tip For WordPress Theme Authors"
 // http://literalbarrage.org/blog/archives/2007/05/03/a-theme-tip-for-wordpress-theme-authors/

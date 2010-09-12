@@ -76,7 +76,7 @@ function thematic_after() {
 			yoast_analytics(); 
 			return;
 		}
-		if(!$ga || $ga == 'false' || $ga == '') {
+		if(!$ga || $ga == 'false') {
 			return;
 		}
 	?>
@@ -102,7 +102,7 @@ function thematic_after() {
 		global $my_shortname;
 		$yp = stripslashes(get_option($my_shortname . '_yahooprofile'));
 		//echo "<!-- yahoo profiling ? {$yp} -->"; return;
-		if(!$yp || $yp == 'false' || $yp == '') {
+		if(!$yp || $yp == 'false') {
 			return;
 		}
 		?>
