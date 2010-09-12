@@ -98,24 +98,23 @@ function thematic_create_initialhead() {
 	$cf = stripslashes(get_option($my_shortname . '_chromeframe'));
 	$fi = stripslashes(get_option($my_shortname . '_favicon'));
 	$at = stripslashes(get_option($my_shortname . '_appletouch'));
-		
+
 	$content  = "\t";
 	$content .= "<meta charset=\"";
 	$content .= get_bloginfo('charset');
 	$content .= "\" />";
-	
+
 	// if chrome frame is set ie its not in htaccess
 	if($cf == "true")	{
-		$content .= "\t<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge,chrome=1\" />";
+		$content .= "\n\t<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge,chrome=1\" />";
 	}
-	
+
+	$content .= "\n";
+
 	// if your using default favicon & apple touch - these may be uploaded
-	if($fi == 'true')	{}
-	if($at == 'true')	{}
-	//$content .= "\n\n";
-	//$content .= '<link rel="shortcut icon" href="/favicon.ico">';
-	//$content .= '<link rel="apple-touch-icon" href="/apple-touch-icon.png">';
-	
+	if(!empty($fi))	{$content .= "\n\t".'<link rel="shortcut icon" href="/favicon.ico">';}
+	if(!empty($at))	{$content .= "\n\t".'<link rel="apple-touch-icon" href="/apple-touch-icon.png">';}
+
 	// featured image for facebook if set
 	//$content .= "\n\n";
 	//$content .= '<link >';

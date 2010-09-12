@@ -38,18 +38,17 @@ function childtheme_add_admin() {
 				header('Location: themes.php?page=' . basename(__FILE__) . '&imgremoved=true' . $error);
 				die;
 			}
-	
-	
+
 			foreach ($my_options as $value) {
 				$id = $value['id'];
 	
 				if ($value['type'] == 'upload') {
 					if (!empty($_FILES['attachment_' . $id]['name'])) {
-	
+
 						// New Upload
 						$whitelist = array('image/gif', 'image/jpeg', 'image/pjpeg', 'image/png', 'image/x-png');
 						$filetype = $_FILES['attachment_' . $id]['type'];
-		
+
 						if (in_array($filetype, $whitelist)) {
 							$upload = wp_handle_upload($_FILES['attachment_' . $id], array('test_form' => false));
 							$upload['option_name'] = $value['name'];
@@ -78,7 +77,7 @@ function childtheme_add_admin() {
 					}
 				}
 			}
-	
+
 			header('Location: themes.php?page=' . basename(__FILE__) . '&saved=true' . $error);
 			die;
 		} elseif ('reset' == $_REQUEST['action']) {
