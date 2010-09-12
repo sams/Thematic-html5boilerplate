@@ -15,7 +15,7 @@ article > h1 {
 
 section > aside,
 article > aside {
-  width: 150px;
+  width: 107px !important;
 }
 
 h1 {
@@ -38,6 +38,20 @@ abbr, acronym {
 figure, video, img {
   border: 1px solid #ccc;
   padding: 10px;
+  text-align: center;
+  margin: 0 auto
+}
+
+figure video, figure img {
+  border: 0;
+  padding: 0;
+}
+
+body > figure {
+	margin-top: 1em;
+}
+
+figure caption {
 }
 
 blockquote {
@@ -155,18 +169,22 @@ ul, ol {
 		font-size: 88%;
 	}
 
-	#header img {
-		margin-left:-16px;
-	}
-
 	#header nav {
 		display: inline;
 		float: right;
-		margin: 0 3em 1em;
+		margin: 0 0 3em 1em;
 	}
 
 	.ie7 #header nav {
 		width: auto;
+	}
+
+	#header ul {
+		clear:right;
+		display:block;
+		list-style:none outside none;
+		margin:0 -20px 0;
+		padding-left:0;
 	}
 
 	#header nav li {
@@ -183,6 +201,12 @@ ul, ol {
 	#header nav li a {
 	  padding: 0 20px;
 	  text-decoration: none;
+	}
+	
+	#header .skip-link {
+		display:inline;
+		float:right;
+		padding-right:0;
 	}
 
 /***** #footer *****/

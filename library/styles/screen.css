@@ -1,11 +1,11 @@
 /* screen */
 
-body {	width: 960px; margin: 0 auto;	}
+body {	font-size: 13px; line-height: 1.5; width: 960px; margin: 0 auto;	}
+
+body.liquid {	max-width: 1280px; max-width: 960px; width: 94%; margin: 0 auto;	}
 
 body.grid {	
-      background: url(../grids/960_grid_12_col_18px_height.gif) no-repeat;
-      width: 1020px;
-      height: 18px;	}
+      background: url(../grids/960_grid_12_col_18px_height.gif) repeat-y center;	}
 
 img {
   -ms-interpolation-mode: bicubic;
@@ -58,7 +58,7 @@ aside nav {
   
 }
 
-aside nav ul {
+aside ul {
   list-style-type: none;
   margin: 0 0 1em;
 }
