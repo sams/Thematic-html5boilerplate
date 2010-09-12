@@ -6,7 +6,10 @@
 
 get_header(); ?>
 
-		<section id="primary" class="main">
+<?php get_sidebar(); ?>
+
+		<!-- was id="primary"  -->
+		<section class="main">
 
 			<?php if ( have_posts() ) : ?>
 
@@ -48,5 +51,4 @@ get_header(); ?>
 
 		</section><!-- #primary -->
 
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>

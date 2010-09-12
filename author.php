@@ -7,8 +7,8 @@
 get_header(); ?>
 
 <aside class="leftCol"><?php get_sidebar(); ?></aside>
-
-		<section id="primary" class="main">
+		<!-- once upon a time this was  id="primary" -->
+		<section class="main">
 
 				<?php the_post(); ?>
 

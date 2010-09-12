@@ -6,7 +6,8 @@
 
 get_header(); ?>
 
-		<section id="primary" class="main">
+		<!-- once upon a time this was  id="primary" -->
+		<section class="main">
 
 				<?php the_post(); ?>
 

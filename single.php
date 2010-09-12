@@ -6,7 +6,10 @@
 
 get_header(); ?>
 
-		<section id="primary" class="main">
+	<?php get_sidebar(); ?>
+
+		<!-- was id="primary"  -->
+		<section class="main">
 
 			<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 
@@ -71,6 +74,4 @@ get_header(); ?>
 			<?php endwhile; // end of the loop. ?>
 
 		</section><!-- #primary -->
-
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>

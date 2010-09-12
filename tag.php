@@ -34,7 +34,10 @@
 
 get_header(); ?>
 
-		<section id="primary" class="main">
+<?php get_sidebar(); ?>
+
+		<!-- was id="primary"  -->
+		<section class="main">
 
 				<?php the_post(); ?>
 
@@ -47,6 +50,4 @@ get_header(); ?>
 				<?php get_template_part( 'loop', 'tag' ); ?>
 
 		</section><!-- #primary -->
-
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>
