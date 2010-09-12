@@ -6,7 +6,8 @@
 ?>
 <?php get_header(); ?>
 
-		<section id="primary" class="image-attachment">
+		<!-- once upon a time this was  id="primary" -->
+		<section class="main image-attachment">
 
 			<?php the_post(); ?>
 

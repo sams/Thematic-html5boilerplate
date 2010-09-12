@@ -6,11 +6,9 @@
 
 get_header(); ?>
 
-		<aisde class="rightCol">
-			this can has asides within this aside
-		</aside>
-
-		<section id="primary" class="main">
+<?php get_sidebar(); ?>
+		<!-- was id="primary"  -->
+		<section class="main">
 
 				<?php 
 					// create the navigation above the content
@@ -36,6 +34,4 @@ get_header(); ?>
 				?>
 
 		</section><!-- #main -->
-
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>
