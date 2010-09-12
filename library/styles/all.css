@@ -135,13 +135,11 @@ ul, ol {
 
 #header {
   border-bottom: 1px solid #ccc;
-  margin: 0 1em;
-  padding: 0 1em;
 }
 
 	#logo {
 	  float: left;
-	  margin-left: .2em;
+	  margin-left: -10px;
 	}
 
 		#logo img {
@@ -172,7 +170,7 @@ ul, ol {
 	#header nav {
 		display: inline;
 		float: right;
-		margin: 0 0 3em 1em;
+		margin-top: 1em;
 	}
 
 	.ie7 #header nav {
