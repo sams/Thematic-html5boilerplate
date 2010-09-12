@@ -1,3 +1,5 @@
+# BEGIN H5BP
+
 # Apache configuration file
 # httpd.apache.org/docs/2.2/mod/quickreference.html
 
@@ -31,9 +33,6 @@
 #  Header set Access-Control-Allow-Origin "*"
 #</IfModule>
 
-
-
-
 # allow access from all domains for webfonts
 # alternatively you could only whitelist
 #   your subdomains like "sub.domain.com"
@@ -43,7 +42,6 @@
     Header set Access-Control-Allow-Origin "*"
   </IfModule>
 </FilesMatch>
-
 
 # video
 AddType video/ogg  ogg ogv
@@ -82,10 +80,6 @@ AddType text/x-component              htc
 #         SetOutputFilter INCLUDES
 # </FilesMatch>
 
-
-
-
-
 # gzip compression.
 <IfModule mod_deflate.c>
 
@@ -98,8 +92,6 @@ AddType text/x-component              htc
     SetOutputFilter DEFLATE
   </FilesMatch>
 </IfModule>
-
-
 
 # these are pretty far-future expires headers
 # they assume you control versioning with cachebusting query params like
@@ -158,16 +150,10 @@ AddType text/x-component              htc
   ExpiresByType text/javascript           "access plus 1 month"
 </IfModule>
 
-
-
-
 # Since we're sending far-future expires, we don't need ETags for
 # static content.
 #   developer.yahoo.com/performance/rules.html#etags
 FileETag None
-
-
-
 
 # Allow cookies to be set from iframes (for IE only)
 # If needed, uncomment and specify a path or regex in the Location directive
@@ -177,7 +163,6 @@ FileETag None
 #     Header set P3P "policyref=\"/w3c/p3p.xml\", CP=\"IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT\""
 #   </Location>
 # </IfModule>
-
 
 # you probably want www.example.com to forward to example.com -- shorter URLs are sexier.
 #   no-www.org/faq.php?q=class_b
@@ -196,6 +181,11 @@ Options -MultiViews
 
 
 
+# custom 404 page
+##ErrorDocument 404 /404.html
+
+
+
 # use utf-8 encoding for anything served text/plain or text/html
 AddDefaultCharset utf-8
 # force utf-8 for a number of file formats
@@ -206,5 +196,4 @@ AddCharset utf-8 .html .css .js .xml .json .rss
 # We don't need to tell everyone we're apache.
 ServerSignature Off
 
-
-
+# END H5BP
