@@ -141,7 +141,7 @@ if ( ! function_exists( 'thematic_h5bp_setup' ) ):
  * before the init hook. The init hook is too late for some features, such as indicating
  * support post thumbnails.
  *
- * To override thematic_h5bp_setup() in a child theme, add your own thematic_pft_setup to your child theme's
+ * To override thematic_h5bp_setup() in a child theme, add your own thematic_h5bp_setup to your child theme's
  * functions.php file.
  *
  * @uses add_theme_support() To add support for post thumbnails and automatic feed links.
@@ -188,7 +188,7 @@ function thematic_h5bp_setup() {
 	define( 'HEADER_IMAGE', '%s/images/headers/path.jpg' );
 
 	// The height and width of your custom header. You can hook into the theme's own filters to change these values.
-	// Add a filter to thematic_pft_header_image_width and thematic_pft_header_image_height to change these values.
+	// Add a filter to thematic_h5bp_header_image_width and thematic_h5bp_header_image_height to change these values.
 	define( 'HEADER_IMAGE_WIDTH', apply_filters( 'thematic_h5bp_header_image_width', 940 ) );
 	define( 'HEADER_IMAGE_HEIGHT', apply_filters( 'thematic_h5bp_header_image_height', 198 ) );
 
@@ -201,7 +201,7 @@ function thematic_h5bp_setup() {
 	define( 'NO_HEADER_TEXT', true );
 
 	// Add a way for the custom header to be styled in the admin panel that controls
-	// custom headers. See thematic_pft_admin_header_style(), below.
+	// custom headers. See thematic_h5bp_admin_header_style(), below.
 	add_custom_image_header( '', 'thematic_h5bp_admin_header_style' );
 
 	// ... and thus ends the changeable header business.
@@ -228,7 +228,7 @@ if ( ! function_exists( 'thematic_h5bp_admin_header_style' ) ) :
 /**
  * Styles the header image displayed on the Appearance > Header admin panel.
  *
- * Referenced via add_custom_image_header() in thematic_pft_setup().
+ * Referenced via add_custom_image_header() in thematic_h5bp_setup().
  *
  * @since Twenty Ten 1.0
  */
@@ -284,11 +284,11 @@ add_filter( 'excerpt_length', 'thematic_h5bp_excerpt_length' );
  * @return string "Continue Reading" link
  */
 function thematic_h5bp_continue_reading_link() {
-	return ' <a href="'. get_permalink() . '">' . __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'thematic_pft' ) . '</a>';
+	return ' <a href="'. get_permalink() . '">' . __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'thematic_h5bp' ) . '</a>';
 }
 
 /**
- * Replaces "[...]" (appended to automatically generated excerpts) with an ellipsis and thematic_pft_continue_reading_link().
+ * Replaces "[...]" (appended to automatically generated excerpts) with an ellipsis and thematic_h5bp_continue_reading_link().
  *
  * To override this in a child theme, remove the filter and add your own
  * function tied to the excerpt_more filter hook.
@@ -297,7 +297,7 @@ function thematic_h5bp_continue_reading_link() {
  * @return string An ellipsis
  */
 function thematic_h5bp_auto_excerpt_more( $more ) {
-	return ' &hellip;' . thematic_pft_continue_reading_link();
+	return ' &hellip;' . thematic_h5bp_continue_reading_link();
 }
 add_filter( 'excerpt_more', 'thematic_h5bp_auto_excerpt_more' );
 
@@ -312,7 +312,7 @@ add_filter( 'excerpt_more', 'thematic_h5bp_auto_excerpt_more' );
  */
 function thematic_h5bp_custom_excerpt_more( $output ) {
 	if ( has_excerpt() && ! is_attachment() ) {
-		$output .= thematic_pft_continue_reading_link();
+		$output .= thematic_h5bp_continue_reading_link();
 	}
 	return $output;
 }

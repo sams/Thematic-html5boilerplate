@@ -69,7 +69,16 @@ if (apply_filters('thematic_show_bodyclass',TRUE)) {
 			?>
 		</header><!-- #header -->
 
-		<?php
+		<?php     
+	if ( is_singular() &&
+	has_post_thumbnail( $post->ID ) &&
+	( /* $src, $width, $height */ $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'post-thumbnail' ) ) &&
+	$image[1] >= HEADER_IMAGE_WIDTH && !is_page('gallery')) :
+	// Houston, we have a new header image!
+	echo '<figure>', get_the_post_thumbnail( $post->ID, 'post-thumbnail' ), '</figure>';
+	elseif(!is_page('gallery')) : ?>
+	<figure><img src="<?php header_image(); ?>" width="<?php echo HEADER_IMAGE_WIDTH; ?>" height="<?php echo HEADER_IMAGE_HEIGHT; ?>" alt="" /></figure>
+	<?php endif;
 		// action hook for placing content below the theme header  
 		thematic_belowheader();
 		?>

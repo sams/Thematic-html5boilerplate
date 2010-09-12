@@ -8,7 +8,7 @@ function childtheme_pick_layout($content) {
   global $my_shortname;
   $altstyle = get_option($my_shortname . '_alt_layouts');
   if (empty($altstyle)) { $altstyle = '2c-r-fixed.css'; }
-  if ($altstyle !== 'default' || $altstyle !== 'default.css') {
+  if ($altstyle !== 'default' && $altstyle !== 'default.css') {
 	  $content .= "\t";
 	  $content .= '<link rel="stylesheet" type="text/css" href="' . get_bloginfo('stylesheet_directory') . '/layouts/' . $altstyle. '" />';
 	  $content .= "\n\n";

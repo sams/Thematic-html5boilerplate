@@ -11,7 +11,9 @@ function thematic_abovefooter() {
 // Just after the footer div
 function thematic_footer() {
     do_action('thematic_footer');
-} // end thematic_footer
+} // end thematic_footer      
+
+    add_action('thematic_footer', 'thematic_scripts', 1);
 
 
 // located in footer.php
@@ -32,9 +34,6 @@ function thematic_belowfooter() {
 // Located in footer.php 
 // Just before the closing body tag, after everything else.
 function thematic_after() {   
-
-		if(JSFOOT)
-			$scripts =   thematic_scripts();
     do_action('thematic_after');   
     
     
@@ -72,10 +71,11 @@ function thematic_after() {
     	global $my_shortname;
 		$ga = stripslashes(get_option($my_shortname . '_googleanalytics'));
 		if($ga == 'YOAST') {
+		// yoast ga needs to be in the header
 			yoast_analytics(); 
 			return;
 		}
-		if(!$ga or $ga == '') {
+		if(!$ga || $ga == 'false' || $ga == '') {
 			return;
 		}
 	?>
@@ -100,7 +100,8 @@ function thematic_after() {
 	function thematic_yahooprofiler() {
 		global $my_shortname;
 		$yp = stripslashes(get_option($my_shortname . '_yahooprofile'));
-		if(!$yp) {
+		//echo "<!-- yahoo profiling ? {$yp} -->"; return;
+		if(!$yp || $yp == 'false' || $yp == '') {
 			return;
 		}
 		?>
