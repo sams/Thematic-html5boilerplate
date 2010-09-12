@@ -257,6 +257,7 @@ function thematic_create_stylesheet() {
 	$content .= "<link rel=\"stylesheet\" type=\"text/css\" href=\"";
 	$content .= get_bloginfo('stylesheet_url');
 	$content .= "\" />\n";
+	// todo styles/ => css/
 	if($hh == 'true') {
 		$content .= "\n\t";
 		$content .= "<link rel=\"stylesheet\" media=\"handheld\" type=\"text/css\" href=\"";
@@ -332,6 +333,7 @@ function thematic_show_commentreply() {
 
 // output modernizr to head of doc
 function thematic_create_modernizr() {
+	// scripts/ => js/
 	echo "\t<script src=\"" . get_stylesheet_directory_uri() . "/library/scripts/modernizr-1.5.min.js\"></script>\n\n";
 } // end thematic_create_modernizr
 
@@ -396,7 +398,7 @@ function thematic_hgroup() {
     global $my_shortname;
 	$title = stripslashes(get_option($my_shortname . '_rmtitle'));
 	$desc = stripslashes(get_option($my_shortname . '_rmdesc'));
-	if($title && $desc) { ?>
+	if($title == 'false' && $desc == 'false') { ?>
 	<hgroup>
 	<?php
 		thematic_blogtitle();

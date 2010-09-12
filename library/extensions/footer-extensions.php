@@ -56,7 +56,9 @@ function thematic_after() {
     }
     add_action('thematic_footer', 'thematic_jqueryalt', 50);
 
-    function thematic_ifieblock() { ?>
+    function thematic_ifieblock() {
+    // scripts/
+	?>
 	<!--[if lt IE 7 ]>
 		<script src="<?php echo get_stylesheet_directory_uri(); ?>/library/scripts/dd_belatedpng.js"></script>
 		<script>
@@ -105,7 +107,7 @@ function thematic_after() {
 			return;
 		}
 		?>
-		<!-- BEGIN thematic_yahooprofiler -->
+		<!-- BEGIN thematic_yahooprofiler - move to scripts/ => js/ -->
 		<script src="<?php echo get_stylesheet_directory_uri(); ?>/library/scripts/profiling/yahoo-profiling.min.js"></script>
 		<script src="<?php echo get_stylesheet_directory_uri(); ?>/library/scripts/profiling/config.js"></script>
 		<!-- END thematic_yahooprofiler -->
