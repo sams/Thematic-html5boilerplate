@@ -2,9 +2,9 @@
 
 // alt layouts are available within a single set of sheets; aim to allow great diversity of layouts within theme; plus less complex
 $alt_layouts = array(
-	'default' => 'simple single sidebar (right) layout ',
-	'ldefault' => 'simple single sidebar (left) layout',
-	'fdefault' => 'full layout',
+	'Default' => '',
+	'Left' => 'ldefault',
+	'Full' => 'full',
 	'col3a' => '2 sidebars and central layout',
 	'col3b' => '2 sidebars (left)',
 	'col3c' => '2 sidebars (right)',

@@ -2,7 +2,8 @@
 
 // Generates semantic classes for BODY element
 function thematic_body_class($add = false, $print = false ) {
-	global $wp_query, $current_user;
+	global $wp_query, $current_user, $my_shortname;
+  $altstyle = get_option($my_shortname . '_alt_layouts');
     
     $c = '';
 
@@ -207,7 +208,8 @@ function thematic_body_class($add = false, $print = false ) {
 			$c[] = 'search-paged-' . $page;
 		}
 	}
-	
+
+	// might need to flip this $c[] = 'lo-' . $altstyle;
 
 	// Separates classes with a single space, collates classes for BODY
 	$c = join( ' ', apply_filters( 'body_class',  $c ) ); // Available filter: body_class
