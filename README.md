@@ -20,6 +20,31 @@ A wordpress theme using html5 and based on Thematic ToolBox (and other Thematic 
    * wp swfobject
  * Thematic Child Themes (todo)
 
+# Plugins
+
+## Minify
+
+Install minify plugin for wp; Customise the sheets as befits; add files for required plugins
+A switch will exist to have minify not min css or js
+
+list the css files for minify to zap (dkf or add)
+	library/styles/h5bp.css
+	library/styles/core/grid/grids.css
+	library/styles/core/template/template.css
+	library/styles/core/module/mod.css
+	library/styles/screen.css
+	library/styles/all.css
+	library/styles/media.css
+	
+list the files for js as
+
+
+## Super Cache
+
+## Contact Form 7
+
+## Cleaner Gallery
+
 The original source is available at 
 http://github.com/paulirish/html5-boilerplate
 and more information is available at
