@@ -1,0 +1,20 @@
+/*
+Theme Name: Html5 Boilerplate
+Description: A theme based upon Thematic ToolBox using all the goodness of <a href="http://paulirish.com/">Paul Irish</a> &amp; <a href="">Divya Manian</a>&#039;s <a href="http://html5boilerplate.com/">HTML5 Boilerplate</a>. It is intended to work with some plugins (WP super cache &amp; WP Minify)
+Author: S Sherlock
+Author URI: http://samsherlock.com/
+Version: 0.02a
+Tags: translation-ready, microformats, rtl-language-support, optimization
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+*/
+/* Import is bad um kay. SO you should be CnC the following sheets um kay use wp-minify um kay */
+@import url("library/css/styles.css");
+@import url("library/css/core/grid/grids.css");
+@import url("library/css/core/template/template.css");
+@import url("library/css/core/module/mod.css");
+@import url("library/css/screen.css");
+@import url("library/css/all.css");
+@import url("library/css/media.css");

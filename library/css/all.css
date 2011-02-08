@@ -1,0 +1,487 @@
+p, ul, ol, blockquote, code.block, dl, figure, pre, table {
+  margin-bottom: 1em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 1em 0 .25em;
+  /* aestheticallyloyal.com/public/optimize-legibility/ */
+  text-rendering: optimizeLegibility;
+}
+
+section > h1,
+article > h1 {
+  margin-top: 0;
+}
+
+section > aside,
+article > aside {
+  width: 107px !important;
+}
+
+h1 {
+  font-size: 140%;
+}
+
+h2 {
+  font-size: 120%;
+}
+
+h3 {
+  font-size: 110%;
+}
+
+abbr, acronym {
+  border-bottom: .1em dotted;
+  cursor: help;
+}
+
+figure, video, img {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+  margin: 0 auto
+}
+
+figure video, figure img {
+  border: 0;
+  padding: 0;
+}
+
+body > figure {
+	margin-top: 1em;
+}
+
+figure caption {
+}
+
+blockquote {
+  background: #f0f0f0;
+  padding: 10px;
+}
+
+dt {
+  font-weight: bold;
+}
+
+q:before {
+  content: "\201c";
+}
+
+q:after {
+  content: "\201d";
+}
+
+q q:before {
+  content: "\2018";
+}
+
+q q:after {
+  content: "\2019";
+}
+
+code.block {
+  display: block;
+}
+
+del {
+  color: #999;
+}
+
+sub, sup {
+  font-size:xx-small; 
+}
+
+sub {
+  vertical-align: sub;
+}
+
+sup {
+  vertical-align: super;
+}
+
+dt {
+  
+}
+
+dd {
+  margin-left: 1em;
+}
+
+table {
+  border: 2px solid #ccc;
+  width: 100%;
+}
+
+table caption {
+  text-align: left;
+}
+
+th {
+  background-color: #f0f0f0;
+  text-align: left;
+}
+
+th,
+td {
+  padding: 2px 5px;
+}
+
+ul, ol {
+  display: block;
+  margin-left: 1.5em;
+}
+
+/***** #header *****/   
+
+#header {
+  border-bottom: 1px solid #ccc;
+}
+
+	#logo {
+	  float: left;
+	  margin-left: -10px;
+	}
+
+		#logo img {
+			margin: 0;
+		}
+
+	#header hgroup {
+		display: inline-block;
+		padding-left: 0.78em;
+	}
+
+	#header h1,
+	#header h2 {
+		display: block;
+	}
+
+	#header h1 {
+		padding-top: 0.12em;
+		font-size: 113%;
+	}
+	
+	#header h2 {
+		font-style: italic;
+		color: rgb(187, 187, 187);
+		font-size: 88%;
+	}
+
+	#header nav {
+		display: inline;
+		float: right;
+		margin-top: 1em;
+	}
+
+	.ie7 #header nav {
+		width: auto;
+	}
+
+	#header ul {
+		clear:right;
+		display:block;
+		list-style:none outside none;
+		margin:0 -20px 0;
+		padding-left:0;
+	}
+
+	#header nav li {
+	  display: inline-block;
+	  /* I might be able to gain something through the use of this rahter than the method that works - though the method that works works :)
+	  zoom: 1; /* ie7 hack for display:inline-block */
+	}
+
+	.ie7 #header li {
+		float: left;
+		display: inline;
+	}
+
+	#header nav li a {
+	  padding: 0 20px;
+	  text-decoration: none;
+	}
+	
+	#header .skip-link {
+		display:inline;
+		float:right;
+		padding-right:0;
+	}
+
+/***** #footer *****/
+
+#footer {
+  border-top: 1px solid #ccc;
+  clear: both;
+  margin: 1em auto;
+  padding: 1em 0;
+  max-width: 88%;
+}
+	#footer small {
+		margin: .5em 1.5em;
+	}
+
+/***** POSTS formatting *****/
+
+article.post {
+}
+
+	article.post header {
+	  border-bottom: 1px solid #ccc;
+	  margin-bottom: 1em;
+	  padding-bottom: 1em;
+	}
+	
+	article.post header time {
+	  color: #666;
+	}
+	
+	article.post header h1 {
+	}
+	
+	article.post header p {
+	  margin: 0;
+	}
+	
+	
+	article.post .author {
+	}
+
+/***** update *****/
+
+section.update {
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 1em 0 0;
+}
+
+/***** footnotes *****/
+
+section.footnotes {
+}
+
+	section.footnotes ul {
+	}
+	
+	section.footnotes ul li {
+	}
+
+/***** comments *****/
+
+section.comments {
+  border-top: 1px solid #ccc;
+  margin-top: 1em;
+}
+
+	section.comments article {
+	  border-top: 1px solid #ccc;
+	  padding-top: 1em;
+	}
+	
+	section.comments form {
+	  border: 1px solid #ccc;
+	  background-color: #f0f0f0;
+	  padding: 10px;
+	}
+
+/***** search *****/
+/* 
+
+This should only contain styles that make forms more usable regardless of the medium.
+
+*/
+
+button, input, select, textarea {
+  font-size: 100%;
+}
+
+form {
+  margin-bottom: 1em;
+}
+
+.field {
+  margin-bottom: .5em;
+}
+  
+  .x-large.field input { width: 30em; }
+  .large.field input { width: 20em; }
+  /* Medium is excluded because it is the default size. */
+  .small.field input { width: 8em; }
+  .x-small.field input { width: 3em; }
+
+.field li {
+  line-height: 180%;
+  list-style-type: none;
+  margin-left: -1.5em;
+  
+}
+
+input[type="radio"] { 
+  vertical-align: text-bottom;
+}
+
+input[type="checkbox"] { 
+  vertical-align: bottom; 
+  *vertical-align: baseline; 
+}
+
+.field label {
+  display: block;
+}
+
+.field > input[type="checkbox"] + label,
+.field li label {
+  display: -moz-inline-stack;
+  display: inline-block;
+}
+
+.field span {
+  color: #666;
+  font-size: 90%;
+}
+
+.field > span {
+  display: block;
+}
+
+fieldset {
+  border-top: 2px solid #ccc;
+  margin-bottom: 1em;
+}
+
+fieldset legend {
+  padding-right: 5px;
+}
+
+textarea {
+  width: 90%;
+  height: 6em;
+}
+
+.placeholder {
+  color: #999;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  background: #e9f4ff;
+  border: 1px solid #38638e!important;
+}
+
+input[type="date"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="text"],
+input[type="url"],
+select,
+textarea {
+  border-top: 1px solid #666;
+  border-right: 1px solid #bbb;
+  border-bottom: 1px solid #bbb;
+  border-left: 1px solid #666;
+  line-height: 140%;
+}
+
+input[type="date"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="text"],
+input[type="url"],
+textarea {
+  padding: 5px 2px 1px 2px;
+}
+
+label, 
+input[type=button],
+input[type=submit],
+button { 
+  cursor: pointer;
+}
+
+input[type=button],
+input[type=submit],
+button { 
+  /* http://www.viget.com/inspire/styling-the-button-element-in-internet-explorer/ */
+  width: auto;
+  overflow: visible;
+}
+
+/*		*/
+#searchbox div {
+	display: inline-block;
+	zoom: 1; /* ie7 hack for display:inline-block */
+	*display: inline;
+	border: solid 1px #d2d2d2;
+	padding: 3px 5px;
+	
+	-webkit-border-radius: 2em;
+	-moz-border-radius: 2em;
+	border-radius: 2em;
+
+	-webkit-box-shadow: 0 1px 0px rgba(0,0,0,.1);
+	-moz-box-shadow: 0 1px 0px rgba(0,0,0,.1);
+	box-shadow: 0 1px 0px rgba(0,0,0,.1);
+
+	background: #f1f1f1;
+	background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#ededed));
+	background: -moz-linear-gradient(top,  #fff,  #ededed);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ededed'); /* ie7 */
+	-ms-filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ededed'); /* ie8 */
+}
+
+	.ie7 #searchbox div {
+		margin-top: -.75em;
+	}
+
+	#searchbox input {
+		font: normal 12px/100% Arial, Helvetica, sans-serif;
+	}
+
+	#searchbox input[type=search] {
+		padding: 5px;
+		font-size: 15px;
+		text-shadow: 0px 1px 0px #fff;
+		outline: none;
+		background: -webkit-gradient(linear, left top, left bottom, from(#bcbcbe), to(#ffffff));
+		background: -moz-linear-gradient(top,  #bcbcbe,  #ffffff);
+		
+		border: 1px solid #717171;
+		
+		background: #fff;
+		padding: 6px 12px 6px 12px;
+		width: 178px;
+		border: solid 1px #bcbbbb;
+		outline: none;
+		
+		-webkit-border-radius: 5px;
+		-moz-border-radius: 2em;
+		border-radius: 2em;
+		
+		-moz-box-shadow: inset 0 1px 2px rgba(0,0,0,.2);
+		-webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,.2);
+		box-shadow: inset 0 1px 2px rgba(0,0,0,.2);   
+	}
+
+	#searchbox input[type=button] {
+		color: #fff;
+		border: solid 1px #494949;
+		font-size: 11px;
+		height: 27px;
+		width: 27px;
+		text-shadow: 0 1px 1px rgba(0,0,0,.6);
+	
+		-webkit-border-radius: 2em;
+		-moz-border-radius: 2em;
+		border-radius: 2em;
+	
+		background: #5f5f5f;
+		background: -webkit-gradient(linear, left top, left bottom, from(#9e9e9e), to(#454545));
+		background: -moz-linear-gradient(top,  #9e9e9e,  #454545);
+		filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#9e9e9e', endColorstr='#454545'); /* ie7 */
+		-ms-filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#9e9e9e', endColorstr='#454545'); /* ie8 */
+		
+		padding-bottom: 2px;
+	}

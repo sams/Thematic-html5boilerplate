@@ -1,0 +1,406 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Thematic 0.8\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-01-18 21:54+0100\n"
+"PO-Revision-Date: 2009-01-19 23:17-0800\n"
+"Last-Translator: Kate Mag <kate@nineteenlabs.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Indonesian\n"
+"X-Poedit-Country: Indonesia\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: 404.php:10
+msgid "Apologies, but we were unable to find what you were looking for. Perhaps  searching will help."
+msgstr "Maaf, tidak dapat menemukan yang anda cari. Gunakan kotak pencarian"
+
+#: 404.php:15
+#: search.php:58
+msgid "Find"
+msgstr "Temukan"
+
+#: archive.php:16
+#, php-format
+msgid "Daily Archives: <span>%s</span>"
+msgstr "Arsip Harian: <span>%s</span>"
+
+#: archive.php:18
+#, php-format
+msgid "Monthly Archives: <span>%s</span>"
+msgstr "Arsip Bulanan: <span>%s</span>"
+
+#: archive.php:20
+#, php-format
+msgid "Yearly Archives: <span>%s</span>"
+msgstr "Arsip Tahunan: <span>%s</span>"
+
+#: archive.php:22
+msgid "Blog Archives"
+msgstr "Arsip Blog"
+
+#: archive.php:31
+#: archive.php:53
+#: author.php:21
+#: author.php:56
+#: category.php:20
+#: category.php:42
+#: index.php:17
+#: index.php:49
+#: search.php:21
+#: search.php:43
+msgid "<span class=\"meta-nav\">&laquo;</span> Older posts"
+msgstr "<span class=\"meta-nav\">&laquo;</span> Artikel sebelumnya"
+
+#: archive.php:32
+#: archive.php:54
+#: author.php:22
+#: author.php:57
+#: category.php:21
+#: category.php:43
+#: index.php:18
+#: index.php:50
+#: search.php:22
+#: search.php:44
+msgid "Newer posts <span class=\"meta-nav\">&raquo;</span>"
+msgstr "Artikel terbaru <span class=\"meta-nav\">&raquo;</span>"
+
+#: archive.php:41
+#: attachment.php:20
+#: author.php:44
+#: category.php:30
+#: index.php:30
+#: search.php:31
+msgid "Read More <span class=\"meta-nav\">&raquo;</span>"
+msgstr "Baca berikutnya <span class=\"meta-nav\">&raquo;</span>"
+
+#: archives.php:20
+msgid "Archives by Category"
+msgstr "Arsip berdasarkan Kategori"
+
+#: archives.php:26
+msgid "Archives by Month"
+msgstr "Arsip berdasarkan Bulan"
+
+#: archives.php:32
+#: comments.php:39
+#: comments.php:65
+#: links.php:20
+#: page.php:16
+msgid "Edit"
+msgstr "Ubah"
+
+#: attachment.php:22
+#: index.php:32
+msgid "Pages:"
+msgstr "Halaman:"
+
+#: author.php:15
+msgid "Author Archives: "
+msgstr "Arsip Pengarang: "
+
+#: author.php:33
+msgid "Email "
+msgstr "E-Mail "
+
+#: category.php:13
+msgid "Category Archives:"
+msgstr "Kategori Arsip:"
+
+#: comments.php:9
+msgid "This post is password protected. Enter the password to view any comments."
+msgstr "Post ini diproteksi password. Masukkan password untuk meliha semua komentar."
+
+#: comments.php:28
+#, php-format
+msgid "<span>%d</span> Comments"
+msgstr "<span>%d</span> Komentar"
+
+#: comments.php:28
+msgid "<span>One</span> Comment"
+msgstr "<span>Satu</span> Komentar"
+
+#: comments.php:35
+#, php-format
+msgid "Posted %1$s at %2$s <span class=\"meta-sep\">|</span> <a href=\"%3$s\" title=\"Permalink to this comment\">Permalink</a>"
+msgstr "Ditulis %1$s pada %2$s <span class=\"meta-sep\">|</span> <a href=\"%3$s\">Permanent-Link</a>"
+
+#: comments.php:40
+msgid "\t\t\t\t\t<span class='unapproved'>Your comment is awaiting moderation.</span>\n"
+msgstr "\t\t\t\t\t<span class='unapproved'>Komentar anda menunggu moderasi</span>\n"
+
+#: comments.php:54
+#, php-format
+msgid "<span>%d</span> Trackbacks"
+msgstr "<span>%d</span> Trackbacks"
+
+#: comments.php:54
+msgid "<span>One</span> Trackback"
+msgstr "<span>Ein</span> Trackback"
+
+#: comments.php:61
+#, php-format
+msgid "By %1$s on %2$s at %3$s"
+msgstr "Oleh %1$s waktu %2$s tempat %3$s"
+
+#: comments.php:66
+msgid "\\t\\t\\t\\t\\t<span class=\"unapproved\">Your trackback is awaiting moderation.</span>\\n"
+msgstr "\\t\\t\\t\\t\\t<span class=\"unapproved\">Trackback anda menunggu moderasi.</span>\\n"
+
+#: comments.php:79
+msgid "Post a Comment"
+msgstr "Tulis sebuah Komentar"
+
+#: comments.php:82
+#, php-format
+msgid "You must be <a href=\"%s\" title=\"Log in\">logged in</a> to post a comment."
+msgstr "Anda harus <a href=\"%s\" title=\"Log in\">login</a> untuk berkomentar."
+
+#: comments.php:90
+#, php-format
+msgid "<span class=\"loggedin\">Logged in as <a href=\"%1$s\" title=\"Logged in as %2$s\">%2$s</a>.</span> <span class=\"logout\"><a href=\"%3$s\" title=\"Log out of this account\">Log out?</a></span>"
+msgstr "<span class=\"loggedin\">Masuk sebagai <a href=\"%1$s\" title=\"Masuk sebagai %2$s\">%2$s</a>.</span> <span class=\"logout\"><a href=\"%3$s\" title=\"Keluar dari akun ini\">Keluar?</a></span>"
+
+#: comments.php:97
+msgid "Your email is <em>never</em> published nor shared."
+msgstr "Email anda <em>tidak pernah</em> dipublikasikan"
+
+#: comments.php:97
+msgid "Required fields are marked <span class=\"required\">*</span>"
+msgstr "Bagian yang diperlukan bertanda <span class=\"required\">*</span>"
+
+#: comments.php:100
+msgid "Name"
+msgstr "Nama"
+
+#: comments.php:100
+#: comments.php:105
+msgid "<span class=\"required\">*</span>"
+msgstr "<span class=\"required\">*</span>"
+
+#: comments.php:105
+#, fuzzy
+msgid "Email"
+msgstr "E-Mail"
+
+#: comments.php:110
+msgid "Website"
+msgstr "Website"
+
+#: comments.php:117
+msgid "Comment"
+msgstr "Komentar"
+
+#: comments.php:123
+msgid "Post Comment"
+msgstr "Buat Komentar"
+
+#: header.php:22
+msgid "Posts RSS feed"
+msgstr "RSS Feed Artikel"
+
+#: header.php:23
+msgid "Comments RSS feed"
+msgstr "RSS Fee Komentar"
+
+#: header.php:44
+msgid "Skip navigation to the content"
+msgstr "Tidak menggunakan navigasi ke isi"
+
+#: header.php:44
+msgid "Skip to content"
+msgstr "Langsung ke isi"
+
+#: page.php:14
+msgid "Pages: "
+msgstr "Halaman: "
+
+#: search.php:15
+msgid "Search Results for:"
+msgstr "Hasil pencarian untuk:"
+
+#: search.php:51
+msgid "Nothing Found"
+msgstr "Tidak Menemukan"
+
+#: search.php:53
+msgid "Sorry, but nothing matched your search criteria. Please try again with some different keywords."
+msgstr "Maaf, tidak ada yang sesuai dengan kriteria pencarian. Coba lagi dengan keyword berbeda"
+
+#: sidebar.php:5
+#: sidebar.php:9
+#: library/functions/widgets.php:16
+#: library/functions/widgets.php:23
+#: library/functions/widgets.php:200
+msgid "Search"
+msgstr "Cari"
+
+#: sidebar.php:15
+msgid "Pages"
+msgstr "Halaman"
+
+#: sidebar.php:22
+msgid "Categories"
+msgstr "Ketegori"
+
+#: sidebar.php:30
+msgid "Archives"
+msgstr "Arsip"
+
+#: sidebar.php:47
+msgid "RSS Feeds"
+msgstr "RSS Feed"
+
+#: sidebar.php:49
+#: library/functions/widgets.php:57
+msgid "All posts"
+msgstr "Semua artikel"
+
+#: sidebar.php:50
+#: library/functions/widgets.php:58
+msgid "All comments"
+msgstr "Semua komentar"
+
+#: sidebar.php:55
+#: library/functions/widgets.php:35
+#: library/functions/widgets.php:202
+msgid "Meta"
+msgstr "Meta"
+
+#: tag.php:13
+msgid "Tag Archives:"
+msgstr "Arsip Tag:"
+
+#: library/functions/hooks-filters.php:26
+msgid "Not Found"
+msgstr "Tidak Ketemu"
+
+#: library/functions/hooks-filters.php:31
+#: library/functions/hooks-filters.php:115
+msgid "Permalink to "
+msgstr "Permalink untuk"
+
+#: library/functions/hooks-filters.php:39
+msgid "By "
+msgstr "Oleh"
+
+#: library/functions/hooks-filters.php:41
+msgid "View all posts by "
+msgstr "Tampilkan semua artikel oleh"
+
+#: library/functions/hooks-filters.php:65
+msgid "Edit post"
+msgstr "Ubah Artikel"
+
+#: library/functions/hooks-filters.php:72
+msgid "This entry was posted in "
+msgstr "Entri ini dipublikasikan di"
+
+#: library/functions/hooks-filters.php:75
+msgid "Also posted in "
+msgstr "Juga dipublikasikan di "
+
+#: library/functions/hooks-filters.php:78
+msgid "Posted in "
+msgstr "Dipublikasikan di"
+
+#: library/functions/hooks-filters.php:84
+msgid " and tagged"
+msgstr "dan ditag"
+
+#: library/functions/hooks-filters.php:87
+msgid " Also tagged "
+msgstr "juga ditag"
+
+#: library/functions/hooks-filters.php:89
+msgid "Tagged"
+msgstr "Tag"
+
+#: library/functions/hooks-filters.php:97
+#: library/functions/hooks-filters.php:100
+#: library/functions/hooks-filters.php:103
+msgid "Comment on "
+msgstr "Komentar kepada"
+
+#: library/functions/hooks-filters.php:98
+msgid " Comments"
+msgstr "Komentar-komentar"
+
+#: library/functions/hooks-filters.php:101
+msgid " Comment"
+msgstr " KoKomentar"
+
+#: library/functions/hooks-filters.php:104
+msgid "Leave a comment"
+msgstr "Tulis sebuah komentar"
+
+#: library/functions/hooks-filters.php:107
+msgid "Comments closed"
+msgstr "Komentar ditutup"
+
+#: library/functions/hooks-filters.php:115
+msgid ". Bookmark the "
+msgstr "Bookmark"
+
+#: library/functions/hooks-filters.php:116
+msgid "permalink"
+msgstr "Permanent-Link"
+
+#: library/functions/hooks-filters.php:118
+#: library/functions/hooks-filters.php:126
+msgid "Post a comment"
+msgstr "Tulis sebuah Komentar"
+
+#: library/functions/hooks-filters.php:119
+msgid " or leave a trackback: "
+msgstr "Tinggalkan trackback"
+
+#: library/functions/hooks-filters.php:120
+#: library/functions/hooks-filters.php:123
+msgid "Trackback URL for your post"
+msgstr "Trackback-URL dari artkel anda"
+
+#: library/functions/hooks-filters.php:120
+#: library/functions/hooks-filters.php:123
+msgid "Trackback URL"
+msgstr "Trackback-URL"
+
+#: library/functions/hooks-filters.php:122
+msgid " Comments are closed, but you can leave a trackback: "
+msgstr "Komentar ditutup, tapi anda dapat meninggalkan trackback:"
+
+#: library/functions/hooks-filters.php:125
+msgid " Trackbacks are closed, but you can "
+msgstr "Trackbacks ditutup, tapi anda dapat"
+
+#: library/functions/hooks-filters.php:126
+msgid "post a comment"
+msgstr "tulis sebuah komentar"
+
+#: library/functions/hooks-filters.php:128
+msgid " Both comments and trackbacks are currently closed."
+msgstr "Komentar dan trackbacks ditutup"
+
+#: library/functions/theme-options.php:199
+msgid "For more information about this theme, <a href=\"http://themeshaper.com\">visit ThemeShaper</a>. Please visit the <a href=\"http://themeshaper.com/forums/\">ThemeShaper Forums</a> if you have any questions about Thematic."
+msgstr "Informasi lanjut tentang theme, <a href=\"http://themeshaper.com\">kunjungi ThemeShaper</a>. Silahkan kunjungi pulsa <a href=\"http://themeshaper.com/forums/\">Forum ThemeShaper</a>jika ada pertanyaan tentang Thematic"
+
+#: library/functions/widgets.php:52
+#: library/functions/widgets.php:204
+#: library/functions/widgets.php:205
+msgid "RSS Links"
+msgstr "Link-Link RSS"
+
+#: library/functions/widgets.php:76
+msgid "Title:"
+msgstr "Judul:"
+
+#: library/functions/widgets.php:199
+msgid "Blog Index"
+msgstr "Blog Indeks"
+

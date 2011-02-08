@@ -1,0 +1,486 @@
+# kubrick theme pot file.
+# Copyright (C) 2007 WordPress
+# This file is distributed under the same license as the kubrick theme package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Thematic 0.9\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-11-12 18:30+0100\n"
+"PO-Revision-Date: 2009-11-11 19:30+0100\n"
+"Last-Translator: Manfred Burkardt <manfred@mabuweb.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Catalan\n"
+"X-Poedit-Country: SPAIN\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: ../../../thematic\n"
+
+#: ../../../thematicSVN/404.php:10
+msgid "Apologies, but we were unable to find what you were looking for. Perhaps  searching will help."
+msgstr "Perdoneu, però no hem trobat el que busqueu. "
+
+#: ../../../thematicSVN/404.php:15
+#: ../../../thematicSVN/search.php:58
+msgid "Find"
+msgstr "Trobar"
+
+#: ../../../thematicSVN/archive.php:16
+#, php-format
+msgid "Daily Archives: <span>%s</span>"
+msgstr "Arxius diarus: <span>%s</span>"
+
+#: ../../../thematicSVN/archive.php:18
+#, php-format
+msgid "Monthly Archives: <span>%s</span>"
+msgstr "Arxius per mes: <span>%s</span>"
+
+#: ../../../thematicSVN/archive.php:20
+#, php-format
+msgid "Yearly Archives: <span>%s</span>"
+msgstr "Arxius per any: <span>%s</span>"
+
+#: ../../../thematicSVN/archive.php:22
+msgid "Blog Archives"
+msgstr "Arxius de bloc"
+
+#: ../../../thematicSVN/archive.php:31
+#: ../../../thematicSVN/archive.php:53
+#: ../../../thematicSVN/author.php:21
+#: ../../../thematicSVN/author.php:57
+#: ../../../thematicSVN/category.php:20
+#: ../../../thematicSVN/category.php:42
+#: ../../../thematicSVN/index.php:17
+#: ../../../thematicSVN/index.php:49
+#: ../../../thematicSVN/search.php:21
+#: ../../../thematicSVN/search.php:43
+msgid "<span class=\"meta-nav\">&laquo;</span> Older posts"
+msgstr "<span class=\"meta-nav\">&laquo;</span> Entrades anteriors"
+
+#: ../../../thematicSVN/archive.php:32
+#: ../../../thematicSVN/archive.php:54
+#: ../../../thematicSVN/author.php:22
+#: ../../../thematicSVN/author.php:58
+#: ../../../thematicSVN/category.php:21
+#: ../../../thematicSVN/category.php:43
+#: ../../../thematicSVN/index.php:18
+#: ../../../thematicSVN/index.php:50
+#: ../../../thematicSVN/search.php:22
+#: ../../../thematicSVN/search.php:44
+msgid "Newer posts <span class=\"meta-nav\">&raquo;</span>"
+msgstr "Entrades  recents <span class=\"meta-nav\">&raquo;</span>"
+
+#: ../../../thematicSVN/archive.php:41
+#: ../../../thematicSVN/attachment.php:20
+#: ../../../thematicSVN/author.php:45
+#: ../../../thematicSVN/category.php:30
+#: ../../../thematicSVN/index.php:30
+#: ../../../thematicSVN/search.php:31
+msgid "Read More <span class=\"meta-nav\">&raquo;</span>"
+msgstr "Llegir Més  <span class=\"meta-nav\">&raquo;</span>"
+
+#: ../../../thematicSVN/archives.php:20
+msgid "Archives by Category"
+msgstr "Arxius per categoria"
+
+#: ../../../thematicSVN/archives.php:26
+msgid "Archives by Month"
+msgstr "Arxius per Mes"
+
+#: ../../../thematicSVN/archives.php:32
+#: ../../../thematicSVN/links.php:20
+#: ../../../thematicSVN/page.php:16
+msgid "Edit"
+msgstr "Editar"
+
+#: ../../../thematicSVN/attachment.php:22
+#: ../../../thematicSVN/index.php:32
+msgid "Pages:"
+msgstr "Pàgines:"
+
+#: ../../../thematicSVN/author.php:15
+msgid "Author Archives: "
+msgstr "Arxius de l'autor: "
+
+#: ../../../thematicSVN/author.php:34
+msgid "Email "
+msgstr "Email"
+
+#: ../../../thematicSVN/category.php:13
+msgid "Category Archives:"
+msgstr "Arxius per categoria:"
+
+#: ../../../thematicSVN/comments.php:10
+msgid "This post is password protected. Enter the password to view any comments."
+msgstr "Aquesta entrada està protegida per contrasenya. Poseu la contrasenya per veure els comentaris."
+
+#: ../../../thematicSVN/comments.php:31
+#, php-format
+msgid "<span>%d</span> Comments"
+msgstr "<span>%d</span>  Comentaris"
+
+#: ../../../thematicSVN/comments.php:31
+msgid "<span>One</span> Comment"
+msgstr "<span>Un</span> Comentari"
+
+#: ../../../thematicSVN/comments.php:52
+#, php-format
+msgid "<span>%d</span> Trackbacks"
+msgstr "<span>%d</span> Trackbacks"
+
+#: ../../../thematicSVN/comments.php:52
+msgid "<span>One</span> Trackback"
+msgstr "<span>Un</span> Trackback"
+
+#: ../../../thematicSVN/comments.php:67
+msgid "Post a Comment"
+msgstr "Publicar un comentari"
+
+#: ../../../thematicSVN/comments.php:67
+#, php-format
+msgid "Post a Reply to %s"
+msgstr "Respongueu a %s"
+
+#: ../../../thematicSVN/comments.php:72
+#, php-format
+msgid "You must be <a href=\"%s\" title=\"Log in\">logged in</a> to post a comment."
+msgstr "Has de <a href=\"%s\" title=\"Logueado\">obrir una sessió</a> per publicar un comentari."
+
+#: ../../../thematicSVN/comments.php:83
+#, php-format
+msgid "<span class=\"loggedin\">Logged in as <a href=\"%1$s\" title=\"Logged in as %2$s\">%2$s</a>.</span> <span class=\"logout\"><a href=\"%3$s\" title=\"Log out of this account\">Log out?</a></span>"
+msgstr "Sessió onert com <a href=\"%1$s\">%2$s</a>.</span> <span class=\"logout\"><a href=\"%3$s\" title=\"Sortir d'aquest compte\" >¿Sortir?</a></span>"
+
+#: ../../../thematicSVN/comments.php:90
+msgid "Your email is <em>never</em> published nor shared."
+msgstr "El teu correu <em>mai</em> serà compartit o publicat."
+
+#: ../../../thematicSVN/comments.php:90
+msgid "Required fields are marked <span class=\"required\">*</span>"
+msgstr "Els camps obligatoris estàn marcats <span class=\"required\">*</span> "
+
+#: ../../../thematicSVN/comments.php:93
+msgid "Name"
+msgstr "Nom"
+
+#: ../../../thematicSVN/comments.php:93
+#: ../../../thematicSVN/comments.php:98
+msgid "<span class=\"required\">*</span>"
+msgstr "<span class=\"required\">*</span>"
+
+#: ../../../thematicSVN/comments.php:98
+msgid "Email"
+msgstr "Email"
+
+#: ../../../thematicSVN/comments.php:103
+msgid "Website"
+msgstr "Website"
+
+#: ../../../thematicSVN/comments.php:110
+msgid "Comment"
+msgstr "Comentari"
+
+#: ../../../thematicSVN/comments.php:120
+msgid "Post Comment"
+msgstr "Publicar comentari"
+
+#: ../../../thematicSVN/page.php:14
+msgid "Pages: "
+msgstr "Pàgines: "
+
+#: ../../../thematicSVN/search.php:15
+msgid "Search Results for:"
+msgstr "Resultats de la cerca:"
+
+#: ../../../thematicSVN/search.php:51
+msgid "Nothing Found"
+msgstr "No s'ha trobat res"
+
+#: ../../../thematicSVN/search.php:53
+msgid "Sorry, but nothing matched your search criteria. Please try again with some different keywords."
+msgstr "Perdoneu, però no s'ha trobat res. Intenteu amb termes diferents."
+
+#: ../../../thematicSVN/sidebar.php:6
+#: ../../../thematicSVN/sidebar.php:10
+msgid "Search"
+msgstr "Cercar"
+
+#: ../../../thematicSVN/sidebar.php:16
+msgid "Pages"
+msgstr "Pàgines"
+
+#: ../../../thematicSVN/sidebar.php:23
+msgid "Categories"
+msgstr "Categories"
+
+#: ../../../thematicSVN/sidebar.php:31
+msgid "Archives"
+msgstr "Arxius"
+
+#: ../../../thematicSVN/sidebar.php:50
+msgid "RSS Feeds"
+msgstr "RSS-Feeds"
+
+#: ../../../thematicSVN/sidebar.php:52
+#: ../../../thematicSVN/library/extensions/hooks-filters.php:391
+msgid "Posts RSS feed"
+msgstr "Publicar Feed de RSS"
+
+#: ../../../thematicSVN/sidebar.php:52
+msgid "All posts"
+msgstr "Totes les entrades"
+
+#: ../../../thematicSVN/sidebar.php:53
+#: ../../../thematicSVN/library/extensions/hooks-filters.php:409
+msgid "Comments RSS feed"
+msgstr "RSS dels comentaris"
+
+#: ../../../thematicSVN/sidebar.php:53
+msgid "All comments"
+msgstr "Tots els comentaris"
+
+#: ../../../thematicSVN/sidebar.php:58
+msgid "Meta"
+msgstr "Info"
+
+#: ../../../thematicSVN/tag.php:13
+#: ../../../thematicSVN/library/extensions/hooks-filters.php:207
+msgid "Tag Archives:"
+msgstr "Arxius de tags"
+
+#: ../../../thematicSVN/library/extensions/discussion.php:10
+#, php-format
+msgid "Posted %1$s at %2$s <span class=\"meta-sep\">|</span> <a href=\"%3$s\" title=\"Permalink to this comment\">Permalink</a>"
+msgstr "Publicat %1$s en %2$s <span class=\"meta-sep\">|</span> <a href=\"%3$s\" title=\"Permalink a este comentario\">Permalink</a>"
+
+#: ../../../thematicSVN/library/extensions/discussion.php:15
+msgid "\t\t\t\t\t<span class='unapproved'>Your comment is awaiting moderation.</span>\n"
+msgstr "\t\t\t\t\t<span class='unapproved'>El vostre comentari està esperant moderació.</span>\n"
+
+#: ../../../thematicSVN/library/extensions/discussion.php:22
+msgid "Reply"
+msgstr "Respondre"
+
+#: ../../../thematicSVN/library/extensions/discussion.php:23
+msgid "Log in to reply."
+msgstr "Obre una sessió per respondre."
+
+#: ../../../thematicSVN/library/extensions/discussion.php:37
+#, php-format
+msgid "By %1$s on %2$s at %3$s"
+msgstr "Per %1$s el %2$s a les %3$s"
+
+#: ../../../thematicSVN/library/extensions/discussion.php:42
+msgid "\\t\\t\\t\\t\\t<span class=\"unapproved\">Your trackback is awaiting moderation.</span>\\n"
+msgstr "\\t\\t\\t\\t\\t<span class=\"unapproved\">El vostre trackback està esperant moderació.</span>\\n"
+
+#: ../../../thematicSVN/library/extensions/helpers.php:31
+#: ../../../thematicSVN/library/extensions/helpers.php:44
+msgid "There is no excerpt because this is a protected post."
+msgstr "No n'hi ha excerpt perquè aquest post està protegit."
+
+#: ../../../thematicSVN/library/extensions/hooks-filters.php:61
+msgid "Skip navigation to the content"
+msgstr "Saltar navegació al contingut"
+
+#: ../../../thematicSVN/library/extensions/hooks-filters.php:61
+msgid "Skip to content"
+msgstr "Saltar al contingut"
+
+#: ../../../thematicSVN/library/extensions/hooks-filters.php:211
+#: ../../../thematicSVN/library/extensions/hooks-filters.php:498
+msgid "Not Found"
+msgstr "No s'ha trobat"
+
+#: ../../../thematicSVN/library/extensions/hooks-filters.php:490
+#: ../../../thematicSVN/library/extensions/hooks-filters.php:545
+msgid "Edit post"
+msgstr "Editar entrada"
+
+#: ../../../thematicSVN/library/extensions/hooks-filters.php:503
+#: ../../../thematicSVN/library/extensions/hooks-filters.php:598
+msgid "Permalink to "
+msgstr "Permalink de"
+
+#: ../../../thematicSVN/library/extensions/hooks-filters.php:512
+msgid "By "
+msgstr "De "
+
+#: ../../../thematicSVN/library/extensions/hooks-filters.php:514
+msgid "View all posts by "
+msgstr "Veure totes les entrades de "
+
+#: ../../../thematicSVN/library/extensions/hooks-filters.php:517
+msgid "Published: "
+msgstr "Publicat: "
+
+#: ../../../thematicSVN/library/extensions/hooks-filters.php:552
+msgid "This entry was posted in "
+msgstr "Aquesta entrada es va publicar en "
+
+#: ../../../thematicSVN/library/extensions/hooks-filters.php:555
+msgid "Also posted in "
+msgstr "També publicat en "
+
+#: ../../../thematicSVN/library/extensions/hooks-filters.php:558
+msgid "Posted in "
+msgstr "Publicat en "
+
+#: ../../../thematicSVN/library/extensions/hooks-filters.php:565
+msgid " and tagged"
+msgstr "i classificat en "
+
+#: ../../../thematicSVN/library/extensions/hooks-filters.php:568
+msgid " Also tagged "
+msgstr "També classificat en "
+
+#: ../../../thematicSVN/library/extensions/hooks-filters.php:570
+msgid "Tagged"
+msgstr "Etiquetes"
+
+#: ../../../thematicSVN/library/extensions/hooks-filters.php:579
+#: ../../../thematicSVN/library/extensions/hooks-filters.php:582
+#: ../../../thematicSVN/library/extensions/hooks-filters.php:585
+msgid "Comment on "
+msgstr "Comentar "
+
+#: ../../../thematicSVN/library/extensions/hooks-filters.php:580
+msgid " Comments"
+msgstr " Comentaris"
+
+#: ../../../thematicSVN/library/extensions/hooks-filters.php:583
+msgid " Comment"
+msgstr " Comentar"
+
+#: ../../../thematicSVN/library/extensions/hooks-filters.php:586
+msgid "Leave a comment"
+msgstr "Deixeu un comentari"
+
+#: ../../../thematicSVN/library/extensions/hooks-filters.php:589
+msgid "Comments closed"
+msgstr "Comentaris tancats"
+
+#: ../../../thematicSVN/library/extensions/hooks-filters.php:598
+msgid ". Bookmark the "
+msgstr ". Bookmark el "
+
+#: ../../../thematicSVN/library/extensions/hooks-filters.php:599
+msgid "permalink"
+msgstr "permalink"
+
+#: ../../../thematicSVN/library/extensions/hooks-filters.php:601
+#: ../../../thematicSVN/library/extensions/hooks-filters.php:609
+msgid "Post a comment"
+msgstr "Publicar un comentari"
+
+#: ../../../thematicSVN/library/extensions/hooks-filters.php:602
+msgid " or leave a trackback: "
+msgstr " o deixar un trackback: "
+
+#: ../../../thematicSVN/library/extensions/hooks-filters.php:603
+#: ../../../thematicSVN/library/extensions/hooks-filters.php:606
+msgid "Trackback URL for your post"
+msgstr "URL del Trackback  per la vostra entrada"
+
+#: ../../../thematicSVN/library/extensions/hooks-filters.php:603
+#: ../../../thematicSVN/library/extensions/hooks-filters.php:606
+msgid "Trackback URL"
+msgstr "URL del Trackback"
+
+#: ../../../thematicSVN/library/extensions/hooks-filters.php:605
+msgid " Comments are closed, but you can leave a trackback: "
+msgstr " Els comentarir estàn tancats, però podeu deixar un trackback: "
+
+#: ../../../thematicSVN/library/extensions/hooks-filters.php:608
+msgid " Trackbacks are closed, but you can "
+msgstr " Els trackbacks estàn tancats però podeu "
+
+#: ../../../thematicSVN/library/extensions/hooks-filters.php:609
+msgid "post a comment"
+msgstr "publicar un comentari"
+
+#: ../../../thematicSVN/library/extensions/hooks-filters.php:611
+msgid " Both comments and trackbacks are currently closed."
+msgstr "Tant els comentaris com els trackbacks estàn tancats."
+
+#: ../../../thematicSVN/library/extensions/shortcodes.php:16
+msgid "Login"
+msgstr "Obrir sessió"
+
+#: ../../../thematicSVN/library/extensions/shortcodes.php:18
+msgid "Logout"
+msgstr "Tancar sessió"
+
+#: ../../../thematicSVN/library/extensions/theme-options.php:13
+msgid "Index Insert Position"
+msgstr "Index d'inserció"
+
+#: ../../../thematicSVN/library/extensions/theme-options.php:14
+msgid "The widgetized Index Insert will follow after this post number."
+msgstr "El widget insertat en \"Index insert\" es mostrarà al redera del post amb aquest nombre."
+
+#: ../../../thematicSVN/library/extensions/theme-options.php:19
+msgid "Info on Author Page"
+msgstr "Informació en la pàgina de l'autor"
+
+#: ../../../thematicSVN/library/extensions/theme-options.php:20
+msgid "Display a <a href=\"http://microformats.org/wiki/hcard\" target=\"_blank\">microformatted vCard</a>—with the author's avatar, bio and email—on the author page."
+msgstr "Mostrar una <a href=\"http://microformats.org/wiki/hcard\" target=\"_blank\">vCard amb microformat</a>—amb el avatar de l'autor, el seu bio i el seu email, en la pàgina de l'autor."
+
+#: ../../../thematicSVN/library/extensions/theme-options.php:25
+msgid "Text in Footer"
+msgstr "Text en el Footer (peu)"
+
+#: ../../../thematicSVN/library/extensions/theme-options.php:26
+msgid "You can use the following shortcodes in your footer text: [wp-link] [theme-link] [loginout-link] [blog-title] [the-year]"
+msgstr "Podeu utilitzar els següents \"shortcodes\" en el text del peu: [wp-link] [theme-link] [loginout-link] [blog-title] [the-year]"
+
+#: ../../../thematicSVN/library/extensions/theme-options.php:28
+msgid "Powered by [wp-link]. Built on the [theme-link]."
+msgstr "Powered by [wp-link]. Dissenyat sobre [theme-link]."
+
+#: ../../../thematicSVN/library/extensions/theme-options.php:76
+msgid "settings saved."
+msgstr "opcions guardats."
+
+#: ../../../thematicSVN/library/extensions/theme-options.php:77
+msgid "settings reset."
+msgstr "opcions reiniciats."
+
+#: ../../../thematicSVN/library/extensions/theme-options.php:78
+msgid "widgets reset."
+msgstr "widgets reiniciats."
+
+#: ../../../thematicSVN/library/extensions/theme-options.php:191
+msgid "Save changes"
+msgstr "Guardar canvis"
+
+#: ../../../thematicSVN/library/extensions/theme-options.php:197
+msgid "Reset"
+msgstr "Reiniciar"
+
+#: ../../../thematicSVN/library/extensions/theme-options.php:203
+msgid "Reset Widgets"
+msgstr "Reiniciar Widgets"
+
+#: ../../../thematicSVN/library/extensions/theme-options.php:208
+msgid "For more information about this theme, <a href=\"http://themeshaper.com\">visit ThemeShaper</a>. Please visit the <a href=\"http://themeshaper.com/forums/\">ThemeShaper Forums</a> if you have any questions about Thematic."
+msgstr "Per a més informació sobre aquest tema, <a href=\"http://themeshaper.com\">visita ThemeShaper</a>. Podeu visitar el <a href=\"http://themeshaper.com/forums/\">Forum de ThemeShaper</a> si teniu preguntes sobre Thematic."
+
+#: ../../../thematicSVN/library/extensions/widgets.php:55
+#: ../../../thematicSVN/library/extensions/widgets.php:245
+#: ../../../thematicSVN/library/extensions/widgets.php:246
+msgid "RSS Links"
+msgstr "Enllaç RSS"
+
+#: ../../../thematicSVN/library/extensions/widgets.php:79
+msgid "Title:"
+msgstr "Títol:"
+
+#~ msgid "Blog Index"
+#~ msgstr "Index del bloc"
+

@@ -1,0 +1,390 @@
+/* screen */
+
+body {	font-size: 13px; line-height: 1.5; width: 960px; margin: 0 auto;	}
+
+body.liquid {	max-width: 1620px; min-width: 960px; width: 94%; margin: 0 auto;	}
+
+body.grid {	
+      background: url(../grids/960_grid_12_col_18px_height.gif) repeat-y center;	}
+
+img {
+  -ms-interpolation-mode: bicubic;
+}
+      
+.blurb {
+  border-style: solid;
+  border-width: 2px;
+  margin: 0 0 10px 0;
+  padding: 10px;
+}
+
+.blurb strong {
+  
+}
+
+.blurb p {
+  margin: 0;
+}
+
+.error.blurb {
+  background-color: #ffebeb;
+  border-color: #e65757;
+}
+
+.warning.blurb {
+  background-color: #ffffe5;
+  border-color: #d3b586;
+}
+
+.notice.blurb {
+  background-color: #eeffeb;
+  border-color: #3abe24;
+}
+
+section.content > section,
+section.content > article,
+section.content > aside {
+	margin:0.8em;
+	padding:0.5em 1.2em;
+}
+
+
+aside {
+  border-left: 1px solid #ccc;
+  padding-left: 1em;
+}
+
+aside nav {
+  
+}
+
+aside ul {
+  list-style-type: none;
+  margin: 0 0 1em;
+}
+
+aside nav li {
+  list-style-type: none;
+}
+
+aside nav li a {
+  background-color: #f0f0f0;
+  border-bottom: 1px solid #fff;
+  display: block;
+  padding: .25em .5em;
+  text-decoration: none;
+}
+
+aside nav li a:hover {
+  background-color: #ffc;
+}
+
+p.slab { font-family: "museo-sans-1", "museo-sans-2", helvetica, arial, serif; }
+p.sans { font-family: "museo-slab-1", "museo-slab-2", helvetica, arial, serif; }
+
+/* =Structure - todo become an example
+-------------------------------------------------------------- */
+
+#page {
+	display: block;
+	margin: 1em auto;
+}
+#aprimary {
+	float: left;
+	margin: 0 -240px 0 0;
+	width: 100%;
+}
+#main .widget-area {
+	float: right;
+	overflow: hidden;
+	width: 220px;
+}
+#colophon {
+	clear: both;
+	display: block;
+	width: 100%;
+}
+
+/* Increase the size of the content area for templates without sidebars */
+
+.full-width .main,
+.image-attachment .main,
+.error404 .main {
+	margin: 0;
+}
+
+/* Text meant only for screen readers */
+
+.screen-reader-text {
+	position: absolute;
+	left: -9000em;
+}
+
+
+/* =Header
+-------------------------------------------------------------- */
+
+#site-title {
+	font-size: 2em;
+	font-weight: bold;
+	margin: .67em 0;
+}
+#site-description {
+	font-size: 1em;
+	font-weight: normal;
+	margin: 0 0 1em 0;
+}
+
+
+/* =Menu
+-------------------------------------------------------------- */
+
+#access {
+	display: block;
+	float: left;
+	margin: 0 auto 1em auto;
+}
+#access ul {
+	list-style: none;
+	margin: 0;
+	padding-left: 0;
+}
+#access li {
+	float: left;
+	position: relative;
+}
+#access a {
+	display: block;
+	line-height: 2em;
+	padding: 0 1em;
+	text-decoration: none;
+}
+#access ul ul {
+	display: none;
+	position: absolute;
+	top: 2em;
+	left: 0;
+	float: left;
+	-webkit-box-shadow: 0px 3px 3px rgba(0,0,0,0.2);
+	-moz-box-shadow: 0px 3px 3px rgba(0,0,0,0.2);
+	box-shadow: 0px 3px 3px rgba(0,0,0,0.2);
+	z-index: 99999;
+}
+#access ul ul ul {
+	left: 100%;
+	top: 0;
+}
+#access ul ul a {
+	background: #333;
+	color: #fff;
+	height: auto;
+	line-height: 1em;
+	padding: .5em .5em .5em 1em;
+	width: 10em;
+}
+#access li:hover > a,
+#access ul ul :hover > a {
+	background: #333;
+	color: #fff;
+}
+#access ul ul a:hover {
+	background: #000;
+}
+#access ul li:hover > ul {
+	display: block;
+}
+
+
+/* =Content
+-------------------------------------------------------------- */
+
+.main nav {
+	display: block;
+	overflow: hidden;
+}
+.main nav .nav-previous {
+	float: left;
+	width: 50%;
+}
+.main nav .nav-next {
+	float: right;
+	text-align: right;
+	width: 50%;
+}
+.main #nav-above {
+	display: none;
+}
+.paged .main #nav-above,
+.single .main #nav-above {
+	display: block;
+}
+#nav-below {
+	margin: 1em 0 0 0;
+}
+.page-link {
+	margin: 0 0 1em 0;
+}
+
+/* 404 page */
+
+.error404 .widget {
+	float: left;
+	width: 33%;
+}
+.error404 .widget .widgettitle,
+.error404 .widget ul {
+	margin-right: 1em;
+}
+.error404 .widget_tag_cloud {
+	clear: both;
+	float: none;
+	width: 100%;
+}
+
+/* Notices */
+
+.post .notice,
+.error404 #searchform {
+	background: #EEE;
+	display: block;
+	padding: 1em;
+}
+
+/* Image Attachments */
+
+.image-attachment div.entry-meta {
+	float: left;
+}
+.image-attachment nav {
+	float: right;
+	margin: 0 0 1em 0;
+}
+.image-attachment .entry-content {
+	clear: both;
+}
+.image-attachment .entry-content .entry-attachment {
+	background: #EEE;
+	padding: 1em;
+	text-align: center;
+}
+.image-attachment .entry-content .attachment {
+	display: block;
+	margin: 0 auto;
+	text-align: center;
+}
+
+
+/* =Images
+-------------------------------------------------------------- */
+
+a img {
+	border: none;
+}
+
+
+/* =Forms
+-------------------------------------------------------------- */
+
+#searchform label {
+	display: none;
+}
+#searchform input#s {
+	width: 60%;
+}
+input[type=text],
+input#s {
+	margin: 0 1em 0 0;
+	width: 60%;
+}
+textarea {
+	width: 80%;
+}
+
+/* Class for labelling required form items */
+
+.required {
+	color: #CC0033;
+}
+
+
+/* =Comments
+-------------------------------------------------------------- */
+
+#respond input[type=text] {
+	float: left;
+	margin: 0 1em 0 0;
+	width: 60%;
+}
+#respond .comment-form-comment label {
+	display: none;
+}
+#respond textarea {
+	margin: 0 1em 1em 0;
+	float: left;
+	width: 80%;
+}
+#respond .form-allowed-tags {
+	clear: both;
+	width: 80%;
+}
+#respond .form-allowed-tags code {
+	display: block;
+}
+
+
+/* =Widgets
+-------------------------------------------------------------- */
+
+.widget-area {
+	background: rgba(212, 234, 235, .25); /* not-pink */
+}
+.widget-area ul {
+	list-style: none;
+	padding: 0 1em;
+}
+.widget-area ul ul {
+	list-style: disc;
+	padding: 0 0 0 1em;
+}
+.widget-area .widget_search {
+	overflow: hidden;
+}
+.widget-area .widget_search input {
+	float: left;
+}
+
+
+/* =Footer
+-------------------------------------------------------------- */
+
+#colophon {
+	padding: 1em 0 0 0;
+}
+
+/* =WordPress basics
+-------------------------------------------------------------- */
+.alignleft {
+	display: inline;
+	float: left;
+}
+.alignright {
+	display: inline;
+	float: right;
+}
+.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+.wp-caption {
+	padding: .5em;
+	text-align: center;
+}
+.wp-caption img {
+	margin: .25em;
+}
+.wp-caption .wp-caption-text {
+	margin: .5em;
+}
+
