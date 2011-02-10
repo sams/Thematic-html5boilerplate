@@ -11,6 +11,28 @@ $alt_layouts = array(
 	'col3c' => '2 sidebars (right)',
 );
 
+$jqueryversion = array(
+	// stable jquery libs
+	'1.5.0' => '1.5.0',
+	'1.4.3' => '1.4.3',
+	'1.4.2' => '1.4.2',
+	'1.4.1' => '1.4.1',
+	'1.3.2' => '1.3.2',
+	'1.3.0' => '1.3.0',
+	'1.2.6' => '1.2.6',
+	'1.2.3' => '1.2.3'
+);
+
+$minification_options = array(
+	'' => 'none',
+	'css' => 'css',
+	'js' => 'js',
+	'html' => 'html',
+	'cssjs' => 'css and js',
+	'all' => 'all',
+);
+
+                          
 // Theme options adapted from "A Theme Tip For WordPress Theme Authors"
 // http://literalbarrage.org/blog/archives/2007/05/03/a-theme-tip-for-wordpress-theme-authors/
 // is it req to add options for minify etc
@@ -20,7 +42,7 @@ $my_options = array(
 		'name' => __('Column Layout', 'thematicchild'),
 		'desc' => '',
 		'id' => $my_shortname . '_alt_layouts',
-		'std' => 'desfault',
+		'std' => 'default',
 		'type' => 'select',
 		'options' => $alt_layouts
 	),
@@ -30,6 +52,13 @@ $my_options = array(
 		'id' => $my_shortname . '_logo',
 		'std' => '',
 		'type' => 'upload'
+	),
+	array(
+		'name' => __('Logo URL', 'thematicchild'),
+		'desc' => __('Specify a url for the logo image (overrides the uploaded).', 'childtheme') ,
+		'id' => $my_shortname . '_logourl',
+		'std' => '',
+		'type' => 'text'
 	),
 	array(
 		'name' => __('Remove Title', 'thematicchild'),
@@ -74,11 +103,40 @@ $my_options = array(
 		'type' => 'checkbox'
 	),
 	array(
+		'name' => __('Modernizr Version', 'thematicchild'),
+		'desc' => __('Version of modernizr to use', 'thematicchild'),
+		'id' => $my_shortname . '_modernizr',
+		'std' => '1.5',
+		'type' => 'text'
+	),
+	array(
+		'name' => __('Main Styles Url', 'thematicchild'),
+		'desc' => __('Uri for main stylesheet', 'thematicchild'),
+		'id' => $my_shortname . '_main_style_url',
+		'std' => '',
+		'type' => 'text'
+	),
+	array(
 		'name' => __('Handheld', 'thematicchild'),
 		'desc' => __('Include the handheld styles.', 'thematicchild'),
 		'id' => $my_shortname . '_handheld',
 		'std' => '',
 		'type' => 'checkbox'
+	),
+	array(
+		'name' => __('Handheld Style Url', 'thematicchild'),
+		'desc' => __('Uri for main stylesheet', 'thematicchild'),
+		'id' => $my_shortname . '_hh_style_url',
+		'std' => '',
+		'type' => 'text'
+	),
+	array(
+		'name' => __('Minify', 'thematicchild'),
+		'desc' => __('Minifcation options.', 'thematicchild'),
+		'id' => $my_shortname . '_minify',
+		'std' => '',
+		'type' => 'select',
+		'options' => $minification_options
 	),
 	array(
 		'name' => __('Liquid', 'thematicchild'),
@@ -88,11 +146,47 @@ $my_options = array(
 		'type' => 'checkbox'
 	),
 	array(
+		'name' => __('jQuery Version', 'thematicchild'),
+		'desc' => __('What Version of jQuery are we to load', 'thematicchild'),
+		'id' => $my_shortname . '_jquery_version',
+		'std' => '1.4.2',
+		'type' => 'select',
+		'options' => $jqueryversion,
+	),
+	array(
 		'name' => __('JS in Footer', 'thematicchild'),
-		'desc' => __('For optimal rendering in performance', 'thematicchild'),
+		'desc' => __('Place JS Before body close after footer', 'thematicchild'),
 		'id' => $my_shortname . '_jsfoot',
 		'std' => '',
 		'type' => 'checkbox'
+	),
+	array(
+		'name' => __('Deque jQuery', 'thematicchild'),
+		'desc' => __('Your already including it', 'thematicchild'),
+		'id' => $my_shortname . '_dqjquery',
+		'std' => '',
+		'type' => 'checkbox'
+	),
+	array(
+		'name' => __('Google Hosted Api', 'thematicchild'),
+		'desc' => __('Load jQuery from Google Hosted CDN', 'thematicchild'),
+		'id' => $my_shortname . '_gdn',
+		'std' => '',
+		'type' => 'checkbox'
+	),
+	array(
+		'name' => __('JS Plugins', 'thematicchild'),
+		'desc' => __('jQuery Plugins to CnC (one file each line); change to minify url once known if using groups', 'thematicchild'),
+		'id' => $my_shortname . '_js_plugins',
+		'std' => '',
+		'type' => 'textarea'
+	),
+	array(
+		'name' => __('JS Script', 'thematicchild'),
+		'desc' => __('jQuery Script Files (one file eachline); change to minify url once known if using groups', 'thematicchild'),
+		'id' => $my_shortname . '_js_script',
+		'std' => '',
+		'type' => 'textarea'
 	),
 	array(
 		'name' => __('Yahoo Profiling', 'thematicchild'),
@@ -116,9 +210,51 @@ $my_options = array(
 		'type' => 'textarea'
 	),
 	array(
+		'name' => __('Selectivizr', 'thematicchild'),
+		'desc' => __('Add selectivizr for IE 8 and less.', 'thematicchild'),
+		'id' => $my_shortname . '_selectivizr',
+		'std' => '',
+		'type' => 'checkbox'
+	),
+	array(
+		'name' => __('Drew Diller PNG Fix', 'thematicchild'),
+		'desc' => __('Fix PNG transparency with DD PNGFix use .png_bg  class on images to fix them in ie7 and below.', 'thematicchild'),
+		'id' => $my_shortname . '_dd_pngfix',
+		'std' => 'true',
+		'type' => 'checkbox'
+	),
+	array(
 		'name' => __('Google Analytics Code', 'thematicchild'),
 		'desc' => __('Your Google Analytics Id String (not the full code just UA-xxx).  Install Yoast GA & Seo Plugins http://yoast.com/.', 'thematicchild'),
 		'id' => $my_shortname . '_googleanalytics',
+		'std' => '',
+		'type' => 'text'
+	),
+	array(
+		'name' => __('Google Site Verification', 'thematicchild'),
+		'desc' => __('Adding a Value here will place a meta tag to the head of home page only to verify the site in Google Webmaster Tools', 'thematicchild'),
+		'id' => $my_shortname . '_gsv',
+		'std' => '',
+		'type' => 'text'
+	),
+	array(
+		'name' => __('Yahoo Site Verification', 'thematicchild'),
+		'desc' => __('Adding a Value here will place a meta tag to the head of home page only to verify the site in Yahoo Site Explorer', 'thematicchild'),
+		'id' => $my_shortname . '_ykey',
+		'std' => '',
+		'type' => 'text'
+	),
+	array(
+		'name' => __('Alexa Site Verification', 'thematicchild'),
+		'desc' => __('Adding a Value here will place a meta tag to the head of home page only to verify the site in Aexla Webmaster Tools', 'thematicchild'),
+		'id' => $my_shortname . '_akey',
+		'std' => '',
+		'type' => 'text'
+	),
+	array(
+		'name' => __('Bing Site Verification', 'thematicchild'),
+		'desc' => __('Adding a Value here will place a meta tag to the head of home page only to verify the site in Bing Webmaster Tools', 'thematicchild'),
+		'id' => $my_shortname . '_msv',
 		'std' => '',
 		'type' => 'text'
 	),
