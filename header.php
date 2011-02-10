@@ -41,6 +41,7 @@
 	// Modernizer
 	thematic_create_modernizr();
 ?>
+<!-- todo: compressed css should go here. -->
 <!-- WP-Minify CSS -->
 
 </head>
@@ -50,8 +51,8 @@
 if (apply_filters('thematic_show_bodyclass',TRUE)) { 
 	// Creating the body class
 	?>
-
-<body class="<?php echo thematic_body_class(); ?>">
+<!-- TODO: make this lang dynamic -->
+<body lang="en" class="<?php echo thematic_body_class(); ?>">
 	<?php }
 
 	// action hook for placing content before it all begins - later will be able to open a wrapper

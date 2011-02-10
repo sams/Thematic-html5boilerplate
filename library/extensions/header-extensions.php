@@ -2,12 +2,11 @@
 
 // Creates the DOCTYPE section
 function thematic_create_doctype() {
-	$content = '<!DOCTYPE html>' . "\n";
-	$content.= '<!--[if lt IE 7 ]><html lang="en" class="no-js ie ie6"><![endif]-->' . "\n";
-	$content.= '<!--[if IE 7 ]><html lang="en" class="no-js ie ie7"><![endif]-->' . "\n";
-	$content.= '<!--[if IE 8 ]><html lang="en" class="no-js ie ie8"><![endif]-->' . "\n";
-	$content.= '<!--[if IE 9 ]><html lang="en" class="no-js ie ie8"><![endif]-->' . "\n";
-	$content.= '<!--[if (gt IE 9)|!(IE)]><!--><html lang="en" class="no-js"><!--<![endif]-->' . "\n";
+	$content = '<!doctype html>' . "\n";
+        $content.= '<!--[if lt IE 7 ]> <html class="no-js ie6"> <![endif]-->' . "\n";
+        $content.= '<!--[if IE 7 ]>    <html class="no-js ie7"> <![endif]-->' . "\n";
+        $content.= '<!--[if IE 8 ]>    <html class="no-js ie8"> <![endif]-->' . "\n";
+        $content.= '<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js"> <!--<![endif]-->' . "\n";
 	echo apply_filters('thematic_create_doctype', $content);
 } // end thematic_create_doctype
 
