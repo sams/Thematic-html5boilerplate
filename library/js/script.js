@@ -5,7 +5,7 @@
 // from thematic dropdowns
 $(document).ready(function(){
 	$('input, textarea').placeholder();
-	$("$header ul").supersubs({ 
+	$("header ul").supersubs({ 
 		minWidth:	12,								// minimum width of sub-menus in em units 
 		maxWidth:	27,								// maximum width of sub-menus in em units 
 		extraWidth:  1								// extra width can ensure lines don't sometimes turn over 
@@ -16,6 +16,16 @@ $(document).ready(function(){
 		speed:	   'fast',							// faster animation speed 
 		autoArrows:  false,							// disable generation of arrow mark-up 
 		dropShadows: false							// disable drop shadows 
-	}); 
+	});
+	
+	// carofredsel - a carosel for any element type - with many options
+	/* $(".slider ul").carouFredSel({
+		items: 1,
+		easing: "linear",
+		auto: {
+			pauseDuration: 7000,
+			delay: 70
+		}
+	}); */
 });
 
