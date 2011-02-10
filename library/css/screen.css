@@ -1,16 +1,47 @@
 /* screen */
 
-body {	font-size: 13px; line-height: 1.5; width: 960px; margin: 0 auto;	}
-
-body.liquid {	max-width: 1620px; min-width: 960px; width: 94%; margin: 0 auto;	}
-
-body.grid {	
-      background: url(../grids/960_grid_12_col_18px_height.gif) repeat-y center;	}
+body {
+	text-shadow: 1px 1px 3px #bbb; -moz-text-shadow: 1px 1px 3px #bbb; -webkit-text-shadow: 1px 1px 3px #bbb; -o-text-shadow: 1px 1px 3px #bbb;
+	margin: 0 auto;
+	width: 997px;
+}
 
 img {
   -ms-interpolation-mode: bicubic;
 }
-      
+
+/***** search *****/
+header .search {
+	width: 220px;
+	margin-top: -3px; margin-left: 9px;
+}
+
+/***** general slider *****/
+
+.slider		{
+	width: 100%;
+}
+
+.js .slider {
+	max-width: 100%;
+	height: auto;
+	overflow: hidden;
+}
+
+	.slider ul {
+		width: 100%;
+		height: 100%;
+		margin: 0; padding: 0;
+	}
+	.slider li { list-style: none }
+	.slider li div {
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+
+/***** blurb, error, notice add warning, alert? *****/   
+
 .blurb {
   border-style: solid;
   border-width: 2px;
@@ -41,13 +72,127 @@ img {
   border-color: #3abe24;
 }
 
+/***** section / article / aside *****/   
+
 section.content > section,
 section.content > article,
 section.content > aside {
-	margin:0.8em;
-	padding:0.5em 1.2em;
+	margin: 0 .8em;
+}
+section.content > aside {
+	font-size: 75.5%;
+}
+section.main > article {
+	padding-left: 16px; padding-right: 8px;
 }
 
+/***** secondary *****/
+.content .single-bottom, .content .page-bottom	{margin-left: 0px; margin-right: 0px;}
+
+.secondary .widget_links links { float: none; }
+.secondary .widget_thematic_rsslinks,
+.secondary .widget_thematic_meta { float: left; width: 50%; }
+.ie6.secondary .widget_thematic_meta,
+.ie7.secondary .widget_thematic_meta  { margin-right: -3px  }
+.secondary .widget_thematic_rsslinks h3,
+.secondary .widget_thematic_meta h3,
+.secondary .widget_thematic_rsslinks ul { margin-right: 1em;  }
+.secondary .widget_thematic_rsslinks ul,
+.secondary .widget_thematic_meta ul { margin-left: .0568em; }
+
+/***** layout variations *****/   
+
+.leftLong .content > .secondary,
+.rightLong .content > .secondary,
+.contact .content > .secondary,
+.contact .content > .secondary {
+	clear: both;
+}
+
+.leftLong .content > .primary,
+.leftLong .content > .secondary,
+.rightLong .content > .primary
+.rightLong .content > .secondary {
+	width: 187px;
+}
+
+.rightDual .content > aside,
+.rightLong .content > aside,
+.rightSec .content > .secondary,
+.contact .content > .secondary {
+	float: right; 
+	border-left: 1px solid #CCCCCC;
+	padding-right: 3px;
+	margin-right: 0;
+	_margin-left:-3px
+}
+.rightSec .content > .secondary {
+	width: 107px;
+}
+
+.leftDual .content > aside,
+.leftLong .content > aside {
+	border-right: 1px solid #CCCCCC;
+	border-left: 0;
+	float: left;
+	padding-left: 3px;
+	margin-left: 0;
+	_margin-right:-3px
+}
+
+.page-top {
+	margin: 1.5em 0;
+	padding: 1em;
+	width: 100%;
+}
+
+/***** home layout *****/   
+
+.home .slider		{	height: 185px;	}
+.home .slider li	{
+	width: 100%;
+	height: 185px;
+}
+.home .content > .primary		{ width: 144px; margin-left: 9px; padding-right: 12px; padding-left: 0px;}
+.home .content > .secondary,
+.home .content > .page-top		{width: 235px; padding-left: 16px; margin-left: 10px;}
+.home .content > .page-top { float: right }
+.home .content > .secondary {clear: right}
+
+/***** about layout *****/   
+
+.about .content > .primary		{width: 97px}
+.about .content > .secondary	{width: 187px}
+.about .content > .main			{  }
+
+
+/***** contact layout *****/   
+
+.contact .content > .secondary {
+	margin-left:9px;
+	padding-left:0;
+	padding-right:12px;
+}
+
+.contact .content > .primary,
+.contact .content > .secondary	{
+	float: right; width: 270px; 
+	border-left: 1px solid #CCCCCC;
+	border-right: 0;
+	margin-right:0;
+	padding-right:3px;
+	margin-left:0;
+	padding-left:19px;
+	_margin-left:-3px
+	}
+.contact .content > .main			{  }
+
+/* section.content h1, section.content h2, section.content h3 { margin-top:0; margin-bottom:0; }
+section.content h1 { font-size:2.62069em; padding:1.26312em 0; }
+section.content h2 { font-size:1.62069em; padding:1.28309em 0; }
+section.content h3 { font-size:1em; padding:1.23077em 0; } */
+
+/***** aside *****/
 
 aside {
   border-left: 1px solid #ccc;
@@ -63,11 +208,11 @@ aside ul {
   margin: 0 0 1em;
 }
 
-aside nav li {
+aside li {
   list-style-type: none;
 }
 
-aside nav li a {
+aside li a {
   background-color: #f0f0f0;
   border-bottom: 1px solid #fff;
   display: block;
@@ -75,7 +220,7 @@ aside nav li a {
   text-decoration: none;
 }
 
-aside nav li a:hover {
+aside li a:hover {
   background-color: #ffc;
 }
 
@@ -85,24 +230,10 @@ p.sans { font-family: "museo-slab-1", "museo-slab-2", helvetica, arial, serif; }
 /* =Structure - todo become an example
 -------------------------------------------------------------- */
 
-#page {
-	display: block;
-	margin: 1em auto;
-}
-#aprimary {
-	float: left;
-	margin: 0 -240px 0 0;
-	width: 100%;
-}
-#main .widget-area {
-	float: right;
-	overflow: hidden;
-	width: 220px;
-}
 #colophon {
 	clear: both;
 	display: block;
-	width: 100%;
+	float: left; width: 40%; text-align: left
 }
 
 /* Increase the size of the content area for templates without sidebars */
@@ -142,13 +273,15 @@ p.sans { font-family: "museo-slab-1", "museo-slab-2", helvetica, arial, serif; }
 #access {
 	display: block;
 	float: left;
-	margin: 0 auto 1em auto;
+	margin: .75em auto 0 auto;
 }
-#access ul {
+/*#access ul {
 	list-style: none;
 	margin: 0;
 	padding-left: 0;
-}
+	margin-top: 15px;
+	padding-top: 16px;
+} */
 #access li {
 	float: left;
 	position: relative;
@@ -184,8 +317,8 @@ p.sans { font-family: "museo-slab-1", "museo-slab-2", helvetica, arial, serif; }
 }
 #access li:hover > a,
 #access ul ul :hover > a {
-	background: #333;
-	color: #fff;
+	background:none repeat scroll 0 0 white;
+	color:#444444;
 }
 #access ul ul a:hover {
 	background: #000;
@@ -288,11 +421,11 @@ a img {
 #searchform label {
 	display: none;
 }
-#searchform input#s {
-	width: 60%;
-}
 input[type=text],
-input#s {
+input[type=password],
+input[type=tel],
+input[type=url],
+input[type=email] {
 	margin: 0 1em 0 0;
 	width: 60%;
 }
@@ -302,8 +435,9 @@ textarea {
 
 /* Class for labelling required form items */
 
+input[required],
 .required {
-	color: #CC0033;
+	border: 1px solid #CC0033;
 }
 
 
@@ -335,6 +469,11 @@ textarea {
 /* =Widgets
 -------------------------------------------------------------- */
 
+.oxox {
+
+}
+  .oxox li {}
+
 .widget-area {
 	background: rgba(212, 234, 235, .25); /* not-pink */
 }
@@ -360,6 +499,18 @@ textarea {
 #colophon {
 	padding: 1em 0 0 0;
 }
+
+#subsidiary {
+	margin: 0;
+}
+	#subsidiary aside {
+		float:left;
+		width:33.33333%;
+	}
+	
+	#subsidiary .third {
+		display:table-cell;float:none;width:auto;*display:block;*zoom:1;_position:relative;_left:-3px;_margin-right:-3px;
+	}
 
 /* =WordPress basics
 -------------------------------------------------------------- */
@@ -388,3 +539,633 @@ textarea {
 	margin: .5em;
 }
 
+
+/* external urls and gen protcols, document types & sites */
+a[href^="http:"],
+a[href^="https:"]	{}
+
+a[href^="callto:"] {}
+a[href^="mailto:"] {}
+
+/* like wikipedia */
+a[href^="http://www.youtube.com"],
+a[href^="http://www.twitter.com"],
+a[href^="http://www.yahoo.com"],
+a[href^="http://delicious.com"],
+a[href^="http://github.com"],
+a[href^="http://www.facebook.com"],
+a[href^="http://www.wordpress.com"],
+a[rel="external"] { min-height: 1.5em; padding-left: 1.5em; background: url("tra1x1.gif") no-repeat scroll 0 3px transparent; -webkit-background-size: 16px 16px; background-size: 16px 16px;}
+
+a[href^="http://www.youtube.com"] {background-image: url(http://www.youtube.com/favicon.ico);}
+a[href^="http://www.twitter.com"] {background-image: url(http://twitter.com/favicon.ico); background-position: 0 2px }
+a[href^="http://www.facebook.com"] {background-image: url(http://www.facebook.com/favicon.ico);}
+a[href^="http://www.yahoo.com"] {background-image: url(http://www.yahoo.com/favicon.ico);}
+a[href^="http://github.com"] {background: url("http://github.com/favicon.ico") no-repeat scroll 0 3px transparent;}
+a[href^="http://delicious.com"] {background-image: url(http://delicious.com/favicon.ico);}
+a[href^="http://www.wordpress.com"] {background-image: url(http://www.wordpress.com/favicon.ico);}
+
+a[href$=".pdf"] {}
+a[href$=".doc"] {}
+a[href$=".rss"] {}
+
+/* unstoppable robot ninja fluid images adjusted */
+
+img {
+    max-width: 100%;
+}
+
+.ie p,
+.ie img {
+	width: 100%;
+}
+
+
+section > aside,
+article > aside {
+	float: right;
+	border-left: 1px solid #CCCCCC
+}
+
+abbr, acronym {
+  border-bottom: .1em dotted;
+  cursor: help;
+}
+
+figure, video, img {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+  margin: 0 auto
+}
+
+figure video, figure img {
+  border: 0;
+  padding: 0;
+}
+
+body > figure {
+	margin-top: 0.75em;
+	margin-bottom: 0.75em;
+}
+
+figure caption {
+}
+
+blockquote {
+  background: #f0f0f0;
+  padding: 10px;
+}
+
+dt {
+  font-weight: bold;
+}
+
+q:before {
+  content: "\201c";
+}
+
+q:after {
+  content: "\201d";
+}
+
+q q:before {
+  content: "\2018";
+}
+
+q q:after {
+  content: "\2019";
+}
+
+code.block {
+  display: block;
+}
+
+del {
+  color: #999;
+}
+
+sub, sup {
+  font-size:xx-small; 
+}
+
+sub {
+  vertical-align: sub;
+}
+
+sup {
+  vertical-align: super;
+}
+
+dt {
+  
+}
+
+dd {
+  margin-left: 1em;
+}
+
+table {
+  border: 2px solid #ccc;
+  width: 100%;
+}
+
+table caption {
+  text-align: left;
+}
+
+th {
+  background-color: #f0f0f0;
+  text-align: left;
+}
+
+th,
+td {
+  padding: 2px 5px;
+}
+
+ul, ol {
+  display: block;
+  margin-left: 1.5em;
+}
+
+/***** helper classes and stuff (where are microformats) *****/   
+
+
+
+/***** #header *****/   
+
+#header {
+  border-bottom: 1px solid #ccc;
+  position: relative; /* I wonder if there are drawbacks to relative divs that I am unaware of? */
+}
+
+	#header .widgetcontainer {
+		position: absolute;
+		right: 0;
+		height: 24px;
+		width: 607px;
+		bottom: 1px;
+	}
+
+	#logo {
+	  float: left;
+	  margin-left: -10px;
+	}
+
+		#logo img {
+			margin: 0;
+			padding-right: 0;
+		}
+
+	#header .social-links {
+		position: absolute;
+		right: 0;
+		width: auto;
+		padding-bottom: 0.5em;
+		padding-left: 0;
+		margin-bottom: 1px;
+		margin-right: 1em;
+		bottom: 0;
+	}
+
+	#header hgroup {
+		display: inline-block;
+		margin-top: 1.5em;
+	}
+	/* maybe ie all but think this is it 17/09/2010 22:42:07 */
+	.ie6 #header hgroup {
+		float: left;
+	}
+
+	#header h1,
+	#header h2 {
+		display: block;
+	}
+
+	#header h1 {
+		padding-top: 0.06em;
+		font-size: 113%;
+	}
+	
+	#header h2 {
+		color:#888888;
+		font-size:88%;
+		font-style:italic;
+		padding-top:0.04em;
+		-moz-text-shadow: #2A242D 1px 1px, #2A242D 2px 2px, #2A242D 3px 3px, #2A242D 4px 4px, #2A242D 5px 5px, #2A242D 6px 6px;
+		-webkit-text-shadow: #2A242D 1px 1px, #2A242D 2px 2px, #2A242D 3px 3px, #2A242D 4px 4px, #2A242D 5px 5px, #2A242D 6px 6px;
+		text-shadow: #2A242D 1px 1px, #2A242D 2px 2px, #2A242D 3px 3px, #2A242D 4px 4px, #2A242D 5px 5px, #2A242D 6px 6px;
+	}
+
+	#header nav {
+		display: inline;
+		float: right;
+	}
+
+	#header ul {
+		clear:right;
+		display:block;
+		list-style:none outside none;
+		margin: 0;
+		padding-left:0;
+		padding-top: 5px;
+		
+	}
+
+	.ie6 #header ul {
+		display: inline; float: right
+	}
+
+	.ie7 #header ul {
+		display: inline; position: absolute; right: 0px;
+	}
+
+	#header nav li {
+	  display: inline-block; zoom: 1;
+	  /* I might be able to gain something through the use of this rahter than the method that works - though the method that works works :)
+	   /* ie7 hack for display:inline-block */
+	   padding-top: 0px; padding-bottom: 0px;
+	}
+
+	.ie6 #header nav li,
+	.ie7 #header nav li {
+		display: block; float: left
+	}
+
+	.ie7 .search,
+	.ie8 .search {
+		margin-bottom: -27px;
+		margin-left: 1em;
+	}
+
+	.ie #header #s {
+		width: 116px;
+	}
+
+	.ie #header li div {
+		width: 174px;
+	}
+
+	.ie7 #header {
+		position: relative;
+	}
+
+	.ie7 #header nav {
+		position: absolute; right: 0;
+	}
+
+	.ie7 #header ul {
+		xright: 0; xposition: absolute;
+	}	
+
+	#header nav li a {
+	  padding: 0 20px;
+	  text-decoration: none;
+	}
+	
+	#header .skip-link,
+	#header .switch-mobile {
+		display:inline;
+		float:right;
+		padding-right:0;
+		margin-right: 1.1em;
+		font-size: 62.5%
+	}
+
+/***** #footer *****/
+
+#footer {
+  border-top: 1px solid #ccc;
+  clear: both;
+  margin: 1em auto;
+  padding: 1em 0;
+}
+	#footer small {
+		margin: .5em 1.5em;
+	}
+
+/***** POSTS formatting *****/
+
+article.post {
+}
+
+	article.post header {
+	  xborder-bottom: 1px solid #ccc;
+	  xmargin-bottom: 1em;
+	  xpadding-bottom: 1em;
+	}
+	
+	article.post header time {
+	  color: #666;
+	}
+	
+	article.post header h1 {
+	}
+	
+	article.post header p {
+	  margin: 0;
+	}
+	
+	
+	article.post .author {
+	}
+
+/***** update *****/
+
+section.update {
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 1em 0 0;
+}
+
+/***** footnotes *****/
+
+section.footnotes {
+}
+
+	section.footnotes ul {
+	}
+	
+	section.footnotes ul li {
+	}
+
+/***** comments *****/
+
+section.comments {
+  xborder-top: 1px solid #ccc;
+  xmargin-top: 1em;
+}
+
+	section.comments article {
+	  xborder-top: 1px solid #ccc;
+	  padding-top: 1em;
+	}
+	
+	section.comments form {
+	  border: 1px solid #ccc;
+	  xbackground-color: #f0f0f0;
+	  xpadding: 10px;
+	}
+
+/***** search *****/
+/* 
+
+This should only contain styles that make forms more usable regardless of the medium.
+
+*/
+
+button, input, select, textarea {
+  font-size: 100%;
+}
+
+form {
+  margin-bottom: 1em;
+}
+
+.field {
+  margin-bottom: .5em;
+}
+  
+  .x-large.field input { width: 30em; }
+  .large.field input { width: 20em; }
+  /* Medium is excluded because it is the default size. */
+  .small.field input { width: 8em; }
+  .x-small.field input { width: 3em; }
+
+.field li {
+  line-height: 180%;
+  list-style-type: none;
+  margin-left: -1.5em;
+  
+}
+
+input[type="radio"] { 
+  vertical-align: text-bottom;
+}
+
+input[type="checkbox"] { 
+  vertical-align: bottom; 
+  *vertical-align: baseline; 
+}
+
+.field label {
+  display: block;
+}
+
+.field > input[type="checkbox"] + label,
+.field li label {
+  display: -moz-inline-stack;
+  display: inline-block;
+}
+
+.field span {
+  color: #666;
+  font-size: 90%;
+}
+
+.field > span {
+  display: block;
+}
+
+fieldset {
+  border-top: 2px solid #ccc;
+  margin-bottom: 1em;
+}
+
+fieldset legend {
+  padding-right: 5px;
+}
+
+textarea {
+  width: 90%;
+  height: 6em;
+}
+
+.placeholder {
+  color: #999;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  background: #e9f4ff;
+  border: 1px solid #38638e;
+}
+
+input[type="date"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="text"],
+input[type="url"],
+select,
+textarea {
+  border-top: 1px solid #666;
+  border-right: 1px solid #bbb;
+  border-bottom: 1px solid #bbb;
+  border-left: 1px solid #666;
+  line-height: 140%;
+}
+
+input[type="date"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="text"],
+input[type="url"],
+textarea {
+  padding: 5px 2px 1px 2px;
+}
+
+label, 
+input[type=button],
+input[type=submit],
+button { 
+  cursor: pointer;
+}
+
+input[type=button],
+input[type=submit],
+button { 
+  /* http://www.viget.com/inspire/styling-the-button-element-in-internet-explorer/ */
+  width: auto;
+  overflow: visible;
+}
+
+/*	searchbox relative here also seems a touch ott perhaps	*/
+#searchbox {
+	position: relative;
+}
+#searchbox div {
+	display: inline-block;
+	zoom: 1; /* ie7 hack for display:inline-block */
+	*display: inline;
+	border: solid 1px #d2d2d2;
+	padding: 3px 5px;
+	
+	-webkit-border-radius: 2em;
+	-moz-border-radius: 2em;
+	border-radius: 2em;
+
+	-webkit-box-shadow: 0 1px 0 rgba(0,0,0,.1);
+	-moz-box-shadow: 0 1px 0 rgba(0,0,0,.1);
+	box-shadow: 0 1px 0 rgba(0,0,0,.1);
+
+	background: #f1f1f1;
+	background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#ededed));
+	background: -moz-linear-gradient(top,  #fff,  #ededed);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ededed'); /* ie7 */
+	-ms-filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ededed'); /* ie8 */
+}
+
+	.ie7 #searchbox div {
+		/* iam margin bottom -27px aboveurgh */
+		margin-top: -.75em;
+	}
+
+	#searchbox input[type=search],
+	#searchbox input[type=submit],
+	#searchbox input[type=text],
+	#searchbox input[type=button] {
+		font: normal 12px/100% Arial, Helvetica, sans-serif;
+		border-color: transparent;
+		border-radius: 2em;
+		-moz-border-radius: 2em;
+		-webkit-border-radius: 2em;
+	}
+
+	.ie #searchbox input[type=search],
+	.ie #searchbox input[type=text] {
+		width: 116px;
+	}
+
+	#searchbox input[type=search] {
+		-webkit-appearance: textfield;
+		-webkit-box-sizing: content-box;
+	}
+
+	#searchbox input[type=search],
+	#searchbox input[type=text] {
+		padding: 5px;
+		outline: none;
+		border-color: transparent;
+		background: -webkit-gradient(linear, left top, left bottom, from(#bcbcbe), to(#ffffff));
+		background: -moz-linear-gradient(top,  #bcbcbe,  #ffffff);
+		
+		border: solid 1px #bcbbbb;
+		xborder: 0;
+		
+		background: #fff;
+		padding: 6px 12px 6px 12px;
+		width: 142px;
+		outline: none;
+		margin: 1px 0;
+		
+		-webkit-border-radius: 5px;
+		-moz-border-radius: 2em;
+		border-radius: 2em;
+		
+		box-shadow: inset 0 1px 2px rgba(0,0,0,.2);   
+	}
+
+	#s:focus {
+		background: #e9f4ff;
+		outline: none;
+	}
+
+	#r {
+		position: absolute;
+		top: 45px;
+		width: 150px;
+		list-style:none outside none;
+		margin:20px 0 5px 15px;
+		padding:0;
+	}
+	
+	#r li {
+		border-bottom:1px solid #D7D6D5;
+		background: rgba(231,231,231, 0.6);
+		font-size: 75.5%;
+		margin:0;
+		padding:5px 7px;
+		display: list-item;
+	}
+
+	#r li:hover {
+		background: #e9f4ff;
+	}
+
+	#searchbox input[type=submit]:hover {
+		background: #c7c1bb;
+		outline: none;
+	}
+
+	#searchbox input[type=submit] {
+		padding-bottom: 4px;
+		padding-left: 7px;
+		color: #fff;
+		border: solid 1px #494949;
+		font-size: 11px;
+		font-weight: bold;
+		text-transform: lowercase;
+		height: 27px;
+		width: 27px;
+		text-shadow: 0 1px 1px rgba(0,0,0,.6);
+		
+		-moz-text-shadow: 0 1px 0 #fff;
+		-webkit-text-shadow: 0 1px 0 #fff;
+		text-shadow: 0 1px 0 #fff;
+	
+		-webkit-border-radius: 2em;
+		-moz-border-radius: 2em;
+		border-radius: 2em;
+	
+		background: #5f5f5f;
+		background: -webkit-gradient(linear, left top, left bottom, from(#9e9e9e), to(#454545));
+		background: -moz-linear-gradient(top,  #9e9e9e,  #454545);
+		filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#9e9e9e', endColorstr='#454545'); /* ie7 */
+		-ms-filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#9e9e9e', endColorstr='#454545'); /* ie8 */
+	}
+	
