@@ -1,5 +1,3 @@
-Thumbs.db
-*.*.bak
-todofile.todo
-scripts/cache/*
-scripts/tmp/*
+cache/*
+*.komodoproject
+
