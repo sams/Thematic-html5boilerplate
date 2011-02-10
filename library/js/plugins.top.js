@@ -1,0 +1,3 @@
+
+// remap jQuery to $
+(function($){
