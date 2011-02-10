@@ -6,4 +6,5 @@ images/*.png
 images/*.gif
 cache/*
 *.komodoproject
+library/*/*.test.*
 
