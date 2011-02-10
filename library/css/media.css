@@ -38,6 +38,28 @@
   
 }
 
+/* an atempt to display content for users with small screen but still desktop */
+@media screen and (max-width: 720px) {
+
+	html body {
+		width: 700px;
+	}
+
+	body > figure {
+		width: 680px;
+		margin-left: -10px;
+	}
+
+	#header nav ul {
+		width: 340px;
+	}
+
+	#header nav .search {
+		float: right;
+		margin-top: 0.5em;
+	}
+}
+
 /* Grade-A Mobile Browsers (Opera Mobile, iPhone Safari, Android Chrome)  
    Consider this: www.cloudfour.com/css-media-query-for-mobile-is-fools-gold/ */
 @media screen and (max-device-width: 480px) {
@@ -46,5 +68,7 @@
   /* Uncomment if you don't want iOS and WinMobile to mobile-optimize the text for you
      j.mp/textsizeadjust 
   html { -webkit-text-size-adjust:none; -ms-text-size-adjust:none; } */
+  
+  .unit { float: none !important; width: auto !important; }
+  
 }
-
