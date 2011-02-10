@@ -3,13 +3,13 @@
  * @package WordPress
  * @subpackage Html5Boilerplate
  */
+// Credits: S Sherlock (merged ideas from thematic and twenty 10 + addded html5 boilerplate)
+
 
 /**
  * Make theme available for translation     - Setup child themes
  * Translations can be filed in the /languages/ directory
- */
-// Credits: S Sherlock (merged ideas from thematic and twenty 10 + addded html5 boilerplate)
-// Credits: Joern Kretzschmar
+ */// Credits: Joern Kretzschmar
 // Credits: Twenty 10 Wordpress Original Theme
 
 $themeData = get_theme_data(TEMPLATEPATH . '/style.css');
@@ -26,14 +26,73 @@ if(!$templateversion)	{
 	$templateversion = "unknown";
 }
 
+if(!defined('DEVICE')) {
+	define('DEVICE', 'desktop');
+}
+
 // set theme constants
 define('THEMENAME', $themeData['Title']);
 define('THEMEAUTHOR', $themeData['Author']);
 define('THEMEURI', $themeData['URI']);
 define('THEMATICVERSION', $version);
 
-// move this to options
-define('JSFOOT', true);
+
+// set feed links handling
+// If you set this to TRUE, thematic_show_rss() and thematic_show_commentsrss() are used instead of add_theme_support( 'automatic-feed-links' )
+if (!defined('THEMATIC_COMPATIBLE_FEEDLINKS')) {	
+	if (function_exists('comment_form')) {
+		define('THEMATIC_COMPATIBLE_FEEDLINKS', false); // WordPress 3.0
+	} else {
+		define('THEMATIC_COMPATIBLE_FEEDLINKS', true); // below WordPress 3.0
+	}
+}    
+	define('THEMATIC_COMPATIBLE_COMMENT_HANDLING', false);
+
+// set comments handling for pages, archives and links
+// If you set this to TRUE, comments only show up on pages with a key/value of "comments"
+if (!defined('THEMATIC_COMPATIBLE_COMMENT_HANDLING')) {
+	define('THEMATIC_COMPATIBLE_COMMENT_HANDLING', false);
+}
+
+// set comments handling for pages, archives and links
+// If you set this to TRUE, comments only show up on pages with a key/value of "comments"
+if (!defined('THEMATIC_BROWSER_BODY_CLASS')) {
+	define('THEMATIC_BROWSER_BODY_CLASS', false);
+}
+
+// set body class handling to WP body_class()
+// If you set this to TRUE, Thematic will use thematic_body_class instead
+if (!defined('THEMATIC_COMPATIBLE_BODY_CLASS')) {
+	define('THEMATIC_COMPATIBLE_BODY_CLASS', false);
+}
+
+// set post class handling to WP post_class()
+// If you set this to TRUE, Thematic will use thematic_post_class instead
+if (!defined('THEMATIC_COMPATIBLE_POST_CLASS')) {
+	define('THEMATIC_COMPATIBLE_POST_CLASS', false);
+}
+// which comment form should be used
+if (!defined('THEMATIC_COMPATIBLE_COMMENT_FORM')) {
+	if (function_exists('comment_form')) {
+		define('THEMATIC_COMPATIBLE_COMMENT_FORM', false); // WordPress 3.0
+	} else {
+		define('THEMATIC_COMPATIBLE_COMMENT_FORM', true); // below WordPress 3.0
+	}
+}
+
+// Check for WordPress mu or WordPress 3.0
+define('THEMATIC_MB', function_exists('get_blog_option'));
+
+// Create the feedlinks
+if (!(THEMATIC_COMPATIBLE_FEEDLINKS)) {
+	add_theme_support( 'automatic-feed-links' );
+}
+
+// Check for WordPress 2.9 add_theme_support()
+if ( apply_filters( 'thematic_post_thumbs', TRUE) ) {
+	if ( function_exists( 'add_theme_support' ) )
+	add_theme_support( 'post-thumbnails' );
+}
 
 // set child theme constants
 define('TEMPLATENAME', $ct['Title']);
@@ -41,25 +100,18 @@ define('TEMPLATEAUTHOR', $ct['Author']);
 define('TEMPLATEURI', $ct['URI']);
 define('TEMPLATEVERSION', $templateversion);
 
-
-/** remove this*/
-function thematic_scripts() {
-}
-
-// load jQuery
-if(!is_admin())	{
-	wp_deregister_script('jquery');
-	wp_enqueue_script('jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js', array(), false, true);
-}
-
 // Path constants
 define('THEMELIB', TEMPLATEPATH . '/library');
+
+// You can mess with these if you wish.
+$my_themename = get_current_theme();
+$my_shortname = 'h5bp';
 
 // Create Theme Options Page
 require_once(THEMELIB . '/extensions/theme-options.php');
 
 // Load legacy functions
-require_once(THEMELIB . '/legacy/deprecated.php');
+//require_once(THEMELIB . '/legacy/deprecated.php');
 
 // Load widgets
 require_once(THEMELIB . '/extensions/widgets.php');
@@ -94,9 +146,134 @@ require_once(THEMELIB . '/extensions/helpers.php');
 // Load shortcodes
 require_once(THEMELIB . '/extensions/shortcodes.php');
 
+// load device type specific functions
+require_once(THEMELIB . '/extensions/'.DEVICE.'-extensions.php');
+
+
+/**
+ *	Handle White Label CMS
+ */
+if (function_exists('wlcms_add_admin')) {
+	define(strtoupper('wlcms_add_admin'), true);
+}
+
+/**
+ *	Handle Minify
+ */
+if (class_exists('WPMinify')) {
+	// make a switch to disable minify temp/soft switch?? maybe not required check this
+	// set link to /wp-content/plugins/wp-minify/min/builder/
+	// inform use of bookmarklet COOL
+	
+	// the results of bookmark should be added to /wp-content/plugins/wp-minify/min/groupsConfig.php
+	//     'keyName' => array('//wpt/wp-content/themes/h5bp/library/js/plugins.top.js', '//wpt/wp-includes/js/jquery/jquery.form.js', '//wpt/wp-content/themes/h5bp/library/js/superfish.js', '//wpt/wp-content/themes/h5bp/library/js/supersubs.js', '//wpt/wp-content/themes/h5bp/library/js/jquery.bgiframe.min.js', '//wpt/wp-content/themes/h5bp/library/js/hoverIntent.js', '//wpt/wp-content/themes/h5bp/library/js/plugins.bottom.js'),
+	//   
+	define(strtoupper('WPMinify'), true);
+}
+
+/**
+ *	Handle Super Cache
+ */
+if (function_exists('wp_cache_is_enabled')) {
+	// make a soft switch
+	// make interface links to clear cache etc
+	define(strtoupper('wp_cache_is_enabled'), true);
+}
+
+/**
+ *	Handle Swf Object
+ */
+if (function_exists('wp_swfobject')) {
+	// make a page in sidebar appear its a display of html5boilerplate video
+	// would be cool to make one for this theme
+	// also oocss slides & some jquery & wordpress tv maybe a feed of html5 wordpress vdieos
+	// ha ha but this should use video in some cases (not like over use eg bing video background urgh)
+	define(strtoupper('SWFObjectWP_SWFObject'), true);
+}
+
+/**
+ *	Handle WP Ajax
+ */
+if (function_exists('wp_ajax')) {
+	// hand specific ajax things like what
+	define(strtoupper('wp_ajax'), true);
+}
+
+/**
+ *	Handle Contact 7
+ */
+//if (function_exists('wpcf7')) {
+	define(strtoupper('WP_Contact7'), true);
+//}
+
+/**
+ *	Handle Cleaner Gallery
+ */
+if (function_exists('cleaner_gallery_setup')) { 
+	define(strtoupper('cleaner_gallery'), true);
+}
+
+/**
+ *	Handle GA Admin Plugin by Yoast
+ */
+if (class_exists('GA_Admin')) {
+	define(strtoupper('Google_Analytics'), true);
+}
+
+/**
+ *	Handle Google Sitemap Generator
+ */
+if (class_exists('Google_Sitemap_Generator')) {
+	define(strtoupper('GoogleSitemapGeneratorLoader'), true);
+}
+
+/**
+ *	Handle All In One SEO
+ */
+if (function_exists('All_in_One_SEO_Pack')) {
+// septup some stuff for plugin interface from within theme options
+// also define some functions for use in theme to display agumented 
+// information based on these refined plugin settings 
+	define(strtoupper('All_in_One_SEO_Pack'), true);
+}
+
 add_theme_support( 'post-thumbnails', array( 'post') ); // Add it for posts
 
 add_filter( 'pre_get_posts', 'home_content' );
+
+  // thematic_open_wrapper
+define('THEMATIC_OPEN_WRAPPER', false);
+
+/**
+ *	thematic script
+ */
+if (!function_exists('thematic_scripts')) {
+	function thematic_scripts() {
+	themeatic_script_setup();
+	}
+}
+/**
+ * trial function to handle bunch of styles
+ * aim to handle multiple styles and assist
+ * in grouping them via mninify.  It will assist in
+ * rewriting the childtheme/default stylesheey
+ */ 
+if (!function_exists('thematic_theme_styles')) {
+	function thematic_theme_styles() {
+	}
+} // end thematic_theme_styles
+
+
+/**
+ * trial function to handle bunch of scripts
+ * aim to handle multiple scripts for debugging 
+ * and assist in grouping them via mninify
+ */ 
+if (!function_exists('thematic_theme_styles')) {
+	function thematic_theme_scripts() {
+	} 
+} // end thematic_theme_scripts
+
 
 function home_content( $query )	{
 	if ( is_home() && false == $query->query_vars['suppress_filters'] )
@@ -117,8 +294,11 @@ function thematic_remove_generators()	{ return ''; }
 if (apply_filters('thematic_hide_generators', TRUE)) {  
 	add_filter('the_generator','thematic_remove_generators');
 }
-
-// Translate, if applicable
+/**
+ * Make theme available for translation
+ * Translations can be filed in the /languages/ directory
+ * Translate, if applicable
+*/
 load_theme_textdomain('thematic', THEMELIB . '/languages');
 
 $locale = get_locale();
@@ -126,14 +306,7 @@ $locale_file = THEMELIB . "/languages/$locale.php";
 if ( is_readable($locale_file) )
 	require_once($locale_file);
 
-/**
- * Enable / Disable profiling.
- */
-if ( ! isset( $profiling ) ) { 
-	$profiling = false;
-}
-
-/** Tell WordPress to run twentyten_setup() when the 'after_setup_theme' hook is run. */
+/** Tell WordPress to run thematic_h5bp_setup() ala Twenty_Ten when the 'after_setup_theme' hook is run. */
 add_action( 'after_setup_theme', 'thematic_h5bp_setup' );
 
 if ( ! function_exists( 'thematic_h5bp_setup' ) ):
@@ -158,6 +331,7 @@ if ( ! function_exists( 'thematic_h5bp_setup' ) ):
  *
  */
 function thematic_h5bp_setup() {
+	GLOBAL $my_themename;
 
 	// This theme styles the visual editor with editor-style.css to match the theme style.
 	add_editor_style();
@@ -168,9 +342,9 @@ function thematic_h5bp_setup() {
 	// Add default posts and comments RSS feed links to head
 	add_theme_support( 'automatic-feed-links' );
 
-	// Make theme available for translation
+	// Make theme available for translation - I can remove the other one
 	// Translations can be filed in the /languages/ directory
-	load_theme_textdomain( 'thematic_h5bp', TEMPLATEPATH . '/languages' );
+	load_theme_textdomain( $my_themename, TEMPLATEPATH . '/languages' );
 
 	$locale = get_locale();
 	$locale_file = TEMPLATEPATH . "/languages/$locale.php";
@@ -179,7 +353,7 @@ function thematic_h5bp_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'oxox' => __( 'Primary Navigation', 'thematic_h5bp' ),
+		'oxox' => __( 'Primary Navigation', $my_themename ),
 	) );
 
 	// This theme allows users to set a custom background
@@ -215,13 +389,13 @@ function thematic_h5bp_setup() {
 			'url' => '%s/images/headers/path.jpg',
 			'thumbnail_url' => '%s/images/headers/path-thumbnail.jpg',
 			/* translators: header image description */
-			'description' => __( 'Path', 'thematic_h5bp' )
+			'description' => __( 'Path', $my_themename )
 		),
 		'h5bp' => array(
 			'url' => '%s/images/headers/h5bp.jpg',
 			'thumbnail_url' => '%s/images/headers/h5bp-thumbnail.jpg',
 			/* translators: header image description */
-			'description' => __( 'Html5 Boilerplate', 'thematic_h5bp' )
+			'description' => __( 'Html5 Boilerplate', $my_themename )
 		)
 	) );
 }
@@ -287,7 +461,7 @@ add_filter( 'excerpt_length', 'thematic_h5bp_excerpt_length' );
  * @return string "Continue Reading" link
  */
 function thematic_h5bp_continue_reading_link() {
-	return ' <a href="'. get_permalink() . '">' . __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'thematic_h5bp' ) . '</a>';
+	return ' <a href="'. get_permalink() . '">' . __( 'Continue reading <span class="meta-nav">&rarr;</span>', $my_themename ) . '</a>';
 }
 
 /**
@@ -344,8 +518,8 @@ if ( ! isset( $content_width ) ) {
  * This theme uses wp_nav_menu() in one location.
  */
 register_nav_menus( array(
-	'oxox' => __( 'Primary Menu', 'themename' ),
-	'aside' => __( 'Aside Menu', 'themename' )
+	'xoxo' => __( 'Primary Menu', $my_themename ),
+	'aside' => __( 'Aside Menu', $my_themename )
 ) );
 
 /**
@@ -380,10 +554,10 @@ function toolbox_filter_wp_title( $title, $separator ) {
 
 	if ( is_search() ) {
 		// If we're a search, let's start over:
-		$title = sprintf( __( 'Search results for %s', 'thematic_h5bp' ), '"' . get_search_query() . '"' );
+		$title = sprintf( __( 'Search results for %s', $my_themename ), '"' . get_search_query() . '"' );
 		// Add a page number if we're on page 2 or more:
 		if ( $paged >= 2 )
-			$title .= " $separator " . sprintf( __( 'Page %s', 'thematic_h5bp' ), $paged );
+			$title .= " $separator " . sprintf( __( 'Page %s', $my_themename ), $paged );
 		// Add the site name to the end:
 		$title .= " $separator " . get_bloginfo( 'name', 'display' );
 		// We're done. Let's send the new title back to wp_title():
@@ -400,12 +574,12 @@ function toolbox_filter_wp_title( $title, $separator ) {
 
 	// Add a page number if necessary:
 	if ( $paged >= 2 || $page >= 2 )
-		$title .= " $separator " . sprintf( __( 'Page %s', 'thematic_h5bp' ), max( $paged, $page ) );
+		$title .= " $separator " . sprintf( __( 'Page %s', $my_themename ), max( $paged, $page ) );
 
 	// Return the new title to wp_title():
 	return $title;
 }
-add_filter( 'wp_title', 'toolbox_filter_wp_title', 10, 2 );
+// add_filter( 'wp_title', 'toolbox_filter_wp_title', 10, 2 );
 
 
 // Set constant for current theme directory
@@ -414,33 +588,31 @@ $dirname = get_stylesheet_directory();
 
 define('CHILDTHEME_THEME_DIRECTORY', $dirname . '/');
 
-// You can mess with these if you wish.
-$my_themename = get_current_theme();
-$my_shortname = 'childtheme';
-
 // Get theme panel
-require_once(CHILDTHEME_THEME_DIRECTORY . 'functions/admin-panel.php');
+require_once(TEMPLATEPATH . '/functions/admin-panel.php');
 
 // Get panel options
-require_once(CHILDTHEME_THEME_DIRECTORY . 'functions/admin-panel-options.php');
+require_once(TEMPLATEPATH . '/functions/admin-panel-options.php');
+// Get panel options
+require_once(TEMPLATEPATH . '/functions/admin-panel-plugins.php');
 
 // Functions related to admin panel
-require_once(CHILDTHEME_THEME_DIRECTORY . 'functions/admin-panel-functions.php');
+require_once(TEMPLATEPATH . '/functions/admin-panel-functions.php');
 
 // Ajax Functions
-require_once(CHILDTHEME_THEME_DIRECTORY . 'functions/admin-panel-ajax.php');
+require_once(TEMPLATEPATH . '/functions/admin-panel-ajax.php');
 
 // Custom theme functions
-require_once(CHILDTHEME_THEME_DIRECTORY . 'functions/theme-functions.php');
+require_once(TEMPLATEPATH . '/functions/theme-functions.php');
 
-add_action('admin_notices', 'childtheme_timthumb_nag');
+add_action('admin_notices', 'childtheme_phpthumb_nag');
 
-function childtheme_timthumb_nag(){
-	if (! is_writable( CHILDTHEME_THEME_DIRECTORY . 'scripts/tmp/'  ) || ! is_writable( CHILDTHEME_THEME_DIRECTORY . 'scripts/cache/' ) ):
+function childtheme_phpthumb_nag(){
+	if (! is_writable( CHILDTHEME_THEME_DIRECTORY . 'cache/'  ) ):
 
 		global $my_themename;
 		echo '<div class="error"><p>';
-		printf( __('Notice: In order for %1$s to function properly, both %2$s and %3$s must be writable by the webserver ' ), $my_themename, CHILDTHEME_THEME_DIRECTORY . 'scripts/tmp/', CHILDTHEME_THEME_DIRECTORY . 'scripts/tmp/' ) ;
+		printf( __('Notice: In order for %1$s to function properly, %2$s must be writable by the webserver chmod 0755 h5bp/cache/' ), $my_themename, CHILDTHEME_THEME_DIRECTORY . 'cache/' ) ;
 		echo '</p></div>';
 
 	endif;
@@ -460,10 +632,31 @@ add_filter( 'wp_page_menu_args', 'toolbox_page_menu_args' );
  */
 function toolbox_widgets_init() {
 	// Area 1, located at the top of the sidebar.
+	GLOBAL $my_themename;
 	register_sidebar( array(
-		'name' => __( 'Primary Widget Area', 'thematic_h5bp' ),
+		'name' => __( 'Home Content', $my_themename ),
+		'id' => 'home-content',
+		'description' => __( 'This widget displays markup ideal for a sliding/fading (or tabbed use classes and customise the css) list on the home page', $my_themename ),
+		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
+		'after_widget' => '</li>',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+	) );
+	
+	register_sidebar( array(
+		'name' => __( 'Blurb AboutBox', $my_themename ),
+		'id' => 'about-box',
+		'description' => __( 'An about aside widgets displayed as sections', $my_themename ),
+		'before_widget' => '<section id="%1$s" class="widget-container %2$s">',
+		'after_widget' => '</section>',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+	) );
+
+	register_sidebar( array(
+		'name' => __( 'Primary Widget Area', $my_themename ),
 		'id' => 'primary-menu',
-		'description' => __( 'The primary menu in header (not wrapped in div)', 'thematic_h5bp' ),
+		'description' => __( 'The primary menu in header (not wrapped in div)', $my_themename ),
 		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
 		'after_widget' => '</li>',
 		'before_title' => '<h3 class="widget-title">',
@@ -471,9 +664,9 @@ function toolbox_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name' => __( 'Primary Widget Area', 'thematic_h5bp' ),
+		'name' => __( 'Primary Widget Area', $my_themename ),
 		'id' => 'primary-widget-area',
-		'description' => __( 'The primary widget area', 'thematic_h5bp' ),
+		'description' => __( 'The primary widget area', $my_themename ),
 		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
 		'after_widget' => '</li>',
 		'before_title' => '<h3 class="widget-title">',
@@ -482,9 +675,9 @@ function toolbox_widgets_init() {
 
 	// Area 2, located below the Primary Widget Area in the sidebar. Empty by default.
 	register_sidebar( array(
-		'name' => __( 'Secondary Widget Area', 'thematic_h5bp' ),
+		'name' => __( 'Secondary Widget Area', $my_themename ),
 		'id' => 'secondary-widget-area',
-		'description' => __( 'The secondary widget area', 'thematic_h5bp' ),
+		'description' => __( 'The secondary widget area', $my_themename ),
 		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
 		'after_widget' => '</li>',
 		'before_title' => '<h3 class="widget-title">',
@@ -493,9 +686,9 @@ function toolbox_widgets_init() {
 
 	// Area 3, located in the footer. Empty by default.
 	register_sidebar( array(
-		'name' => __( 'First Footer Widget Area', 'thematic_h5bp' ),
+		'name' => __( 'First Footer Widget Area', $my_themename ),
 		'id' => 'first-footer-widget-area',
-		'description' => __( 'The first footer widget area', 'thematic_h5bp' ),
+		'description' => __( 'The first footer widget area', $my_themename ),
 		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
 		'after_widget' => '</li>',
 		'before_title' => '<h3 class="widget-title">',
@@ -504,9 +697,9 @@ function toolbox_widgets_init() {
 
 	// Area 4, located in the footer. Empty by default.
 	register_sidebar( array(
-		'name' => __( 'Second Footer Widget Area', 'thematic_h5bp' ),
+		'name' => __( 'Second Footer Widget Area', $my_themename ),
 		'id' => 'second-footer-widget-area',
-		'description' => __( 'The second footer widget area', 'thematic_h5bp' ),
+		'description' => __( 'The second footer widget area', $my_themename ),
 		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
 		'after_widget' => '</li>',
 		'before_title' => '<h3 class="widget-title">',
@@ -515,9 +708,9 @@ function toolbox_widgets_init() {
 
 	// Area 5, located in the footer. Empty by default.
 	register_sidebar( array(
-		'name' => __( 'Third Footer Widget Area', 'thematic_h5bp' ),
+		'name' => __( 'Third Footer Widget Area', $my_themename ),
 		'id' => 'third-footer-widget-area',
-		'description' => __( 'The third footer widget area', 'thematic_h5bp' ),
+		'description' => __( 'The third footer widget area', $my_themename ),
 		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
 		'after_widget' => '</li>',
 		'before_title' => '<h3 class="widget-title">',
@@ -526,9 +719,9 @@ function toolbox_widgets_init() {
 
 	// Area 6, located in the footer. Empty by default.
 	register_sidebar( array(
-		'name' => __( 'Fourth Footer Widget Area', 'thematic_h5bp' ),
+		'name' => __( 'Fourth Footer Widget Area', $my_themename ),
 		'id' => 'fourth-footer-widget-area',
-		'description' => __( 'The fourth footer widget area', 'thematic_h5bp' ),
+		'description' => __( 'The fourth footer widget area', $my_themename ),
 		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
 		'after_widget' => '</li>',
 		'before_title' => '<h3 class="widget-title">',

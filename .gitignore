@@ -1,3 +1,10 @@
+Thumbs.db
+*.*.bak
+todofile.todo
+images/*.jpg
+images/*.png
+images/*.gif
 cache/*
 *.komodoproject
+library/*/*.test.*
 

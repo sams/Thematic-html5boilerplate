@@ -1,6 +1,12 @@
 ﻿Thematic Html5Boilerplate
 =========================
 
+* update the position of sidebars and sort out stuff
+* compressed styles and script are placed in the wrong places by either w3 tool or wp-minify plugins
+* some changes need documenting other need testing (others still need both)
+* default theme needs reworking
+
+
 A wordpress theme using html5 and based on Thematic ToolBox (and other Thematic themes).
 
  * Header branding image from TwentyTen
