@@ -1,34 +1,71 @@
 <?php
-/**
- * @package WordPress
- * @subpackage Thematic PFT
- */
 
-get_header(); ?> 
+    // calling the header.php
+    get_header();
 
-<?php get_sidebar(); ?>
+    // action hook for placing content above #container
+    thematic_abovecontainer();
+
+?>
+
+<?php 
+
+            the_post();
+
+            // displays the page title
+            thematic_page_title();
+
+            rewind_posts();
+
+            // create the navigation above the content
+            thematic_navigation_above();
+
+            // action hook creating the archive loop
+            thematic_archiveloop();
+
+            // create the navigation below the content
+            thematic_navigation_below();
+
+			get_sidebar(); ?>
 
 		<!-- once upon a time this was  id="primary" -->
 		<section class="main">
-
-			<?php the_post(); ?>
-
-			<h2 class="page-title">
-			<?php if ( is_day() ) : ?>
-				<?php printf( __( 'Daily Archives: <span>%s</span>', 'themename' ), get_the_date() ); ?>
-			<?php elseif ( is_month() ) : ?>
-				<?php printf( __( 'Monthly Archives: <span>%s</span>', 'themename' ), get_the_date( 'F Y' ) ); ?>
-			<?php elseif ( is_year() ) : ?>
-				<?php printf( __( 'Yearly Archives: <span>%s</span>', 'themename' ), get_the_date( 'Y' ) ); ?>
-			<?php else : ?>
-				<?php _e( 'Blog Archives', 'themename' ); ?>
-			<?php endif; ?>
-			</h2>
-
-			<?php rewind_posts(); ?>
-
-			<?php get_template_part( 'loop', 'archive' ); ?>
-
-		</section><!-- #primary -->
 		
-<?php get_footer(); ?>
+		        <?php 
+		
+		        the_post();
+		
+		        // displays the page title
+		        thematic_page_title();
+		
+		        rewind_posts();
+		
+		        // create the navigation above the content
+		        thematic_navigation_above();
+		
+		        // action hook creating the archive loop
+		        thematic_archiveloop();
+		
+		        // create the navigation below the content
+		        thematic_navigation_below();
+		
+		        ?>
+
+		</section><!-- .main -->
+		
+
+<?php 
+	
+	// 	action hook for placing content below #content.main  ?wrong place?  
+	thematic_belowcontent();
+
+    // action hook for placing content below #container
+    thematic_belowcontainer();
+
+    // calling the standard sidebar 
+    thematic_sidebar();
+    
+    // calling footer.php
+    get_footer();
+
+?>

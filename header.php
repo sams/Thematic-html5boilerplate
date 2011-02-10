@@ -1,7 +1,11 @@
 <?php
+
+
+	//if (ob_get_level() == 0) ob_start(); 
+
 /**
  * @package WordPress
- * @subpackage Thematic PFT
+ * @subpackage Thematic post.php
  */
 	thematic_create_doctype();
 
@@ -9,7 +13,7 @@
 	thematic_head_profile();
 	
 	// TODO change function name this one is crappy 
-	thematic_create_initialhead();
+	thematic_show_meta();
 
 	// Creating the doc title
 	thematic_doctitle();
@@ -23,11 +27,13 @@
 	// Loading the stylesheet
 	thematic_create_stylesheet();
 
-	// Creating the internal RSS links
-	thematic_show_rss();
-
-	// Creating the comments RSS links
-	thematic_show_commentsrss();
+	if (THEMATIC_COMPATIBLE_FEEDLINKS) {    
+    	// Creating the internal RSS links
+    	thematic_show_rss();
+    
+    	// Creating the comments RSS links
+    	thematic_show_commentsrss();
+   	}
 
 	// Creating the pingback adress
 	thematic_show_pingback();
@@ -37,33 +43,30 @@
 
 	// Calling WordPress' header action hook
 	wp_head();
-
-	// Modernizer
-	thematic_create_modernizr();
 ?>
-<!-- todo: compressed css should go here. -->
-<!-- WP-Minify CSS -->
 
 </head>
 
-<?php
-
-if (apply_filters('thematic_show_bodyclass',TRUE)) { 
+<?php 
+	//ob_get_flush();	flush();
 	// Creating the body class
-	?>
-<!-- TODO: make this lang dynamic -->
-<body lang="en" class="<?php echo thematic_body_class(); ?>">
-	<?php }
 
-	// action hook for placing content before it all begins - later will be able to open a wrapper
-	thematic_before();
+thematic_body();
 
-	thematic_aboveheader();
+// action hook for placing content before opening #wrapper
+thematic_before(); 
+
+if (apply_filters('thematic_open_wrapper', true)) {
+	//echo '<div id="wrapper" class="hfeed">';
+}
+    
+    // action hook for placing content above the theme header
+    thematic_aboveheader();
 	?>
 		<header id="header" role="banner" class="head clearfix">
 			<?php
 				// action hook creating the theme header
-				thematic_header();
+				thematic_header(); 
 			?>
 		</header><!-- #header -->
 
@@ -82,4 +85,4 @@ if (apply_filters('thematic_show_bodyclass',TRUE)) {
 		thematic_belowheader();
 	?>
 
-	<section id="main" class="body content clearfix">
+	<section id="content" class="content clearfix">

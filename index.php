@@ -1,22 +1,37 @@
 <?php
-/**
- * @package WordPress
- * @subpackage Thematic PFT
- */
 
-get_header(); ?>
+    // calling the header.php
+    get_header();
 
-<?php get_sidebar(); ?>
-		<!-- was id="primary"  -->
+    // action hook for placing content above #container
+    thematic_abovecontainer();
+
+?>
+	
+		<?php
+			thematic_abovecontent();
+		?>
+	
+		<?php
+			// calling the standard sidebar 
+			thematic_sidebar();
+		?>
+		
 		<section class="main">
 
-			<?php 
+			<?php
 				// create the navigation above the content
 				thematic_navigation_above();
+            	
+            	// create the navigation above the content
+            	thematic_navigation_above();
 				
-				// calling the widget area 'index-top'
-				get_sidebar('index-top');
+            	// calling the widget area 'index-top'
+            	get_sidebar('index-top');
 				
+            	// action hook for placing content above the index loop
+            	thematic_above_indexloop();
+
 				// action hook for placing content above the index loop
 				thematic_above_indexloop();
 				
@@ -26,12 +41,17 @@ get_header(); ?>
 				// action hook for placing content below the index loop
 				thematic_below_indexloop();
 				
-				// calling the widget area 'index-bottom'
-				get_sidebar('index-bottom');
-				
 				// create the navigation below the content
-				thematic_navigation_below();
+				thematic_navigation_below(); 
 			?>
 
 		</section><!-- #main -->
-<?php get_footer(); ?>
+		
+			<?php thematic_belowcontent(); ?> 
+<?php 
+
+    // action hook for placing content below #container
+    thematic_belowcontainer();
+
+    // calling footer.php
+    get_footer(); ?>

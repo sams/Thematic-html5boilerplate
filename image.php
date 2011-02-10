@@ -1,7 +1,7 @@
 <?php
 /**
  * @package WordPress
- * @subpackage Thematic PFT
+ * @subpackage Thematic post.php
  */
 ?>
 <?php get_header(); ?>

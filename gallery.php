@@ -4,7 +4,7 @@
  * Description: with some widgets
  *
  * @package WordPress
- * @subpackage Thematic PFT
+ * @subpackage Thematic post.php
  */
 
 get_header(); ?>
@@ -12,14 +12,12 @@ get_header(); ?>
 	<?php the_post(); ?>
 
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-		<header class="entry-header">
+			<?php edit_post_link( __( 'Edit', 'themename' ), '<span class="edit-link">', '</span>' ); ?>
 			<h1 class="entry-title"><?php the_title(); ?></h1>
-		</header><!-- .entry-header -->
 
 		<section class="entry-content">
 			<?php the_content(); ?>
 			<?php wp_link_pages( 'before=<div class="page-link">' . __( 'Pages:', 'themename' ) . '&after=</div>' ); ?>
-			<?php edit_post_link( __( 'Edit', 'themename' ), '<span class="edit-link">', '</span>' ); ?>
 		</section><!-- .entry-content -->
 	</article><!-- #post-<?php the_ID(); ?> -->
 

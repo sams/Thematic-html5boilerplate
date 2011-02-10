@@ -1,55 +1,78 @@
 <?php
-/**
- * @package WordPress
- * @subpackage Thematic PFT
- */
 
-get_header(); ?>
+    // calling the header.php
+    get_header();
 
-<?php get_sidebar(); ?>
+    // action hook for placing content above #container
+    thematic_abovecontainer();
+ ?>
+		
+		<?php thematic_abovecontent();
 
-		<!-- was id="primary"  -->
-		<section class="main">
+    // calling the standard sidebar 
+    thematic_sidebar(); ?>
 
-			<?php if ( have_posts() ) : ?>
-
-				<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'themename' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
-				<?php
-
-					// displays the page title
-					thematic_page_title();
-
-					// create the navigation above the content
-					thematic_navigation_above();
-
-					// action hook for placing content above the search loop
-					thematic_above_searchloop();
-
-					//	get_template_part( 'loop', 'search' );
-
-					// action hook creating the search loop
-					thematic_searchloop();
-
-					// action hook for placing content below the search loop
-					thematic_below_searchloop();
-
-				?>
-
-			<?php else : ?>
-
-				<article id="post-0" class="post no-results not-found">
-					<header class="entry-header">
-						<h1 class="entry-title"><?php _e( 'Nothing Found', 'themename' ); ?></h1>
-					</header><!-- .entry-header -->
-
+		<section class="main">	
+	            <?php 
+	            
+	            if (have_posts()) {
+	
+	                // displays the page title
+	                thematic_page_title();
+	
+	                // create the navigation above the content
+	                thematic_navigation_above();
+				
+	                // action hook for placing content above the search loop
+	                thematic_above_searchloop();			
+	
+	                // action hook creating the search loop
+	                thematic_searchloop();
+	
+	                // action hook for placing content below the search loop
+	                thematic_below_searchloop();			
+	
+	                // create the navigation below the content
+	                thematic_navigation_below();
+	
+	            } else {
+	            	
+	           		thematic_abovepost();
+	                
+	                ?>
+	
+				<article id="post-0" class="post noresults">
+					<h1 class="entry-title"><?php _e('Nothing Found', 'thematic') ?></h1>
 					<div class="entry-content">
-						<p><?php _e( 'Sorry, but nothing matched your search criteria. Please try again with some different keywords.', 'themename' ); ?></p>
-						<?php get_search_form(); ?>
+						<p><?php _e('Sorry, but nothing matched your search criteria. Please try again with some different keywords.', 'thematic') ?></p>
 					</div><!-- .entry-content -->
-				</article><!-- #post-0 -->
+					<form id="noresults-searchform" method="get" action="<?php bloginfo('url') ?>/">
+						<div>
+							<input id="noresults-s" name="s" type="text" value="<?php echo esc_html(stripslashes($_GET['s'])) ?>" size="40" />
+							<input id="noresults-searchsubmit" name="searchsubmit" type="submit" value="<?php _e('Find', 'thematic') ?>" />
+						</div>
+					</form>
+				</article><!-- #post -->
+	
+	            <?php
+	            
+	            	thematic_belowpost();
+	            
+	            }
+	            
+	            ?>
 
-			<?php endif; ?>
+		</section><!-- .main -->
+			
+			<?php thematic_belowcontent(); ?>
 
-		</section><!-- #primary -->
 
-<?php get_footer(); ?>
+<?php 
+
+    // action hook for placing content below #container
+    thematic_belowcontainer();
+    
+    // calling footer.php
+    get_footer();
+
+?>

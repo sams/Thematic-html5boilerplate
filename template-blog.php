@@ -8,16 +8,12 @@ Template Name: Blog Page
 	// action hook for placing content above #container
 	thematic_abovecontainer(); ?>
 
-	<aside class="leftCol">
-
 		<?php thematic_sidebar(); ?>
-
-	</aside>
 
 	<section id="main" class="main">
 
 		<?php
-			thematic_abovecontent();
+			//thematic_abovecontent();
 
 			$paged = (get_query_var('paged')) ? get_query_var('paged') : 1; query_posts("paged=$paged");
 
@@ -44,7 +40,7 @@ Template Name: Blog Page
 
 			thematic_belowcontent(); ?> 
 
-	</section><!-- #main -->
+	</section><!-- .main -->
 
 <?php
 
