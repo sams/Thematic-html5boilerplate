@@ -10,6 +10,13 @@ $alt_layouts = array(
 	'col3b' => '2 sidebars (left)',
 	'col3c' => '2 sidebars (right)',
 );
+//die(get_template_directory() . '/library/js/libs/modernizr-*.js');
+$modernizrBuildsComplete = glob(get_template_directory() . '/library/js/libs/modernizr-*.js');
+$modernizrBuilds = array();
+foreach($modernizrBuildsComplete as $build) {
+    $modernizrBuilds[] = basename($build);    
+}
+unset($modernizrBuildsComplete);
 
 $jqueryversion = array(
 	// stable jquery libs
@@ -103,13 +110,6 @@ $my_options = array(
 		'type' => 'checkbox'
 	),
 	array(
-		'name' => __('Modernizr Version', 'thematicchild'),
-		'desc' => __('Version of modernizr to use', 'thematicchild'),
-		'id' => $my_shortname . '_modernizr',
-		'std' => '1.5',
-		'type' => 'text'
-	),
-	array(
 		'name' => __('Main Styles Url', 'thematicchild'),
 		'desc' => __('Uri for main stylesheet', 'thematicchild'),
 		'id' => $my_shortname . '_main_style_url',
@@ -149,15 +149,30 @@ $my_options = array(
 		'name' => __('jQuery Version', 'thematicchild'),
 		'desc' => __('What Version of jQuery are we to load', 'thematicchild'),
 		'id' => $my_shortname . '_jquery_version',
-		'std' => '1.4.2',
+		'std' => '1.5.0',
 		'type' => 'select',
 		'options' => $jqueryversion,
+	),
+	array(
+		'name' => __('modernizr builds', 'thematicchild'),
+		'desc' => __('Lists available builds of modernizr include custom builds that you add', 'thematicchild'),
+		'id' => $my_shortname . '_modernizr_build',
+		'std' => 'modernizr-1.6.min',
+		'type' => 'select',
+		'options' => $modernizrBuilds,
 	),
 	array(
 		'name' => __('JS in Footer', 'thematicchild'),
 		'desc' => __('Place JS Before body close after footer', 'thematicchild'),
 		'id' => $my_shortname . '_jsfoot',
 		'std' => '',
+		'type' => 'checkbox'
+	),
+	array(
+		'name' => __('childtheme_override_head_scripts', 'thematicchild'),
+		'desc' => __('Override the thematic script header. If set this to true or create a function named \'childtheme_override_head_scripts\'.  If you set this to false you\'ll have errors.', 'thematicchild'),
+		'id' => $my_shortname . '_override_head_scripts',
+		'std' => 'true',
 		'type' => 'checkbox'
 	),
 	array(

@@ -115,20 +115,25 @@ function thematic_script_foot() {
 		$jqversion = stripslashes(get_option($my_shortname . '_jquery_version'));
 		$minify = stripslashes(get_option($my_shortname . '_minify'));
 		
-		//if(empty($jsfoot) || $jsfoot == 'true')	{
-			echo "<!-- script foot -->";
+		if(empty($jsfoot) || $jsfoot == 'true')	{
 			echo themeatic_script_setup(false);
-			
-			$w3_plugin_minify = & W3_Plugin_Minify::instance();
-			$w3_plugin_minify->printed_scripts[] = $location;
-			if(($minify == 'js' || $minify == 'css and js') && function_exists('w3tc_styles'))	{
-				echo $w3_plugin_minify->get_scripts('include-footer', null);
+	
+			echo "<!-- script foot -->";
+		
+			if(class_exists('W3_Plugin_Minify', false)) {	
+				$w3_plugin_minify = & W3_Plugin_Minify::instance();
+				$w3_plugin_minify->printed_scripts[] = $location;
+				if(($minify == 'js' || $minify == 'css and js') && function_exists('w3tc_styles'))	{
+					echo $w3_plugin_minify->get_scripts('include-footer', null);
+					
+					echo $w3_plugin_minify->get_scripts('include-footer-nb', null);
+				}
+			} elseif(class_exists('WP_Minify')) {
 				
-				echo $w3_plugin_minify->get_scripts('include-footer-nb', null);
 			}
 			thematic_ifieblock();
 			thematic_googleanalytics();
 			thematic_yahooprofiler();
-		//}
+		}
 }
 add_action('thematic_after', 'thematic_script_foot', 1);
