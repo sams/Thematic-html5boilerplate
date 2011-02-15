@@ -14,7 +14,7 @@ function thematic_bodyopen() {
     if (apply_filters('thematic_show_bodyclass',TRUE)) { 
         // Creating the body class
     	if (!(THEMATIC_COMPATIBLE_BODY_CLASS)) { 
-    		echo '<body ';
+    		echo '<body lang="en" ';
     		body_class();
     		echo '>' . "\n\n";
     	} else { 
@@ -23,7 +23,7 @@ function thematic_bodyopen() {
     		echo '">' . "\n\n";
     	}
     } else {
-    	echo '<body>' . "\n\n";
+    	echo '<body lang="en">' . "\n\n";
     }
 }
 

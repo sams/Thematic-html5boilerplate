@@ -246,10 +246,10 @@ function thematic_script() {
 
 	if(!is_admin() && $jsfoot == 'true' && $isHead && ($google_hosted_apis == 'true') )	{
 		if((!empty($dqjquery) && $dqjquery == 'true') || ($google_hosted_apis == 'true'))	{
-			wp_enqueue_script('jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/'.$jqueryversion.'/jquery.min.js', array(), false, true);
+			wp_enqueue_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/'.$jqueryversion.'/jquery.min.js', array(), false, true);
 		}
 	}
-	$scripts =   themeatic_script_setup();
+	//$scripts =   themeatic_script_setup();
 	
 	//if($jsfoot !== 'true') return;
 
@@ -507,10 +507,10 @@ if (function_exists('childtheme_thematic_head_modernizr'))  {
 } else {
 	function thematic_head_modernizr() {
 	global $my_shortname;
-	$modernizr = stripslashes(get_option($my_shortname . '_modernizr'));
+	$modernizr = stripslashes(get_option($my_shortname . '_modernizrbuild'));
 		$parentTheme = THEMELIB . '/..';
 		// option to use group for modernizer though its a single file it may be easier to styleup
-		echo "\n<script src=\"".get_stylesheet_directory_uri()."/library/js/libs/modernizr-1.6.min.js\"></script>\n";	} // end thematic_create_modernizr
+		echo "\n<script src=\"".get_stylesheet_directory_uri()."/library/js/libs/modernizr-$modernizr\"></script>\n";	} // end thematic_create_modernizr
 
 	if (apply_filters('thematic_head_modernizr', TRUE)) {
 		add_action('wp_head','thematic_head_modernizr', 90);
@@ -518,7 +518,9 @@ if (function_exists('childtheme_thematic_head_modernizr'))  {
 }
 
 // Load scripts for the jquery Superfish plugin http://users.tpg.com.au/j_birch/plugins/superfish/#examples
-if (function_exists('childtheme_override_head_scripts'))  {
+if(stripslashes(get_option($my_shortname . '_override_head_scripts')) == 'true' && !function_exists('childtheme_override_head_scripts')) {
+    function childtheme_override_head_scripts() {}
+} elseif (function_exists('childtheme_override_head_scripts'))  {
     function thematic_head_scripts() {
     	childtheme_override_head_scripts();
     }
