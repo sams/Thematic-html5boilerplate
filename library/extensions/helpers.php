@@ -9,8 +9,7 @@ function themeatic_script_setup($isHead = true)	{
 	$js_plugins = stripslashes(get_option($my_shortname . '_js_plugins'));
 	$js_dropdowns = stripslashes(get_option($my_shortname . '_js_dropdowns'));
 	$dqjquery = stripslashes(get_option($my_shortname . '_js_dqjquery'));
-	$jquery = '1.5.0'; // so this could easily (?? or not so easily work with non jquery stuff in place of jquery not  addition too) those last two would require other things 
-
+	
 	if(($isHead && (empty($jsfoot) && $jsfoot !== 'true')) || ($jsfoot == 'true' && !$isHead))	{
 		if(empty($google_hosted_apis) || $google_hosted_apis == 'true')	{
 			$scripts .= thematic_h5bp_cdnalt('jquery', $jqversion);

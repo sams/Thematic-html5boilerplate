@@ -757,6 +757,11 @@ ul, ol {
 		-webkit-text-shadow: #2A242D 1px 1px, #2A242D 2px 2px, #2A242D 3px 3px, #2A242D 4px 4px, #2A242D 5px 5px, #2A242D 6px 6px;
 		text-shadow: #2A242D 1px 1px, #2A242D 2px 2px, #2A242D 3px 3px, #2A242D 4px 4px, #2A242D 5px 5px, #2A242D 6px 6px;
 	}
+	
+	#header hgroup h1,
+	#header hgroup h2 {
+		padding-bottom: 3px;
+	}
 
 	#header nav {
 		display: inline;
