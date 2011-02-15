@@ -144,11 +144,26 @@ function childtheme_admin() {
 	<div id="childtheme_theme_icon_32" class="icon32"></div>
 	<h2><?php print $my_themename; ?></h2>
 	<form method="post" action="<?php echo $_SERVER['REQUEST_URI']; ?>" enctype="multipart/form-data">
-	<table class="form-table">
-		<tbody>
-			<?php childtheme_admin_get_my_options(); ?>
-		</tbody>
-	</table>
+	
+	<div class="tabs">
+		<ul>
+			<li></li>
+		</ul>
+		<div>
+			<table class="form-table">
+				<tbody>
+					<?php childtheme_admin_get_my_options(); ?>
+				</tbody>
+			</table>
+		</div>
+		<div>
+			<table class="form-table">
+				<tbody>
+					<?php childtheme_admin_get_my_plugins(); ?>
+				</tbody>
+			</table>
+		</div>
+	</div>
 	
 	<p class="submit">
 		<input id='childoption_submit' name="save" type="submit" value="<?php _e('Save changes','thematic'); ?>" />
@@ -176,16 +191,25 @@ function childtheme_admin() {
 }
 
 /**
+ * This function displays the settings for supported plugins
+ *
+ * @todo the whole shebang
+ */
+function childtheme_admin_get_my_plugins() {
+  childtheme_admin_get_my_options(true);
+}
+
+/**
  * This function does the actual work building out the theme options.
  *
  * The switch statement below detects the type of each option and builds the form fields.
  *
  * @todo split out each option into a unique function, drop functions into switch statement.
  */
-function childtheme_admin_get_my_options() {
-  global $my_themename, $my_shortname, $my_options;
+function childtheme_admin_get_my_options($plugins = false) {
+  global $my_themename, $my_shortname, $my_options, $my_plugins;
 
-  $options = apply_filters('childtheme_options_list', $my_options);
+  $options = apply_filters('childtheme_options_list', ($plugins) ? $my_options : $my_plugins);
   foreach (  $options   as $value) {
     switch ($value['type']) {
       case 'text':

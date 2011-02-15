@@ -1,4 +1,8 @@
-<!DOCTYPE html>
+<?php
+
+    @header("HTTP/1.1 404 Not found", true, 404);
+
+?><!doctype html>
 <title>not found</title>
 
 <style>
@@ -13,7 +17,7 @@ a:hover { color: rgb(96, 73, 141) ; text-shadow: 2px 2px 2px rgba(36, 109, 56, 0
 </style>
 
 <details>
-	<summary><h1><?php _e( 'It might be that Monkeys are mocking you from a distance', 'themename' ); ?></h1></summary>
+	<summary><h1><?php _e( 'Asteroids do not concern me, Admiral. I want that ship, not excuses.', 'themename' ); ?></h1></summary>
 	<?php
 		$archive_content = '<p>' . sprintf( __( 'Or you maybe attempting to breach our defenses. %1$s', 'themename' ), convert_smilies( ':(' ) ) . '</p>';
 		the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );

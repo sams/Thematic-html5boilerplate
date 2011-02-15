@@ -3,7 +3,7 @@ Theme Name: Html5 Boilerplate
 Description: A theme based upon Thematic ToolBox using all the goodness of <a href="http://paulirish.com/">Paul Irish</a> &amp; <a href="">Divya Manian</a>&#039;s <a href="http://html5boilerplate.com/">HTML5 Boilerplate</a>. It is intended to work with some plugins (WP super cache &amp; WP Minify)
 Author: S Sherlock
 Author URI: http://samsherlock.com/
-Version: 0.02a
+Version: 0.03a
 Tags: translation-ready, microformats, rtl-language-support, optimization
 
 This theme, like WordPress, is licensed under the GPL.
@@ -12,9 +12,18 @@ Use it to make something cool, have fun, and share what you've learned with othe
 */
 /* Import is bad um kay. SO you should be CnC the following sheets um kay use wp-minify um kay */
 @import url("library/css/styles.css");
-@import url("library/css/core/grid/grids.css");
-@import url("library/css/core/template/template.css");
-@import url("library/css/core/module/mod.css");
-@import url("library/css/screen.css");
-@import url("library/css/all.css");
+@import url("library/css/grid/grids.css");
+@import url("library/css/template/template.css");
+@import url("library/css/module/mod.css");
+@import url("library/css/module/mod_skins.css");
+@import url("library/css/spacing/space.css");
+
+/* @import url("library/css/table/table.css"); */
+/* @import url("library/css/table/table_skins.css"); */
+/* @import url("library/css/talk/talk.css");
+@import url("library/css/talk/talk_skins.css"); */
 @import url("library/css/media.css");
+/* typography (see library/css/text/(oocss|azbuka|le-corbusier|...).css */
+@import url("library/css/text/le-corbusier.css");
+
+@import url("library/css/screen.css");
