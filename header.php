@@ -70,17 +70,34 @@ if (apply_filters('thematic_open_wrapper', true)) {
 			?>
 		</header><!-- #header -->
 
-		<?php
-	// currently this is a complete mess to me and may be rethought. figure though appeals to me here but this setup is borky should be in a function but seemed to bork then
-	if ( is_singular() &&
-	has_post_thumbnail( $post->ID ) &&
-	( /* $src, $width, $height */ $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'post-thumbnail' ) ) &&
-	$image[1] >= HEADER_IMAGE_WIDTH && !is_page('gallery')) :
-	// Houston, we have a new header image!
-	echo '<figure>', get_the_post_thumbnail( $post->ID, 'post-thumbnail' ), '</figure>';
-	elseif(!is_page('gallery')) : ?>
-	<figure><img src="<?php header_image(); ?>" width="<?php echo HEADER_IMAGE_WIDTH; ?>" height="<?php echo HEADER_IMAGE_HEIGHT; ?>" alt="" /></figure>
-	<?php endif;
+<?php
+        // currently this is a complete mess to me and may be rethought. figure though appeals to me here but this setup is borky should be in a function but seemed to bork then
+        if ( is_singular() &&
+            has_post_thumbnail( $post->ID ) &&
+            ( /* $src, $width, $height */ $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'post-thumbnail' ) ) &&
+            $image[1] >= HEADER_IMAGE_WIDTH && !is_page('gallery'))
+        {
+            // Houston, we have a new header image!
+            $headerImage = get_the_post_thumbnail( $post->ID, 'post-thumbnail' );
+        }
+        elseif(!is_page('gallery'))
+        {
+            $headerImage = header_image();
+            // header image can be empty, so disable <figure>
+            if (empty($headerImage))
+            {
+                unset($headerImage);
+            }
+            else
+            {
+                $headerImage = '<img src="' . $headerImage . '" width="' . HEADER_IMAGE_WIDTH . '" height="' . HEADER_IMAGE_HEIGHT . '" alt="" />';
+            }
+        }
+
+        if (isset($headerImage)) : ?>
+        <figure id="header-figure"><?php echo headerImage ?></figure>
+<?php
+        endif;
 		// action hook for placing content below the theme header  
 		thematic_belowheader();
 	?>
