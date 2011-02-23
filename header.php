@@ -72,7 +72,7 @@ if (apply_filters('thematic_open_wrapper', true)) {
 
 <?php
         // currently this is a complete mess to me and may be rethought. figure though appeals to me here but this setup is borky should be in a function but seemed to bork then
-	// also in somecases maybe most image headers should not be figures - figures should have captions too; in somecases the sites subtitle could be that....
+    // also in somecases maybe most image headers should not be figures - figures should have captions too; in somecases the sites subtitle could be that....
         if ( is_singular() &&
             has_post_thumbnail( $post->ID ) &&
             ( /* $src, $width, $height */ $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'post-thumbnail' ) ) &&
