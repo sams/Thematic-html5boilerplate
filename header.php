@@ -51,18 +51,18 @@
     //ob_get_flush();    flush();
     // Creating the body class
 
-thematic_body();
+    thematic_body();
 
-// action hook for placing content before opening #wrapper
-thematic_before();
+    // action hook for placing content before opening #wrapper
+    thematic_before();
 
-if (apply_filters('thematic_open_wrapper', true)) {
-    //echo '<div id="wrapper" class="hfeed">';
-}
+    if (apply_filters('thematic_open_wrapper', true)) {
+        //echo '<div id="wrapper" class="hfeed">';
+    }
 
     // action hook for placing content above the theme header
     thematic_aboveheader();
-    ?>
+?>
         <header id="header" role="banner" class="head clearfix">
             <?php
                 // action hook creating the theme header
