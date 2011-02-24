@@ -72,6 +72,7 @@ if (apply_filters('thematic_open_wrapper', true)) {
 
 <?php
         // currently this is a complete mess to me and may be rethought. figure though appeals to me here but this setup is borky should be in a function but seemed to bork then
+	// also in somecases maybe most image headers should not be figures - figures should have captions too; in somecases the sites subtitle could be that....
         if ( is_singular() &&
             has_post_thumbnail( $post->ID ) &&
             ( /* $src, $width, $height */ $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'post-thumbnail' ) ) &&
@@ -84,20 +85,12 @@ if (apply_filters('thematic_open_wrapper', true)) {
         {
             $headerImage = get_header_image();
             // header image can be empty, so disable <figure>
-            if (empty($headerImage))
-            {
-                unset($headerImage);
-            }
-            else
+            if (!empty($headerImage))
             {
                 $headerImage = '<img src="' . $headerImage . '" width="' . HEADER_IMAGE_WIDTH . '" height="' . HEADER_IMAGE_HEIGHT . '" alt="" />';
+		?><figure id="header-figure"><?php echo $headerImage; ?></figure><?php
             }
         }
-
-        if (isset($headerImage)) : ?>
-        <figure id="header-figure"><?php //echo headerImage ?></figure>
-<?php
-        endif;
 
         // action hook for placing content below the theme header
         thematic_belowheader();
