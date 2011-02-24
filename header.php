@@ -85,13 +85,18 @@ if (apply_filters('thematic_open_wrapper', true)) {
         {
             $headerImage = get_header_image();
             // header image can be empty, so disable <figure>
-            if (!empty($headerImage))
+            if (empty($headerImage))
+            {
+                unset($headerImage);
+            }
+            else
             {
                 $headerImage = '<img src="' . $headerImage . '" width="' . HEADER_IMAGE_WIDTH . '" height="' . HEADER_IMAGE_HEIGHT . '" alt="" />';
-		?><figure id="header-figure"><?php echo $headerImage; ?></figure><?php
             }
         }
 
+        if (isset($headerImage)) : ?>
+        <figure id="header-figure"><?php echo $headerImage; ?></figure>
         // action hook for placing content below the theme header
         thematic_belowheader();
 ?>
