@@ -97,6 +97,7 @@ if (apply_filters('thematic_open_wrapper', true)) {
 
         if (isset($headerImage)) : ?>
         <figure id="header-figure"><?php echo $headerImage; ?></figure>
+<?php   endif;
         // action hook for placing content below the theme header
         thematic_belowheader();
 ?>
