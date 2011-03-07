@@ -10,7 +10,7 @@ $alt_layouts = array(
 	'col3b' => '2 sidebars (left)',
 	'col3c' => '2 sidebars (right)',
 );
-//die(get_template_directory() . '/library/js/libs/modernizr-*.js');
+
 $modernizrBuildsComplete = glob(get_template_directory() . '/library/js/libs/modernizr-*.js');
 $modernizrBuilds = array();
 foreach($modernizrBuildsComplete as $build) {
@@ -20,6 +20,7 @@ unset($modernizrBuildsComplete);
 
 $jqueryversion = array(
 	// stable jquery libs
+	'1.5.1' => '1.5.1',
 	'1.5.0' => '1.5.0',
 	'1.4.3' => '1.4.3',
 	'1.4.2' => '1.4.2',
