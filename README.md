@@ -6,7 +6,6 @@
 * some changes need documenting other need testing (others still need both)
 * default theme needs reworking
 
-
 A wordpress theme using html5 and based on Thematic ToolBox (and other Thematic themes).
 
  * Header branding image from TwentyTen
@@ -66,3 +65,10 @@ extra support for custom types
 built in support for funky jquery plugins later
 
 http://github.com/pengwynn/compass-wordpress ?
+
+
+
+
+## Contributions & Thanks
+
+Mo0X & John Raz
