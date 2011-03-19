@@ -288,7 +288,7 @@ add_filter( 'archive_meta', 'convert_smilies' );
 add_filter( 'archive_meta', 'convert_chars' );
 add_filter( 'archive_meta', 'wpautop' );
 
-// Remove the WordPress Generator – via http://blog.ftwr.co.uk/archives/2007/10/06/improving-the-wordpress-generator/
+// Remove the WordPress Generator via http://blog.ftwr.co.uk/archives/2007/10/06/improving-the-wordpress-generator/
 function thematic_remove_generators()	{ return ''; }
 
 if (apply_filters('thematic_hide_generators', TRUE)) {  
@@ -353,7 +353,7 @@ function thematic_h5bp_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'oxox' => __( 'Primary Navigation', $my_themename ),
+		'xoxo' => __( 'Primary Navigation', $my_themename ),
 	) );
 
 	// This theme allows users to set a custom background
