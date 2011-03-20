@@ -42,7 +42,7 @@ function thematic_widgets_array()
 			'args' => array (
 				'name' => 'Header Widgets',
 				'id' => 'widget-header',
-				'description' => __('The header widget area for additional mast head items.', $my_shortname),
+				'description' => __('The header widget area for additional mast head items.', 'thematic'),
 				'before_widget' => thematic_before_widget(),
 				'after_widget' => thematic_after_widget(),
 				'before_title' => thematic_before_title(),
