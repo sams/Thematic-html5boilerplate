@@ -10,7 +10,7 @@ $alt_layouts = array(
 	'col3b' => '2 sidebars (left)',
 	'col3c' => '2 sidebars (right)',
 );
-//die(get_template_directory() . '/library/js/libs/modernizr-*.js');
+
 $modernizrBuildsComplete = glob(get_template_directory() . '/library/js/libs/modernizr-*.js');
 $modernizrBuilds = array();
 foreach($modernizrBuildsComplete as $build) {

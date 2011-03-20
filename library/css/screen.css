@@ -469,10 +469,10 @@ input[required],
 /* =Widgets
 -------------------------------------------------------------- */
 
-.oxox {
-
+ul.xoxo
+{
+    list-style-type: none;
 }
-  .oxox li {}
 
 .widget-area {
 	background: rgba(212, 234, 235, .25); /* not-pink */
@@ -1173,4 +1173,3 @@ button {
 		filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#9e9e9e', endColorstr='#454545'); /* ie7 */
 		-ms-filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#9e9e9e', endColorstr='#454545'); /* ie8 */
 	}
-	
