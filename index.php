@@ -7,47 +7,47 @@
     thematic_abovecontainer();
 
 ?>
-	
-		<?php
-			thematic_abovecontent();
-		?>
-	
-		<?php
-			// calling the standard sidebar 
-			thematic_sidebar();
-		?>
-		
-		<section class="main">
 
-			<?php
-				// create the navigation above the content
-				thematic_navigation_above();
-            	
-            	// create the navigation above the content
-            	thematic_navigation_above();
-				
-            	// calling the widget area 'index-top'
-            	get_sidebar('index-top');
-				
-            	// action hook for placing content above the index loop
-            	thematic_above_indexloop();
+        <?php
+            thematic_abovecontent();
+        ?>
 
-				// action hook for placing content above the index loop
-				thematic_above_indexloop();
-				
-				// action hook creating the index loop
-				thematic_indexloop();
-				
-				// action hook for placing content below the index loop
-				thematic_below_indexloop();
-				
-				// create the navigation below the content
-				thematic_navigation_below(); 
-			?>
+        <?php
+            // calling the standard sidebar
+            thematic_sidebar();
+        ?>
 
-		</section><!-- #main -->
-		
-			<?php thematic_belowcontent(); ?> 
+        <section class="main">
+
+            <?php
+                // create the navigation above the content
+                thematic_navigation_above();
+
+                // create the navigation above the content
+                thematic_navigation_above();
+
+                // calling the widget area 'index-top'
+                get_sidebar('index-top');
+
+                // action hook for placing content above the index loop
+                thematic_above_indexloop();
+
+                // action hook for placing content above the index loop
+                thematic_above_indexloop();
+
+                // action hook creating the index loop
+                thematic_indexloop();
+
+                // action hook for placing content below the index loop
+                thematic_below_indexloop();
+
+                // create the navigation below the content
+                thematic_navigation_below();
+            ?>
+
+        </section><!-- #main -->
+
+            <?php thematic_belowcontent(); ?>
 <?php 
 
     // action hook for placing content below #container

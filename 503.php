@@ -14,18 +14,18 @@ body { font: 20px Constantia, 'Hoefler Text',  "Adobe Caslon Pro", Baskerville, 
 details { display:block; }
 a { color: rgb(36, 109, 56); text-decoration:none; }
 a:hover { color: rgb(96, 73, 141) ; text-shadow: 2px 2px 2px rgba(36, 109, 56, 0.5); }
-nav	{ float: right; width: 3em; clear: both; }
-nav ul	{ width: 100%; margin: 0; padding: 0; }
-nav li	{ display: inline; float: left; }
-nav a	{ display: block;}
+nav    { float: right; width: 3em; clear: both; }
+nav ul    { width: 100%; margin: 0; padding: 0; }
+nav li    { display: inline; float: left; }
+nav a    { display: block;}
 </style>
 
 
 
 <?php echo $this->mamo_template_tag_message(); ?>
-	
+
 <nav id="menu">
-	<ul>
-	    <li id="admin"><?php	echo $this->mamo_template_tag_login_logout(); ?></li>
-	</ul>
+    <ul>
+        <li id="admin"><?php    echo $this->mamo_template_tag_login_logout(); ?></li>
+    </ul>
 </nav>

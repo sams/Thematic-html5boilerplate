@@ -41,23 +41,23 @@
 /* an atempt to display content for users with small screen but still desktop */
 @media screen and (max-width: 720px) {
 
-	html body {
-		width: 700px;
-	}
+    html body {
+        width: 700px;
+    }
 
-	body > figure {
-		width: 680px;
-		margin-left: -10px;
-	}
+    body > figure {
+        width: 680px;
+        margin-left: -10px;
+    }
 
-	#header nav ul {
-		width: 340px;
-	}
+    #header nav ul {
+        width: 340px;
+    }
 
-	#header nav .search {
-		float: right;
-		margin-top: 0.5em;
-	}
+    #header nav .search {
+        float: right;
+        margin-top: 0.5em;
+    }
 }
 
 /* Grade-A Mobile Browsers (Opera Mobile, iPhone Safari, Android Chrome)  

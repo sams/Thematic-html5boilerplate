@@ -2,52 +2,52 @@
 /*
 Template Name: Blog Page
 */
-	// calling the header.php
-	get_header();
-	
-	// action hook for placing content above #container
-	thematic_abovecontainer(); ?>
+    // calling the header.php
+    get_header();
 
-		<?php thematic_sidebar(); ?>
+    // action hook for placing content above #container
+    thematic_abovecontainer(); ?>
 
-	<section id="main" class="main">
+        <?php thematic_sidebar(); ?>
 
-		<?php
-			//thematic_abovecontent();
+    <section id="main" class="main">
 
-			$paged = (get_query_var('paged')) ? get_query_var('paged') : 1; query_posts("paged=$paged");
+        <?php
+            //thematic_abovecontent();
 
-			// create the navigation above the content
-			thematic_navigation_above();
+            $paged = (get_query_var('paged')) ? get_query_var('paged') : 1; query_posts("paged=$paged");
 
-			// calling the widget area 'index-top'
-			get_sidebar('index-top');
+            // create the navigation above the content
+            thematic_navigation_above();
 
-			// action hook for placing content above the index loop
-			thematic_above_indexloop();
+            // calling the widget area 'index-top'
+            get_sidebar('index-top');
 
-			// action hook creating the index loop
-			thematic_indexloop();
+            // action hook for placing content above the index loop
+            thematic_above_indexloop();
 
-			// action hook for placing content below the index loop
-			thematic_below_indexloop();
+            // action hook creating the index loop
+            thematic_indexloop();
 
-			// calling the widget area 'index-bottom'
-			get_sidebar('index-bottom');
+            // action hook for placing content below the index loop
+            thematic_below_indexloop();
 
-			// create the navigation below the content
-			thematic_navigation_below();
+            // calling the widget area 'index-bottom'
+            get_sidebar('index-bottom');
 
-			thematic_belowcontent(); ?> 
+            // create the navigation below the content
+            thematic_navigation_below();
 
-	</section><!-- .main -->
+            thematic_belowcontent(); ?>
+
+    </section><!-- .main -->
 
 <?php
 
-	// action hook for placing content below #container
-	thematic_belowcontainer();
+    // action hook for placing content below #container
+    thematic_belowcontainer();
 
-	// calling footer.php
-	get_footer();
+    // calling footer.php
+    get_footer();
 
 ?>

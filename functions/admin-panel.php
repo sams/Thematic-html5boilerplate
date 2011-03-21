@@ -4,7 +4,7 @@
  * Remove Thematic Admin Panel
  */
 function remove_thematic_panel() {
-	remove_action('admin_menu' , 'mytheme_add_admin');
+    remove_action('admin_menu' , 'mytheme_add_admin');
 }
 add_action('init', 'remove_thematic_panel');
 
@@ -15,7 +15,7 @@ add_action('admin_menu' , 'childtheme_add_admin');
  * Hook in styling for the theme panel.
  */
 function childtheme_panel_add_styles() {
-	wp_register_style('childtheme_style', get_bloginfo('stylesheet_directory') . '/functions/admin-panel-styles.css');
+    wp_register_style('childtheme_style', get_bloginfo('stylesheet_directory') . '/functions/admin-panel-styles.css');
 }
 
 add_action('admin_init', 'childtheme_panel_add_styles');
@@ -24,81 +24,81 @@ add_action('admin_init', 'childtheme_panel_add_styles');
  * Create theme panel.
  */
 function childtheme_add_admin() {
-	global $my_themename, $my_shortname, $my_options;
+    global $my_themename, $my_shortname, $my_options;
 
-	if ($_GET['page'] == basename(__FILE__)) {
-		if (! childtheme_can_edit_theme_options() ) {
-			wp_die('Nice Try');
-		}
+    if ($_GET['page'] == basename(__FILE__)) {
+        if (! childtheme_can_edit_theme_options() ) {
+            wp_die('Nice Try');
+        }
 
-		if ('save' == $_REQUEST['action']) {
-			if ( strpos($_REQUEST['save'], 'Remove') !== false ) {
-				$field = substr_replace($_REQUEST['save'], '', 0, 7);
-				delete_option($field);
-				header('Location: themes.php?page=' . basename(__FILE__) . '&imgremoved=true' . $error);
-				die;
-			}
+        if ('save' == $_REQUEST['action']) {
+            if ( strpos($_REQUEST['save'], 'Remove') !== false ) {
+                $field = substr_replace($_REQUEST['save'], '', 0, 7);
+                delete_option($field);
+                header('Location: themes.php?page=' . basename(__FILE__) . '&imgremoved=true' . $error);
+                die;
+            }
 
-			foreach ($my_options as $value) {
-				$id = $value['id'];
-	
-				if ($value['type'] == 'upload') {
-					if (!empty($_FILES['attachment_' . $id]['name'])) {
+            foreach ($my_options as $value) {
+                $id = $value['id'];
 
-						// New Upload
-						$whitelist = array('image/gif', 'image/jpeg', 'image/pjpeg', 'image/png', 'image/x-png');
-						$filetype = $_FILES['attachment_' . $id]['type'];
+                if ($value['type'] == 'upload') {
+                    if (!empty($_FILES['attachment_' . $id]['name'])) {
 
-						if (in_array($filetype, $whitelist)) {
-							$upload = wp_handle_upload($_FILES['attachment_' . $id], array('test_form' => false));
-							$upload['option_name'] = $value['name'];
-							update_option($id, $upload['url']);
-						} else {
-							$error = '&error=1';
-						}
-					} elseif (isset($_REQUEST[$id])) {
-						// No new file, just the url
-						update_option($id, $_REQUEST[$id]);
-					} else {
-						// Delete unwanted data
-						delete_option($id);
-					}
-				} elseif ($value['type'] == 'checkbox') {
-					if (isset($_REQUEST[$id])) {
-						update_option($id, 'true');
-					} else {
-						update_option($id, 'false');
-					}
-				} else {
-					if (isset($_REQUEST[$id])) {
-						update_option($id, $_REQUEST[$id]);
-					} else {
-						delete_option($id);
-					}
-				}
-			}
+                        // New Upload
+                        $whitelist = array('image/gif', 'image/jpeg', 'image/pjpeg', 'image/png', 'image/x-png');
+                        $filetype = $_FILES['attachment_' . $id]['type'];
 
-			header('Location: themes.php?page=' . basename(__FILE__) . '&saved=true' . $error);
-			die;
-		} elseif ('reset' == $_REQUEST['action']) {
-			foreach ($my_options as $value) {
-				delete_option($value['id']);
-			}
-			header('Location: themes.php?page=' . basename(__FILE__) . '&reset=true');
-			die;
-		} else if ('reset_widgets' == $_REQUEST['action']) {
-			$null = null;
-			update_option('sidebars_widgets', $null);
-			header('Location: themes.php?page=' . basename(__FILE__) . '&reset=true');
-			die;
-		}
-	
-	}
+                        if (in_array($filetype, $whitelist)) {
+                            $upload = wp_handle_upload($_FILES['attachment_' . $id], array('test_form' => false));
+                            $upload['option_name'] = $value['name'];
+                            update_option($id, $upload['url']);
+                        } else {
+                            $error = '&error=1';
+                        }
+                    } elseif (isset($_REQUEST[$id])) {
+                        // No new file, just the url
+                        update_option($id, $_REQUEST[$id]);
+                    } else {
+                        // Delete unwanted data
+                        delete_option($id);
+                    }
+                } elseif ($value['type'] == 'checkbox') {
+                    if (isset($_REQUEST[$id])) {
+                        update_option($id, 'true');
+                    } else {
+                        update_option($id, 'false');
+                    }
+                } else {
+                    if (isset($_REQUEST[$id])) {
+                        update_option($id, $_REQUEST[$id]);
+                    } else {
+                        delete_option($id);
+                    }
+                }
+            }
 
-	$optionspage =  add_theme_page('Thematic Options', $my_themename . ' Options', 8, basename(__FILE__), 'childtheme_admin');
+            header('Location: themes.php?page=' . basename(__FILE__) . '&saved=true' . $error);
+            die;
+        } elseif ('reset' == $_REQUEST['action']) {
+            foreach ($my_options as $value) {
+                delete_option($value['id']);
+            }
+            header('Location: themes.php?page=' . basename(__FILE__) . '&reset=true');
+            die;
+        } else if ('reset_widgets' == $_REQUEST['action']) {
+            $null = null;
+            update_option('sidebars_widgets', $null);
+            header('Location: themes.php?page=' . basename(__FILE__) . '&reset=true');
+            die;
+        }
 
-	add_action('admin_print_styles-' . $optionspage, 'childtheme_admin_print_styles');
-	add_action('admin_head-' . $optionspage, 'childtheme_javascript');
+    }
+
+    $optionspage =  add_theme_page('Thematic Options', $my_themename . ' Options', 8, basename(__FILE__), 'childtheme_admin');
+
+    add_action('admin_print_styles-' . $optionspage, 'childtheme_admin_print_styles');
+    add_action('admin_head-' . $optionspage, 'childtheme_javascript');
 
 }
 
@@ -108,7 +108,7 @@ function childtheme_add_admin() {
  * 
  */
 function childtheme_admin_print_styles(){
-	wp_enqueue_style('childtheme_style');
+    wp_enqueue_style('childtheme_style');
 }
 
 
@@ -117,75 +117,75 @@ function childtheme_admin_print_styles(){
  * 
  */
 function childtheme_admin() {
-	if (! childtheme_can_edit_theme_options() ) wp_die('Nice Try');
-		global $my_themename, $my_shortname, $my_options;
+    if (! childtheme_can_edit_theme_options() ) wp_die('Nice Try');
+        global $my_themename, $my_shortname, $my_options;
 
-	if ($_REQUEST['saved']) {
-		echo '<div id="message" class="updated fade"><p><strong>' . $my_themename . ' ' . __('settings saved.', 'thematic') . '</strong></p></div>';
-	}
+    if ($_REQUEST['saved']) {
+        echo '<div id="message" class="updated fade"><p><strong>' . $my_themename . ' ' . __('settings saved.', 'thematic') . '</strong></p></div>';
+    }
 
-	if ($_REQUEST['reset']) {
-		echo '<div id="message" class="updated fade"><p><strong>' . $my_themename . ' ' . __('settings reset.', 'thematic') . '</strong></p></div>';
-	}
+    if ($_REQUEST['reset']) {
+        echo '<div id="message" class="updated fade"><p><strong>' . $my_themename . ' ' . __('settings reset.', 'thematic') . '</strong></p></div>';
+    }
 
-	if ($_REQUEST['reset_widgets']) {
-		echo '<div id="message" class="updated fade"><p><strong>' . $my_themename . ' ' . __('widgets reset.', 'thematic') . '</strong></p></div>';
-	}
+    if ($_REQUEST['reset_widgets']) {
+        echo '<div id="message" class="updated fade"><p><strong>' . $my_themename . ' ' . __('widgets reset.', 'thematic') . '</strong></p></div>';
+    }
 
-	if ($_REQUEST['error']) {
-		echo '<div id="message" class="updated fade"><p><strong>The file you submitted was not a valid image type.</strong></p></div>';
-	}
+    if ($_REQUEST['error']) {
+        echo '<div id="message" class="updated fade"><p><strong>The file you submitted was not a valid image type.</strong></p></div>';
+    }
 
-	if ($_REQUEST['imgremoved']) {
-		echo '<div id="message" class="updated fade"><p><strong>'. __('Image Removed') .'</strong></p></div>';
-	}
+    if ($_REQUEST['imgremoved']) {
+        echo '<div id="message" class="updated fade"><p><strong>'. __('Image Removed') .'</strong></p></div>';
+    }
 ?>
 <div id="panel" class="wrap">
-	<div id="childtheme_theme_icon_32" class="icon32"></div>
-	<h2><?php print $my_themename; ?></h2>
-	<form method="post" action="<?php echo $_SERVER['REQUEST_URI']; ?>" enctype="multipart/form-data">
-	
-	<div class="tabs">
-		<ul>
-			<li></li>
-		</ul>
-		<div>
-			<table class="form-table">
-				<tbody>
-					<?php childtheme_admin_get_my_options(); ?>
-				</tbody>
-			</table>
-		</div>
-		<div>
-			<table class="form-table">
-				<tbody>
-					<?php childtheme_admin_get_my_plugins(); ?>
-				</tbody>
-			</table>
-		</div>
-	</div>
-	
-	<p class="submit">
-		<input id='childoption_submit' name="save" type="submit" value="<?php _e('Save changes','thematic'); ?>" />
-		<input type="hidden" name="action" value="save" />
-	</p>
-	
-	</form>
+    <div id="childtheme_theme_icon_32" class="icon32"></div>
+    <h2><?php print $my_themename; ?></h2>
+    <form method="post" action="<?php echo $_SERVER['REQUEST_URI']; ?>" enctype="multipart/form-data">
 
-	<form method="post" action="">
-		<p class="submit">
-			<input  name="reset" type="submit" value="<?php _e('Reset','thematic'); ?>" />
-			<input type="hidden" name="action" value="reset" />
-		</p>
-	</form>
-	<!--
-	<form method="post" action="">
-		<p class="submit">
-			<input name="reset_widgets" type="submit" value="<?php _e('Reset Widgets','thematic'); ?>" />
-			<input type="hidden" name="action" value="reset_widgets" />
-		</p>
-	</form>
-	-->
+    <div class="tabs">
+        <ul>
+            <li></li>
+        </ul>
+        <div>
+            <table class="form-table">
+                <tbody>
+                    <?php childtheme_admin_get_my_options(); ?>
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <table class="form-table">
+                <tbody>
+                    <?php childtheme_admin_get_my_plugins(); ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <p class="submit">
+        <input id='childoption_submit' name="save" type="submit" value="<?php _e('Save changes','thematic'); ?>" />
+        <input type="hidden" name="action" value="save" />
+    </p>
+
+    </form>
+
+    <form method="post" action="">
+        <p class="submit">
+            <input  name="reset" type="submit" value="<?php _e('Reset','thematic'); ?>" />
+            <input type="hidden" name="action" value="reset" />
+        </p>
+    </form>
+    <!--
+    <form method="post" action="">
+        <p class="submit">
+            <input name="reset_widgets" type="submit" value="<?php _e('Reset Widgets','thematic'); ?>" />
+            <input type="hidden" name="action" value="reset_widgets" />
+        </p>
+    </form>
+    -->
 </div>
 <?php
 }
@@ -307,9 +307,9 @@ function childtheme_admin_get_my_options($plugins = false) {
         <tr valign="top" class="upload <?php echo $value['id']; ?>">
           <th scope="row"><label for="<?php echo $value['id']; ?>"><?php echo __($value['name'],'thematic'); ?></label></th>
           <td>
-		  <div id='imgupload'>
+          <div id='imgupload'>
             <?php print get_upload_field($value['id'], $value['std'], $value['desc']); ?>
-			</div>
+            </div>
           </td>
         </tr>
         <?php

@@ -3,13 +3,13 @@
 function thmfooter_wp_link() {
     return '<a class="wp-link" href="http://WordPress.org/" title="WordPress" rel="generator">WordPress</a>';
 }
-add_shortcode('wp-link', 'thmfooter_wp_link');		  
-		  
+add_shortcode('wp-link', 'thmfooter_wp_link');
+
 function thmfooter_theme_link() {
     $themelink = '<a class="theme-link" href="http://themeshaper.com/thematic/" title="Thematic Theme Framework" rel="designer">Thematic Theme Framework</a>';
     return apply_filters('thematic_theme_link',$themelink);
 }
-add_shortcode('theme-link', 'thmfooter_theme_link');	
+add_shortcode('theme-link', 'thmfooter_theme_link');
 
 function thmfooter_login_link() {
     if ( ! is_user_logged_in() )
@@ -18,15 +18,15 @@ function thmfooter_login_link() {
     $link = '<a href="' . wp_logout_url($redirect) . '">' . __('Logout','thematic') . '</a>';
     return apply_filters('loginout', $link);
 }
-add_shortcode('loginout-link', 'thmfooter_login_link');		  	  
+add_shortcode('loginout-link', 'thmfooter_login_link');
 
 function thmfooter_blog_title() {
-	return '<span class="blog-title">' . get_bloginfo('name') . '</span>';
+    return '<span class="blog-title">' . get_bloginfo('name') . '</span>';
 }
 add_shortcode('blog-title', 'thmfooter_blog_title');
 
 function thmfooter_blog_link() {
-	return '<a href="' . site_url('/') . '" title="' . get_option('blogname') . '" >' . get_option('blogname') . "</a>";
+    return '<a href="' . site_url('/') . '" title="' . get_option('blogname') . '" >' . get_option('blogname') . "</a>";
 }
 add_shortcode('blog-link', 'thmfooter_blog_link');
 

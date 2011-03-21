@@ -13,10 +13,10 @@
 
 function thm_bloginfo($command = '', $echo = FALSE) {
 
-	_deprecated_function( __FUNCTION__, '0.9.6.1', 'bloginfo() or get_bloginfo()' );
+    _deprecated_function( __FUNCTION__, '0.9.6.1', 'bloginfo() or get_bloginfo()' );
 
     if ($echo) {
-	   bloginfo($command);
+       bloginfo($command);
     } else {
         return get_bloginfo($command);
     }
@@ -36,9 +36,9 @@ function thm_bloginfo($command = '', $echo = FALSE) {
 
 function is_sidebar_active( $index ){
 
-	_deprecated_function( __FUNCTION__, '0.9.7.3', 'is_active_sidebar()' );
+    _deprecated_function( __FUNCTION__, '0.9.7.3', 'is_active_sidebar()' );
 
-	return is_active_sidebar( $index );
+    return is_active_sidebar( $index );
 
 }
 

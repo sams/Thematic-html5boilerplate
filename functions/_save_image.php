@@ -38,26 +38,26 @@ function get_request( $property, $default = 0 ) {
 
 }
 
-define ('CACHE_SIZE', 250);					// number of files to store before clearing cache
-define ('CACHE_CLEAR', 5);					// maximum number of files to delete on each cache clear
-define ('VERSION', '1.14');					// version number (to force a cache refresh)
-define ('DIRECTORY_CACHE', './cache');		// cache directory
-define ('DIRECTORY_TEMP', './temp');		// temp directory
+define ('CACHE_SIZE', 250);                    // number of files to store before clearing cache
+define ('CACHE_CLEAR', 5);                    // maximum number of files to delete on each cache clear
+define ('VERSION', '1.14');                    // version number (to force a cache refresh)
+define ('DIRECTORY_CACHE', './cache');        // cache directory
+define ('DIRECTORY_TEMP', './temp');        // temp directory
 
 if (function_exists('imagefilter') && defined('IMG_FILTER_NEGATE')) {
-	$imageFilters = array(
-		"1" => array(IMG_FILTER_NEGATE, 0),
-		"2" => array(IMG_FILTER_GRAYSCALE, 0),
-		"3" => array(IMG_FILTER_BRIGHTNESS, 1),
-		"4" => array(IMG_FILTER_CONTRAST, 1),
-		"5" => array(IMG_FILTER_COLORIZE, 4),
-		"6" => array(IMG_FILTER_EDGEDETECT, 0),
-		"7" => array(IMG_FILTER_EMBOSS, 0),
-		"8" => array(IMG_FILTER_GAUSSIAN_BLUR, 0),
-		"9" => array(IMG_FILTER_SELECTIVE_BLUR, 0),
-		"10" => array(IMG_FILTER_MEAN_REMOVAL, 0),
-		"11" => array(IMG_FILTER_SMOOTH, 0),
-	);
+    $imageFilters = array(
+        "1" => array(IMG_FILTER_NEGATE, 0),
+        "2" => array(IMG_FILTER_GRAYSCALE, 0),
+        "3" => array(IMG_FILTER_BRIGHTNESS, 1),
+        "4" => array(IMG_FILTER_CONTRAST, 1),
+        "5" => array(IMG_FILTER_COLORIZE, 4),
+        "6" => array(IMG_FILTER_EDGEDETECT, 0),
+        "7" => array(IMG_FILTER_EMBOSS, 0),
+        "8" => array(IMG_FILTER_GAUSSIAN_BLUR, 0),
+        "9" => array(IMG_FILTER_SELECTIVE_BLUR, 0),
+        "10" => array(IMG_FILTER_MEAN_REMOVAL, 0),
+        "11" => array(IMG_FILTER_SMOOTH, 0),
+    );
 }
 
 /* / sort out image source
@@ -90,23 +90,23 @@ if ($new_width == 0 && $new_height == 0) {
 $type = 'logo';
 
 
-switch($type)	{
-	case 'login_logo':
-	break;
-	case 'appletouch':
-	break;
-	case 'whitelabel_logo':
-	break;
-	case 'whitelabel_ft_logo':
-	break;
-	case 'whitelabel_dev_logo':
-	break;
-	case 'logo':
-	default:
-		$thumb = PhpThumbFactory::create($src);
-		$thumb->adaptiveResize($new_width, $new_height)->createReflection(40, 40, 80, true, '#a4a4a4');
-		$thumb->save('../images/spme.png', 'png')->show();
-	break;
+switch($type)    {
+    case 'login_logo':
+    break;
+    case 'appletouch':
+    break;
+    case 'whitelabel_logo':
+    break;
+    case 'whitelabel_ft_logo':
+    break;
+    case 'whitelabel_dev_logo':
+    break;
+    case 'logo':
+    default:
+        $thumb = PhpThumbFactory::create($src);
+        $thumb->adaptiveResize($new_width, $new_height)->createReflection(40, 40, 80, true, '#a4a4a4');
+        $thumb->save('../images/spme.png', 'png')->show();
+    break;
 }
 
 ?>
