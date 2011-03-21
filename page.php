@@ -25,7 +25,7 @@
 	            ?>
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 			<header class="entry-header">
-				<h1 class="entry-title"><?php the_title(); ?></h1>
+                <?php thematic_postheader() ?>
 			</header><!-- .entry-header -->
 
 	            
@@ -39,10 +39,6 @@
 						thematic_post_class();
 						echo '">';
 					}
-	                
-	                // creating the post header
-	                thematic_postheader();
-	                
 	                ?>
 	                
 					<div class="entry-content">
