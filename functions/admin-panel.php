@@ -26,7 +26,7 @@ add_action('admin_init', 'childtheme_panel_add_styles');
 function childtheme_add_admin() {
     global $my_themename, $my_shortname, $my_options;
 
-    if ($_GET['page'] == basename(__FILE__)) {
+    if (isset($_GET['page']) and $_GET['page'] == basename(__FILE__)) {
         if (! childtheme_can_edit_theme_options() ) {
             wp_die('Nice Try');
         }
