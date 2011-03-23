@@ -6,12 +6,11 @@
     // action hook for placing content above #container
     thematic_abovecontainer();
 
-?>
-
-<?php thematic_abovecontent(); 
+    thematic_abovecontent();
 
     // calling the standard sidebar 
-    thematic_sidebar(); ?>
+    thematic_sidebar();
+?>
     <section class="main">
                 <?php
 
@@ -74,8 +73,9 @@
 
             ?>
     </section><!-- .main -->
-<?php thematic_belowcontent(); ?>
-<?php 
+<?php
+
+    thematic_belowcontent();
 
     // action hook for placing content below #container
     thematic_belowcontainer();

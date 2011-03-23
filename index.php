@@ -6,31 +6,21 @@
     // action hook for placing content above #container
     thematic_abovecontainer();
 
+
+    thematic_abovecontent();
+
+    // calling the standard sidebar
+    thematic_sidebar();
 ?>
-
-        <?php
-            thematic_abovecontent();
-        ?>
-
-        <?php
-            // calling the standard sidebar
-            thematic_sidebar();
-        ?>
 
         <section class="main">
 
-            <?php
-                // create the navigation above the content
-                thematic_navigation_above();
-
+<?php
                 // create the navigation above the content
                 thematic_navigation_above();
 
                 // calling the widget area 'index-top'
                 get_sidebar('index-top');
-
-                // action hook for placing content above the index loop
-                thematic_above_indexloop();
 
                 // action hook for placing content above the index loop
                 thematic_above_indexloop();
@@ -43,11 +33,11 @@
 
                 // create the navigation below the content
                 thematic_navigation_below();
-            ?>
+?>
 
         </section><!-- #main -->
 
-            <?php thematic_belowcontent(); ?>
+        <?php thematic_belowcontent(); ?>
 <?php 
 
     // action hook for placing content below #container
