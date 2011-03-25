@@ -239,9 +239,7 @@ if (function_exists('All_in_One_SEO_Pack')) {
 
 add_theme_support( 'post-thumbnails', array( 'post') ); // Add it for posts
 
-add_filter( 'pre_get_posts', 'home_content' );
-
-  // thematic_open_wrapper
+// thematic_open_wrapper
 define('THEMATIC_OPEN_WRAPPER', false);
 
 /**
@@ -281,6 +279,8 @@ function home_content( $query )    {
 
     return $query;
 }
+
+add_filter('pre_get_posts', 'home_content');
 
 // Adds filters for the description/meta content in archives.php
 add_filter( 'archive_meta', 'wptexturize' );
