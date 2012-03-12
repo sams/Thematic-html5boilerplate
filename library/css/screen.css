@@ -1,9 +1,9 @@
 /* screen */
 
 body {
-	text-shadow: 1px 1px 3px #bbb; -moz-text-shadow: 1px 1px 3px #bbb; -webkit-text-shadow: 1px 1px 3px #bbb; -o-text-shadow: 1px 1px 3px #bbb;
-	margin: 0 auto;
-	width: 997px;
+    text-shadow: 1px 1px 3px #bbb; -moz-text-shadow: 1px 1px 3px #bbb; -webkit-text-shadow: 1px 1px 3px #bbb; -o-text-shadow: 1px 1px 3px #bbb;
+    margin: 0 auto;
+    width: 997px;
 }
 
 img {
@@ -12,33 +12,33 @@ img {
 
 /***** search *****/
 header .search {
-	width: 220px;
-	margin-top: -3px; margin-left: 9px;
+    width: 220px;
+    margin-top: -3px; margin-left: 9px;
 }
 
 /***** general slider *****/
 
-.slider		{
-	width: 100%;
+.slider        {
+    width: 100%;
 }
 
 .js .slider {
-	max-width: 100%;
-	height: auto;
-	overflow: hidden;
+    max-width: 100%;
+    height: auto;
+    overflow: hidden;
 }
 
-	.slider ul {
-		width: 100%;
-		height: 100%;
-		margin: 0; padding: 0;
-	}
-	.slider li { list-style: none }
-	.slider li div {
-		display: block;
-		width: 100%;
-		height: 100%;
-	}
+    .slider ul {
+        width: 100%;
+        height: 100%;
+        margin: 0; padding: 0;
+    }
+    .slider li { list-style: none }
+    .slider li div {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
 
 /***** blurb, error, notice add warning, alert? *****/   
 
@@ -77,17 +77,17 @@ header .search {
 section.content > section,
 section.content > article,
 section.content > aside {
-	margin: 0 .8em;
+    margin: 0 .8em;
 }
 section.content > aside {
-	font-size: 75.5%;
+    font-size: 75.5%;
 }
 section.main > article {
-	padding-left: 16px; padding-right: 8px;
+    padding-left: 16px; padding-right: 8px;
 }
 
 /***** secondary *****/
-.content .single-bottom, .content .page-bottom	{margin-left: 0px; margin-right: 0px;}
+.content .single-bottom, .content .page-bottom    {margin-left: 0px; margin-right: 0px;}
 
 .secondary .widget_links links { float: none; }
 .secondary .widget_thematic_rsslinks,
@@ -106,86 +106,86 @@ section.main > article {
 .rightLong .content > .secondary,
 .contact .content > .secondary,
 .contact .content > .secondary {
-	clear: both;
+    clear: both;
 }
 
 .leftLong .content > .primary,
 .leftLong .content > .secondary,
 .rightLong .content > .primary
 .rightLong .content > .secondary {
-	width: 187px;
+    width: 187px;
 }
 
 .rightDual .content > aside,
 .rightLong .content > aside,
 .rightSec .content > .secondary,
 .contact .content > .secondary {
-	float: right; 
-	border-left: 1px solid #CCCCCC;
-	padding-right: 3px;
-	margin-right: 0;
-	_margin-left:-3px
+    float: right;
+    border-left: 1px solid #CCCCCC;
+    padding-right: 3px;
+    margin-right: 0;
+    _margin-left:-3px
 }
 .rightSec .content > .secondary {
-	width: 107px;
+    width: 107px;
 }
 
 .leftDual .content > aside,
 .leftLong .content > aside {
-	border-right: 1px solid #CCCCCC;
-	border-left: 0;
-	float: left;
-	padding-left: 3px;
-	margin-left: 0;
-	_margin-right:-3px
+    border-right: 1px solid #CCCCCC;
+    border-left: 0;
+    float: left;
+    padding-left: 3px;
+    margin-left: 0;
+    _margin-right:-3px
 }
 
 .page-top {
-	margin: 1.5em 0;
-	padding: 1em;
-	width: 100%;
+    margin: 1.5em 0;
+    padding: 1em;
+    width: 100%;
 }
 
 /***** home layout *****/   
 
-.home .slider		{	height: 185px;	}
-.home .slider li	{
-	width: 100%;
-	height: 185px;
+.home .slider        {    height: 185px;    }
+.home .slider li    {
+    width: 100%;
+    height: 185px;
 }
-.home .content > .primary		{ width: 144px; margin-left: 9px; padding-right: 12px; padding-left: 0px;}
+.home .content > .primary        { width: 144px; margin-left: 9px; padding-right: 12px; padding-left: 0px;}
 .home .content > .secondary,
-.home .content > .page-top		{width: 235px; padding-left: 16px; margin-left: 10px;}
+.home .content > .page-top        {width: 235px; padding-left: 16px; margin-left: 10px;}
 .home .content > .page-top { float: right }
 .home .content > .secondary {clear: right}
 
 /***** about layout *****/   
 
-.about .content > .primary		{width: 97px}
-.about .content > .secondary	{width: 187px}
-.about .content > .main			{  }
+.about .content > .primary        {width: 97px}
+.about .content > .secondary    {width: 187px}
+.about .content > .main            {  }
 
 
 /***** contact layout *****/   
 
 .contact .content > .secondary {
-	margin-left:9px;
-	padding-left:0;
-	padding-right:12px;
+    margin-left:9px;
+    padding-left:0;
+    padding-right:12px;
 }
 
 .contact .content > .primary,
-.contact .content > .secondary	{
-	float: right; width: 270px; 
-	border-left: 1px solid #CCCCCC;
-	border-right: 0;
-	margin-right:0;
-	padding-right:3px;
-	margin-left:0;
-	padding-left:19px;
-	_margin-left:-3px
-	}
-.contact .content > .main			{  }
+.contact .content > .secondary    {
+    float: right; width: 270px;
+    border-left: 1px solid #CCCCCC;
+    border-right: 0;
+    margin-right:0;
+    padding-right:3px;
+    margin-left:0;
+    padding-left:19px;
+    _margin-left:-3px
+    }
+.contact .content > .main            {  }
 
 /* section.content h1, section.content h2, section.content h3 { margin-top:0; margin-bottom:0; }
 section.content h1 { font-size:2.62069em; padding:1.26312em 0; }
@@ -231,9 +231,9 @@ p.sans { font-family: "museo-slab-1", "museo-slab-2", helvetica, arial, serif; }
 -------------------------------------------------------------- */
 
 #colophon {
-	clear: both;
-	display: block;
-	float: left; width: 40%; text-align: left
+    clear: both;
+    display: block;
+    float: left; width: 40%; text-align: left
 }
 
 /* Increase the size of the content area for templates without sidebars */
@@ -241,14 +241,14 @@ p.sans { font-family: "museo-slab-1", "museo-slab-2", helvetica, arial, serif; }
 .full-width .main,
 .image-attachment .main,
 .error404 .main {
-	margin: 0;
+    margin: 0;
 }
 
 /* Text meant only for screen readers */
 
 .screen-reader-text {
-	position: absolute;
-	left: -9000em;
+    position: absolute;
+    left: -9000em;
 }
 
 
@@ -256,14 +256,14 @@ p.sans { font-family: "museo-slab-1", "museo-slab-2", helvetica, arial, serif; }
 -------------------------------------------------------------- */
 
 #site-title {
-	font-size: 2em;
-	font-weight: bold;
-	margin: .67em 0;
+    font-size: 2em;
+    font-weight: bold;
+    margin: .67em 0;
 }
 #site-description {
-	font-size: 1em;
-	font-weight: normal;
-	margin: 0 0 1em 0;
+    font-size: 1em;
+    font-weight: normal;
+    margin: 0 0 1em 0;
 }
 
 
@@ -271,60 +271,60 @@ p.sans { font-family: "museo-slab-1", "museo-slab-2", helvetica, arial, serif; }
 -------------------------------------------------------------- */
 
 #access {
-	display: block;
-	float: left;
-	margin: .75em auto 0 auto;
+    display: block;
+    float: left;
+    margin: .75em auto 0 auto;
 }
 /*#access ul {
-	list-style: none;
-	margin: 0;
-	padding-left: 0;
-	margin-top: 15px;
-	padding-top: 16px;
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+    margin-top: 15px;
+    padding-top: 16px;
 } */
 #access li {
-	float: left;
-	position: relative;
+    float: left;
+    position: relative;
 }
 #access a {
-	display: block;
-	line-height: 2em;
-	padding: 0 1em;
-	text-decoration: none;
+    display: block;
+    line-height: 2em;
+    padding: 0 1em;
+    text-decoration: none;
 }
 #access ul ul {
-	display: none;
-	position: absolute;
-	top: 2em;
-	left: 0;
-	float: left;
-	-webkit-box-shadow: 0px 3px 3px rgba(0,0,0,0.2);
-	-moz-box-shadow: 0px 3px 3px rgba(0,0,0,0.2);
-	box-shadow: 0px 3px 3px rgba(0,0,0,0.2);
-	z-index: 99999;
+    display: none;
+    position: absolute;
+    top: 2em;
+    left: 0;
+    float: left;
+    -webkit-box-shadow: 0px 3px 3px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0px 3px 3px rgba(0,0,0,0.2);
+    box-shadow: 0px 3px 3px rgba(0,0,0,0.2);
+    z-index: 99999;
 }
 #access ul ul ul {
-	left: 100%;
-	top: 0;
+    left: 100%;
+    top: 0;
 }
 #access ul ul a {
-	background: #333;
-	color: #fff;
-	height: auto;
-	line-height: 1em;
-	padding: .5em .5em .5em 1em;
-	width: 10em;
+    background: #333;
+    color: #fff;
+    height: auto;
+    line-height: 1em;
+    padding: .5em .5em .5em 1em;
+    width: 10em;
 }
 #access li:hover > a,
 #access ul ul :hover > a {
-	background:none repeat scroll 0 0 white;
-	color:#444444;
+    background:none repeat scroll 0 0 white;
+    color:#444444;
 }
 #access ul ul a:hover {
-	background: #000;
+    background: #000;
 }
 #access ul li:hover > ul {
-	display: block;
+    display: block;
 }
 
 
@@ -332,78 +332,78 @@ p.sans { font-family: "museo-slab-1", "museo-slab-2", helvetica, arial, serif; }
 -------------------------------------------------------------- */
 
 .main nav {
-	display: block;
-	overflow: hidden;
+    display: block;
+    overflow: hidden;
 }
 .main nav .nav-previous {
-	float: left;
-	width: 50%;
+    float: left;
+    width: 50%;
 }
 .main nav .nav-next {
-	float: right;
-	text-align: right;
-	width: 50%;
+    float: right;
+    text-align: right;
+    width: 50%;
 }
 .main #nav-above {
-	display: none;
+    display: none;
 }
 .paged .main #nav-above,
 .single .main #nav-above {
-	display: block;
+    display: block;
 }
 #nav-below {
-	margin: 1em 0 0 0;
+    margin: 1em 0 0 0;
 }
 .page-link {
-	margin: 0 0 1em 0;
+    margin: 0 0 1em 0;
 }
 
 /* 404 page */
 
 .error404 .widget {
-	float: left;
-	width: 33%;
+    float: left;
+    width: 33%;
 }
 .error404 .widget .widgettitle,
 .error404 .widget ul {
-	margin-right: 1em;
+    margin-right: 1em;
 }
 .error404 .widget_tag_cloud {
-	clear: both;
-	float: none;
-	width: 100%;
+    clear: both;
+    float: none;
+    width: 100%;
 }
 
 /* Notices */
 
 .post .notice,
 .error404 #searchform {
-	background: #EEE;
-	display: block;
-	padding: 1em;
+    background: #EEE;
+    display: block;
+    padding: 1em;
 }
 
 /* Image Attachments */
 
 .image-attachment div.entry-meta {
-	float: left;
+    float: left;
 }
 .image-attachment nav {
-	float: right;
-	margin: 0 0 1em 0;
+    float: right;
+    margin: 0 0 1em 0;
 }
 .image-attachment .entry-content {
-	clear: both;
+    clear: both;
 }
 .image-attachment .entry-content .entry-attachment {
-	background: #EEE;
-	padding: 1em;
-	text-align: center;
+    background: #EEE;
+    padding: 1em;
+    text-align: center;
 }
 .image-attachment .entry-content .attachment {
-	display: block;
-	margin: 0 auto;
-	text-align: center;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
 }
 
 
@@ -411,7 +411,7 @@ p.sans { font-family: "museo-slab-1", "museo-slab-2", helvetica, arial, serif; }
 -------------------------------------------------------------- */
 
 a img {
-	border: none;
+    border: none;
 }
 
 
@@ -419,25 +419,25 @@ a img {
 -------------------------------------------------------------- */
 
 #searchform label {
-	display: none;
+    display: none;
 }
 input[type=text],
 input[type=password],
 input[type=tel],
 input[type=url],
 input[type=email] {
-	margin: 0 1em 0 0;
-	width: 60%;
+    margin: 0 1em 0 0;
+    width: 60%;
 }
 textarea {
-	width: 80%;
+    width: 80%;
 }
 
 /* Class for labelling required form items */
 
 input[required],
 .required {
-	border: 1px solid #CC0033;
+    border: 1px solid #CC0033;
 }
 
 
@@ -445,24 +445,24 @@ input[required],
 -------------------------------------------------------------- */
 
 #respond input[type=text] {
-	float: left;
-	margin: 0 1em 0 0;
-	width: 60%;
+    float: left;
+    margin: 0 1em 0 0;
+    width: 60%;
 }
 #respond .comment-form-comment label {
-	display: none;
+    display: none;
 }
 #respond textarea {
-	margin: 0 1em 1em 0;
-	float: left;
-	width: 80%;
+    margin: 0 1em 1em 0;
+    float: left;
+    width: 80%;
 }
 #respond .form-allowed-tags {
-	clear: both;
-	width: 80%;
+    clear: both;
+    width: 80%;
 }
 #respond .form-allowed-tags code {
-	display: block;
+    display: block;
 }
 
 
@@ -475,21 +475,21 @@ ul.xoxo
 }
 
 .widget-area {
-	background: rgba(212, 234, 235, .25); /* not-pink */
+    background: rgba(212, 234, 235, .25); /* not-pink */
 }
 .widget-area ul {
-	list-style: none;
-	padding: 0 1em;
+    list-style: none;
+    padding: 0 1em;
 }
 .widget-area ul ul {
-	list-style: disc;
-	padding: 0 0 0 1em;
+    list-style: disc;
+    padding: 0 0 0 1em;
 }
 .widget-area .widget_search {
-	overflow: hidden;
+    overflow: hidden;
 }
 .widget-area .widget_search input {
-	float: left;
+    float: left;
 }
 
 
@@ -497,52 +497,52 @@ ul.xoxo
 -------------------------------------------------------------- */
 
 #colophon {
-	padding: 1em 0 0 0;
+    padding: 1em 0 0 0;
 }
 
 #subsidiary {
-	margin: 0;
+    margin: 0;
 }
-	#subsidiary aside {
-		float:left;
-		width:33.33333%;
-	}
-	
-	#subsidiary .third {
-		display:table-cell;float:none;width:auto;*display:block;*zoom:1;_position:relative;_left:-3px;_margin-right:-3px;
-	}
+    #subsidiary aside {
+        float:left;
+        width:33.33333%;
+    }
+
+    #subsidiary .third {
+        display:table-cell;float:none;width:auto;*display:block;*zoom:1;_position:relative;_left:-3px;_margin-right:-3px;
+    }
 
 /* =WordPress basics
 -------------------------------------------------------------- */
 .alignleft {
-	display: inline;
-	float: left;
+    display: inline;
+    float: left;
 }
 .alignright {
-	display: inline;
-	float: right;
+    display: inline;
+    float: right;
 }
 .aligncenter {
-	clear: both;
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
+    clear: both;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 .wp-caption {
-	padding: .5em;
-	text-align: center;
+    padding: .5em;
+    text-align: center;
 }
 .wp-caption img {
-	margin: .25em;
+    margin: .25em;
 }
 .wp-caption .wp-caption-text {
-	margin: .5em;
+    margin: .5em;
 }
 
 
 /* external urls and gen protcols, document types & sites */
 a[href^="http:"],
-a[href^="https:"]	{}
+a[href^="https:"]    {}
 
 a[href^="callto:"] {}
 a[href^="mailto:"] {}
@@ -577,14 +577,14 @@ img {
 
 .ie p,
 .ie img {
-	width: 100%;
+    width: 100%;
 }
 
 
 section > aside,
 article > aside {
-	float: right;
-	border-left: 1px solid #CCCCCC
+    float: right;
+    border-left: 1px solid #CCCCCC
 }
 
 abbr, acronym {
@@ -605,8 +605,8 @@ figure video, figure img {
 }
 
 body > figure {
-	margin-top: 0.75em;
-	margin-bottom: 0.75em;
+    margin-top: 0.75em;
+    margin-bottom: 0.75em;
 }
 
 figure caption {
@@ -700,143 +700,143 @@ ul, ol {
   position: relative; /* I wonder if there are drawbacks to relative divs that I am unaware of? */
 }
 
-	#header .widgetcontainer {
-		position: absolute;
-		right: 0;
-		height: 24px;
-		width: 607px;
-		bottom: 1px;
-	}
+    #header .widgetcontainer {
+        position: absolute;
+        right: 0;
+        height: 24px;
+        width: 607px;
+        bottom: 1px;
+    }
 
-	#logo {
-	  float: left;
-	  margin-left: -10px;
-	}
+    #logo {
+      float: left;
+      margin-left: -10px;
+    }
 
-		#logo img {
-			margin: 0;
-			padding-right: 0;
-		}
+        #logo img {
+            margin: 0;
+            padding-right: 0;
+        }
 
-	#header .social-links {
-		position: absolute;
-		right: 0;
-		width: auto;
-		padding-bottom: 0.5em;
-		padding-left: 0;
-		margin-bottom: 1px;
-		margin-right: 1em;
-		bottom: 0;
-	}
+    #header .social-links {
+        position: absolute;
+        right: 0;
+        width: auto;
+        padding-bottom: 0.5em;
+        padding-left: 0;
+        margin-bottom: 1px;
+        margin-right: 1em;
+        bottom: 0;
+    }
 
-	#header hgroup {
-		display: inline-block;
-		margin-top: 1.5em;
-	}
-	/* maybe ie all but think this is it 17/09/2010 22:42:07 */
-	.ie6 #header hgroup {
-		float: left;
-	}
+    #header hgroup {
+        display: inline-block;
+        margin-top: 1.5em;
+    }
+    /* maybe ie all but think this is it 17/09/2010 22:42:07 */
+    .ie6 #header hgroup {
+        float: left;
+    }
 
-	#header h1,
-	#header h2 {
-		display: block;
-	}
+    #header h1,
+    #header h2 {
+        display: block;
+    }
 
-	#header h1 {
-		padding-top: 0.06em;
-		font-size: 113%;
-	}
-	
-	#header h2 {
-		color:#888888;
-		font-size:88%;
-		font-style:italic;
-		padding-top:0.04em;
-		-moz-text-shadow: #2A242D 1px 1px, #2A242D 2px 2px, #2A242D 3px 3px, #2A242D 4px 4px, #2A242D 5px 5px, #2A242D 6px 6px;
-		-webkit-text-shadow: #2A242D 1px 1px, #2A242D 2px 2px, #2A242D 3px 3px, #2A242D 4px 4px, #2A242D 5px 5px, #2A242D 6px 6px;
-		text-shadow: #2A242D 1px 1px, #2A242D 2px 2px, #2A242D 3px 3px, #2A242D 4px 4px, #2A242D 5px 5px, #2A242D 6px 6px;
-	}
-	
-	#header hgroup h1,
-	#header hgroup h2 {
-		padding-bottom: 3px;
-	}
+    #header h1 {
+        padding-top: 0.06em;
+        font-size: 113%;
+    }
 
-	#header nav {
-		display: inline;
-		float: right;
-	}
+    #header h2 {
+        color:#888888;
+        font-size:88%;
+        font-style:italic;
+        padding-top:0.04em;
+        -moz-text-shadow: #2A242D 1px 1px, #2A242D 2px 2px, #2A242D 3px 3px, #2A242D 4px 4px, #2A242D 5px 5px, #2A242D 6px 6px;
+        -webkit-text-shadow: #2A242D 1px 1px, #2A242D 2px 2px, #2A242D 3px 3px, #2A242D 4px 4px, #2A242D 5px 5px, #2A242D 6px 6px;
+        text-shadow: #2A242D 1px 1px, #2A242D 2px 2px, #2A242D 3px 3px, #2A242D 4px 4px, #2A242D 5px 5px, #2A242D 6px 6px;
+    }
 
-	#header ul {
-		clear:right;
-		display:block;
-		list-style:none outside none;
-		margin: 0;
-		padding-left:0;
-		padding-top: 5px;
-		
-	}
+    #header hgroup h1,
+    #header hgroup h2 {
+        padding-bottom: 3px;
+    }
 
-	.ie6 #header ul {
-		display: inline; float: right
-	}
+    #header nav {
+        display: inline;
+        float: right;
+    }
 
-	.ie7 #header ul {
-		display: inline; position: absolute; right: 0px;
-	}
+    #header ul {
+        clear:right;
+        display:block;
+        list-style:none outside none;
+        margin: 0;
+        padding-left:0;
+        padding-top: 5px;
 
-	#header nav li {
-	  display: inline-block; zoom: 1;
-	  /* I might be able to gain something through the use of this rahter than the method that works - though the method that works works :)
-	   /* ie7 hack for display:inline-block */
-	   padding-top: 0px; padding-bottom: 0px;
-	}
+    }
 
-	.ie6 #header nav li,
-	.ie7 #header nav li {
-		display: block; float: left
-	}
+    .ie6 #header ul {
+        display: inline; float: right
+    }
 
-	.ie7 .search,
-	.ie8 .search {
-		margin-bottom: -27px;
-		margin-left: 1em;
-	}
+    .ie7 #header ul {
+        display: inline; position: absolute; right: 0px;
+    }
 
-	.ie #header #s {
-		width: 116px;
-	}
+    #header nav li {
+      display: inline-block; zoom: 1;
+      /* I might be able to gain something through the use of this rahter than the method that works - though the method that works works :)
+       /* ie7 hack for display:inline-block */
+       padding-top: 0px; padding-bottom: 0px;
+    }
 
-	.ie #header li div {
-		width: 174px;
-	}
+    .ie6 #header nav li,
+    .ie7 #header nav li {
+        display: block; float: left
+    }
 
-	.ie7 #header {
-		position: relative;
-	}
+    .ie7 .search,
+    .ie8 .search {
+        margin-bottom: -27px;
+        margin-left: 1em;
+    }
 
-	.ie7 #header nav {
-		position: absolute; right: 0;
-	}
+    .ie #header #s {
+        width: 116px;
+    }
 
-	.ie7 #header ul {
-		xright: 0; xposition: absolute;
-	}	
+    .ie #header li div {
+        width: 174px;
+    }
 
-	#header nav li a {
-	  padding: 0 20px;
-	  text-decoration: none;
-	}
-	
-	#header .skip-link,
-	#header .switch-mobile {
-		display:inline;
-		float:right;
-		padding-right:0;
-		margin-right: 1.1em;
-		font-size: 62.5%
-	}
+    .ie7 #header {
+        position: relative;
+    }
+
+    .ie7 #header nav {
+        position: absolute; right: 0;
+    }
+
+    .ie7 #header ul {
+        xright: 0; xposition: absolute;
+    }
+
+    #header nav li a {
+      padding: 0 20px;
+      text-decoration: none;
+    }
+
+    #header .skip-link,
+    #header .switch-mobile {
+        display:inline;
+        float:right;
+        padding-right:0;
+        margin-right: 1.1em;
+        font-size: 62.5%
+    }
 
 /***** #footer *****/
 
@@ -846,35 +846,35 @@ ul, ol {
   margin: 1em auto;
   padding: 1em 0;
 }
-	#footer small {
-		margin: .5em 1.5em;
-	}
+    #footer small {
+        margin: .5em 1.5em;
+    }
 
 /***** POSTS formatting *****/
 
 article.post {
 }
 
-	article.post header {
-	  xborder-bottom: 1px solid #ccc;
-	  xmargin-bottom: 1em;
-	  xpadding-bottom: 1em;
-	}
-	
-	article.post header time {
-	  color: #666;
-	}
-	
-	article.post header h1 {
-	}
-	
-	article.post header p {
-	  margin: 0;
-	}
-	
-	
-	article.post .author {
-	}
+    article.post header {
+      xborder-bottom: 1px solid #ccc;
+      xmargin-bottom: 1em;
+      xpadding-bottom: 1em;
+    }
+
+    article.post header time {
+      color: #666;
+    }
+
+    article.post header h1 {
+    }
+
+    article.post header p {
+      margin: 0;
+    }
+
+
+    article.post .author {
+    }
 
 /***** update *****/
 
@@ -890,11 +890,11 @@ section.update {
 section.footnotes {
 }
 
-	section.footnotes ul {
-	}
-	
-	section.footnotes ul li {
-	}
+    section.footnotes ul {
+    }
+
+    section.footnotes ul li {
+    }
 
 /***** comments *****/
 
@@ -903,16 +903,16 @@ section.comments {
   xmargin-top: 1em;
 }
 
-	section.comments article {
-	  xborder-top: 1px solid #ccc;
-	  padding-top: 1em;
-	}
-	
-	section.comments form {
-	  border: 1px solid #ccc;
-	  xbackground-color: #f0f0f0;
-	  xpadding: 10px;
-	}
+    section.comments article {
+      xborder-top: 1px solid #ccc;
+      padding-top: 1em;
+    }
+
+    section.comments form {
+      border: 1px solid #ccc;
+      xbackground-color: #f0f0f0;
+      xpadding: 10px;
+    }
 
 /***** search *****/
 /* 
@@ -1039,137 +1039,137 @@ button {
   overflow: visible;
 }
 
-/*	searchbox relative here also seems a touch ott perhaps	*/
+/*    searchbox relative here also seems a touch ott perhaps    */
 #searchbox {
-	position: relative;
+    position: relative;
 }
 #searchbox div {
-	display: inline-block;
-	zoom: 1; /* ie7 hack for display:inline-block */
-	*display: inline;
-	border: solid 1px #d2d2d2;
-	padding: 3px 5px;
-	
-	-webkit-border-radius: 2em;
-	-moz-border-radius: 2em;
-	border-radius: 2em;
+    display: inline-block;
+    zoom: 1; /* ie7 hack for display:inline-block */
+    *display: inline;
+    border: solid 1px #d2d2d2;
+    padding: 3px 5px;
 
-	-webkit-box-shadow: 0 1px 0 rgba(0,0,0,.1);
-	-moz-box-shadow: 0 1px 0 rgba(0,0,0,.1);
-	box-shadow: 0 1px 0 rgba(0,0,0,.1);
+    -webkit-border-radius: 2em;
+    -moz-border-radius: 2em;
+    border-radius: 2em;
 
-	background: #f1f1f1;
-	background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#ededed));
-	background: -moz-linear-gradient(top,  #fff,  #ededed);
-	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ededed'); /* ie7 */
-	-ms-filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ededed'); /* ie8 */
+    -webkit-box-shadow: 0 1px 0 rgba(0,0,0,.1);
+    -moz-box-shadow: 0 1px 0 rgba(0,0,0,.1);
+    box-shadow: 0 1px 0 rgba(0,0,0,.1);
+
+    background: #f1f1f1;
+    background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#ededed));
+    background: -moz-linear-gradient(top,  #fff,  #ededed);
+    filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ededed'); /* ie7 */
+    -ms-filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ededed'); /* ie8 */
 }
 
-	.ie7 #searchbox div {
-		/* iam margin bottom -27px aboveurgh */
-		margin-top: -.75em;
-	}
+    .ie7 #searchbox div {
+        /* iam margin bottom -27px aboveurgh */
+        margin-top: -.75em;
+    }
 
-	#searchbox input[type=search],
-	#searchbox input[type=submit],
-	#searchbox input[type=text],
-	#searchbox input[type=button] {
-		font: normal 12px/100% Arial, Helvetica, sans-serif;
-		border-color: transparent;
-		border-radius: 2em;
-		-moz-border-radius: 2em;
-		-webkit-border-radius: 2em;
-	}
+    #searchbox input[type=search],
+    #searchbox input[type=submit],
+    #searchbox input[type=text],
+    #searchbox input[type=button] {
+        font: normal 12px/100% Arial, Helvetica, sans-serif;
+        border-color: transparent;
+        border-radius: 2em;
+        -moz-border-radius: 2em;
+        -webkit-border-radius: 2em;
+    }
 
-	.ie #searchbox input[type=search],
-	.ie #searchbox input[type=text] {
-		width: 116px;
-	}
+    .ie #searchbox input[type=search],
+    .ie #searchbox input[type=text] {
+        width: 116px;
+    }
 
-	#searchbox input[type=search] {
-		-webkit-appearance: textfield;
-		-webkit-box-sizing: content-box;
-	}
+    #searchbox input[type=search] {
+        -webkit-appearance: textfield;
+        -webkit-box-sizing: content-box;
+    }
 
-	#searchbox input[type=search],
-	#searchbox input[type=text] {
-		padding: 5px;
-		outline: none;
-		border-color: transparent;
-		background: -webkit-gradient(linear, left top, left bottom, from(#bcbcbe), to(#ffffff));
-		background: -moz-linear-gradient(top,  #bcbcbe,  #ffffff);
-		
-		border: solid 1px #bcbbbb;
-		xborder: 0;
-		
-		background: #fff;
-		padding: 6px 12px 6px 12px;
-		width: 142px;
-		outline: none;
-		margin: 1px 0;
-		
-		-webkit-border-radius: 5px;
-		-moz-border-radius: 2em;
-		border-radius: 2em;
-		
-		box-shadow: inset 0 1px 2px rgba(0,0,0,.2);   
-	}
+    #searchbox input[type=search],
+    #searchbox input[type=text] {
+        padding: 5px;
+        outline: none;
+        border-color: transparent;
+        background: -webkit-gradient(linear, left top, left bottom, from(#bcbcbe), to(#ffffff));
+        background: -moz-linear-gradient(top,  #bcbcbe,  #ffffff);
 
-	#s:focus {
-		background: #e9f4ff;
-		outline: none;
-	}
+        border: solid 1px #bcbbbb;
+        xborder: 0;
 
-	#r {
-		position: absolute;
-		top: 45px;
-		width: 150px;
-		list-style:none outside none;
-		margin:20px 0 5px 15px;
-		padding:0;
-	}
-	
-	#r li {
-		border-bottom:1px solid #D7D6D5;
-		background: rgba(231,231,231, 0.6);
-		font-size: 75.5%;
-		margin:0;
-		padding:5px 7px;
-		display: list-item;
-	}
+        background: #fff;
+        padding: 6px 12px 6px 12px;
+        width: 142px;
+        outline: none;
+        margin: 1px 0;
 
-	#r li:hover {
-		background: #e9f4ff;
-	}
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 2em;
+        border-radius: 2em;
 
-	#searchbox input[type=submit]:hover {
-		background: #c7c1bb;
-		outline: none;
-	}
+        box-shadow: inset 0 1px 2px rgba(0,0,0,.2);
+    }
 
-	#searchbox input[type=submit] {
-		padding-bottom: 4px;
-		padding-left: 7px;
-		color: #fff;
-		border: solid 1px #494949;
-		font-size: 11px;
-		font-weight: bold;
-		text-transform: lowercase;
-		height: 27px;
-		width: 27px;
-		text-shadow: 0 1px 1px rgba(0,0,0,.6);
-		
-		-moz-text-shadow: 0 1px 0 #fff;
-		-webkit-text-shadow: 0 1px 0 #fff;
-		text-shadow: 0 1px 0 #fff;
-	
-		-webkit-border-radius: 2em;
-		-moz-border-radius: 2em;
-		border-radius: 2em;
-	
-		background: #5f5f5f;
-		background: -webkit-gradient(linear, left top, left bottom, from(#9e9e9e), to(#454545));
-		background: -moz-linear-gradient(top,  #9e9e9e,  #454545);
-		filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#9e9e9e', endColorstr='#454545'); /* ie7 */
-		-ms-filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#9e9e9e', endColorstr='#454545'); /* ie8 */
-	}
+    #s:focus {
+        background: #e9f4ff;
+        outline: none;
+    }
+
+    #r {
+        position: absolute;
+        top: 45px;
+        width: 150px;
+        list-style:none outside none;
+        margin:20px 0 5px 15px;
+        padding:0;
+    }
+
+    #r li {
+        border-bottom:1px solid #D7D6D5;
+        background: rgba(231,231,231, 0.6);
+        font-size: 75.5%;
+        margin:0;
+        padding:5px 7px;
+        display: list-item;
+    }
+
+    #r li:hover {
+        background: #e9f4ff;
+    }
+
+    #searchbox input[type=submit]:hover {
+        background: #c7c1bb;
+        outline: none;
+    }
+
+    #searchbox input[type=submit] {
+        padding-bottom: 4px;
+        padding-left: 7px;
+        color: #fff;
+        border: solid 1px #494949;
+        font-size: 11px;
+        font-weight: bold;
+        text-transform: lowercase;
+        height: 27px;
+        width: 27px;
+        text-shadow: 0 1px 1px rgba(0,0,0,.6);
+
+        -moz-text-shadow: 0 1px 0 #fff;
+        -webkit-text-shadow: 0 1px 0 #fff;
+        text-shadow: 0 1px 0 #fff;
+
+        -webkit-border-radius: 2em;
+        -moz-border-radius: 2em;
+        border-radius: 2em;
+
+        background: #5f5f5f;
+        background: -webkit-gradient(linear, left top, left bottom, from(#9e9e9e), to(#454545));
+        background: -moz-linear-gradient(top,  #9e9e9e,  #454545);
+        filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#9e9e9e', endColorstr='#454545'); /* ie7 */
+        -ms-filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#9e9e9e', endColorstr='#454545'); /* ie8 */
+    }

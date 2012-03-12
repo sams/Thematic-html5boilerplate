@@ -32,22 +32,22 @@ body {
     margin:0 0 0 10px;
 }
 #content {
-	margin: 0 240px;
+    margin: 0 240px;
     overflow:hidden;
 }
 #primary {
     width:220px;
     float:left;
-	margin: 0 0 0 -940px;
+    margin: 0 0 0 -940px;
 }
 * html #primary {
-	left: 20px;
-	position: relative;
+    left: 20px;
+    position: relative;
 }
 #secondary {
     width:220px;
     float:left;
-	margin: 0 0 0 -220px;
+    margin: 0 0 0 -220px;
 }
 #footer {    
     clear:both;

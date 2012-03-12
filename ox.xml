@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
-	<ShortName>example.com [by:ltge.de]</ShortName>
-	<Description>Use example.com to search on blog.</Description>
-	<Url type="text/html" method="get" template="http://example.com/?s={searchTerms}"></Url>
-	<Contact>info@example.com</Contact>
-	<LongName>example.com [by:example.com] Weblog Search</LongName>
-	<Image height="16" width="16" type="image/x-icon">http://example.com/favicon.ico</Image>
-	<Tags>Weblog WordPress Webdevelopment</Tags>
-	<Url type="application/atom+xml" template="http://example.com/?q={searchTerms}&pw={startPage?}&format=atom"/>
-	<Url type="application/rss+xml" template="http://example.com/?q={searchTerms}&pw={startPage?}&format=rss"/>
-	<Url type="text/html" template="http://example.com/?q={searchTerms}&pw={startPage?}"/>
-	<Query role="example" searchTerms="blog"/>
-	<Developer>Sam Sherlock</Developer>
-	<Attribution>
-	    Search data Copyright 2010, example.com, All Rights Reserved
-	</Attribution>
-	<SyndicationRight>open</SyndicationRight>
-	<AdultContent>false</AdultContent>
-	<Language>en-GB</Language>
-	<OutputEncoding>UTF-8</OutputEncoding>
-	<InputEncoding>UTF-8</InputEncoding>
+    <ShortName>example.com [by:ltge.de]</ShortName>
+    <Description>Use example.com to search on blog.</Description>
+    <Url type="text/html" method="get" template="http://example.com/?s={searchTerms}"></Url>
+    <Contact>info@example.com</Contact>
+    <LongName>example.com [by:example.com] Weblog Search</LongName>
+    <Image height="16" width="16" type="image/x-icon">http://example.com/favicon.ico</Image>
+    <Tags>Weblog WordPress Webdevelopment</Tags>
+    <Url type="application/atom+xml" template="http://example.com/?q={searchTerms}&pw={startPage?}&format=atom"/>
+    <Url type="application/rss+xml" template="http://example.com/?q={searchTerms}&pw={startPage?}&format=rss"/>
+    <Url type="text/html" template="http://example.com/?q={searchTerms}&pw={startPage?}"/>
+    <Query role="example" searchTerms="blog"/>
+    <Developer>Sam Sherlock</Developer>
+    <Attribution>
+        Search data Copyright 2010, example.com, All Rights Reserved
+    </Attribution>
+    <SyndicationRight>open</SyndicationRight>
+    <AdultContent>false</AdultContent>
+    <Language>en-GB</Language>
+    <OutputEncoding>UTF-8</OutputEncoding>
+    <InputEncoding>UTF-8</InputEncoding>
 </OpenSearchDescription>

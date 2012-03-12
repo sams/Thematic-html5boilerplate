@@ -15,19 +15,19 @@
 $themeData = get_theme_data(TEMPLATEPATH . '/style.css');
 $version = trim($themeData['Version']);
 
-if(!$version)	{
-	$version = "unknown";
+if(!$version)    {
+    $version = "unknown";
 }
 
 $ct=get_theme_data(STYLESHEETPATH . '/style.css');
 $templateversion = trim($ct['Version']);
 
-if(!$templateversion)	{
-	$templateversion = "unknown";
+if(!$templateversion)    {
+    $templateversion = "unknown";
 }
 
 if(!defined('DEVICE')) {
-	define('DEVICE', 'desktop');
+    define('DEVICE', 'desktop');
 }
 
 // set theme constants
@@ -39,45 +39,45 @@ define('THEMATICVERSION', $version);
 
 // set feed links handling
 // If you set this to TRUE, thematic_show_rss() and thematic_show_commentsrss() are used instead of add_theme_support( 'automatic-feed-links' )
-if (!defined('THEMATIC_COMPATIBLE_FEEDLINKS')) {	
-	if (function_exists('comment_form')) {
-		define('THEMATIC_COMPATIBLE_FEEDLINKS', false); // WordPress 3.0
-	} else {
-		define('THEMATIC_COMPATIBLE_FEEDLINKS', true); // below WordPress 3.0
-	}
+if (!defined('THEMATIC_COMPATIBLE_FEEDLINKS')) {
+    if (function_exists('comment_form')) {
+        define('THEMATIC_COMPATIBLE_FEEDLINKS', false); // WordPress 3.0
+    } else {
+        define('THEMATIC_COMPATIBLE_FEEDLINKS', true); // below WordPress 3.0
+    }
 }    
-	define('THEMATIC_COMPATIBLE_COMMENT_HANDLING', false);
+    define('THEMATIC_COMPATIBLE_COMMENT_HANDLING', false);
 
 // set comments handling for pages, archives and links
 // If you set this to TRUE, comments only show up on pages with a key/value of "comments"
 if (!defined('THEMATIC_COMPATIBLE_COMMENT_HANDLING')) {
-	define('THEMATIC_COMPATIBLE_COMMENT_HANDLING', false);
+    define('THEMATIC_COMPATIBLE_COMMENT_HANDLING', false);
 }
 
 // set comments handling for pages, archives and links
 // If you set this to TRUE, comments only show up on pages with a key/value of "comments"
 if (!defined('THEMATIC_BROWSER_BODY_CLASS')) {
-	define('THEMATIC_BROWSER_BODY_CLASS', false);
+    define('THEMATIC_BROWSER_BODY_CLASS', false);
 }
 
 // set body class handling to WP body_class()
 // If you set this to TRUE, Thematic will use thematic_body_class instead
 if (!defined('THEMATIC_COMPATIBLE_BODY_CLASS')) {
-	define('THEMATIC_COMPATIBLE_BODY_CLASS', false);
+    define('THEMATIC_COMPATIBLE_BODY_CLASS', false);
 }
 
 // set post class handling to WP post_class()
 // If you set this to TRUE, Thematic will use thematic_post_class instead
 if (!defined('THEMATIC_COMPATIBLE_POST_CLASS')) {
-	define('THEMATIC_COMPATIBLE_POST_CLASS', false);
+    define('THEMATIC_COMPATIBLE_POST_CLASS', false);
 }
 // which comment form should be used
 if (!defined('THEMATIC_COMPATIBLE_COMMENT_FORM')) {
-	if (function_exists('comment_form')) {
-		define('THEMATIC_COMPATIBLE_COMMENT_FORM', false); // WordPress 3.0
-	} else {
-		define('THEMATIC_COMPATIBLE_COMMENT_FORM', true); // below WordPress 3.0
-	}
+    if (function_exists('comment_form')) {
+        define('THEMATIC_COMPATIBLE_COMMENT_FORM', false); // WordPress 3.0
+    } else {
+        define('THEMATIC_COMPATIBLE_COMMENT_FORM', true); // below WordPress 3.0
+    }
 }
 
 // Check for WordPress mu or WordPress 3.0
@@ -85,13 +85,13 @@ define('THEMATIC_MB', function_exists('get_blog_option'));
 
 // Create the feedlinks
 if (!(THEMATIC_COMPATIBLE_FEEDLINKS)) {
-	add_theme_support( 'automatic-feed-links' );
+    add_theme_support( 'automatic-feed-links' );
 }
 
 // Check for WordPress 2.9 add_theme_support()
 if ( apply_filters( 'thematic_post_thumbs', TRUE) ) {
-	if ( function_exists( 'add_theme_support' ) )
-	add_theme_support( 'post-thumbnails' );
+    if ( function_exists( 'add_theme_support' ) )
+    add_theme_support( 'post-thumbnails' );
 }
 
 // set child theme constants
@@ -151,106 +151,104 @@ require_once(THEMELIB . '/extensions/'.DEVICE.'-extensions.php');
 
 
 /**
- *	Handle White Label CMS
+ *    Handle White Label CMS
  */
 if (function_exists('wlcms_add_admin')) {
-	define(strtoupper('wlcms_add_admin'), true);
+    define(strtoupper('wlcms_add_admin'), true);
 }
 
 /**
- *	Handle Minify
+ *    Handle Minify
  */
 if (class_exists('WPMinify')) {
-	// make a switch to disable minify temp/soft switch?? maybe not required check this
-	// set link to /wp-content/plugins/wp-minify/min/builder/
-	// inform use of bookmarklet COOL
-	
-	// the results of bookmark should be added to /wp-content/plugins/wp-minify/min/groupsConfig.php
-	//     'keyName' => array('//wpt/wp-content/themes/h5bp/library/js/plugins.top.js', '//wpt/wp-includes/js/jquery/jquery.form.js', '//wpt/wp-content/themes/h5bp/library/js/superfish.js', '//wpt/wp-content/themes/h5bp/library/js/supersubs.js', '//wpt/wp-content/themes/h5bp/library/js/jquery.bgiframe.min.js', '//wpt/wp-content/themes/h5bp/library/js/hoverIntent.js', '//wpt/wp-content/themes/h5bp/library/js/plugins.bottom.js'),
-	//   
-	define(strtoupper('WPMinify'), true);
+    // make a switch to disable minify temp/soft switch?? maybe not required check this
+    // set link to /wp-content/plugins/wp-minify/min/builder/
+    // inform use of bookmarklet COOL
+
+    // the results of bookmark should be added to /wp-content/plugins/wp-minify/min/groupsConfig.php
+    //     'keyName' => array('//wpt/wp-content/themes/h5bp/library/js/plugins.top.js', '//wpt/wp-includes/js/jquery/jquery.form.js', '//wpt/wp-content/themes/h5bp/library/js/superfish.js', '//wpt/wp-content/themes/h5bp/library/js/supersubs.js', '//wpt/wp-content/themes/h5bp/library/js/jquery.bgiframe.min.js', '//wpt/wp-content/themes/h5bp/library/js/hoverIntent.js', '//wpt/wp-content/themes/h5bp/library/js/plugins.bottom.js'),
+    //
+    define(strtoupper('WPMinify'), true);
 }
 
 /**
- *	Handle Super Cache
+ *    Handle Super Cache
  */
 if (function_exists('wp_cache_is_enabled')) {
-	// make a soft switch
-	// make interface links to clear cache etc
-	define(strtoupper('wp_cache_is_enabled'), true);
+    // make a soft switch
+    // make interface links to clear cache etc
+    define(strtoupper('wp_cache_is_enabled'), true);
 }
 
 /**
- *	Handle Swf Object
+ *    Handle Swf Object
  */
 if (function_exists('wp_swfobject')) {
-	// make a page in sidebar appear its a display of html5boilerplate video
-	// would be cool to make one for this theme
-	// also oocss slides & some jquery & wordpress tv maybe a feed of html5 wordpress vdieos
-	// ha ha but this should use video in some cases (not like over use eg bing video background urgh)
-	define(strtoupper('SWFObjectWP_SWFObject'), true);
+    // make a page in sidebar appear its a display of html5boilerplate video
+    // would be cool to make one for this theme
+    // also oocss slides & some jquery & wordpress tv maybe a feed of html5 wordpress vdieos
+    // ha ha but this should use video in some cases (not like over use eg bing video background urgh)
+    define(strtoupper('SWFObjectWP_SWFObject'), true);
 }
 
 /**
- *	Handle WP Ajax
+ *    Handle WP Ajax
  */
 if (function_exists('wp_ajax')) {
-	// hand specific ajax things like what
-	define(strtoupper('wp_ajax'), true);
+    // hand specific ajax things like what
+    define(strtoupper('wp_ajax'), true);
 }
 
 /**
- *	Handle Contact 7
+ *    Handle Contact 7
  */
 //if (function_exists('wpcf7')) {
-	define(strtoupper('WP_Contact7'), true);
+    define(strtoupper('WP_Contact7'), true);
 //}
 
 /**
- *	Handle Cleaner Gallery
+ *    Handle Cleaner Gallery
  */
 if (function_exists('cleaner_gallery_setup')) { 
-	define(strtoupper('cleaner_gallery'), true);
+    define(strtoupper('cleaner_gallery'), true);
 }
 
 /**
- *	Handle GA Admin Plugin by Yoast
+ *    Handle GA Admin Plugin by Yoast
  */
 if (class_exists('GA_Admin')) {
-	define(strtoupper('Google_Analytics'), true);
+    define(strtoupper('Google_Analytics'), true);
 }
 
 /**
- *	Handle Google Sitemap Generator
+ *    Handle Google Sitemap Generator
  */
 if (class_exists('Google_Sitemap_Generator')) {
-	define(strtoupper('GoogleSitemapGeneratorLoader'), true);
+    define(strtoupper('GoogleSitemapGeneratorLoader'), true);
 }
 
 /**
- *	Handle All In One SEO
+ *    Handle All In One SEO
  */
 if (function_exists('All_in_One_SEO_Pack')) {
 // septup some stuff for plugin interface from within theme options
 // also define some functions for use in theme to display agumented 
 // information based on these refined plugin settings 
-	define(strtoupper('All_in_One_SEO_Pack'), true);
+    define(strtoupper('All_in_One_SEO_Pack'), true);
 }
 
 add_theme_support( 'post-thumbnails', array( 'post') ); // Add it for posts
 
-add_filter( 'pre_get_posts', 'home_content' );
-
-  // thematic_open_wrapper
+// thematic_open_wrapper
 define('THEMATIC_OPEN_WRAPPER', false);
 
 /**
- *	thematic script
+ *    thematic script
  */
 if (!function_exists('thematic_scripts')) {
-	function thematic_scripts() {
-	themeatic_script_setup();
-	}
+    function thematic_scripts() {
+    themeatic_script_setup();
+    }
 }
 /**
  * trial function to handle bunch of styles
@@ -259,8 +257,8 @@ if (!function_exists('thematic_scripts')) {
  * rewriting the childtheme/default stylesheey
  */ 
 if (!function_exists('thematic_theme_styles')) {
-	function thematic_theme_styles() {
-	}
+    function thematic_theme_styles() {
+    }
 } // end thematic_theme_styles
 
 
@@ -270,17 +268,19 @@ if (!function_exists('thematic_theme_styles')) {
  * and assist in grouping them via mninify
  */ 
 if (!function_exists('thematic_theme_styles')) {
-	function thematic_theme_scripts() {
-	} 
+    function thematic_theme_scripts() {
+    }
 } // end thematic_theme_scripts
 
 
-function home_content( $query )	{
-	if ( is_home() && false == $query->query_vars['suppress_filters'] )
-		$query->set( 'post_type', array( 'home', 'attachment' ) );
+function home_content( $query )    {
+    if ( is_home() && false == $query->query_vars['suppress_filters'] )
+        $query->set( 'post_type', array( 'home', 'attachment' ) );
 
-	return $query;
+    return $query;
 }
+
+add_filter('pre_get_posts', 'home_content');
 
 // Adds filters for the description/meta content in archives.php
 add_filter( 'archive_meta', 'wptexturize' );
@@ -289,10 +289,10 @@ add_filter( 'archive_meta', 'convert_chars' );
 add_filter( 'archive_meta', 'wpautop' );
 
 // Remove the WordPress Generator via http://blog.ftwr.co.uk/archives/2007/10/06/improving-the-wordpress-generator/
-function thematic_remove_generators()	{ return ''; }
+function thematic_remove_generators()    { return ''; }
 
 if (apply_filters('thematic_hide_generators', TRUE)) {  
-	add_filter('the_generator','thematic_remove_generators');
+    add_filter('the_generator','thematic_remove_generators');
 }
 /**
  * Make theme available for translation
@@ -304,7 +304,7 @@ load_theme_textdomain('thematic', THEMELIB . '/languages');
 $locale = get_locale();
 $locale_file = THEMELIB . "/languages/$locale.php";
 if ( is_readable($locale_file) )
-	require_once($locale_file);
+    require_once($locale_file);
 
 /** Tell WordPress to run thematic_h5bp_setup() ala Twenty_Ten when the 'after_setup_theme' hook is run. */
 add_action( 'after_setup_theme', 'thematic_h5bp_setup' );
@@ -331,73 +331,73 @@ if ( ! function_exists( 'thematic_h5bp_setup' ) ):
  *
  */
 function thematic_h5bp_setup() {
-	GLOBAL $my_themename;
+    GLOBAL $my_themename;
 
-	// This theme styles the visual editor with editor-style.css to match the theme style.
-	add_editor_style();
+    // This theme styles the visual editor with editor-style.css to match the theme style.
+    add_editor_style();
 
-	// This theme uses post thumbnails
-	add_theme_support( 'post-thumbnails' );
+    // This theme uses post thumbnails
+    add_theme_support( 'post-thumbnails' );
 
-	// Add default posts and comments RSS feed links to head
-	add_theme_support( 'automatic-feed-links' );
+    // Add default posts and comments RSS feed links to head
+    add_theme_support( 'automatic-feed-links' );
 
-	// Make theme available for translation - I can remove the other one
-	// Translations can be filed in the /languages/ directory
-	load_theme_textdomain( $my_themename, TEMPLATEPATH . '/languages' );
+    // Make theme available for translation - I can remove the other one
+    // Translations can be filed in the /languages/ directory
+    load_theme_textdomain( $my_themename, TEMPLATEPATH . '/languages' );
 
-	$locale = get_locale();
-	$locale_file = TEMPLATEPATH . "/languages/$locale.php";
-	if ( is_readable( $locale_file ) )
-		require_once( $locale_file );
+    $locale = get_locale();
+    $locale_file = TEMPLATEPATH . "/languages/$locale.php";
+    if ( is_readable( $locale_file ) )
+        require_once( $locale_file );
 
-	// This theme uses wp_nav_menu() in one location.
-	register_nav_menus( array(
-		'xoxo' => __( 'Primary Navigation', $my_themename ),
-	) );
+    // This theme uses wp_nav_menu() in one location.
+    register_nav_menus( array(
+        'xoxo' => __( 'Primary Navigation', $my_themename ),
+    ) );
 
-	// This theme allows users to set a custom background
-	add_custom_background();
+    // This theme allows users to set a custom background
+    add_custom_background();
 
-	// Your changeable header business starts here
-	define( 'HEADER_TEXTCOLOR', '' );
-	// No CSS, just IMG call. The %s is a placeholder for the theme template directory URI.
-	define( 'HEADER_IMAGE', '%s/images/headers/path.jpg' );
+    // Your changeable header business starts here
+    define( 'HEADER_TEXTCOLOR', '' );
+    // No CSS, just IMG call. The %s is a placeholder for the theme template directory URI.
+    define( 'HEADER_IMAGE', '%s/images/headers/path.jpg' );
 
-	// The height and width of your custom header. You can hook into the theme's own filters to change these values.
-	// Add a filter to thematic_h5bp_header_image_width and thematic_h5bp_header_image_height to change these values.
-	define( 'HEADER_IMAGE_WIDTH', apply_filters( 'thematic_h5bp_header_image_width', 940 ) );
-	define( 'HEADER_IMAGE_HEIGHT', apply_filters( 'thematic_h5bp_header_image_height', 198 ) );
+    // The height and width of your custom header. You can hook into the theme's own filters to change these values.
+    // Add a filter to thematic_h5bp_header_image_width and thematic_h5bp_header_image_height to change these values.
+    define( 'HEADER_IMAGE_WIDTH', apply_filters( 'thematic_h5bp_header_image_width', 940 ) );
+    define( 'HEADER_IMAGE_HEIGHT', apply_filters( 'thematic_h5bp_header_image_height', 198 ) );
 
-	// We'll be using post thumbnails for custom header images on posts and pages.
-	// We want them to be 940 pixels wide by 198 pixels tall.
-	// Larger images will be auto-cropped to fit, smaller ones will be ignored. See header.php.
-	set_post_thumbnail_size( HEADER_IMAGE_WIDTH, HEADER_IMAGE_HEIGHT, true );
+    // We'll be using post thumbnails for custom header images on posts and pages.
+    // We want them to be 940 pixels wide by 198 pixels tall.
+    // Larger images will be auto-cropped to fit, smaller ones will be ignored. See header.php.
+    set_post_thumbnail_size( HEADER_IMAGE_WIDTH, HEADER_IMAGE_HEIGHT, true );
 
-	// Don't support text inside the header image.
-	define( 'NO_HEADER_TEXT', true );
+    // Don't support text inside the header image.
+    define( 'NO_HEADER_TEXT', true );
 
-	// Add a way for the custom header to be styled in the admin panel that controls
-	// custom headers. See thematic_h5bp_admin_header_style(), below.
-	add_custom_image_header( '', 'thematic_h5bp_admin_header_style' );
+    // Add a way for the custom header to be styled in the admin panel that controls
+    // custom headers. See thematic_h5bp_admin_header_style(), below.
+    add_custom_image_header( '', 'thematic_h5bp_admin_header_style' );
 
-	// ... and thus ends the changeable header business.
+    // ... and thus ends the changeable header business.
 
-	// Default custom headers packaged with the theme. %s is a placeholder for the theme template directory URI.
-	register_default_headers( array(
-		'path' => array(
-			'url' => '%s/images/headers/path.jpg',
-			'thumbnail_url' => '%s/images/headers/path-thumbnail.jpg',
-			/* translators: header image description */
-			'description' => __( 'Path', $my_themename )
-		),
-		'h5bp' => array(
-			'url' => '%s/images/headers/h5bp.jpg',
-			'thumbnail_url' => '%s/images/headers/h5bp-thumbnail.jpg',
-			/* translators: header image description */
-			'description' => __( 'Html5 Boilerplate', $my_themename )
-		)
-	) );
+    // Default custom headers packaged with the theme. %s is a placeholder for the theme template directory URI.
+    register_default_headers( array(
+        'path' => array(
+            'url' => '%s/images/headers/path.jpg',
+            'thumbnail_url' => '%s/images/headers/path-thumbnail.jpg',
+            /* translators: header image description */
+            'description' => __( 'Path', $my_themename )
+        ),
+        'h5bp' => array(
+            'url' => '%s/images/headers/h5bp.jpg',
+            'thumbnail_url' => '%s/images/headers/h5bp-thumbnail.jpg',
+            /* translators: header image description */
+            'description' => __( 'Html5 Boilerplate', $my_themename )
+        )
+    ) );
 }
 endif;
 
@@ -414,12 +414,12 @@ function thematic_h5bp_admin_header_style() {
 <style type="text/css">
 /* Shows the same border as on front end */
 #headimg {
-	border-bottom: 1px solid #000;
-	border-top: 4px solid #000;
+    border-bottom: 1px solid #000;
+    border-top: 4px solid #000;
 }
 /* If NO_HEADER_TEXT is false, you would style the text with these selectors:
-	#headimg #name { }
-	#headimg #desc { }
+    #headimg #name { }
+    #headimg #desc { }
 */
 </style>
 <?php
@@ -435,8 +435,8 @@ endif;
  * @since Twenty Ten 1.0
  */
 function thematic_h5bp_page_menu_args( $args ) {
-	$args['show_home'] = true;
-	return $args;
+    $args['show_home'] = true;
+    return $args;
 }
 add_filter( 'wp_page_menu_args', 'thematic_h5bp_page_menu_args' );
 
@@ -450,7 +450,7 @@ add_filter( 'wp_page_menu_args', 'thematic_h5bp_page_menu_args' );
  * @return int
  */
 function thematic_h5bp_excerpt_length( $length ) {
-	return 40;
+    return 40;
 }
 add_filter( 'excerpt_length', 'thematic_h5bp_excerpt_length' );
 
@@ -461,7 +461,7 @@ add_filter( 'excerpt_length', 'thematic_h5bp_excerpt_length' );
  * @return string "Continue Reading" link
  */
 function thematic_h5bp_continue_reading_link() {
-	return ' <a href="'. get_permalink() . '">' . __( 'Continue reading <span class="meta-nav">&rarr;</span>', $my_themename ) . '</a>';
+    return ' <a href="'. get_permalink() . '">' . __( 'Continue reading <span class="meta-nav">&rarr;</span>', $my_themename ) . '</a>';
 }
 
 /**
@@ -474,7 +474,7 @@ function thematic_h5bp_continue_reading_link() {
  * @return string An ellipsis
  */
 function thematic_h5bp_auto_excerpt_more( $more ) {
-	return ' &hellip;' . thematic_h5bp_continue_reading_link();
+    return ' &hellip;' . thematic_h5bp_continue_reading_link();
 }
 add_filter( 'excerpt_more', 'thematic_h5bp_auto_excerpt_more' );
 
@@ -488,10 +488,10 @@ add_filter( 'excerpt_more', 'thematic_h5bp_auto_excerpt_more' );
  * @return string Excerpt with a pretty "Continue Reading" link
  */
 function thematic_h5bp_custom_excerpt_more( $output ) {
-	if ( has_excerpt() && ! is_attachment() ) {
-		$output .= thematic_h5bp_continue_reading_link();
-	}
-	return $output;
+    if ( has_excerpt() && ! is_attachment() ) {
+        $output .= thematic_h5bp_continue_reading_link();
+    }
+    return $output;
 }
 add_filter( 'get_the_excerpt', 'thematic_h5bp_custom_excerpt_more' );
 
@@ -504,7 +504,7 @@ add_filter( 'get_the_excerpt', 'thematic_h5bp_custom_excerpt_more' );
  * @return string The gallery style filter, with the styles themselves removed.
  */
 function thematic_h5bp_remove_gallery_css( $css ) {
-	return preg_replace( "#<style type='text/css'>(.*?)</style>#s", '', $css );
+    return preg_replace( "#<style type='text/css'>(.*?)</style>#s", '', $css );
 }
 add_filter( 'gallery_style', 'thematic_h5bp_remove_gallery_css' );
 
@@ -512,14 +512,14 @@ add_filter( 'gallery_style', 'thematic_h5bp_remove_gallery_css' );
  * Set the content width based on the theme's design and stylesheet.
  */
 if ( ! isset( $content_width ) ) { 
-	$content_width = 640;
+    $content_width = 640;
 }
 /**
  * This theme uses wp_nav_menu() in one location.
  */
 register_nav_menus( array(
-	'xoxo' => __( 'Primary Menu', $my_themename ),
-	'aside' => __( 'Aside Menu', $my_themename )
+    'xoxo' => __( 'Primary Menu', $my_themename ),
+    'aside' => __( 'Aside Menu', $my_themename )
 ) );
 
 /**
@@ -539,45 +539,45 @@ add_theme_support( 'automatic-feed-links' );
  *
  * @param string $title Title generated by wp_title()
  * @param string $separator The separator passed to wp_title(). Twenty Ten uses a
- * 	vertical bar, "|", as a separator in header.php.
+ *     vertical bar, "|", as a separator in header.php.
  * @return string The new title, ready for the <title> tag.
  */
 function toolbox_filter_wp_title( $title, $separator ) {
-	// Don't affect wp_title() calls in feeds.
-	if ( is_feed() )
-		return $title;
-		
-	// The $paged global variable contains the page number of a listing of posts.
-	// The $page global variable contains the page number of a single post that is paged.
-	// We'll display whichever one applies, if we're not looking at the first page.
-	global $paged, $page;
+    // Don't affect wp_title() calls in feeds.
+    if ( is_feed() )
+        return $title;
 
-	if ( is_search() ) {
-		// If we're a search, let's start over:
-		$title = sprintf( __( 'Search results for %s', $my_themename ), '"' . get_search_query() . '"' );
-		// Add a page number if we're on page 2 or more:
-		if ( $paged >= 2 )
-			$title .= " $separator " . sprintf( __( 'Page %s', $my_themename ), $paged );
-		// Add the site name to the end:
-		$title .= " $separator " . get_bloginfo( 'name', 'display' );
-		// We're done. Let's send the new title back to wp_title():
-		return $title;
-	}
+    // The $paged global variable contains the page number of a listing of posts.
+    // The $page global variable contains the page number of a single post that is paged.
+    // We'll display whichever one applies, if we're not looking at the first page.
+    global $paged, $page;
 
-	// Otherwise, let's start by adding the site name to the end:
-	$title .= get_bloginfo( 'name', 'display' );
+    if ( is_search() ) {
+        // If we're a search, let's start over:
+        $title = sprintf( __( 'Search results for %s', $my_themename ), '"' . get_search_query() . '"' );
+        // Add a page number if we're on page 2 or more:
+        if ( $paged >= 2 )
+            $title .= " $separator " . sprintf( __( 'Page %s', $my_themename ), $paged );
+        // Add the site name to the end:
+        $title .= " $separator " . get_bloginfo( 'name', 'display' );
+        // We're done. Let's send the new title back to wp_title():
+        return $title;
+    }
 
-	// If we have a site description and we're on the home/front page, add the description:
-	$site_description = get_bloginfo( 'description', 'display' );
-	if ( $site_description && ( is_home() || is_front_page() ) )
-		$title .= " $separator " . $site_description;
+    // Otherwise, let's start by adding the site name to the end:
+    $title .= get_bloginfo( 'name', 'display' );
 
-	// Add a page number if necessary:
-	if ( $paged >= 2 || $page >= 2 )
-		$title .= " $separator " . sprintf( __( 'Page %s', $my_themename ), max( $paged, $page ) );
+    // If we have a site description and we're on the home/front page, add the description:
+    $site_description = get_bloginfo( 'description', 'display' );
+    if ( $site_description && ( is_home() || is_front_page() ) )
+        $title .= " $separator " . $site_description;
 
-	// Return the new title to wp_title():
-	return $title;
+    // Add a page number if necessary:
+    if ( $paged >= 2 || $page >= 2 )
+        $title .= " $separator " . sprintf( __( 'Page %s', $my_themename ), max( $paged, $page ) );
+
+    // Return the new title to wp_title():
+    return $title;
 }
 // add_filter( 'wp_title', 'toolbox_filter_wp_title', 10, 2 );
 
@@ -608,22 +608,22 @@ require_once(TEMPLATEPATH . '/functions/theme-functions.php');
 add_action('admin_notices', 'childtheme_phpthumb_nag');
 
 function childtheme_phpthumb_nag(){
-	if (! is_writable( CHILDTHEME_THEME_DIRECTORY . 'cache/'  ) ):
+    if (! is_writable( CHILDTHEME_THEME_DIRECTORY . 'cache/'  ) ):
 
-		global $my_themename;
-		echo '<div class="error"><p>';
-		printf( __('Notice: In order for %1$s to function properly, %2$s must be writable by the webserver chmod 0755 h5bp/cache/' ), $my_themename, CHILDTHEME_THEME_DIRECTORY . 'cache/' ) ;
-		echo '</p></div>';
+        global $my_themename;
+        echo '<div class="error"><p>';
+        printf( __('Notice: In order for %1$s to function properly, %2$s must be writable by the webserver chmod 0755 h5bp/cache/' ), $my_themename, CHILDTHEME_THEME_DIRECTORY . 'cache/' ) ;
+        echo '</p></div>';
 
-	endif;
+    endif;
 }
 
 /**
  * Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link.
  */
 function toolbox_page_menu_args($args) {
-	$args['show_home'] = true;
-	return $args;
+    $args['show_home'] = true;
+    return $args;
 }
 add_filter( 'wp_page_menu_args', 'toolbox_page_menu_args' );
 
@@ -631,102 +631,102 @@ add_filter( 'wp_page_menu_args', 'toolbox_page_menu_args' );
  * Register widgetized area and update sidebar with default widgets
  */
 function toolbox_widgets_init() {
-	// Area 1, located at the top of the sidebar.
-	GLOBAL $my_themename;
-	register_sidebar( array(
-		'name' => __( 'Home Content', $my_themename ),
-		'id' => 'home-content',
-		'description' => __( 'This widget displays markup ideal for a sliding/fading (or tabbed use classes and customise the css) list on the home page', $my_themename ),
-		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
-		'after_widget' => '</li>',
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
-	) );
-	
-	register_sidebar( array(
-		'name' => __( 'Blurb AboutBox', $my_themename ),
-		'id' => 'about-box',
-		'description' => __( 'An about aside widgets displayed as sections', $my_themename ),
-		'before_widget' => '<section id="%1$s" class="widget-container %2$s">',
-		'after_widget' => '</section>',
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
-	) );
+    // Area 1, located at the top of the sidebar.
+    GLOBAL $my_themename;
+    register_sidebar( array(
+        'name' => __( 'Home Content', $my_themename ),
+        'id' => 'home-content',
+        'description' => __( 'This widget displays markup ideal for a sliding/fading (or tabbed use classes and customise the css) list on the home page', $my_themename ),
+        'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
+        'after_widget' => '</li>',
+        'before_title' => '<h3 class="widget-title">',
+        'after_title' => '</h3>',
+    ) );
 
-	register_sidebar( array(
-		'name' => __( 'Primary Widget Area', $my_themename ),
-		'id' => 'primary-menu',
-		'description' => __( 'The primary menu in header (not wrapped in div)', $my_themename ),
-		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
-		'after_widget' => '</li>',
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
-	) );
+    register_sidebar( array(
+        'name' => __( 'Blurb AboutBox', $my_themename ),
+        'id' => 'about-box',
+        'description' => __( 'An about aside widgets displayed as sections', $my_themename ),
+        'before_widget' => '<section id="%1$s" class="widget-container %2$s">',
+        'after_widget' => '</section>',
+        'before_title' => '<h3 class="widget-title">',
+        'after_title' => '</h3>',
+    ) );
 
-	register_sidebar( array(
-		'name' => __( 'Primary Widget Area', $my_themename ),
-		'id' => 'primary-widget-area',
-		'description' => __( 'The primary widget area', $my_themename ),
-		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
-		'after_widget' => '</li>',
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
-	) );
+    register_sidebar( array(
+        'name' => __( 'Primary Widget Area', $my_themename ),
+        'id' => 'primary-menu',
+        'description' => __( 'The primary menu in header (not wrapped in div)', $my_themename ),
+        'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
+        'after_widget' => '</li>',
+        'before_title' => '<h3 class="widget-title">',
+        'after_title' => '</h3>',
+    ) );
 
-	// Area 2, located below the Primary Widget Area in the sidebar. Empty by default.
-	register_sidebar( array(
-		'name' => __( 'Secondary Widget Area', $my_themename ),
-		'id' => 'secondary-widget-area',
-		'description' => __( 'The secondary widget area', $my_themename ),
-		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
-		'after_widget' => '</li>',
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
-	) );
+    register_sidebar( array(
+        'name' => __( 'Primary Widget Area', $my_themename ),
+        'id' => 'primary-widget-area',
+        'description' => __( 'The primary widget area', $my_themename ),
+        'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
+        'after_widget' => '</li>',
+        'before_title' => '<h3 class="widget-title">',
+        'after_title' => '</h3>',
+    ) );
 
-	// Area 3, located in the footer. Empty by default.
-	register_sidebar( array(
-		'name' => __( 'First Footer Widget Area', $my_themename ),
-		'id' => 'first-footer-widget-area',
-		'description' => __( 'The first footer widget area', $my_themename ),
-		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
-		'after_widget' => '</li>',
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
-	) );
+    // Area 2, located below the Primary Widget Area in the sidebar. Empty by default.
+    register_sidebar( array(
+        'name' => __( 'Secondary Widget Area', $my_themename ),
+        'id' => 'secondary-widget-area',
+        'description' => __( 'The secondary widget area', $my_themename ),
+        'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
+        'after_widget' => '</li>',
+        'before_title' => '<h3 class="widget-title">',
+        'after_title' => '</h3>',
+    ) );
 
-	// Area 4, located in the footer. Empty by default.
-	register_sidebar( array(
-		'name' => __( 'Second Footer Widget Area', $my_themename ),
-		'id' => 'second-footer-widget-area',
-		'description' => __( 'The second footer widget area', $my_themename ),
-		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
-		'after_widget' => '</li>',
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
-	) );
+    // Area 3, located in the footer. Empty by default.
+    register_sidebar( array(
+        'name' => __( 'First Footer Widget Area', $my_themename ),
+        'id' => 'first-footer-widget-area',
+        'description' => __( 'The first footer widget area', $my_themename ),
+        'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
+        'after_widget' => '</li>',
+        'before_title' => '<h3 class="widget-title">',
+        'after_title' => '</h3>',
+    ) );
 
-	// Area 5, located in the footer. Empty by default.
-	register_sidebar( array(
-		'name' => __( 'Third Footer Widget Area', $my_themename ),
-		'id' => 'third-footer-widget-area',
-		'description' => __( 'The third footer widget area', $my_themename ),
-		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
-		'after_widget' => '</li>',
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
-	) );
+    // Area 4, located in the footer. Empty by default.
+    register_sidebar( array(
+        'name' => __( 'Second Footer Widget Area', $my_themename ),
+        'id' => 'second-footer-widget-area',
+        'description' => __( 'The second footer widget area', $my_themename ),
+        'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
+        'after_widget' => '</li>',
+        'before_title' => '<h3 class="widget-title">',
+        'after_title' => '</h3>',
+    ) );
 
-	// Area 6, located in the footer. Empty by default.
-	register_sidebar( array(
-		'name' => __( 'Fourth Footer Widget Area', $my_themename ),
-		'id' => 'fourth-footer-widget-area',
-		'description' => __( 'The fourth footer widget area', $my_themename ),
-		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
-		'after_widget' => '</li>',
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
-	) );
+    // Area 5, located in the footer. Empty by default.
+    register_sidebar( array(
+        'name' => __( 'Third Footer Widget Area', $my_themename ),
+        'id' => 'third-footer-widget-area',
+        'description' => __( 'The third footer widget area', $my_themename ),
+        'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
+        'after_widget' => '</li>',
+        'before_title' => '<h3 class="widget-title">',
+        'after_title' => '</h3>',
+    ) );
+
+    // Area 6, located in the footer. Empty by default.
+    register_sidebar( array(
+        'name' => __( 'Fourth Footer Widget Area', $my_themename ),
+        'id' => 'fourth-footer-widget-area',
+        'description' => __( 'The fourth footer widget area', $my_themename ),
+        'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
+        'after_widget' => '</li>',
+        'before_title' => '<h3 class="widget-title">',
+        'after_title' => '</h3>',
+    ) );
 }
 
 add_action( 'init', 'toolbox_widgets_init' );
@@ -743,29 +743,29 @@ add_action('admin_menu', 'my_plugin_admin_menu');
  
 function my_plugin_admin_init()
 {
-	/* Register our script. * /
-	wp_register_script('myPluginScript', WP_PLUGIN_URL . '/myPlugin/script.js');
+    /* Register our script. * /
+    wp_register_script('myPluginScript', WP_PLUGIN_URL . '/myPlugin/script.js');
 }function my_plugin_admin_menu()
 {
-	/* Register our plugin page * /
-	$page = add_submenu_page( 'edit.php', 
-							  __('My Plugin', 'myPlugin'), 
-							  __('My Plugin', 'myPlugin'), 9,  __FILE__, 
-							  'my_plugin_manage_menu');
+    /* Register our plugin page * /
+    $page = add_submenu_page( 'edit.php',
+                              __('My Plugin', 'myPlugin'),
+                              __('My Plugin', 'myPlugin'), 9,  __FILE__,
+                              'my_plugin_manage_menu');
 
-	/* Using registered $page handle to hook script load * /
-	add_action('admin_print_scripts-' . $page, 'my_plugin_admin_styles');
+    /* Using registered $page handle to hook script load * /
+    add_action('admin_print_scripts-' . $page, 'my_plugin_admin_styles');
 }
 
 function my_plugin_admin_styles()
 {
-	/*
-	 * It will be called only on your plugin admin page, enqueue our script here
-	 * /
-	wp_enqueue_script('myPluginScript');
+    /*
+     * It will be called only on your plugin admin page, enqueue our script here
+     * /
+    wp_enqueue_script('myPluginScript');
 }
 
 function my_plugin_manage_menu()
 {
-	/* Output our admin page * /
+    /* Output our admin page * /
 } */

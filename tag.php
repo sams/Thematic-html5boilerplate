@@ -9,9 +9,9 @@
     // calling the standard sidebar 
     thematic_sidebar(); ?>
 
-	<!-- was id="primary"  -->
-	<section class="main">
-	
+    <!-- was id="primary"  -->
+    <section class="main">
+
         <?php
     
         // displays the page title
@@ -19,9 +19,9 @@
 
         // create the navigation above the content
         thematic_navigation_above();
-		
+
         // action hook for placing content above the tag loop
-        thematic_above_tagloop();		
+        thematic_above_tagloop();
 
         // action hook creating the tag loop
         thematic_tagloop();
@@ -34,11 +34,11 @@
         
         ?>
 
-	</section><!-- .main -->
+    </section><!-- .main -->
 
 
-			
-			<?php thematic_belowcontent(); ?> 
+
+            <?php thematic_belowcontent(); ?>
 <?php 
 
     // action hook for placing content below #container

@@ -50,11 +50,11 @@ function get_request( $property, $default = 0 ) {
 
 }
 
-define ('CACHE_SIZE', 250);					// number of files to store before clearing cache
-define ('CACHE_CLEAR', 5);					// maximum number of files to delete on each cache clear
-define ('VERSION', '1.14');					// version number (to force a cache refresh)
-define ('DIRECTORY_CACHE', $cache_path);		// cache directory
-define ('DIRECTORY_TEMP', './temp');		// temp directory
+define ('CACHE_SIZE', 250);                    // number of files to store before clearing cache
+define ('CACHE_CLEAR', 5);                    // maximum number of files to delete on each cache clear
+define ('VERSION', '1.14');                    // version number (to force a cache refresh)
+define ('DIRECTORY_CACHE', $cache_path);        // cache directory
+define ('DIRECTORY_TEMP', './temp');        // temp directory
 
     
 
@@ -123,19 +123,19 @@ function checkExternal ($src) {
 
         $isAllowedSite = false;
         foreach ($allowedSites as $site) {
-			$site = '/' . addslashes($site) . '/';
+            $site = '/' . addslashes($site) . '/';
             if (preg_match($site, $url_info['host']) == true) {
                 $isAllowedSite = true;
             }
-		}
+        }
 
-		if ($isAllowedSite) {
+        if ($isAllowedSite) {
 
-			$fileDetails = pathinfo($src);
-			$ext = strtolower($fileDetails['extension']);
+            $fileDetails = pathinfo($src);
+            $ext = strtolower($fileDetails['extension']);
 
-			$filename = md5($src);
-			$local_filepath = DIRECTORY_TEMP . '/' . $filename . '.' . $ext;
+            $filename = md5($src);
+            $local_filepath = DIRECTORY_TEMP . '/' . $filename . '.' . $ext;
 
             if (!file_exists($local_filepath)) {
 
@@ -146,20 +146,20 @@ function checkExternal ($src) {
 
                     curl_setopt($ch, CURLOPT_URL, $src);
                     curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
-					curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-					curl_setopt($ch, CURLOPT_HEADER, 0);
+                    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+                    curl_setopt($ch, CURLOPT_HEADER, 0);
                     curl_setopt($ch, CURLOPT_USERAGENT, 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.7.5) Gecko/20041107 Firefox/1.0');
                     curl_setopt($ch, CURLOPT_FILE, $fh);
 
-					if (curl_exec($ch) === FALSE) {
-						if (file_exists($local_filepath)) {
-							unlink($local_filepath);
-						}
-						displayError('error reading file ' . $src . ' from remote host: ' . curl_error($ch));
-					}
+                    if (curl_exec($ch) === FALSE) {
+                        if (file_exists($local_filepath)) {
+                            unlink($local_filepath);
+                        }
+                        displayError('error reading file ' . $src . ' from remote host: ' . curl_error($ch));
+                    }
 
-					curl_close($ch);
-					fclose($fh);
+                    curl_close($ch);
+                    fclose($fh);
 
                 } else {
 
@@ -198,11 +198,11 @@ function checkExternal ($src) {
  */
 function cleanSource($src) {
 
-	$host = str_replace('www.', '', $_SERVER['HTTP_HOST']);
-	$regex = "/^((ht|f)tp(s|):\/\/)(www\.|)" . $host . "/i";
+    $host = str_replace('www.', '', $_SERVER['HTTP_HOST']);
+    $regex = "/^((ht|f)tp(s|):\/\/)(www\.|)" . $host . "/i";
 
-	$src = preg_replace ($regex, '', $src);
-	$src = strip_tags ($src);
+    $src = preg_replace ($regex, '', $src);
+    $src = strip_tags ($src);
     $src = checkExternal ($src);
 
     // remove slash from start of string
@@ -295,22 +295,22 @@ function mime_type($file) {
         $mime_type = mime_content_type($file);
     }
 
-	// use PECL fileinfo to determine mime type
-	if (!valid_src_mime_type($mime_type)) {
-		if (function_exists('finfo_open')) {
-			$finfo = @finfo_open(FILEINFO_MIME);
-			if ($finfo != '') {
-				$mime_type = finfo_file($finfo, $file);
-				finfo_close($finfo);
-			}
-		}
-	}
+    // use PECL fileinfo to determine mime type
+    if (!valid_src_mime_type($mime_type)) {
+        if (function_exists('finfo_open')) {
+            $finfo = @finfo_open(FILEINFO_MIME);
+            if ($finfo != '') {
+                $mime_type = finfo_file($finfo, $file);
+                finfo_close($finfo);
+            }
+        }
+    }
 
     // try to determine mime type by using unix file command
     // this should not be executed on windows
     if (!valid_src_mime_type($mime_type) && $os != "WIN") {
         if (preg_match("/FreeBSD|FREEBSD|LINUX/", $os)) {
-			$mime_type = trim(@shell_exec('file -bi ' . escapeshellarg($file)));
+            $mime_type = trim(@shell_exec('file -bi ' . escapeshellarg($file)));
         }
     }
 
@@ -362,29 +362,29 @@ $cache = md5($src.$w.$h).'.png';
 $cache_path.= $cache;
 
 if (
-	file_exists($cache_path) &&
-	($cache_life == false || filemtime($cache_path) > strtotime($cache_life)) &&
-	@$_SERVER['HTTP_CACHE_CONTROL'] != 'no-cache'
+    file_exists($cache_path) &&
+    ($cache_life == false || filemtime($cache_path) > strtotime($cache_life)) &&
+    @$_SERVER['HTTP_CACHE_CONTROL'] != 'no-cache'
 )
 {
-	header('Content-type: '.$mime_type);
-	header('Location: '.$cache_uri.$cache);
-	exit();
+    header('Content-type: '.$mime_type);
+    header('Location: '.$cache_uri.$cache);
+    exit();
 }
 else
 {
-	if (!file_exists($src))
-	{
-		$src = $document_path.$src;
-	}
-	
-	$thumb = PhpThumbFactory::create($src);
-	$thumb->setOptions($options);
-	$thumb->adaptiveResize($w, $h)->createReflection(40, 40, 80, true, '#a4a4a4');;
-	
-	$thumb->save($cache_path);
+    if (!file_exists($src))
+    {
+        $src = $document_path.$src;
+    }
+
+    $thumb = PhpThumbFactory::create($src);
+    $thumb->setOptions($options);
+    $thumb->adaptiveResize($w, $h)->createReflection(40, 40, 80, true, '#a4a4a4');;
+
+    $thumb->save($cache_path);
 } 
-	header('Content-type: '.$mime_type);
+    header('Content-type: '.$mime_type);
 
 $thumb->show();
 flush();

@@ -6,14 +6,14 @@ var PROFILE = {
 
   init : function(bool) {
   
-  	// define what objects, constructors and functions you want to profile
-  	// documentation here: http://developer.yahoo.com/yui/profiler/
-  	
-  	YAHOO.tool.Profiler.registerObject("jQuery", jQuery, true);
-  	
-  	// the following would profile all methods within constructor's prototype
+      // define what objects, constructors and functions you want to profile
+      // documentation here: http://developer.yahoo.com/yui/profiler/
+
+      YAHOO.tool.Profiler.registerObject("jQuery", jQuery, true);
+
+      // the following would profile all methods within constructor's prototype
     // YAHOO.tool.Profiler.registerConstructor("Person");
-  	
+
     // the following would profile the global function sayHi
     // YAHOO.tool.Profiler.registerFunction("sayHi", window); 
     
@@ -40,16 +40,16 @@ var PROFILE = {
           s.setAttribute('href','js/profiling/yahoo-profiling.css');
           document.body.appendChild(s);
           
-	        YAHOO.util.Dom.addClass(document.body, 'yui-skin-sam');
+            YAHOO.util.Dom.addClass(document.body, 'yui-skin-sam');
 
-      		//instantiate ProfilerViewer with desired options:
-      		var pv = new YAHOO.widget.ProfilerViewer("", {
-      			visible: true, //expand the viewer mmediately after instantiation
-      			showChart: true,
-      		  //	base:"../../build/",
-      		  swfUrl: "js/profiling/charts.swf"
-      		});
-  	
+              //instantiate ProfilerViewer with desired options:
+              var pv = new YAHOO.widget.ProfilerViewer("", {
+                  visible: true, //expand the viewer mmediately after instantiation
+                  showChart: true,
+                //    base:"../../build/",
+                swfUrl: "js/profiling/charts.swf"
+              });
+
   }
 
 };

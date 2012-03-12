@@ -199,13 +199,13 @@ class FirePHP {
    * @return FirePHP
    */
   function &getInstance($AutoCreate=false) {
-  	global $FirePHP_Instance;
-  	
-  	if($AutoCreate===true && !$FirePHP_Instance) {
-  		$FirePHP_Instance = new FirePHP();
-  	}
-  	
-  	return $FirePHP_Instance;
+      global $FirePHP_Instance;
+
+      if($AutoCreate===true && !$FirePHP_Instance) {
+          $FirePHP_Instance = new FirePHP();
+      }
+
+      return $FirePHP_Instance;
   }
     
   /**
@@ -295,7 +295,7 @@ class FirePHP {
    */
   function errorHandler($errno, $errstr, $errfile, $errline, $errcontext)
   {
-  	global $FirePHP_Instance;
+      global $FirePHP_Instance;
     // Don't log error if error reporting is switched off
     if (error_reporting() == 0) {
       return;
@@ -656,19 +656,19 @@ class FirePHP {
       unset($meta['line']);
     }
 
-  	$this->setHeader('X-Wf-Protocol-1','http://meta.wildfirehq.org/Protocol/JsonStream/0.2');
-  	$this->setHeader('X-Wf-1-Plugin-1','http://meta.firephp.org/Wildfire/Plugin/FirePHP/Library-FirePHPCore/'.FirePHP_VERSION);
+      $this->setHeader('X-Wf-Protocol-1','http://meta.wildfirehq.org/Protocol/JsonStream/0.2');
+      $this->setHeader('X-Wf-1-Plugin-1','http://meta.firephp.org/Wildfire/Plugin/FirePHP/Library-FirePHPCore/'.FirePHP_VERSION);
  
     $structure_index = 1;
     if($Type==FirePHP_DUMP) {
       $structure_index = 2;
-    	$this->setHeader('X-Wf-1-Structure-2','http://meta.firephp.org/Wildfire/Structure/FirePHP/Dump/0.1');
+        $this->setHeader('X-Wf-1-Structure-2','http://meta.firephp.org/Wildfire/Structure/FirePHP/Dump/0.1');
     } else {
-    	$this->setHeader('X-Wf-1-Structure-1','http://meta.firephp.org/Wildfire/Structure/FirePHP/FirebugConsole/0.1');
+        $this->setHeader('X-Wf-1-Structure-1','http://meta.firephp.org/Wildfire/Structure/FirePHP/FirebugConsole/0.1');
     }
   
     if($Type==FirePHP_DUMP) {
-    	$msg = '{"'.$Label.'":'.$this->jsonEncode($Object, $skipFinalObjectEncode).'}';
+        $msg = '{"'.$Label.'":'.$this->jsonEncode($Object, $skipFinalObjectEncode).'}';
     } else {
       $msg_meta = $Options;
       $msg_meta['Type'] = $Type;
@@ -681,7 +681,7 @@ class FirePHP {
       if(isset($meta['line']) && !isset($msg_meta['Line'])) {
         $msg_meta['Line'] = $meta['line'];
       }
-    	$msg = '['.$this->jsonEncode($msg_meta).','.$this->jsonEncode($Object, $skipFinalObjectEncode).']';
+        $msg = '['.$this->jsonEncode($msg_meta).','.$this->jsonEncode($Object, $skipFinalObjectEncode).']';
     }
     
     $parts = explode("\n",chunk_split($msg, 5000, "\n"));
@@ -710,7 +710,7 @@ class FirePHP {
         }
     }
 
-  	$this->setHeader('X-Wf-1-Index',$this->messageIndex-1);
+      $this->setHeader('X-Wf-1-Index',$this->messageIndex-1);
 
     return true;
   }
@@ -922,7 +922,7 @@ class FirePHP {
       }
     }
     return $return;
-  	
+
   }
 
   /**
